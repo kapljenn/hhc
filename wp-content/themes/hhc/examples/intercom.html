@@ -1,0 +1,126 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0, user-scalable=no">
+        <meta name="apple-mobile-web-app-capable" content="yes" />
+
+        <!-- Page title -->
+        <title>Template Generator</title>
+
+        <!-- Fonts -->
+        <link href="https://fonts.googleapis.com/css?family=Playfair+Display:400,700,400italic,700italic|Raleway:300,500,800|Source+Sans+Pro:100,300,400,600,700,900" rel="stylesheet" type="text/css" />
+        
+        
+        <!-- Base Path to Scripts -->
+        <base href="../">
+        
+        <!-- Styles -->
+        <link rel="stylesheet" href="css/slides.css" name="main-styles">
+
+        <!-- Scripts -->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+        <script src="js/plugins.js" type="text/javascript" name="plugins"></script>
+        <script src="js/slides.js" type="text/javascript" name="main-scripts"></script>
+                
+                
+                 
+    </head>
+    <body class="slides animated">
+      
+
+<!-- Example intercom -->
+<!-- ignore -->
+<svg xmlns="http://www.w3.org/2000/svg" style="display:none"><symbol id="chat" viewBox="0 0 22 22"><path d="M11 22c-.1 0-.3 0-.4-.1-.4-.1-.6-.5-.6-.9v-4h-7.8c-1.2 0-2.2-1-2.2-2.2v-11.6c0-1.2 1-2.2 2.2-2.2h17.7c1.1 0 2.1 1 2.1 2.2v11.7c0 1.2-1 2.2-2.2 2.2h-3.4l-4.7 4.7c-.2.1-.4.2-.7.2zm-8.8-19c-.1 0-.2.1-.2.2v11.7s.1.1.2.1h8.8c.6 0 1 .4 1 1v2.6l3.3-3.3c.2-.2.4-.3.7-.3h3.8c.1 0 .2-.1.2-.2v-11.6c0-.1-.1-.2-.2-.2h-17.6zM5 6h6v2h-6zM5 10h10v2h-10z"></path></symbol></svg>
+
+<!-- How to find your Intercom App ID: http://cl.ly/fXyr -->
+
+<!-- (1) Copy scripts, Add your APP ID here:     ↓      -->
+<script> window.intercomSettings = { app_id: "kdh4twtm" }; </script>
+<script>(function(){var w=window;var ic=w.Intercom;if(typeof ic==="function"){ic('reattach_activator');ic('update',intercomSettings);}else{var d=document;var i=function(){i.c(arguments)};i.q=[];i.c=function(args){i.q.push(args)};w.Intercom=i;function l(){var s=d.createElement('script');s.type='text/javascript';s.async=true;s.src='https://widget.intercom.io/widget/kdh4twtm';var x=d.getElementsByTagName('script')[0];x.parentNode.insertBefore(s,x);}if(w.attachEvent){w.attachEvent('onload',l);}else{w.addEventListener('load',l,false);}}})()</script>
+
+<!-- (2) Copy styles if you want (read the comments below) -->
+<style>
+  
+  /* highlight the button when chat is active (hidden) */
+  .intercom-messenger-active .button.intercomButton,
+  .intercom-messenger-active .button.intercomButton:hover {
+    background: #0070b4;
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.2);
+  }
+  
+  /* prepare for animation */
+  #intercom-container .intercom-sheet {
+    visibility: visible !important;
+    -webkit-transform: translateX(100%) !important;
+    transform: translateX(100%) !important;
+    opacity: 0;
+  }
+  
+  /* animate intercom container */
+  #intercom-container .intercom-sheet-active {
+    opacity: 1;
+    -webkit-transform: translateX(0%) !important;
+    transform: translateX(0%) !important;
+  }
+  #intercom-container .intercom-sheet-minimized {
+    -webkit-transform: scale(0) !important;
+    transform: scale(0) !important;
+  }
+  
+  /* darken the background */
+  #intercom-container .intercom-sheet {
+    box-shadow: 0 0 0 4000px rgba(0, 0, 0, 0.2);
+  }
+  
+  /* allow to select comments */
+  .slides .intercom-comment-body-container {
+    -webkit-user-select: initial;
+    -moz-user-select: initial;
+    -ms-user-select: initial;
+    user-select: initial;
+  }
+</style>
+
+
+<!-- (3) Copy scripts if you want -->
+<script>
+  //Hide intercom on body click
+  $(document).on('click', function(e) {
+    var container = $(".intercom-messenger-active #intercom-container, .intercomButton");
+    if (!container.is(e.target) && container.has(e.target).length === 0 && container.length > 0) {
+      Intercom('hide');
+    }
+  });
+</script>
+
+<nav class="panel bottom fixed">
+  <div class="sections">
+    <div class="right"><span class="button intercomButton actionButton" onclick="Intercom('show')"><svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#chat"></use></svg></span></div>
+  </div>
+</nav>
+
+<div class="slide whiteSlide">
+  <div class="content">
+    <div class="container">
+      <div class="wrap">
+        <div class="fix-9-12 ae-1">
+          <p class="hero"><a class="textIntercom" href="https://www.intercom.io/" target="_blank" rel="nofollow">Intercom</a> is a customer platform with a suite of products
+for live chat, marketing, feedback, and support. View the <a class="textIntercom" onclick="window.location='view-source:' + window.location.href">source code</a> for more info. Or <a class="textIntercom intercomButton" onclick="Intercom('showNewMessage')">start a chat</a> with us.</p>
+        </h2>
+      </div>
+    </div>
+  </div>
+</div>
+
+<style>
+  /* ignore */
+  .textIntercom { color:rgb(31,141,237);}
+  .intercomBG { background:rgb(31,141,237);}
+</style>
+
+<!-- Preloader -->
+<div class="loadingIcon"><svg class="loading-icon" id="loading-circle" viewBox="0 0 18 18"><circle class="circle" opacity=".1" stroke="#fff" stroke-width="2" stroke-miterlimit="10" cx="9" cy="9" r="8" fill="none"></circle><circle class="dash" stroke-width="2" stroke-linecap="round" stroke-miterlimit="10" stroke-dasharray="1,100" cx="9" cy="9" r="8" fill="none"></circle></svg></div>
+                    
+    </body>
+</html>

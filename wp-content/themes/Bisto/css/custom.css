@@ -1,0 +1,324 @@
+@font-face {
+    font-family: "futura-bold";
+    src: url(https://fonts.typekit.net/af/90cf9f/000000000000000000010091/27/l?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=n7) format("woff2");
+    font-weight: 700;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "futura-footer";
+    src: url(https://fonts.typekit.net/af/8a5494/000000000000000000013365/27/l?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=n4) format("woff2");
+    font-weight: 400;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: tk-baskerville-urw-n7;
+    src: url(https://fonts.typekit.net/af/74fd47/00000000000000000001791c/27/l?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=n7) format("woff2");
+    font-weight: 700;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'fontello';
+    src: url("../font/fontello-39380182.eot");
+    src: url("../font/fontello-39380182.eot#iefix") format('embedded-opentype'), url("../font/fontello-39380182.woff") format('woff'), url("../font/fontello-39380182.ttf") format('truetype'), url("../font/fontello-39380182.svg#fontello") format('svg');
+    font-weight: normal;
+    font-style: normal
+}
+@font-face {
+    font-family: 'BaskervilleBT-Bold';
+    src: url("../font/2C293E_0_0.eot");
+    src: url("../font/2C293E_0_0-.eot#iefix") format('embedded-opentype'), url("../font/2C293E_0_0.woff") format('woff'), url("../font/2C293E_0_0.ttf") format('truetype')
+}
+@font-face {
+  font-family: 'icomoon';
+  src:  url('../font/icomoon.eot?5icajv');
+  src:  url('../font/icomoon.eot?5icajv#iefix') format('embedded-opentype'),
+    url('../font/icomoon.ttf?5icajv') format('truetype'),
+    url('../font/icomoon.woff?5icajv') format('woff'),
+    url('../font/icomoon.svg?5icajv#icomoon') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+[class^="icon-"], [class*=" icon-"] {
+  /* use !important to prevent issues with browser extensions that change fonts */
+  font-family: 'icomoon' !important;
+  speak: none;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+[class^="fontelloicon-"], [class*=" fontelloicon-"] {
+    /* use !important to prevent issues with browser extensions that change fonts */
+    font-family: 'fontello' !important;
+    font-style: normal;
+    font-weight: normal;
+    speak: none;
+    text-decoration: inherit;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    font-variant: normal;
+    text-transform: none;
+    font-size: 12px;
+    vertical-align: top;
+    position: relative;
+    top: -2px;
+    /* Better Font Rendering =========== */
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-facebook:before {
+    content: "\e900";
+}
+.icon-youtube:before {
+  content: "\ea9d";
+}
+.discover-arrow-down {
+    text-align: center;
+}
+.fontelloicon-circle-down:before {
+  content: '\e802';
+}
+.share-icons {
+    position: fixed;
+    top: 10px;
+    right: 10px;
+    width: 80px;
+    height: 30px;
+    z-index: 11;
+}
+.icon.social-icon {
+    position: relative;
+    width: 30px;
+    height: 30px;
+    -webkit-border-radius: 30px;
+    border-radius: 30px;
+    border: 1px solid #fff;
+    background: none;
+    color: #fff;
+    font-size: 15px;
+    outline: none;
+    cursor: pointer;
+    margin-right: 10px;
+    float: left;
+    padding: 0;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    text-align: center;
+    line-height: 30px;
+
+}
+.icon.social-icon:hover {
+    border: 1px solid #d70911;
+    background: #d70911;
+    color: #fff;
+}
+h1.ae-1 {
+    font-family: 'BaskervilleBT-Bold', Arial, sans-serif;
+    font-size: 60px;
+    line-height: 1.2;
+    color: #fff;
+    padding-top: 40px;
+}
+@media (max-width: 800px) {
+    h1.ae-1 {
+        padding-top: 0px;
+        font-size: 28px;
+    }
+    .bisto-logo {
+        width: 70px !important;
+        height: auto !important;
+    }
+    .optional-logo {
+        width: 130px !important;
+        height: auto !important;
+        padding-bottom: 10px;
+    }
+}
+@media (max-width: 800px) {
+    .custom .stage-2 .wrap {
+        padding-top: 20px;
+    }
+    .custom .stage-2 h1 {
+        font-size: 24px;
+    }
+    .custom .stage-2 .button {
+        margin-top: 30px !important;
+    }
+}
+.custom .content {
+    background: none;
+}
+.custom .button.home-button {
+    outline: none;
+    min-height: 40px;
+    border: 1px solid #fff;
+    font-size: 17px;
+    font-family: "futura-bold",sans-serif;
+    background: none;
+    color: #fff;
+    -webkit-border-radius: 10px;
+    border-radius: 10px;
+    display: inline-block;
+    font-weight: bold;
+    width: 220px;
+}
+.custom .button.home-button:hover {
+    background: #d70911 !important;
+    color: #fff;
+    border: 1px solid #d70911;
+}
+.custom .button.play.small {
+    position: relative;
+    width: 50px;
+    height: 50px;
+    background: none !important;
+    border: 1px solid #fff;
+}
+
+.custom .button.play.small:hover {
+    transform: none;
+    background: #d70911 !important;
+    border: 1px solid #d70911;
+}
+
+.custom .button.play.small svg{
+    position: absolute;
+    top: 12px;
+    left: 15px;
+    fill: #fff !important;
+    width: 22px;
+    height: 22px;
+}
+.custom .panel.bottom {
+    min-height: 70px;
+    padding: 0;
+    pointer-events: auto;
+}
+@media (min-width: 800px) {
+    .custom .panel.bottom:hover {
+        padding-top: 5px;
+        background: #d70911;
+    }
+}
+.custom .bottom .icon {
+    font-size: 30px;
+}
+
+/*bottom red navigation */
+.custom .fixed {
+    position: absolute;
+    padding: 23px 20px 25px 20px !important;
+    background: #d70911;
+}
+
+.custom .fixed ul{
+    text-align: left;
+}
+.custom .fixed li {
+    display: inline-block;
+    padding-left: 20px;
+    padding-right: 20px;
+    font-size: 16px;
+    font-family: "futura-footer", sans-serif;
+    position: relative;
+    z-index: 1;
+    font-weight: bold;
+}
+.custom .fixed.bottom  li a:hover,
+.custom .fixed.bottom  li a:visited,
+.custom .fixed.bottom  li a:active,
+.custom .fixed.bottom  li a:hover,
+.custom .fixed.bottom  li a:focus {
+    opacity: 1;
+    color: #fff;
+}
+.custom .fixed.bottom  li a:hover {
+    text-decoration: underline;
+}
+@media (max-width: 800px) {
+    .custom .fixed {
+        padding: 15px 20px 20px 20px !important;
+    }
+    .custom .fixed li {
+        padding-left: 0px;
+        display: block;
+        line-height: 21px;
+    }
+}
+span.discover-more {
+    font-family:"futura-pt",sans-serif;
+    padding-bottom: 5px;
+    display: block;
+    font-size: 14px;
+}
+.discover-arrow-down {
+    position: relative;
+    width: 25px;
+    border: 2px solid #fff;
+    color: #fff;
+    display: block;
+    margin: 5px auto 5px auto;
+    -webkit-border-radius: 40px;
+    border-radius: 40px;
+    height: 25px;
+    text-align: center;
+    line-height: 25px;
+    font-size: 10px;
+}
+.custom .navigation li {
+    padding: 2px 0;
+}
+.mobile-menu-container,
+.mobile-menu-opener {
+    display: none;
+}
+.mobile-menu-container {
+    padding: 100px 0;
+    background: rgba(0, 0, 0, 0.9);
+    position: absolute;
+    overflow-y: scroll;
+    text-align: center;
+    width: 100%;
+    height: 100%;
+    display: none;
+    z-index: 300;
+    top: 0;
+    left: 0;
+}
+.close-mobile-menu,
+.close-mobile-menu:hover,
+.close-mobile-menu:focus,
+.close-mobile-menu:active
+{
+    position: absolute;
+    right: 40px;
+    top: 40px;
+    text-decoration: none;
+    font-size: 60px;
+}
+@media (max-width: 800px) {
+    .mobile-menu-opener {
+        display: block;
+    }
+}
+.hide-for-small {
+    display: block;
+}
+@media (max-width: 800px) {
+    .hide-for-small {
+        display: none;
+    }
+}

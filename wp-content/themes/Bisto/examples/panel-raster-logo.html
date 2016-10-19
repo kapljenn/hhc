@@ -1,0 +1,112 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0, user-scalable=no">
+        <meta name="apple-mobile-web-app-capable" content="yes" />
+
+        <!-- Page title -->
+        <title>Template Generator</title>
+
+        <!-- Fonts -->
+        <link href="https://fonts.googleapis.com/css?family=Playfair+Display:400,700,400italic,700italic|Raleway:300,500,800|Source+Sans+Pro:100,300,400,600,700,900" rel="stylesheet" type="text/css" />
+        
+        
+        <!-- Base Path to Scripts -->
+        <base href="../">
+        
+        <!-- Styles -->
+        <link rel="stylesheet" href="css/slides.css" name="main-styles">
+
+        <!-- Scripts -->
+        <script src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
+        <script src="js/plugins.js" type="text/javascript" name="plugins"></script>
+        <script src="js/slides.js" type="text/javascript" name="main-scripts"></script>
+                
+                
+                 
+    </head>
+    <body class="slides animated">
+      
+
+<!-- Example panel-raster-logo -->
+<!-- 1) Copy styles -->
+<style>
+/* styles for raster images */
+.logoHolder {
+   position:relative;
+   top:-25%;
+   display:block;
+}
+.whiteLogo,
+.blackLogo {
+   position:absolute;
+   left:0;
+   top:0;
+   opacity:0;
+   -webkit-transition:opacity 0.5s;
+   transition:opacity 0.5s;
+}
+.slides.whiteSlide .blackLogo,
+.slides:not(.whiteSlide) .whiteLogo {
+   opacity:1;
+}
+
+/* styles for text */
+.textLogo {
+	font-size: 33px;
+	letter-spacing: -1px;
+	font-weight: 600;
+}
+</style>
+
+<!-- Panel Example -->
+<nav class="panel top small">
+  <div class="sections">
+    <div class="left">
+      <a href="#" class="logoHolder">
+      
+        <!-- set your images for bright and dark screens -->
+        <img src="http://cl.ly/gEB5/logo.png" alt="Image" class="whiteLogo" height="30"/>
+        <img src="http://cl.ly/gDTw/logo-black.png" alt="Image" class="blackLogo" height="30"/>
+      </a>
+    </div>
+    <div class="right">
+    
+        <!-- or use text as logo as well -->
+      <div class="textLogo selectable sourceSans">brand<span class="light">name</span></div>
+    </div>
+  </div>
+</nav>
+
+<!-- Black slide example -->
+<section class="slide fade">
+  <div class="content">
+    <div class="container">
+      <div class="wrap">
+      
+        <p>Use PNG image or text as a logo</p>
+        
+      </div>
+    </div> 
+  </div>
+</section>
+
+<!-- White slide example -->
+<section class="slide whiteSlide">
+  <div class="content">
+    <div class="container">
+      <div class="wrap">
+      
+        <p>Works on dark and bright slides</p>
+        
+      </div>
+    </div> 
+  </div>
+</section>
+
+<!-- Preloader -->
+<div class="loadingIcon"><svg class="loading-icon" id="loading-circle" viewBox="0 0 18 18"><circle class="circle" opacity=".1" stroke="#fff" stroke-width="2" stroke-miterlimit="10" cx="9" cy="9" r="8" fill="none"></circle><circle class="dash" stroke-width="2" stroke-linecap="round" stroke-miterlimit="10" stroke-dasharray="1,100" cx="9" cy="9" r="8" fill="none"></circle></svg></div>
+                    
+    </body>
+</html>
