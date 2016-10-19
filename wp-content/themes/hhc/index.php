@@ -158,11 +158,16 @@
 </nav>
 
 <?php
+
+$slide = 0;
+
 $the_query = new WP_Query(array( 'post_type' => 'post', 'posts_per_page' => '-1', 'order' => 'asc'));
 while ( $the_query->have_posts() ) : $the_query->the_post();
 
-the_title();
+  $slide++;
 ?>
+
+<?php if ($slide == 1) { ?>
 
 <!-- Slide #50 -->
 <section class="slide fade kenBurns">
@@ -172,8 +177,8 @@ the_title();
 
 				<div class="fix-12-12">
 					<div class="fix-10-12 toCenter">
-						<h1 class="small ae-1">Form follows function – that has been misunderstood.</h1>
-						<div class="ae-2"><p>I think there are two types of people in this world – people who can start things and people who can finish things. And while I place great value on the finishers, it&rsquo;s the starters who are rare because they can envision what isn&rsquo;t&nbsp;there.</p></div>
+						<h1 class="small ae-1"><?php the_title(); ?></h1>
+						<div class="ae-2"><?php the_content(); ?></div>
 					</div>
 					<ul class="grid grid-50">
 						<li class="col-4-12 left ae-3">
@@ -197,8 +202,7 @@ the_title();
 	<div class="background" style="background-image:url(assets/img/img-50.jpg)"></div>
 </section>
 
-<?php endwhile; ?>
-
+<?php } else if ($slide == 2) { ?>
 
 <!-- Slide #61 -->
 <section class="slide fade kenBurns">
@@ -249,6 +253,8 @@ the_title();
   <div class="background" style="background-image:url(assets/img/img-61.jpg)"></div>
 </section>
 
+<?php } else if ($slide == 3) { ?>
+
 <!-- Slide #48 -->
 <section class="slide whiteSlide">
   <div class="content">
@@ -290,6 +296,8 @@ the_title();
   </div>
 </section>
 
+<?php } else if ($slide == 4) { ?>
+
 <!-- Slide #11 -->
 <section class="slide fade kenBurns">
   <div class="content">
@@ -309,6 +317,8 @@ the_title();
   </div>
   <div class="background" style="background-image:url(assets/img/img-11.jpg)"></div>
 </section>
+
+<?php } else if ($slide == 5) { ?>
 
 <!-- Slide #91 -->
 <section class="slide whiteSlide">
@@ -367,6 +377,8 @@ the_title();
   </div>
 </div>
 
+<?php } else if ($slide == 6) { ?>
+
 <!-- Slide #51 -->
 <section class="slide fade kenBurns">
   <div class="content">
@@ -405,6 +417,8 @@ the_title();
   </div>
   <div class="background" style="background-image:url(assets/img/img-51.jpg)"></div>
 </section>
+
+<?php } else if ($slide == 7) { ?>
 
 <!-- Slide #48 -->
 <section class="slide whiteSlide">
@@ -446,6 +460,8 @@ the_title();
     </div>
   </div>
 </section>
+
+<?php } endwhile; ?>
 
 <!-- Slide #96 -->
 <section class="slide fade kenBurns">
