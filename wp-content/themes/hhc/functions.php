@@ -4,21 +4,11 @@
 function my_enqueue_scripts() {
 
 	// scripts
-	// wp_register_script( 'modernizr', get_stylesheet_directory_uri() . '/js/modernizr.custom.js', array('jquery'), '5.5.0', true );
-	// wp_enqueue_script( 'modernizr' ); 
-	// wp_register_script( 'selectivizr', get_stylesheet_directory_uri() . '/js/selectivizr.min.js', array('jquery'), '5.5.0', true );
-	// wp_enqueue_script( 'selectivizr' ); 
-	// wp_register_script( 'imagesloaded', get_stylesheet_directory_uri() . '/js/imagesloaded.pkgd.min.js', array('jquery'), '5.5.0', true );
-	// wp_enqueue_script( 'imagesloaded' );
-	// wp_register_script( 'imagefill', get_stylesheet_directory_uri() . '/js/jquery-imagefill.js', array('jquery'), '5.5.0', true );
-	// wp_enqueue_script( 'imagefill' ); 
 	wp_register_script( 'main', get_stylesheet_directory_uri() . '/js/main.js', array('jquery'), '5.5.0', true );
 	wp_enqueue_script( 'main' );	
 
 	// stylesheets
 	wp_enqueue_style( 'default', get_stylesheet_uri() );
-	// wp_register_style( 'base', get_template_directory_uri() . '/css/base.css', array(), '1.0', 'all' );
-	// wp_enqueue_style( 'base' );
 	wp_register_style( 'main', get_template_directory_uri() . '/css/main.css', array(), '1.0', 'all' );
 	wp_enqueue_style( 'main' );
 	wp_register_style( 'responsive', get_template_directory_uri() . '/css/responsive.css', array(), '1.0', 'all' );
@@ -39,6 +29,14 @@ add_action('widgets_init', 'arphabet_widgets_init');
 
 // add feed links
 add_theme_support('automatic-feed-links');
+
+
+// fixes title tag for custom homepage
+add_filter( 'wp_title', 'baw_hack_wp_title_for_home' );
+function baw_hack_wp_title_for_home( $title ) {
+	if (empty($title) || is_home() || is_front_page()) $title = "Home | " . get_bloginfo( 'name' );
+	return $title;
+}
 
 
 // remove the admin bar
@@ -73,6 +71,21 @@ function give_linked_images_class($html, $id, $caption, $title, $align, $url, $s
   return $html;
 }
 add_filter('image_send_to_editor','give_linked_images_class',10,8);
+
+
+// add title tag to wp_header output
+add_theme_support( 'title-tag' );
+
+
+// set max content width
+if (!isset($content_width)) $content_width = 900;
+
+
+// add excerpts to pages
+function my_add_excerpts_to_pages() {
+     add_post_type_support( 'page', 'excerpt' );
+}
+add_action( 'init', 'my_add_excerpts_to_pages' );
 
 
 // add stylesheet for WYSIWYG editor
@@ -138,8 +151,6 @@ function custom_taxonomy_init() {
 	*/
 }
 add_action( 'init', 'custom_taxonomy_init' );
-
-
 
 
 
