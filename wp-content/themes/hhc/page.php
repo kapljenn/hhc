@@ -6,7 +6,11 @@ get_header();
 
 while ( have_posts() ) : the_post();
 
-	get_template_part( 'content', 'page' );
+// TO DO: loop through the slides in this page...
+
+
+
+
 
 endwhile;
 
