@@ -21,10 +21,17 @@
 // ** MySQL settings - You can get this info from your web host ** //
 
 /* localhost */
+// define('DB_NAME', 'hhc');
+// define('DB_USER', 'root');
+// define('DB_PASSWORD', 'root');
+// define('DB_HOST', 'localhost');
+
+/* WS staging */
 define('DB_NAME', 'hhc');
-define('DB_USER', 'root');
-define('DB_PASSWORD', 'root');
+define('DB_USER', 'wsroot');
+define('DB_PASSWORD', '!qaz2wsX');
 define('DB_HOST', 'localhost');
+
 
 /** Database Charset to use in creating database tables. */
 define('DB_CHARSET', 'utf8');

@@ -103,21 +103,21 @@ add_action( 'admin_init', 'my_theme_add_editor_styles' );
 
 // create custom post types
 function addCPTs() {
-/*
-	// case studies
+
+	// slides
 	$cpt_args = array(
 		'menu_icon' => '',
-		'label'	=> __('Case Studies'),
-		'singular_label' =>	__('Case Study'),
+		'label'	=> __('Slides'),
+		'singular_label' =>	__('Slide'),
 		'public'	=>	true,
 		'show_ui'	=>	true,
 		'capability_type'	=>	'post',
 		'hierarchical'	=>	false,
 		'rewrite'	=>	true,
-		'supports'	=>	array('title', 'thumbnail')
+		'supports'	=>	array('title', 'thumbnail', 'editor', 'excerpt')
 		);
-	register_post_type('case-study', $cpt_args);
-*/
+	register_post_type('slide', $cpt_args);
+
 }
 add_action('init', 'addCPTs');
 add_theme_support( 'post-thumbnails' );
@@ -128,7 +128,7 @@ set_post_thumbnail_size( 140, 75, true );
 function add_menu_icons_styles() {
 	?>
 		<style>
-			#adminmenu .menu-icon-case-study div.wp-menu-image:before { content: '\f175'; }
+			#adminmenu .menu-icon-slide div.wp-menu-image:before { content: '\f175'; }
 		</style>
 	<?php
 }
@@ -160,10 +160,18 @@ add_action( 'init', 'custom_taxonomy_init' );
 
 
 
+// remove editor support from pages
+function hide_editor() {
+    remove_post_type_support('page', 'editor');
+}
+add_action( 'admin_init', 'hide_editor' );
 
-
-
-
+// hide featured image and page attributes from pages
+function remove_thumbnail_box() {
+    remove_meta_box( 'postimagediv','page','side' );
+    remove_meta_box('pageparentdiv', 'page', 'side');
+}
+add_action('do_meta_boxes', 'remove_thumbnail_box');
 
 
 
