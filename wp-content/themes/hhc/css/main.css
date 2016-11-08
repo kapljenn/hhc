@@ -31,3 +31,8 @@ section:nth-of-type(1) h1 { font-size: 60px; }
 section.side_by_side h1 { font-size: 42px; }
 
 
+
+/* footer */
+section.footer.fade .content { background-color: #3c3c3b; }
+section.footer h2, section.footer h3 { text-transform: uppercase; }
+.social li { display: inline-block; margin: 10px 25px; }
