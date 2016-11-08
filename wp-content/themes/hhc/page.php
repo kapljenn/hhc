@@ -123,7 +123,7 @@ while ( have_posts() ) : the_post();
 
 <?php } else if ($slide_type == "side_by_side") { ?>
 <?php
-	$left_image = get_field('left_image', $slide_id); // get the image to go on the left
+	$left_image = get_field('left_image', $slide_id); // get the left hand image
 ?>
 <div class="fix-12-12">
 	<ul class="grid">

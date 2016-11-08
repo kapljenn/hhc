@@ -10,12 +10,16 @@ body, h1, h2, h3, p, a, div, span { font-family: "Poppins", sans-serif; font-wei
 
 
 /* Slides reset */
+.sections .menu li a { font-weight: 500; font-size: 17px; letter-spacing: 0; }
+.panel .button { color: #57244b; background-color: #ffffff; border-radius: 10px; font-size: 16px; }
 .slide { background-color: #57244b; }
 .slide.whiteSlide { color: #3c3c3b; }
 .slide.fade .content { background: none; } /* remove the fade background */
 .button { background-color: #00a9dc; border-radius: 10px; }
-
-
+.logo { display: none; }
+.logo.inverted { display: block; }
+.slides.whiteSlide .logo { display: block; }
+.slides.whiteSlide .logo.inverted { display: none; }
 
 /* core elements */
 h1 { font-size: 50px; font-weight: 300; letter-spacing: 0; }
