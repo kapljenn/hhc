@@ -4,12 +4,26 @@
 /* WP CORE CLASSES */
 .wp-caption, .wp-caption-text, .sticky, .screen-reader-text, .gallery-caption, .bypostauthor, .alignright, .alignleft, .aligncenter {}
 
+/* fonts */
+body, h1, h2, h3, p, a, div, span { font-family: "Poppins", sans-serif; font-weight: 400; }
 
 
 
+/* Slides reset */
+.slide { background-color: #57244b; }
+.slide.whiteSlide { color: #3c3c3b; }
+.slide.fade .content { background: none; } /* remove the fade background */
+.button { background-color: #00a9dc; border-radius: 10px; }
 
 
 
+/* core elements */
+h1 { font-size: 50px; font-weight: 300; letter-spacing: 0; }
 
+
+
+/* slide specific */
+section:nth-of-type(1) h1 { font-size: 60px; }
+section.side_by_side h1 { font-size: 42px; }
 
 
