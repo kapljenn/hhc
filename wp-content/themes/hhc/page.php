@@ -125,10 +125,13 @@ while ( have_posts() ) : the_post();
 <?php
 	$left_image = get_field('left_image', $slide_id); // get the left hand image
 ?>
+<div class="left-hand-image">
+	<img class="shiftImage shiftImageVertical" src="<?php echo $left_image['url']; ?>" width="1200" alt="<?php echo $left_image['url']; ?>"/>
+</div>
 <div class="fix-12-12">
 	<ul class="grid">
 		<li class="col-6-12 left ae-1 image-61" data-action="zoom">
-			<img class="shiftImage shiftImageVertical" src="<?php echo $left_image['url']; ?>" width="1200" alt="<?php echo $left_image['url']; ?>"/>
+			
 		</li> 
 		<li class="col-6-12 left">
 			<h1 class="ae-2" style="color: <?php echo $title_colour; ?>"><?php echo $slide->post_title; ?></h1>
@@ -234,6 +237,15 @@ endwhile;
 				</a>
 			</li>
 		</ul>
+	</div>
+	<div class="sections desktop">
+		<div class="left">
+			&copy; Hope and Homes for Children 2016
+		</div>
+		<div class="center"></div>
+		<div class="right">
+			<?php wp_nav_menu( array('menu' => 'Legal', 'menu_class' => 'menu')); ?>
+		</div>
 	</div>
 </section>
 

@@ -72,10 +72,23 @@
 			<li><a href="#">Privacy Policy</a></li>
 		</ul>
 		<ul class="social">
-			<li><a href="#"><svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#twitter"></use></svg></a></li>
-			<li><a href="#"><svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#facebook"></use></svg></a></li>
-			<li><a href="#"><svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#googlePlus"></use></svg></a></li>
-			<li><a href="#"><svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#pinterest"></use></svg></a></li>
+			<li>
+				<a href="#">
+					<img src="<?php echo esc_url(get_stylesheet_directory_uri()); ?>/img/facebook.png" />
+				</a>
+			</li>
+
+			<li>
+				<a href="#">
+					<img src="<?php echo esc_url(get_stylesheet_directory_uri()); ?>/img/twitter.png" />
+				</a>
+			</li>
+
+			<li>
+				<a href="#">
+					<img src="<?php echo esc_url(get_stylesheet_directory_uri()); ?>/img/instagram.png" />
+				</a>
+			</li>
 		</ul>
 	</div>
 </nav>
