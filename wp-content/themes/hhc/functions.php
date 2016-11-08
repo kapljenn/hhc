@@ -173,5 +173,12 @@ function remove_thumbnail_box() {
 }
 add_action('do_meta_boxes', 'remove_thumbnail_box');
 
+// enqueue admin stylesheet
+function add_my_admin_scripts() {
+    wp_enqueue_style( 'acf_styles', get_template_directory_uri() . '/css/acf.css');
+}
+add_action( 'admin_enqueue_scripts', 'add_my_admin_scripts');
+
+
 
 

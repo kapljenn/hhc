@@ -1,0 +1,23 @@
+
+/* STYLESHEET FOR ACF FIELDS */
+
+/* slide type */
+#acf-slide_type ul.acf-radio-list.horizontal li { 
+	padding-top: 120px; background-size: 180px; background-repeat: no-repeat; width: 180px; text-align: center;
+}
+#acf-slide_type ul.acf-radio-list.horizontal li:nth-of-type(1) { background-image: url(../img/header-with-three-columns.jpg); }
+#acf-slide_type ul.acf-radio-list.horizontal li:nth-of-type(2) { background-image: url(../img/header-with-four-columns.jpg); }
+#acf-slide_type ul.acf-radio-list.horizontal li:nth-of-type(3) { background-image: url(../img/side-by-side.jpg); }
+#acf-slide_type ul.acf-radio-list.horizontal li:nth-of-type(4) { background-image: url(../img/single-central-column.jpg); }
+
+
+
+
+/* slide palette */
+#acf-slide_palette ul.acf-radio-list.horizontal li { 
+	padding-top: 120px; background-size: 180px; background-repeat: no-repeat; width: 180px; text-align: center;
+}
+#acf-slide_palette ul.acf-radio-list.horizontal li:nth-of-type(1) { background-image: url(../img/white-on-dark.jpg); }
+#acf-slide_palette ul.acf-radio-list.horizontal li:nth-of-type(2) { background-image: url(../img/dark-on-white.jpg); }
+#acf-slide_palette ul.acf-radio-list.horizontal li:nth-of-type(3) { background-image: url(../img/dark-on-grey.jpg); }
+

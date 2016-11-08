@@ -4,4 +4,6 @@
 body#tinymce.wp-editor a {}
 body#tinymce.wp-editor h1 {}
 
-
+#acf-slide_palette ul.acf-radio-list.horizontal li {
+	border: 1px solid red;
+}
