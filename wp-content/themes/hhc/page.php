@@ -12,8 +12,6 @@ while ( have_posts() ) : the_post();
 	    while ( have_rows('slides') ) : the_row();
 
 			$slide = get_sub_field('slide');
-
-			// slide ID
 			$slide_id = $slide->ID;
 
 			// slide title
@@ -63,7 +61,7 @@ while ( have_posts() ) : the_post();
 
 
 
-<?php if ($slide_type == "header_with_3_columns") { ?>
+<?php if ( ($slide_type == "header_with_3_columns") || ($slide_type == "header_with_4_columns") ) { ?>
 <?php
 	$hero_alignment = get_field('hero_alignment', $slide_id);
 	$columns = get_field('columns', $slide_id);
@@ -115,50 +113,6 @@ while ( have_posts() ) : the_post();
 
 
 
-<?php } else if ($slide_type == "header_with_4_columns") { ?>
-<div class="fix-10-12 toCenter">
-	<?php echo $title_html; ?>
-	<div class="ae-2"><?php echo $slide_content; ?></div>
-</div>
-<div class="fix-12-12">
-	<ul class="grid later equal">
-		<li class="col-3-12">
-			<div class="fix-3-12">
-				<img src="#">
-				<h3 class="equalElement ae-7">Meet Quick</h3>
-				<div class="ae-5">Here is some column text.</div>
-			</div>
-		</li>
-		<li class="col-3-12">
-			<div class="fix-3-12">
-				<img src="#">
-				<h3 class="equalElement ae-8">Nice Experience</h3>
-				<div class="ae-6">Here is some column text.</div>
-			</div>
-		</li>
-		<li class="col-3-12">
-			<div class="fix-3-12">  
-				<img src="#">
-				<h3 class="equalElement ae-9">Simple Beauty</h3>
-				<div class="ae-7">Here is some column text.</div>
-			</div>
-		</li>
-		<li class="col-3-12">
-			<div class="fix-3-12">  
-				<img src="#">
-				<h3 class="equalElement ae-10">Simple Beauty</h3>
-				<div class="ae-8">Here is some column text.</div>
-			</div>
-		</li>
-	</ul>
-</div>
-
-
-
-
-
-
-
 
 
 <?php } else if ($slide_type == "side_by_side_with_image") { ?>
@@ -196,6 +150,13 @@ while ( have_posts() ) : the_post();
 	<div class="ae-2"><?php echo $slide_content; ?></div>
 	<a class="button ae-5 fromCenter" href="<?php echo $cta_url; ?>"><?php echo $cta_text; ?></a>
 </div>
+
+
+
+
+
+
+
 
 <?php } else { echo "No slide template defined!"; } ?>
 

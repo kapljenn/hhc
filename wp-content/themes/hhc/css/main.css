@@ -28,6 +28,12 @@ body, h1, h2, h3, p, a, div, span { font-family: "Poppins", sans-serif; font-wei
 .slide-title { margin-bottom: 45px; }
 .img-holder { height: 100px; width: 100%; margin-bottom: 0px; }
 .img-holder img { margin: 0 auto; display: block; height: 80px; width: auto; }
+.fix-10-12.left { margin-left: 0 !important; margin-right: 0 !important; text-align: left; max-width: 400px !important; }
+.fix-10-12.center { margin-left: auto !important; margin-right: auto !important; text-align: center; margin-bottom: 50px; }
+.fix-10-12.right { margin-left: 0 !important; margin-right: 0 !important; text-align: left; }
+
+
+
 
 /* core elements */
 h1 { font-size: 50px; font-weight: 300; letter-spacing: 0; }
@@ -40,16 +46,16 @@ section p { font-size: 30px; line-height: 35px; }
 .ae-3 .small, .ae-4 .small { font-size: 16px; line-height: 20px; font-weight: bold; }
 
 
-/* header with three columns */
+/* header with 3 columns */
 .header_with_3_columns h1 { margin-bottom: 30px; }
 .header_with_3_columns p { font-weight: 300; margin-bottom: 15px; font-size: 26px; }
-.header_with_3_columns .fix-10-12.left { margin-left: 0 !important; margin-right: 0 !important; text-align: left; }
-.header_with_3_columns .fix-10-12.left { max-width: 400px !important; }
-.header_with_3_columns .fix-10-12.center { 
-	margin-left: auto !important; margin-right: auto !important; text-align: center; margin-bottom: 50px;
-}
-.header_with_3_columns .fix-10-12.right { margin-left: 0 !important; margin-right: 0 !important; text-align: left; }
 .header_with_3_columns .button { margin-left: 0; margin-bottom: 50px; }
+
+
+/* header with 4 columns */
+.header_with_4_columns h1 { margin-bottom: 30px; }
+.header_with_4_columns p { font-weight: 300; margin-bottom: 15px; font-size: 26px; }
+.header_with_4_columns .button { margin-left: 0; margin-bottom: 50px; }
 
 
 /* side by side */
@@ -86,7 +92,7 @@ section.footer h2, section.footer h3 { text-transform: uppercase; font-weight: b
 /* slide specific */
 section:nth-of-type(1) h1 { font-size: 60px; }
 section:nth-of-type(1).header_with_3_columns h1 { margin-bottom: 10px; }
-section:nth-of-type(1).header_with_3_columns p { font-size: 30px; }
+section:nth-of-type(1).header_with_3_columns .fix-10-12 p { font-size: 30px; }
 
 
 
