@@ -16,6 +16,18 @@ while ( have_posts() ) : the_post();
 			// slide ID
 			$slide_id = $slide->ID;
 
+			// slide title
+			$title_colour = get_field('title_colour', $slide_id);
+			$title_html = '<h1 class="ae-1" style="color: ' . $title_colour . '">' . $slide->post_title . '</h1>';
+			$title_format = get_field('title_format', $slide_id);
+			$title_image = get_field('title_image', $slide_id);
+			if ($title_format == "image") {
+				if ($title_image != null) {
+					$title_image = $title_image['url'];
+					$title_html = "<img class='slide-title' src='" . $title_image . "'>";
+				}
+			} else if ($title_format == "no_title") $title_html = "";
+
 			// slide type
 			$slide_type = get_field('slide_type', $slide_id);
 
@@ -27,9 +39,6 @@ while ( have_posts() ) : the_post();
 
 			// background image
 			$featured_image = wp_get_attachment_image_src( get_post_thumbnail_id($slide_id), 'large' )['0'];
-
-			// title colour
-			$title_colour = get_field('title_colour', $slide_id);
 
 			// CTA
 			$cta_text = get_field('cta_text', $slide_id);
@@ -52,40 +61,63 @@ while ( have_posts() ) : the_post();
 
 
 
+
+
 <?php if ($slide_type == "header_with_3_columns") { ?>
-<div class="fix-10-12 toCenter">
-	<h1 class="ae-1" style="color: <?php echo $title_colour; ?>"><?php echo $slide->post_title; ?></h1>
+<?php
+	$hero_alignment = get_field('hero_alignment', $slide_id);
+	$columns = get_field('columns', $slide_id);
+	$cta_position = get_field('cta_position', $slide_id);
+?>
+<div class="fix-10-12 <?php echo $hero_alignment; ?>">
+	<?php echo $title_html; ?>
 	<div class="ae-2"><?php echo $slide_content; ?></div>
+	<?php if ($cta_position == "above_the_columns") { ?>
+		<a class="button ae-5 fromCenter" href="<?php echo $cta_url; ?>"><?php echo $cta_text; ?></a>
+	<?php } ?>
 </div>
+
+<?php if (sizeOf($columns) > 0) { ?>
 <div class="fix-12-12">
 	<ul class="grid later equal">
-		<li class="col-4-12">
-			<div class="fix-4-12">
-				<img src="#">
-				<h3 class="equalElement ae-7">Meet Quick</h3>
-				<div class="ae-8"><p class="small">Space and light and order. Those are the things that men.</p></div>
+<?php
+		$column_fraction = floor(12/sizeOf($columns));
+		foreach ($columns as $c) {
+			$column_text_colour = $c['column_text_colour'];
+			$column_icon = $c['column_icon'];
+?>
+		<li class="col-<?php echo $column_fraction; ?>-12">
+			<div class="fix-<?php echo $column_fraction; ?>-12">
+<?php if ($c['column_icon'] != null) { ?>
+				<div class="img-holder">
+					<img class="column-icon" src="<?php echo $column_icon['url']; ?>" />
+				</div>
+<?php } ?>
+				<h3 class="equalElement ae-7" style="color: <?php echo $column_text_colour; ?>"><?php echo $c['column_title']; ?></h3>
+				<div class="ae-4">
+					<p class="small" style="color: <?php echo $column_text_colour; ?>"><?php echo $c['column_text']; ?></p>
+				</div>
 			</div>
 		</li>
-		<li class="col-4-12">
-			<div class="fix-4-12">
-				<img src="#">
-				<h3 class="equalElement ae-8">Nice Experience</h3>
-				<div class="ae-9"><p class="small">Space and light and order. Those are the things that men.</p></div>
+<?php } ?>
+				</ul>
 			</div>
-		</li>
-		<li class="col-4-12">
-			<div class="fix-4-12">  
-				<img src="#">
-				<h3 class="equalElement ae-9">Simple Beauty</h3>
-				<div class="ae-10"><p class="small">Space and light and order. Those are the things that men.</p></div>
-			</div>
-		</li>
-	</ul>
-</div>
+<?php } ?>
+<?php if ($cta_position == "below_the_columns") { ?>
+	<a class="button ae-5 fromCenter" href="<?php echo $cta_url; ?>"><?php echo $cta_text; ?></a>
+<?php } ?>
+
+
+
+
+
+
+
+
 
 <?php } else if ($slide_type == "header_with_4_columns") { ?>
 <div class="fix-10-12 toCenter">
-	<h1 class="ae-1" style="color: <?php echo $title_colour; ?>"><?php echo $slide->post_title; ?></h1>
+	<?php echo $title_html; ?>
 	<div class="ae-2"><?php echo $slide_content; ?></div>
 </div>
 <div class="fix-12-12">
@@ -121,31 +153,46 @@ while ( have_posts() ) : the_post();
 	</ul>
 </div>
 
+
+
+
+
+
+
+
+
 <?php } else if ($slide_type == "side_by_side_with_image") { ?>
 <?php
-	
 	$image_alignment = get_field('image_alignment', $slide_id);
 	$image = get_field('image', $slide_id);
-	
 ?>
 <div class="<?php echo $image_alignment; ?>-hand-image">
-	<img class="shiftImage shiftImageVertical" src="<?php echo $image['url']; ?>" width="1200" alt="<?php echo $image['url']; ?>"/>
+	<img class="shiftImage shiftImageVertical" src="<?php echo $image['url']; ?>" width="1200" alt="<?php echo $image['alt']; ?>"/>
 </div>
 <div class="fix-12-12">
 	<ul class="grid">
-
 		<?php if ($image_alignment == "left") { ?><li class="col-6-12 left" data-action="zoom">&nbsp;</li><?php } ?>
 		<li class="col-6-12 left">
-			<h1 class="ae-2" style="color: <?php echo $title_colour; ?>"><?php echo $slide->post_title; ?></h1>
+			<?php echo $title_html; ?>
 			<div class="ae-3"><?php echo $slide_content; ?></div>
 		</li>
 		<?php if ($image_alignment == "right") { ?><li class="col-6-12 left" data-action="zoom">&nbsp;</li><?php } ?>
 	</ul>
 </div>
-        
+
+
+
+
+
+
+
+
+
+
+
 <?php } else if ($slide_type == "single_central_column") { ?>
 <div class="fix-10-12">
-	<h1 class="ae-1" style="color: <?php echo $title_colour; ?>"><?php echo $slide->post_title; ?></h1>
+	<?php echo $title_html; ?>
 	<div class="ae-2"><?php echo $slide_content; ?></div>
 	<a class="button ae-5 fromCenter" href="<?php echo $cta_url; ?>"><?php echo $cta_text; ?></a>
 </div>
@@ -157,13 +204,12 @@ while ( have_posts() ) : the_post();
 
 
 
-<?php
 
+<?php
 			// slide footer
 	      	echo '</div></div></div>';
 			if ($featured_image != null) echo '<div class="background" style="background-image:url(' . $featured_image . ')"></div>';
 			echo '</section>';
-
 			// popup video
 			/*
 			<!-- Popup Video -->
@@ -182,74 +228,15 @@ while ( have_posts() ) : the_post();
 			  </div>
 			</div>
 			*/
-
 	    endwhile;
-
 	endif;
-
 endwhile;
-
 ?>
-
-<section class="slide fade kenBurns footer"><div class="content"><div class="container"><div class="wrap">
-	<div class="fix-12-12">
-		<ul class="grid later equal">
-			<li class="col-3-12">
-				<div class="fix-3-12">
-					<h3 class="equalElement ae-7">Lorem Ipsum</h3>
-					<div class="ae-5">Here is some column text.</div>
-				</div>
-			</li>
-			<li class="col-3-12">
-				<div class="fix-3-12">
-					<h3 class="equalElement ae-8">Lorem Ipsum</h3>
-					<div class="ae-6">Here is some column text.</div>
-				</div>
-			</li>
-			<li class="col-3-12">
-				<div class="fix-3-12">  
-					<h3 class="equalElement ae-9">Lorem Ipsum</h3>
-					<div class="ae-7">Here is some column text.</div>
-				</div>
-			</li>
-			<li class="col-3-12">
-				<div class="fix-3-12">
-					<h3 class="equalElement ae-10">Lorem Ipsum</h3>
-					<div class="ae-8">Here is some column text.</div>
-				</div>
-			</li>
-		</ul>
-	</div>
-	<div class="fix-10-12 toCenter">
-		<br><br><br><br>
-		<h3 class="equalElement ae-10">Follow us</h3>
-		<ul class="social ae-9">
-			<li>
-				<a href="#">
-					<img src="<?php echo esc_url(get_stylesheet_directory_uri()); ?>/img/facebook.png" />
-				</a>
-			</li>
-			<li>
-				<a href="#">
-					<img src="<?php echo esc_url(get_stylesheet_directory_uri()); ?>/img/twitter.png" />
-				</a>
-			</li>
-			<li>
-				<a href="#">
-					<img src="<?php echo esc_url(get_stylesheet_directory_uri()); ?>/img/instagram.png" />
-				</a>
-			</li>
-		</ul>
-	</div>
-</section>
-
-
 
 
 
 
 <?php
-
 
 get_footer();
 
