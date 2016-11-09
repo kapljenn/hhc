@@ -126,7 +126,7 @@ while ( have_posts() ) : the_post();
 	
 	$image_alignment = get_field('image_alignment', $slide_id);
 	$image = get_field('image', $slide_id);
-// var_dump($image_alignment);
+	
 ?>
 <div class="<?php echo $image_alignment; ?>-hand-image">
 	<img class="shiftImage shiftImageVertical" src="<?php echo $image['url']; ?>" width="1200" alt="<?php echo $image['url']; ?>"/>
