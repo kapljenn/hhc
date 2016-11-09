@@ -66,11 +66,7 @@
 	<div class="content">
 		<a href="#" class="logo"><svg width="120" height="50"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#logo"></use></svg></a>
 		<?php wp_nav_menu( array('menu' => 'Main', 'menu_class' => 'mainMenu uppercase')); ?>
-		<ul class="subMenu">
-			<li><a href="#">About Us</a></li>
-			<li><a href="#">Terms of Use</a></li>
-			<li><a href="#">Privacy Policy</a></li>
-		</ul>
+		<?php wp_nav_menu( array('menu' => 'Legal', 'menu_class' => 'subMenu')); ?>
 		<ul class="social">
 			<li>
 				<a href="#">

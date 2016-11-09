@@ -37,7 +37,7 @@ section.side_by_side h1 { font-size: 42px; }
 .left-hand-image, .right-hand-image { 
 	position: absolute; top: 0; left: 0; width: 50%; height: 100%; box-sizing: border-box; margin: 0; padding: 0; overflow: hidden;
 }
-.right-hand-image { right: 0; }
+.right-hand-image { left: auto; right: 0; }
 .left-hand-image img, .right-hand-image img { height: 100%; width: auto; }
 
 
@@ -46,6 +46,10 @@ section.footer.fade .content { background-color: #3c3c3b; }
 section.footer h2, section.footer h3 { text-transform: uppercase; }
 .social li { display: inline-block; margin: 10px 25px; }
 
+
+/* bottom panel */
+.panel.bottom .sections .left { font-size: 14px; }
+.panel.bottom .sections .menu li a { font-size: 14px; }
 
 
 

@@ -4,9 +4,13 @@
 <!-- Panel Bottom #01 -->
 <nav class="panel bottom forceMobileView">
 	<div class="sections desktop">
-		<div class="left"></div>
+		<div class="left">
+			&copy; Hope and Homes for Children 2016
+		</div>
 		<div class="center"><span class="nextSlide"><svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#arrow-down"></use></svg></span></div>
-		<div class="right"></div>
+		<div class="right">
+			<?php wp_nav_menu( array('menu' => 'Legal', 'menu_class' => 'menu')); ?>
+		</div>
 	</div>
 	<div class="sections compact hidden">
 		<div class="right"></div>
