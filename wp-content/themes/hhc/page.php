@@ -71,11 +71,61 @@ while ( have_posts() ) : the_post();
 
 
 <?php if ( ($slide_type == "header_with_3_columns") || ($slide_type == "header_with_4_columns") ) { ?>
-<?php
-
-?>
 <div class="fix-10-12 <?php echo $hero_alignment; ?>">
 	<?php echo $title_html; ?>
+	<div class="ae-2"><?php echo $slide_content; ?></div>
+	<?php if ($cta_position == "above_the_columns") { ?>
+		<a class="button ae-5 fromCenter" href="<?php echo $cta_url; ?>"><?php echo $cta_text; ?></a>
+	<?php } ?>
+</div>
+
+<?php if (sizeOf($columns) > 0) { ?>
+<div class="fix-12-12">
+	<ul class="grid later equal">
+<?php
+		$column_fraction = floor(12/sizeOf($columns));
+		foreach ($columns as $c) {
+			$column_text_colour = $c['column_text_colour'];
+			$column_icon = $c['column_icon'];
+			$column_image = $c['column_image'];
+?>
+		<li class="col-<?php echo $column_fraction; ?>-12">
+			<div class="fix-<?php echo $column_fraction; ?>-12">
+<?php if ($c['column_icon'] != null) { ?>
+				<div class="img-holder">
+					<img class="column-icon" src="<?php echo $column_icon['url']; ?>" />
+				</div>
+<?php } ?>
+<?php if ($c['column_image'] != null) { ?>
+				<div class="img-holder">
+					<img class="column-image" src="<?php echo $column_image['url']; ?>" />
+				</div>
+<?php } ?>
+				<h3 class="equalElement ae-7" style="color: <?php echo $column_text_colour; ?>"><?php echo $c['column_title']; ?></h3>
+				<div class="ae-4">
+					<p class="small" style="color: <?php echo $column_text_colour; ?>"><?php echo $c['column_text']; ?></p>
+				</div>
+			</div>
+		</li>
+<?php } ?>
+				</ul>
+			</div>
+<?php } ?>
+<?php if ($cta_position == "below_the_columns") { ?>
+	<a class="button ae-5 fromCenter" href="<?php echo $cta_url; ?>"><?php echo $cta_text; ?></a>
+<?php } ?>
+
+
+
+
+
+
+
+
+<?php } if ($slide_type == "map") { ?>
+<div class="fix-10-12 <?php echo $hero_alignment; ?>">
+	<?php echo $title_html; ?>
+	<BR><BR><BR><BR><BR><BR><BR><BR><BR>
 	<div class="ae-2"><?php echo $slide_content; ?></div>
 	<?php if ($cta_position == "above_the_columns") { ?>
 		<a class="button ae-5 fromCenter" href="<?php echo $cta_url; ?>"><?php echo $cta_text; ?></a>
