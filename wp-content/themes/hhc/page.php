@@ -32,6 +32,9 @@ while ( have_posts() ) : the_post();
 			// slide palette
 			$slide_palette = get_field('slide_palette', $slide_id);
 
+			// hero alignment
+			$hero_alignment = get_field('hero_alignment', $slide_id);
+
 			// slide content
 			$slide_content = apply_filters('the_content', $slide->post_content);
 
@@ -48,6 +51,12 @@ while ( have_posts() ) : the_post();
 			if ($slide_palette == "dark_text_grey_background") $slide_classes = "whiteSlide greyTint";
 			$slide_classes .= $slide_type;
 
+			// columns
+			$columns = get_field('columns', $slide_id);
+
+			// CTA position
+			$cta_position = get_field('cta_position', $slide_id);
+
 			// slide header
 			echo '<section class="slide ' . $slide_classes . '"><div class="content"><div class="container"><div class="wrap">';
 
@@ -63,9 +72,7 @@ while ( have_posts() ) : the_post();
 
 <?php if ( ($slide_type == "header_with_3_columns") || ($slide_type == "header_with_4_columns") ) { ?>
 <?php
-	$hero_alignment = get_field('hero_alignment', $slide_id);
-	$columns = get_field('columns', $slide_id);
-	$cta_position = get_field('cta_position', $slide_id);
+
 ?>
 <div class="fix-10-12 <?php echo $hero_alignment; ?>">
 	<?php echo $title_html; ?>

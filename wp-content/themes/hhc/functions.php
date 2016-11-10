@@ -111,6 +111,7 @@ function addCPTs() {
 		'singular_label' =>	__('Slide'),
 		'public'	=>	true,
 		'show_ui'	=>	true,
+		'taxonomies'  => array( 'category' ),
 		'capability_type'	=>	'post',
 		'hierarchical'	=>	false,
 		'rewrite'	=>	true,
