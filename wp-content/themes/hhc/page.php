@@ -83,12 +83,18 @@ while ( have_posts() ) : the_post();
 		foreach ($columns as $c) {
 			$column_text_colour = $c['column_text_colour'];
 			$column_icon = $c['column_icon'];
+			$column_image = $c['column_image'];
 ?>
 		<li class="col-<?php echo $column_fraction; ?>-12">
 			<div class="fix-<?php echo $column_fraction; ?>-12">
 <?php if ($c['column_icon'] != null) { ?>
 				<div class="img-holder">
 					<img class="column-icon" src="<?php echo $column_icon['url']; ?>" />
+				</div>
+<?php } ?>
+<?php if ($c['column_image'] != null) { ?>
+				<div class="img-holder">
+					<img class="column-image" src="<?php echo $column_image['url']; ?>" />
 				</div>
 <?php } ?>
 				<h3 class="equalElement ae-7" style="color: <?php echo $column_text_colour; ?>"><?php echo $c['column_title']; ?></h3>
@@ -148,7 +154,9 @@ while ( have_posts() ) : the_post();
 <div class="fix-10-12">
 	<?php echo $title_html; ?>
 	<div class="ae-2"><?php echo $slide_content; ?></div>
+<?php if ($cta_text != "") { ?>
 	<a class="button ae-5 fromCenter" href="<?php echo $cta_url; ?>"><?php echo $cta_text; ?></a>
+<?php } ?>
 </div>
 
 

@@ -5,7 +5,7 @@
 .wp-caption, .wp-caption-text, .sticky, .screen-reader-text, .gallery-caption, .bypostauthor, .alignright, .alignleft, .aligncenter {}
 
 /* fonts */
-body, h1, h2, h3, p, a, div, span { font-family: "Poppins", sans-serif; font-weight: 400; }
+body, h1, h2, h3, p, a, div, span, input, select, textarea, label { font-family: "Poppins", sans-serif; font-weight: 400; }
 
 
 
@@ -15,7 +15,7 @@ body, h1, h2, h3, p, a, div, span { font-family: "Poppins", sans-serif; font-wei
 .slide { background-color: #57244b; }
 .slide.whiteSlide { color: #3c3c3b; }
 .slide.fade .content { background: none; } /* remove the fade background */
-.button { background-color: #00a9dc; border-radius: 6px; padding: 15px 30px; }
+.button { background-color: #00a9dc; border-radius: 6px; padding: 12px 30px; }
 .logo { display: none; }
 .logo.inverted { display: block; }
 .slides.whiteSlide .logo { display: block; }
@@ -26,8 +26,10 @@ body, h1, h2, h3, p, a, div, span { font-family: "Poppins", sans-serif; font-wei
 
 /* slides general */
 .slide-title { margin-bottom: 45px; }
-.img-holder { height: 100px; width: 100%; margin-bottom: 0px; }
-.img-holder img { margin: 0 auto; display: block; height: 80px; width: auto; }
+.column-icon .img-holder { height: 100px; width: 100%; margin-bottom: 0px; }
+.column-icon .img-holder img { margin: 0 auto; display: block; height: 80px; width: auto; }
+.column-image .img-holder { width: 100%; margin-bottom: 20px; }
+.column-image .img-holder img { margin: 0 auto; display: block; width: auto; }
 .fix-10-12.left { margin-left: 0 !important; margin-right: 0 !important; text-align: left; max-width: 400px !important; }
 .fix-10-12.center { margin-left: auto !important; margin-right: auto !important; text-align: center; margin-bottom: 50px; }
 .fix-10-12.right { margin-left: 0 !important; margin-right: 0 !important; text-align: left; }
@@ -38,6 +40,24 @@ body, h1, h2, h3, p, a, div, span { font-family: "Poppins", sans-serif; font-wei
 /* core elements */
 h1 { font-size: 50px; font-weight: 300; letter-spacing: 0; }
 section p { font-size: 30px; line-height: 35px; }
+input[type=button] {
+	background-color: #00a9dc; border-radius: 6px; padding: 12px 30px; display: inline-block; color: #fff; border: 0;
+    outline: 0; text-decoration: none; font-size: 22px; font-weight: 500; vertical-align: top; cursor: pointer; overflow: hidden;
+    position: relative; white-space: nowrap; box-shadow: inset 0 -100px 0 rgba(41,41,41,0); -webkit-appearance: none;
+    margin-bottom: 20px; user-select: none !important; transition: .25s;
+}
+.nf-form-title { display: none; }
+nf-field { display: inline-block; vertical-align: top; }
+.label-above .nf-field-element { width: auto; }
+input[type=text], input[type=email], input[type=number], input[type=tel] {
+	padding: 12px 30px; border-radius: 6px; border: 0; font-size: 22px;
+}
+
+
+/* join newsletter form */
+#nf-form-2-cont nf-field:nth-of-type(1) { width: 50%; }
+#nf-form-2-cont nf-field:nth-of-type(2) { width: 30%; }
+#nf-form-2-cont nf-field:nth-of-type(2) input { width: 90%; }
 
 
 /* columns */
