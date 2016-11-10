@@ -178,6 +178,29 @@ while ( have_posts() ) : the_post();
 
 
 
+<?php } else if ($slide_type == "side_by_side") { ?>
+<div class="fix-10-12">
+	<?php echo $title_html; ?>
+	<div class="ae-2"><?php echo $slide_content; ?></div>
+</div>
+<div class="fix-12-12">
+	<ul class="grid">
+		<li class="col-6-12 left">
+			<div class="ae-3"><?php the_field('left_side_text', $slide_id); ?></div>
+		</li>
+		<li class="col-6-12 left">
+			<div class="ae-3"><?php the_field('right_side_text', $slide_id); ?></div>
+		</li>
+	</ul>
+</div>
+
+
+
+
+
+
+
+
 <?php } else if ($slide_type == "side_by_side_with_image") { ?>
 <?php
 	$image_alignment = get_field('image_alignment', $slide_id);
