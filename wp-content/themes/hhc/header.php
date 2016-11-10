@@ -39,7 +39,7 @@
 <nav class="panel top forceMobileView">
 	<div class="sections desktop">
 		<div class="left">
-			<a href="#">
+			<a href="<?php echo home_url() ?>">
 				<img class="logo" alt="logo" src="<?php echo esc_url(get_stylesheet_directory_uri()); ?>/img/logo.png" />
 				<img class="logo inverted" alt="logo" src="<?php echo esc_url(get_stylesheet_directory_uri()); ?>/img/logo-inverted.png" />
 			</a>

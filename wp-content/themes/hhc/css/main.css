@@ -15,25 +15,27 @@ body, h1, h2, h3, p, a, div, span, input, select, textarea, label { font-family:
 .slide { background-color: #57244b; }
 .slide.whiteSlide { color: #3c3c3b; }
 .slide.fade .content { background: none; } /* remove the fade background */
-.button { background-color: #00a9dc; border-radius: 6px; padding: 12px 30px; }
+.button { background-color: #00a9dc; border-radius: 6px; padding: 12px 30px; font-family: "Poppins", sans-serif; }
 .logo { display: none; }
 .logo.inverted { display: block; }
 .slides.whiteSlide .logo { display: block; }
 .slides.whiteSlide .logo.inverted { display: none; }
 .deepPurple { background-color: #57244b !important; }
 .grid { margin-bottom: 20px; }
+.menu-main-container li a { color: #ffffff; }
+.whiteSlide .menu-main-container li a { color: #57244b; }
+
 
 
 /* slides general */
 .slide-title { margin-bottom: 45px; }
-.column-icon .img-holder { height: 100px; width: 100%; margin-bottom: 0px; }
-.column-icon .img-holder img { margin: 0 auto; display: block; height: 80px; width: auto; }
-.column-image .img-holder { width: 100%; margin-bottom: 20px; }
-.column-image .img-holder img { margin: 0 auto; display: block; width: auto; }
+.img-holder { width: 100%; margin-bottom: 20px; }
+.img-holder .column-icon { margin: 0 auto; display: block; height: 80px; width: auto; }
+.img-holder .column-image { margin: 0 auto; display: block; width: auto; }
 .fix-10-12.left { margin-left: 0 !important; margin-right: 0 !important; text-align: left; max-width: 400px !important; }
 .fix-10-12.center { margin-left: auto !important; margin-right: auto !important; text-align: center; margin-bottom: 50px; }
 .fix-10-12.right { margin-left: 0 !important; margin-right: 0 !important; text-align: left; }
-
+body.lastSlide .nextSlide { display: none; }
 
 
 
@@ -63,6 +65,7 @@ input[type=text], input[type=email], input[type=number], input[type=tel] {
 /* columns */
 .column { font-size: 16px; line-height: 20px; }
 .col-4-12 h2, .col-4-12 h3 { font-size: 22px; text-transform: uppercase; }
+.col-3-12 h2, .col-3-12 h3 { font-size: 22px; text-transform: uppercase; }
 .ae-3 .small, .ae-4 .small { font-size: 16px; line-height: 20px; font-weight: bold; }
 
 
@@ -110,6 +113,7 @@ section.footer h2, section.footer h3 { text-transform: uppercase; font-weight: b
 
 
 /* slide specific */
+body.home.slides.whiteSlide.stage-1 .panel .menuButton { color: #57244b; background-color: #ffffff; }
 section:nth-of-type(1) h1 { font-size: 60px; }
 section:nth-of-type(1).header_with_3_columns h1 { margin-bottom: 10px; }
 section:nth-of-type(1).header_with_3_columns .fix-10-12 p { font-size: 30px; }
