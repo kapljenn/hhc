@@ -24,7 +24,9 @@ body, h1, h2, h3, p, a, div, span, input, select, textarea, label { font-family:
 .grid { margin-bottom: 20px; }
 .menu-main-container li a { color: #ffffff; }
 .whiteSlide .menu-main-container li a { color: #57244b; }
-
+.slides.animated .video.kenBurns .background { opacity: 1; }
+html:not(.mobile) .slide.video .background[style] { background-size: cover !important; }
+.button.play { background-image: url(../img/play.png); background-size: 100%; }
 
 
 /* slides general */

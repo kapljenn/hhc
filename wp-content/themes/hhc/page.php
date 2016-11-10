@@ -122,7 +122,7 @@ while ( have_posts() ) : the_post();
 
 
 
-<?php } if ($slide_type == "map") { ?>
+<?php } else if ($slide_type == "map") { ?>
 <div class="fix-10-12 <?php echo $hero_alignment; ?>">
 	<?php echo $title_html; ?>
 	<BR><BR><BR><BR><BR><BR><BR><BR><BR>
@@ -222,6 +222,23 @@ while ( have_posts() ) : the_post();
 
 
 
+<?php } else if ($slide_type == "video") { ?>
+<div class="fix-10-12">
+
+	<div class="button play white popupTrigger ae-2 fromCenter button-9" data-popup-id="9"></div>
+
+	<?php echo $title_html; ?>
+	<div class="ae-2"><?php echo $slide_content; ?></div>
+
+</div>
+
+
+
+
+
+
+
+
 
 <?php } else { echo "No slide template defined!"; } ?>
 
@@ -234,12 +251,14 @@ while ( have_posts() ) : the_post();
 <?php
 			// slide footer
 	      	echo '</div></div></div>';
-			if ($featured_image != null) echo '<div class="background" style="background-image:url(' . $featured_image . ')"></div>';
+			if ($featured_image != null) echo '<div class="background" style="background-image:url(' . $featured_image . ') !important"></div>';
 			echo '</section>';
-			// popup video
-			/*
+
+if ($slide_type == "video") {
+
+?>
 			<!-- Popup Video -->
-			<div class="popup autoplay" data-popup-id="91-4">
+			<div class="popup autoplay" data-popup-id="9">
 			  <div class="close"><svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#close"></use></svg></div>
 			  <div class="content">
 			    <div class="container">
@@ -253,7 +272,9 @@ while ( have_posts() ) : the_post();
 			    </div>
 			  </div>
 			</div>
-			*/
+<?php
+
+}
 	    endwhile;
 	endif;
 endwhile;
