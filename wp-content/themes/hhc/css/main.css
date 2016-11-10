@@ -84,6 +84,11 @@ input[type=text], input[type=email], input[type=number], input[type=tel] {
 
 
 /* side by side */
+.side_by_side p { font-weight: 300; margin-bottom: 15px; font-size: 26px; }
+.side_by_side .col-6-12 p { padding-top: 25px; font-size: 16px; line-height: 20px; font-weight: 500; }
+
+
+/* side by side with image */
 section.side_by_side_with_image h1 { font-size: 42px; margin-bottom: 30px; }
 section.side_by_side_with_image p { font-size: 22px; line-height: 32px; }
 .left-hand-image, .right-hand-image { 
