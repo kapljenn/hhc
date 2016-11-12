@@ -119,6 +119,21 @@ function addCPTs() {
 		);
 	register_post_type('slide', $cpt_args);
 
+	// partners
+	$cpt_args = array(
+		'menu_icon' => '',
+		'label'	=> __('Partners'),
+		'singular_label' =>	__('Partner'),
+		'public'	=>	true,
+		'show_ui'	=>	true,
+		'taxonomies'  => array( 'category' ),
+		'capability_type'	=>	'post',
+		'hierarchical'	=>	false,
+		'rewrite'	=>	true,
+		'supports'	=>	array('title')
+		);
+	register_post_type('partner', $cpt_args);
+
 }
 add_action('init', 'addCPTs');
 add_theme_support( 'post-thumbnails' );
@@ -130,6 +145,7 @@ function add_menu_icons_styles() {
 	?>
 		<style>
 			#adminmenu .menu-icon-slide div.wp-menu-image:before { content: '\f175'; }
+			#adminmenu .menu-icon-partner div.wp-menu-image:before { content: '\f175'; }
 		</style>
 	<?php
 }
@@ -180,6 +196,30 @@ function add_my_admin_scripts() {
 }
 add_action( 'admin_enqueue_scripts', 'add_my_admin_scripts');
 
+
+// enhance PDF links
+if ( !function_exists('customise_pdf_embed') ) :
+    function customise_pdf_embed( $html, $id ) {
+        $attachment = get_post( $id );
+        $mime_type = $attachment->post_mime_type;
+
+        if ($mime_type == 'application/pdf') {
+            $src = wp_get_attachment_url($id);
+
+            $att[] = wp_prepare_attachment_for_js($id);
+            $title = $att[0]['title'];
+            $caption = $att[0]['caption'];
+
+            $html = 
+            	'<div class="media-link">' .
+            		'<a href="'. $src . '">Download ' . $title . '</a>' .
+            		'<div class="media-caption">' . $caption . '</div>' .
+            	'</div>';
+        }
+        return $html;
+	}
+endif;
+add_filter('media_send_to_editor', 'customise_pdf_embed', 20, 3);
 
 
 

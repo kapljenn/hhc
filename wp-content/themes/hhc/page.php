@@ -48,7 +48,7 @@ while ( have_posts() ) : the_post();
 			// slide classes
 			$slide_classes = "fade kenBurns ";
 			if ($slide_palette == "dark_text_white_background") $slide_classes = "whiteSlide ";
-			if ($slide_palette == "dark_text_grey_background") $slide_classes = "whiteSlide greyTint";
+			if ($slide_palette == "dark_text_grey_background") $slide_classes = "whiteSlide greyTint ";
 			$slide_classes .= $slide_type;
 
 			// columns
@@ -211,12 +211,17 @@ while ( have_posts() ) : the_post();
 </div>
 <div class="fix-12-12">
 	<ul class="grid">
-		<?php if ($image_alignment == "left") { ?><li class="col-6-12 left" data-action="zoom">&nbsp;</li><?php } ?>
+		<?php if ($image_alignment == "left") { ?>
+		<li class="col-6-12 left" data-action="zoom">&nbsp;</li>
 		<li class="col-6-12 left">
-			<?php echo $title_html; ?>
-			<div class="ae-3"><?php echo $slide_content; ?></div>
+			<div class="ae-3"><?php the_field('right_side_text', $slide_id); ?></div>
 		</li>
-		<?php if ($image_alignment == "right") { ?><li class="col-6-12 left" data-action="zoom">&nbsp;</li><?php } ?>
+		<?php } else if ($image_alignment == "right") { ?>
+		<li class="col-6-12 left">
+			<div class="ae-3"><?php the_field('left_side_text', $slide_id); ?></div>
+		</li>
+		<li class="col-6-12 left" data-action="zoom">&nbsp;</li>
+		<?php } ?>
 	</ul>
 </div>
 
@@ -224,6 +229,40 @@ while ( have_posts() ) : the_post();
 
 
 
+
+
+
+
+
+
+<?php } else if ($slide_type == "icon_grid") { ?>
+<div class="fix-10-12">
+	<?php echo $title_html; ?>
+	<div class="ae-2"><?php echo $slide_content; ?></div>
+<?php
+		// partners
+		$partners = get_field('partners', $slide_id);
+		if (sizeOf($partners) > 0) {
+			echo "<ul class='partner-grid'>";
+			$column_fraction = floor(12/sizeOf($partners));
+			foreach ($partners as $p) {
+				$partner_logo = get_field('partner_logo', $p['partner']->ID)['url'];
+				$partner_url = get_field('partner_url', $p['partner']->ID);
+?>
+					<li>
+						<a href="<?php echo $partner_url; ?>"><img src='<?php echo $partner_logo; ?>'></a>
+					</li>
+<?php
+			}
+			echo "</ul>";
+		}
+?>
+
+<?php if ($cta_text != "") { ?>
+	<a class="button ae-5 fromCenter" href="<?php echo $cta_url; ?>"><?php echo $cta_text; ?></a>
+<?php } ?>
+
+</div>
 
 
 

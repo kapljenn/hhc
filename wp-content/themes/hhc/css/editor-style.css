@@ -1,9 +1,24 @@
 
 /* STYLESHEET FOR WYSIWYG EDITOR */
 
-body#tinymce.wp-editor a {}
-body#tinymce.wp-editor h1 {}
+body#tinymce.wp-editor h1,
+body#tinymce.wp-editor h2,
+body#tinymce.wp-editor h3,
+body#tinymce.wp-editor h4,
+body#tinymce.wp-editor h5,
+body#tinymce.wp-editor h6,
+body#tinymce.wp-editor a,
+body#tinymce.wp-editor p,
+body#tinymce.wp-editor div
+	{ font-family: "Poppins", sans-serif; font-weight: 400; }
+body#tinymce.wp-editor h1 {  }
 
-#acf-slide_palette ul.acf-radio-list.horizontal li {
-	border: 1px solid red;
+/* download links */
+body#tinymce.wp-editor .media-link { margin: 10px 0 20px 0; }
+body#tinymce.wp-editor .media-link p { margin-bottom: 0; }
+body#tinymce.wp-editor .media-link a { 
+	color: #00a9dc; padding-left: 25px; background-image: url(../img/download.png); background-repeat: no-repeat;
+	background-position: left center; font-size: 18px;
 }
+body#tinymce.wp-editor .media-caption { font-size: 18px; color: #999999; }
+

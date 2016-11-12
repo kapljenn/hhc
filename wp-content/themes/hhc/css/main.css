@@ -38,7 +38,13 @@ html:not(.mobile) .slide.video .background[style] { background-size: cover !impo
 .fix-10-12.center { margin-left: auto !important; margin-right: auto !important; text-align: center; margin-bottom: 50px; }
 .fix-10-12.right { margin-left: 0 !important; margin-right: 0 !important; text-align: left; }
 body.lastSlide .nextSlide { display: none; }
-
+.media-link { margin: 10px 0 20px 0; }
+.media-link p { margin-bottom: 0; }
+.media-link a { 
+	color: #00a9dc; padding-left: 25px; background-image: url(../img/download.png); background-repeat: no-repeat;
+	background-position: left center; font-size: 18px;
+}
+.media-caption { font-size: 18px; color: #999999; }
 
 
 /* core elements */
@@ -104,6 +110,13 @@ section.side_by_side_with_image .grid .col-6-12 { box-sizing: border-box; paddin
 /* single central column */
 section.single_central_column p { font-size: 25px; line-height: 32px; }
 section.single_central_column .button { margin-top: 10px; }
+
+
+/* icon grid */
+section.icon_grid p { font-size: 25px; line-height: 32px; }
+.partner-grid { font-size: 0; text-align: center; margin-bottom: 30px; }
+.partner-grid li { display: inline-block; vertical-align: top; width: 24%; margin: 20px 0; }
+
 
 
 /* footer */
