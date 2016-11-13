@@ -75,6 +75,10 @@ input[type=text], input[type=email], input[type=number], input[type=tel] {
 .col-4-12 h2, .col-4-12 h3 { font-size: 22px; text-transform: uppercase; }
 .col-3-12 h2, .col-3-12 h3 { font-size: 22px; text-transform: uppercase; }
 .ae-3 .small, .ae-4 .small { font-size: 16px; line-height: 20px; font-weight: bold; }
+.column-cta { 
+	color: #00a4e1; padding-left: 15px; background-image: url(../img/arrow-right.png); background-position: left 5px;
+	background-repeat: no-repeat;
+}
 
 
 /* header with 3 columns */

@@ -88,6 +88,9 @@ while ( have_posts() ) : the_post();
 			$column_text_colour = $c['column_text_colour'];
 			$column_icon = $c['column_icon'];
 			$column_image = $c['column_image'];
+			$column_cta_text = $c['cta_text'];
+			$column_cta_url = $c['cta_url'];
+
 ?>
 		<li class="col-<?php echo $column_fraction; ?>-12">
 			<div class="fix-<?php echo $column_fraction; ?>-12">
@@ -105,6 +108,9 @@ while ( have_posts() ) : the_post();
 				<div class="ae-4">
 					<p class="small" style="color: <?php echo $column_text_colour; ?>"><?php echo $c['column_text']; ?></p>
 				</div>
+<?php if ($column_cta_text != null) { ?>
+				<a class="column-cta" href="<?php echo $column_cta_url; ?>"><?php echo $column_cta_text; ?></a>
+<?php } ?>
 			</div>
 		</li>
 <?php } ?>
