@@ -1,5 +1,8 @@
 
 /* RESPONSIVE RULES */
 
-@media all and (max-width: 479px) {
+@media all and (max-width: 1023px) {
+	.left-hand-image { overflow: visible; }
+	.right-hand-image { left: 0; width: 100%; }
+	.left-hand-image img, .right-hand-image img { max-width: 200% !important; width: 200%; height: auto; }
 }

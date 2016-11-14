@@ -70,7 +70,7 @@ while ( have_posts() ) : the_post();
 
 
 
-<?php if ( ($slide_type == "header_with_3_columns") || ($slide_type == "header_with_4_columns") ) { ?>
+<?php if ($slide_type == "header_with_columns") { ?>
 <div class="fix-10-12 <?php echo $hero_alignment; ?>">
 	<?php echo $title_html; ?>
 	<div class="ae-2"><?php echo $slide_content; ?></div>
@@ -127,6 +127,40 @@ while ( have_posts() ) : the_post();
 
 
 
+<?php } else if ($slide_type == "side_by_side") { ?>
+<?php
+	$left_image = get_field('left_image', $slide_id);
+	$right_image = get_field('right_image', $slide_id);
+	$column_ratio = get_field('column_ratio', $slide_id);
+?>
+<div class="left-hand-image">
+	<img class="shiftImage shiftImageVertical" src="<?php echo $left_image['url']; ?>" width="1200">
+</div>
+<div class="right-hand-image">
+	<img class="shiftImage shiftImageVertical" src="<?php echo $right_image['url']; ?>" width="1200">
+</div>
+<div class="fix-10-12">
+	<div class="ae-2"><?php echo $slide_content; ?></div>
+</div>
+<div class="fix-12-12">
+	<ul class="grid">
+		<li class="col-<?php echo substr($column_ratio, 0, 1); ?>-12 left">
+			<div class="ae-3"><?php the_field('left_side_text', $slide_id); ?>&nbsp;</div>
+		</li>
+		<li class="col-<?php echo substr($column_ratio, 2, 3); ?>-12 left">
+			<div class="ae-3"><?php the_field('right_side_text', $slide_id); ?>&nbsp;</div>
+		</li>
+	</ul>
+</div>
+
+
+
+
+
+
+
+
+
 
 <?php } else if ($slide_type == "map") { ?>
 <div class="fix-10-12 <?php echo $hero_alignment; ?>">
@@ -173,63 +207,6 @@ while ( have_posts() ) : the_post();
 <?php if ($cta_position == "below_the_columns") { ?>
 	<a class="button ae-5 fromCenter" href="<?php echo $cta_url; ?>"><?php echo $cta_text; ?></a>
 <?php } ?>
-
-
-
-
-
-
-
-
-
-
-
-<?php } else if ($slide_type == "side_by_side") { ?>
-<div class="fix-10-12">
-	<?php echo $title_html; ?>
-	<div class="ae-2"><?php echo $slide_content; ?></div>
-</div>
-<div class="fix-12-12">
-	<ul class="grid">
-		<li class="col-6-12 left">
-			<div class="ae-3"><?php the_field('left_side_text', $slide_id); ?></div>
-		</li>
-		<li class="col-6-12 left">
-			<div class="ae-3"><?php the_field('right_side_text', $slide_id); ?></div>
-		</li>
-	</ul>
-</div>
-
-
-
-
-
-
-
-
-<?php } else if ($slide_type == "side_by_side_with_image") { ?>
-<?php
-	$image_alignment = get_field('image_alignment', $slide_id);
-	$image = get_field('image', $slide_id);
-?>
-<div class="<?php echo $image_alignment; ?>-hand-image">
-	<img class="shiftImage shiftImageVertical" src="<?php echo $image['url']; ?>" width="1200" alt="<?php echo $image['alt']; ?>"/>
-</div>
-<div class="fix-12-12">
-	<ul class="grid">
-		<?php if ($image_alignment == "left") { ?>
-		<li class="col-6-12 left" data-action="zoom">&nbsp;</li>
-		<li class="col-6-12 left">
-			<div class="ae-3"><?php the_field('right_side_text', $slide_id); ?></div>
-		</li>
-		<?php } else if ($image_alignment == "right") { ?>
-		<li class="col-6-12 left">
-			<div class="ae-3"><?php the_field('left_side_text', $slide_id); ?></div>
-		</li>
-		<li class="col-6-12 left" data-action="zoom">&nbsp;</li>
-		<?php } ?>
-	</ul>
-</div>
 
 
 
