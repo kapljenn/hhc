@@ -47,7 +47,10 @@
 		<div class="center">
 			<?php wp_nav_menu( array('menu' => 'Main', 'menu_class' => 'menu uppercase')); ?>
 		</div>
-		<div class="right"><a class="button menuButton" href="#">Fundraise</a><a class="button menuButton" href="#">Donate</a></div>
+		<div class="right">
+			<a class="button menuButton" href="<?php echo site_url() . '/fundraise/' ?>">Fundraise</a>
+			<a class="button menuButton" href="<?php echo site_url()  . '/donate/' ?>">Donate</a>
+		</div>
 	</div>
 	<div class="sections compact hidden">
 		<div class="left">

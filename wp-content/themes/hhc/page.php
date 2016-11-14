@@ -41,9 +41,11 @@ while ( have_posts() ) : the_post();
 			// background image
 			$featured_image = wp_get_attachment_image_src( get_post_thumbnail_id($slide_id), 'large' )['0'];
 
-			// CTA
+			// CTA(s)
 			$cta_text = get_field('cta_text', $slide_id);
 			$cta_url = get_field('cta_url', $slide_id);
+			$cta_2_text = get_field('cta_2_text', $slide_id);
+			$cta_2_url = get_field('cta_2_url', $slide_id);
 
 			// slide classes
 			$slide_classes = "fade kenBurns ";
@@ -188,6 +190,26 @@ while ( have_posts() ) : the_post();
 <?php if ($cta_text != "") { ?>
 	<a class="button ae-5 fromCenter" href="<?php echo $cta_url; ?>"><?php echo $cta_text; ?></a>
 <?php } ?>
+</div>
+
+
+
+
+
+
+
+<?php } else if ($slide_type == "double_cta") { ?>
+<div class="fix-10-12">
+	<?php echo $title_html; ?>
+	<div class="ae-2"><?php echo $slide_content; ?></div>
+	<div class="cta-bar">
+<?php if ($cta_text != "") { ?>
+	<a class="button ae-5 fromCenter" href="<?php echo $cta_url; ?>"><?php echo $cta_text; ?></a>
+<?php } ?>
+<?php if ($cta_2_text != "") { ?>
+	<a class="button ae-5 fromCenter" href="<?php echo $cta_2_url; ?>"><?php echo $cta_2_text; ?></a>
+<?php } ?>
+	</div>
 </div>
 
 
