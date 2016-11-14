@@ -162,6 +162,41 @@ while ( have_posts() ) : the_post();
 
 
 
+
+<?php } else if ($slide_type == "single_central_column") { ?>
+<div class="fix-10-12">
+	<?php echo $title_html; ?>
+	<div class="ae-2"><?php echo $slide_content; ?></div>
+<?php
+		// partners
+		$partners = get_field('icon_grid', $slide_id);
+		if (sizeOf($partners) > 0) {
+			echo "<ul class='partner-grid'>";
+			$column_fraction = floor(12/sizeOf($partners));
+			foreach ($partners as $p) {
+				$partner_logo = get_field('partner_logo', $p['icon']->ID)['url'];
+				$partner_url = get_field('partner_url', $p['icon']->ID);
+?>
+					<li>
+						<a href="<?php echo $partner_url; ?>"><img src='<?php echo $partner_logo; ?>'></a>
+					</li>
+<?php
+			}
+			echo "</ul>";
+		}
+?>
+<?php if ($cta_text != "") { ?>
+	<a class="button ae-5 fromCenter" href="<?php echo $cta_url; ?>"><?php echo $cta_text; ?></a>
+<?php } ?>
+</div>
+
+
+
+
+
+
+
+
 <?php } else if ($slide_type == "map") { ?>
 <div class="fix-10-12 <?php echo $hero_alignment; ?>">
 	<?php echo $title_html; ?>
@@ -209,57 +244,6 @@ while ( have_posts() ) : the_post();
 <?php } ?>
 
 
-
-
-
-
-
-
-
-
-
-<?php } else if ($slide_type == "icon_grid") { ?>
-<div class="fix-10-12">
-	<?php echo $title_html; ?>
-	<div class="ae-2"><?php echo $slide_content; ?></div>
-<?php
-		// partners
-		$partners = get_field('partners', $slide_id);
-		if (sizeOf($partners) > 0) {
-			echo "<ul class='partner-grid'>";
-			$column_fraction = floor(12/sizeOf($partners));
-			foreach ($partners as $p) {
-				$partner_logo = get_field('partner_logo', $p['partner']->ID)['url'];
-				$partner_url = get_field('partner_url', $p['partner']->ID);
-?>
-					<li>
-						<a href="<?php echo $partner_url; ?>"><img src='<?php echo $partner_logo; ?>'></a>
-					</li>
-<?php
-			}
-			echo "</ul>";
-		}
-?>
-
-<?php if ($cta_text != "") { ?>
-	<a class="button ae-5 fromCenter" href="<?php echo $cta_url; ?>"><?php echo $cta_text; ?></a>
-<?php } ?>
-
-</div>
-
-
-
-
-
-
-<?php } else if ($slide_type == "single_central_column") { ?>
-<div class="fix-10-12">
-	<?php echo $title_html; ?>
-	<div class="ae-2"><?php echo $slide_content; ?></div>
-<?php if ($cta_text != "") { ?>
-	<a class="button ae-5 fromCenter" href="<?php echo $cta_url; ?>"><?php echo $cta_text; ?></a>
-<?php } ?>
-</div>
 
 
 
