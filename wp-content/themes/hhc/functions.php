@@ -134,6 +134,21 @@ function addCPTs() {
 		);
 	register_post_type('partner', $cpt_args);
 
+	// global contacts
+	$cpt_args = array(
+		'menu_icon' => '',
+		'label'	=> __('Global Contacts'),
+		'singular_label' =>	__('Global Contact'),
+		'public'	=>	true,
+		'show_ui'	=>	true,
+		'taxonomies'  => array( 'category' ),
+		'capability_type'	=>	'post',
+		'hierarchical'	=>	false,
+		'rewrite'	=>	true,
+		'supports'	=>	array('title', 'thumbnail', 'editor', 'excerpt')
+		);
+	register_post_type('global-contact', $cpt_args);
+
 }
 add_action('init', 'addCPTs');
 add_theme_support( 'post-thumbnails' );
@@ -146,6 +161,7 @@ function add_menu_icons_styles() {
 		<style>
 			#adminmenu .menu-icon-slide div.wp-menu-image:before { content: '\f175'; }
 			#adminmenu .menu-icon-partner div.wp-menu-image:before { content: '\f175'; }
+			#adminmenu .menu-icon-global-contact div.wp-menu-image:before { content: '\f175'; }
 		</style>
 	<?php
 }
