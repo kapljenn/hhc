@@ -148,6 +148,13 @@ section.icon_grid p { font-size: 25px; line-height: 32px; }
 section.footer.fade .content { background-color: #3c3c3b; }
 section.footer h2, section.footer h3 { text-transform: uppercase; font-weight: bold; margin-bottom: 0; }
 .social li { display: inline-block; margin: 10px 25px; }
+#menu-corporate { padding-top: 100px; }
+#menu-corporate li { display: inline-block; }
+#menu-corporate li a { text-transform: uppercase; font-weight: bold; font-size: 22px; padding: 0 40px; }
+#menu-legal-1 { padding: 50px 0; }
+#menu-legal-1 li { display: inline-block; }
+#menu-legal-1 li a { text-transform: uppercase; font-weight: 500; font-size: 16px; padding: 0 10px; }
+.copyright { padding-top: 100px; font-size: 18px; }
 
 
 /* bottom panel */

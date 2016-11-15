@@ -142,6 +142,7 @@ while ( have_posts() ) : the_post();
 	<img class="shiftImage shiftImageVertical" src="<?php echo $right_image['url']; ?>" width="1200">
 </div>
 <div class="fix-10-12">
+	<?php echo $title_html; ?>
 	<div class="ae-2"><?php echo $slide_content; ?></div>
 </div>
 <div class="fix-12-12">

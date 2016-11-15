@@ -2,32 +2,10 @@
 
 <section class="slide fade kenBurns footer"><div class="content"><div class="container"><div class="wrap">
 	<div class="fix-12-12">
-		<ul class="grid later equal">
-			<li class="col-3-12">
-				<div class="fix-3-12">
-					<h3 class="equalElement ae-7">Lorem Ipsum</h3>
-					<div class="ae-5">Here is some column text.</div>
-				</div>
-			</li>
-			<li class="col-3-12">
-				<div class="fix-3-12">
-					<h3 class="equalElement ae-8">Lorem Ipsum</h3>
-					<div class="ae-6">Here is some column text.</div>
-				</div>
-			</li>
-			<li class="col-3-12">
-				<div class="fix-3-12">  
-					<h3 class="equalElement ae-9">Lorem Ipsum</h3>
-					<div class="ae-7">Here is some column text.</div>
-				</div>
-			</li>
-			<li class="col-3-12">
-				<div class="fix-3-12">
-					<h3 class="equalElement ae-10">Lorem Ipsum</h3>
-					<div class="ae-8">Here is some column text.</div>
-				</div>
-			</li>
-		</ul>
+		<?php wp_nav_menu( array('menu' => 'Corporate', 'menu_class' => '')); ?>
+	</div>
+	<div class="fix-12-12">
+		<?php wp_nav_menu( array('menu' => 'Legal', 'menu_class' => '')); ?>
 	</div>
 	<div class="fix-10-12 toCenter">
 		<br><br><br><br>
@@ -49,6 +27,7 @@
 				</a>
 			</li>
 		</ul>
+		<div class="copyright">&copy; Hope and Homes for Children 2016</div>
 	</div>
 </section>
 
@@ -56,17 +35,13 @@
 <!-- Panel Bottom #01 -->
 <nav class="panel bottom forceMobileView">
 	<div class="sections desktop">
-		<div class="left">
-			&copy; Hope and Homes for Children 2016
-		</div>
+		<div class="left"></div>
 		<div class="center">
 			<span class="nextSlide">
 				<img src="<?php echo esc_url(get_stylesheet_directory_uri()); ?>/img/down-arrow.png" />
 			</span>
 		</div>
-		<div class="right">
-			<?php wp_nav_menu( array('menu' => 'Legal', 'menu_class' => 'menu')); ?>
-		</div>
+		<div class="right"></div>
 	</div>
 	<div class="sections compact hidden">
 		<div class="right"></div>
