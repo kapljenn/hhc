@@ -272,6 +272,46 @@ while ( have_posts() ) : the_post();
 
 
 
+<?php } else if ($slide_type == "three_thumbnails") { ?>
+<?php $thumbnails = get_field('thumbnails', $slide_id); ?>
+<div class="fix-10-12 <?php echo $hero_alignment; ?>">
+	<?php echo $title_html; ?>
+	<div class="ae-2"><?php echo $slide_content; ?></div>
+	<?php if ($cta_position == "above_the_columns") { ?>
+		<a class="button ae-5 fromCenter" href="<?php echo $cta_url; ?>"><?php echo $cta_text; ?></a>
+	<?php } ?>
+</div>
+<?php if (sizeOf($thumbnails) > 0) { ?>
+<div class="fix-12-12">
+	<ul class="grid later equal">
+<?php
+		foreach ($thumbnails as $t) {
+			$thumbnail_image = $t['thumbnail_image'];
+			$thumbnail_title = $t['thumbnail_title'];
+			$thumbnail_url = $t['thumbnail_url'];
+?>
+		<li class="col-4-12">
+			<div class="fix-4-12">
+				<a href="<?php echo $thumbnail_url; ?>" class="thumbnail-link">
+					<img src="<?php echo $thumbnail_image['url']; ?>" />
+					<div class="thumbnail-content">
+						<span class="thumbnail-title"><?php echo $thumbnail_title; ?></span>
+					</div>
+				</a>
+			</div>
+		</li>
+<?php } ?>
+	</ul>
+</div>
+<?php } ?>
+<?php if ($cta_position == "below_the_columns") { ?>
+	<a class="button ae-5 fromCenter" href="<?php echo $cta_url; ?>"><?php echo $cta_text; ?></a>
+<?php } ?>
+
+
+
+
+
 
 <?php } else if ($slide_type == "video") { ?>
 <div class="fix-10-12">
