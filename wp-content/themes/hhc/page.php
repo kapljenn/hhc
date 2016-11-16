@@ -215,10 +215,14 @@ if ($video_url != "") {
 			echo "</ul>";
 		}
 ?>
+
+<!-- CTA -->
 <?php if ($cta_text != "") { ?>
 	<a class="button ae-5 fromCenter" href="<?php echo $cta_url; ?>"><?php echo $cta_text; ?></a>
 	<br>
 <?php } ?>
+
+<!-- video -->
 <?php
 if ($video_url != "") {
 	if ($video_cta_position == "bottom") {
@@ -226,27 +230,23 @@ if ($video_url != "") {
 	}
 }
 ?>
+
+<!-- box links -->
+<?php
+	$box_links = get_field('box_links', $slide_id);
+	if (sizeOf($box_links) > 0) {
+		echo "<div class='cta-bar'>";
+		foreach ($box_links as $l) {
+			$link_title = $l['link_title'];
+			$link_url = $l['link_url'];
+			echo '<a class="button ae-5 fromCenter" href="' . $link_url . '">' . $link_title . '</a>';
+		}
+		echo "</div>";
+	}
+?>
 </div>
 
 
-
-
-
-
-
-<?php } else if ($slide_type == "double_cta") { ?>
-<div class="fix-10-12">
-	<?php echo $title_html; ?>
-	<div class="ae-2"><?php echo $slide_content; ?></div>
-	<div class="cta-bar">
-<?php if ($cta_text != "") { ?>
-	<a class="button ae-5 fromCenter" href="<?php echo $cta_url; ?>"><?php echo $cta_text; ?></a>
-<?php } ?>
-<?php if ($cta_2_text != "") { ?>
-	<a class="button ae-5 fromCenter" href="<?php echo $cta_2_url; ?>"><?php echo $cta_2_text; ?></a>
-<?php } ?>
-	</div>
-</div>
 
 
 

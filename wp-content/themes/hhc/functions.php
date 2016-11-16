@@ -261,3 +261,36 @@ function my_mce_before_init_insert_formats( $init_array ) {
 add_filter( 'tiny_mce_before_init', 'my_mce_before_init_insert_formats' );
 
 
+
+
+
+/* customise admin columns */
+function my_post_columns($columns) {
+	$columns = array(
+		'cb'	 	=> '<input type="checkbox" />',
+		'title' 	=> 'Title',
+		'categories'	=>	'Categories',
+		'slide_type'	=>	'Slide Type',
+		'date'		=>	'Date',
+	);
+	return $columns;
+}
+function my_custom_columns($column) {
+	global $post;
+	if ($column == 'slide_type') echo get_field('slide_type', $post->ID);
+}
+add_action("manage_posts_custom_column", "my_custom_columns");
+add_filter("manage_edit-slide_columns", "my_post_columns");
+
+/* add sort functionality */
+// function my_column_register_sortable( $columns ) {
+// 	$columns['slide_type'] = 'slide_type';
+// 	return $columns;
+// }
+// add_filter("manage_edit-slide_sortable_columns", "my_column_register_sortable" );
+
+
+
+
+
+
