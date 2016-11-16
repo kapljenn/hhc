@@ -172,18 +172,34 @@ while ( have_posts() ) : the_post();
 	<div class="ae-2"><?php echo $slide_content; ?></div>
 <?php
 		// partners
-		$partners = get_field('icon_grid', $slide_id);
-		if (sizeOf($partners) > 0) {
-			echo "<ul class='partner-grid'>";
-			$column_fraction = floor(12/sizeOf($partners));
-			foreach ($partners as $p) {
-				$partner_logo = get_field('partner_logo', $p['icon']->ID)['url'];
-				$partner_url = get_field('partner_url', $p['icon']->ID);
-?>
-					<li>
-						<a href="<?php echo $partner_url; ?>"><img src='<?php echo $partner_logo; ?>'></a>
-					</li>
-<?php
+		$post_list = get_field('post_list', $slide_id);
+		$post_list_classes = get_field('post_list_classes', $slide_id);
+		if (sizeOf($post_list) > 0) {
+			echo "<ul class='post-grid " . $post_list_classes . "'>";
+			$column_fraction = floor(12/sizeOf($post_list));
+			foreach ($post_list as $p) {
+
+				$p = $p['post_item'];
+
+				if ($p->post_type == 'partner') {
+					$partner_logo = get_field('partner_logo', $p->ID)['url'];
+					$partner_url = get_field('partner_url', $p->ID);
+					echo '<li class="partner"><a href="' . $partner_url . '"><img src="' . $partner_logo . '"></a></li>';
+				} else if ($p->post_type == 'global-contact') {
+					$thumb = wp_get_attachment_image_src( get_post_thumbnail_id($p->ID), 'medium')[0];
+					$title = $p->post_title;
+					$excerpt = get_the_excerpt($p->ID);
+					$permalink = $p->permalink;
+					echo '<li class="global-contact">';
+						echo '<div class="img-holder">';
+							echo '<img src="' . $thumb . '">';
+						echo '</div>';
+						echo '<div class="post-content">';
+							echo '<a href="' . $permalink . '" class="post-title">' . $title . '</a>';
+							echo '<div class="post-excerpt">' . $excerpt . '</div>';
+						echo '</div>';
+					echo '</li>';
+				}
 			}
 			echo "</ul>";
 		}
