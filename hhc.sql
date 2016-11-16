@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost
--- Generation Time: Nov 16, 2016 at 04:56 PM
+-- Generation Time: Nov 16, 2016 at 05:08 PM
 -- Server version: 5.5.33-log
 -- PHP Version: 5.5.3
 
@@ -889,7 +889,7 @@ CREATE TABLE `wp_postmeta` (
   PRIMARY KEY (`meta_id`),
   KEY `post_id` (`post_id`),
   KEY `meta_key` (`meta_key`(191))
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci AUTO_INCREMENT=3678 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci AUTO_INCREMENT=3778 ;
 
 --
 -- Dumping data for table `wp_postmeta`
@@ -2312,7 +2312,7 @@ INSERT INTO `wp_postmeta` (`meta_id`, `post_id`, `meta_key`, `meta_value`) VALUE
 (1581, 137, 'slides', '8'),
 (1582, 137, '_slides', 'field_581b0be6b9508'),
 (1583, 138, '_edit_last', '1'),
-(1584, 138, '_edit_lock', '1479234549:1'),
+(1584, 138, '_edit_lock', '1479312272:1'),
 (1585, 138, 'slide_type', 'single_central_column'),
 (1586, 138, '_slide_type', 'field_581c82b385f0a'),
 (1587, 138, 'slide_palette', 'white_text_dark_background'),
@@ -2948,7 +2948,7 @@ INSERT INTO `wp_postmeta` (`meta_id`, `post_id`, `meta_key`, `meta_value`) VALUE
 (2401, 170, '_slides', 'field_581b0be6b9508'),
 (2402, 135, '_wp_old_slug', 'runners'),
 (2403, 171, '_edit_last', '1'),
-(2404, 171, '_edit_lock', '1479234515:1'),
+(2404, 171, '_edit_lock', '1479312182:1'),
 (2405, 171, 'slide_type', 'side_by_side'),
 (2406, 171, '_slide_type', 'field_581c82b385f0a'),
 (2407, 171, 'column_ratio', '6-6'),
@@ -3325,9 +3325,9 @@ INSERT INTO `wp_postmeta` (`meta_id`, `post_id`, `meta_key`, `meta_value`) VALUE
 (2847, 195, '_edit_last', '1'),
 (2848, 196, 'slides', '0'),
 (2849, 196, '_slides', 'field_581b0be6b9508'),
-(2850, 195, 'slides', '2'),
+(2850, 195, 'slides', '5'),
 (2851, 195, '_slides', 'field_581b0be6b9508'),
-(2852, 195, '_edit_lock', '1479311350:1'),
+(2852, 195, '_edit_lock', '1479312467:1'),
 (2853, 197, '_edit_last', '1'),
 (2854, 198, 'slides', '0'),
 (2855, 198, '_slides', 'field_581b0be6b9508'),
@@ -3925,7 +3925,7 @@ INSERT INTO `wp_postmeta` (`meta_id`, `post_id`, `meta_key`, `meta_value`) VALUE
 (3584, 240, 'box_links_2_link_url', 'a:3:{s:3:"url";s:0:"";s:5:"title";s:0:"";s:6:"target";s:0:"";}'),
 (3585, 240, '_box_links_2_link_url', 'field_582c7b61f1b78'),
 (3586, 241, '_edit_last', '1'),
-(3587, 241, '_edit_lock', '1479311739:1'),
+(3587, 241, '_edit_lock', '1479312163:1'),
 (3588, 241, 'slide_type', 'single_central_column'),
 (3589, 241, '_slide_type', 'field_581c82b385f0a'),
 (3590, 241, 'slide_palette', 'dark_text_grey_background'),
@@ -3992,7 +3992,91 @@ INSERT INTO `wp_postmeta` (`meta_id`, `post_id`, `meta_key`, `meta_value`) VALUE
 (3674, 243, 'slides_1_slide', '241'),
 (3675, 243, '_slides_1_slide', 'field_581b0c12b9509'),
 (3676, 243, 'slides', '2'),
-(3677, 243, '_slides', 'field_581b0be6b9508');
+(3677, 243, '_slides', 'field_581b0be6b9508'),
+(3678, 244, '_edit_last', '1'),
+(3679, 244, '_edit_lock', '1479312257:1'),
+(3680, 244, 'slide_type', 'side_by_side'),
+(3681, 244, '_slide_type', 'field_581c82b385f0a'),
+(3682, 244, 'column_ratio', '6-6'),
+(3683, 244, '_column_ratio', 'field_582996b9f6ec9'),
+(3684, 244, 'left_image', '172'),
+(3685, 244, '_left_image', 'field_58209c61acb9d'),
+(3686, 244, 'right_image', ''),
+(3687, 244, '_right_image', 'field_582996990827e'),
+(3688, 244, 'left_side_text', ''),
+(3689, 244, '_left_side_text', 'field_5824943211bea'),
+(3690, 244, 'right_side_text', '<h1><span style="color: #57244b;">What we value</span></h1>\r\nLorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam semper hendrerit neque ac pulvinar. Etiam vehicula tristique nibh id placerat. Cras fermentum pharetra enim nec fringilla\r\n\r\nQuisque magna metus, tempor non feugiat eu, ornare et nulla.\r\n<h1><span style="color: #57244b;">What we offer</span></h1>\r\nLorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam semper hendrerit neque ac pulvinar. Etiam vehicula tristique nibh id placerat. Cras fermentum pharetra enim nec fringilla\r\n\r\nQuisque magna metus, tempor non feugiat eu, ornare et nulla.\r\n\r\n<a class="button" href="#">Call to action</a>'),
+(3691, 244, '_right_side_text', 'field_5824944011beb'),
+(3692, 244, 'slide_palette', 'dark_text_white_background'),
+(3693, 244, '_slide_palette', 'field_5821a38635d3e'),
+(3694, 244, 'title_format', 'no_title'),
+(3695, 244, '_title_format', 'field_58236a7dbc0e5'),
+(3696, 244, 'title_colour', '#ffffff'),
+(3697, 244, '_title_colour', 'field_58207f6b2877b'),
+(3698, 244, 'hero_alignment', 'center'),
+(3699, 244, '_hero_alignment', 'field_582320f269fff'),
+(3700, 244, 'cta_text', 'Call to action'),
+(3701, 244, '_cta_text', 'field_580783c4f9bef'),
+(3702, 244, 'cta_url', 'a:3:{s:3:"url";s:1:"#";s:5:"title";s:1:"#";s:6:"target";s:0:"";}'),
+(3703, 244, '_cta_url', 'field_580783d6f9bf0'),
+(3704, 244, '_wp_old_slug', 'runners'),
+(3705, 244, '_wp_old_slug', 'featured-event'),
+(3709, 244, '_wp_old_slug', 'campaign-heading-2'),
+(3710, 245, 'slides_0_slide', '240'),
+(3711, 245, '_slides_0_slide', 'field_581b0c12b9509'),
+(3712, 245, 'slides_1_slide', '241'),
+(3713, 245, '_slides_1_slide', 'field_581b0c12b9509'),
+(3714, 245, 'slides_2_slide', '244'),
+(3715, 245, '_slides_2_slide', 'field_581b0c12b9509'),
+(3716, 245, 'slides', '3'),
+(3717, 245, '_slides', 'field_581b0be6b9508'),
+(3718, 195, 'slides_2_slide', '244'),
+(3719, 195, '_slides_2_slide', 'field_581b0c12b9509'),
+(3720, 246, '_edit_last', '1'),
+(3721, 246, '_edit_lock', '1479312440:1'),
+(3722, 246, 'slide_type', 'single_central_column'),
+(3723, 246, '_slide_type', 'field_581c82b385f0a'),
+(3724, 246, 'slide_palette', 'white_text_dark_background'),
+(3725, 246, '_slide_palette', 'field_5821a38635d3e'),
+(3726, 246, 'title_format', 'text'),
+(3727, 246, '_title_format', 'field_58236a7dbc0e5'),
+(3728, 246, 'title_colour', '#ffffff'),
+(3729, 246, '_title_colour', 'field_58207f6b2877b'),
+(3730, 246, 'hero_alignment', 'center'),
+(3731, 246, '_hero_alignment', 'field_582320f269fff'),
+(3732, 246, 'cta_text', 'More about our partners'),
+(3733, 246, '_cta_text', 'field_580783c4f9bef'),
+(3734, 246, 'cta_url', 'a:3:{s:3:"url";s:1:"#";s:5:"title";s:1:"#";s:6:"target";s:0:"";}'),
+(3735, 246, '_cta_url', 'field_580783d6f9bf0'),
+(3736, 246, 'icon_grid', '0'),
+(3737, 246, '_icon_grid', 'field_5829a3e657a15'),
+(3751, 246, '_wp_old_slug', 'fundraising-tools'),
+(3752, 246, 'post_list', '0'),
+(3753, 246, '_post_list', 'field_582c3189b0250'),
+(3754, 246, 'post_list_classes', ''),
+(3755, 246, '_post_list_classes', 'field_582c514d6e95f'),
+(3756, 246, 'video_url', ''),
+(3757, 246, '_video_url', 'field_582c6994a18c4'),
+(3758, 246, 'video_cta_position', 'top'),
+(3759, 246, '_video_cta_position', 'field_582c69bba18c5'),
+(3760, 246, 'box_links', '0'),
+(3761, 246, '_box_links', 'field_582c7b36f1b77'),
+(3762, 247, 'slides_0_slide', '240'),
+(3763, 247, '_slides_0_slide', 'field_581b0c12b9509'),
+(3764, 247, 'slides_1_slide', '241'),
+(3765, 247, '_slides_1_slide', 'field_581b0c12b9509'),
+(3766, 247, 'slides_2_slide', '244'),
+(3767, 247, '_slides_2_slide', 'field_581b0c12b9509'),
+(3768, 247, 'slides_3_slide', '246'),
+(3769, 247, '_slides_3_slide', 'field_581b0c12b9509'),
+(3770, 247, 'slides_4_slide', '231'),
+(3771, 247, '_slides_4_slide', 'field_581b0c12b9509'),
+(3772, 247, 'slides', '5'),
+(3773, 247, '_slides', 'field_581b0be6b9508'),
+(3774, 195, 'slides_3_slide', '246'),
+(3775, 195, '_slides_3_slide', 'field_581b0c12b9509'),
+(3776, 195, 'slides_4_slide', '231'),
+(3777, 195, '_slides_4_slide', 'field_581b0c12b9509');
 
 -- --------------------------------------------------------
 
@@ -4029,7 +4113,7 @@ CREATE TABLE `wp_posts` (
   KEY `type_status_date` (`post_type`,`post_status`,`post_date`,`ID`),
   KEY `post_parent` (`post_parent`),
   KEY `post_author` (`post_author`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci AUTO_INCREMENT=244 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci AUTO_INCREMENT=248 ;
 
 --
 -- Dumping data for table `wp_posts`
@@ -4220,7 +4304,7 @@ INSERT INTO `wp_posts` (`ID`, `post_author`, `post_date`, `post_date_gmt`, `post
 (192, 1, '2016-11-15 17:28:05', '2016-11-15 17:28:05', '', 'Get in touch', '', 'inherit', 'closed', 'closed', '', '191-revision-v1', '', '', '2016-11-15 17:28:05', '2016-11-15 17:28:05', '', 191, 'http://localhost/hhc/191-revision-v1/', 0, 'revision', '', 0),
 (193, 1, '2016-11-15 17:28:15', '2016-11-15 17:28:15', '', 'Media', '', 'publish', 'closed', 'closed', '', 'media', '', '', '2016-11-16 14:18:10', '2016-11-16 14:18:10', '', 0, 'http://localhost/hhc/?page_id=193', 0, 'page', '', 0),
 (194, 1, '2016-11-15 17:28:15', '2016-11-15 17:28:15', '', 'Media', '', 'inherit', 'closed', 'closed', '', '193-revision-v1', '', '', '2016-11-15 17:28:15', '2016-11-15 17:28:15', '', 193, 'http://localhost/hhc/193-revision-v1/', 0, 'revision', '', 0),
-(195, 1, '2016-11-15 17:28:27', '2016-11-15 17:28:27', '', 'Work with us', '', 'publish', 'closed', 'closed', '', 'work-with-us', '', '', '2016-11-16 15:49:09', '2016-11-16 15:49:09', '', 0, 'http://localhost/hhc/?page_id=195', 0, 'page', '', 0),
+(195, 1, '2016-11-15 17:28:27', '2016-11-15 17:28:27', '', 'Work with us', '', 'publish', 'closed', 'closed', '', 'work-with-us', '', '', '2016-11-16 16:07:46', '2016-11-16 16:07:46', '', 0, 'http://localhost/hhc/?page_id=195', 0, 'page', '', 0),
 (196, 1, '2016-11-15 17:28:27', '2016-11-15 17:28:27', '', 'Work with us', '', 'inherit', 'closed', 'closed', '', '195-revision-v1', '', '', '2016-11-15 17:28:27', '2016-11-15 17:28:27', '', 195, 'http://localhost/hhc/195-revision-v1/', 0, 'revision', '', 0),
 (197, 1, '2016-11-15 17:28:38', '2016-11-15 17:28:38', '', 'Blog', '', 'publish', 'closed', 'closed', '', 'blog', '', '', '2016-11-15 17:28:38', '2016-11-15 17:28:38', '', 0, 'http://localhost/hhc/?page_id=197', 0, 'page', '', 0),
 (198, 1, '2016-11-15 17:28:38', '2016-11-15 17:28:38', '', 'Blog', '', 'inherit', 'closed', 'closed', '', '197-revision-v1', '', '', '2016-11-15 17:28:38', '2016-11-15 17:28:38', '', 197, 'http://localhost/hhc/197-revision-v1/', 0, 'revision', '', 0),
@@ -4268,7 +4352,11 @@ INSERT INTO `wp_posts` (`ID`, `post_author`, `post_date`, `post_date_gmt`, `post
 (240, 1, '2016-11-16 15:45:41', '2016-11-16 15:45:41', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam semper hendrerit neque ac pulvinar. Etiam vehicula tristique nibh id placerat. Aliquam semper hendrerit neque ac pulvinar. Etiam vehicula tristique nibh id placerat vehicula tristique nibh .', 'Work with us 2', '', 'publish', 'closed', 'closed', '', 'work-with-us-2', '', '', '2016-11-16 15:48:59', '2016-11-16 15:48:59', '', 0, 'http://localhost/hhc/?post_type=slide&#038;p=240', 0, 'slide', '', 0),
 (241, 1, '2016-11-16 15:47:22', '2016-11-16 15:47:22', 'Quisque quis turpis vitae odio tempor lacinia vel vitae tellusisque quis turpis vitae odio tempor lacinia vel vitae tellus.', 'Our people 2', '', 'publish', 'closed', 'closed', '', 'our-people-2', '', '', '2016-11-16 15:55:38', '2016-11-16 15:55:38', '', 0, 'http://localhost/hhc/?post_type=slide&#038;p=241', 0, 'slide', '', 0),
 (242, 1, '2016-11-16 15:48:28', '2016-11-16 15:48:28', '', 'Work with us', '', 'inherit', 'closed', 'closed', '', '195-revision-v1', '', '', '2016-11-16 15:48:28', '2016-11-16 15:48:28', '', 195, 'http://localhost/hhc/195-revision-v1/', 0, 'revision', '', 0),
-(243, 1, '2016-11-16 15:49:09', '2016-11-16 15:49:09', '', 'Work with us', '', 'inherit', 'closed', 'closed', '', '195-revision-v1', '', '', '2016-11-16 15:49:09', '2016-11-16 15:49:09', '', 195, 'http://localhost/hhc/195-revision-v1/', 0, 'revision', '', 0);
+(243, 1, '2016-11-16 15:49:09', '2016-11-16 15:49:09', '', 'Work with us', '', 'inherit', 'closed', 'closed', '', '195-revision-v1', '', '', '2016-11-16 15:49:09', '2016-11-16 15:49:09', '', 195, 'http://localhost/hhc/195-revision-v1/', 0, 'revision', '', 0),
+(244, 1, '2016-11-16 16:06:08', '2016-11-16 16:06:08', '', 'What we value', '', 'publish', 'closed', 'closed', '', 'campaign-heading-2-2', '', '', '2016-11-16 16:06:09', '2016-11-16 16:06:09', '', 0, 'http://localhost/hhc/?post_type=slide&#038;p=244', 0, 'slide', '', 0),
+(245, 1, '2016-11-16 16:06:21', '2016-11-16 16:06:21', '', 'Work with us', '', 'inherit', 'closed', 'closed', '', '195-revision-v1', '', '', '2016-11-16 16:06:21', '2016-11-16 16:06:21', '', 195, 'http://localhost/hhc/195-revision-v1/', 0, 'revision', '', 0),
+(246, 1, '2016-11-16 16:07:19', '2016-11-16 16:07:19', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam semper hendrerit neque ac pulvinar. Etiam vehicula tristique nibh id placerat. Dolor sit amet, consectetur adipiscing elit. Aliquam semper hendrerit neque ac pulvinar.', 'Become a trustee', '', 'publish', 'closed', 'closed', '', 'become-trustee', '', '', '2016-11-16 16:07:19', '2016-11-16 16:07:19', '', 0, 'http://localhost/hhc/?post_type=slide&#038;p=246', 0, 'slide', '', 0),
+(247, 1, '2016-11-16 16:07:46', '2016-11-16 16:07:46', '', 'Work with us', '', 'inherit', 'closed', 'closed', '', '195-revision-v1', '', '', '2016-11-16 16:07:46', '2016-11-16 16:07:46', '', 195, 'http://localhost/hhc/195-revision-v1/', 0, 'revision', '', 0);
 
 -- --------------------------------------------------------
 
@@ -4410,7 +4498,9 @@ INSERT INTO `wp_term_relationships` (`object_id`, `term_taxonomy_id`, `term_orde
 (235, 13, 0),
 (238, 13, 0),
 (240, 14, 0),
-(241, 14, 0);
+(241, 14, 0),
+(244, 14, 0),
+(246, 14, 0);
 
 -- --------------------------------------------------------
 
@@ -4447,7 +4537,7 @@ INSERT INTO `wp_term_taxonomy` (`term_taxonomy_id`, `term_id`, `taxonomy`, `desc
 (11, 11, 'nav_menu', '', 0, 5),
 (12, 12, 'category', '', 0, 5),
 (13, 13, 'category', '', 0, 3),
-(14, 14, 'category', '', 0, 2);
+(14, 14, 'category', '', 0, 4);
 
 -- --------------------------------------------------------
 
