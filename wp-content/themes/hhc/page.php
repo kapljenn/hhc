@@ -56,6 +56,10 @@ while ( have_posts() ) : the_post();
 			// columns
 			$columns = get_field('columns', $slide_id);
 
+			// video
+			$video_url = get_field('video_url', $slide_id);
+			$video_cta_position = get_field('video_cta_position', $slide_id);
+
 			// CTA position
 			$cta_position = get_field('cta_position', $slide_id);
 
@@ -168,6 +172,13 @@ while ( have_posts() ) : the_post();
 
 <?php } else if ($slide_type == "single_central_column") { ?>
 <div class="fix-10-12">
+<?php
+if ($video_url != "") {
+	if ($video_cta_position == "top") {
+		echo '<div class="button play white popupTrigger ae-2 fromCenter button-9" data-popup-id="9"></div>';
+	}
+}
+?>
 	<?php echo $title_html; ?>
 	<div class="ae-2"><?php echo $slide_content; ?></div>
 <?php
@@ -206,7 +217,15 @@ while ( have_posts() ) : the_post();
 ?>
 <?php if ($cta_text != "") { ?>
 	<a class="button ae-5 fromCenter" href="<?php echo $cta_url; ?>"><?php echo $cta_text; ?></a>
+	<br>
 <?php } ?>
+<?php
+if ($video_url != "") {
+	if ($video_cta_position == "bottom") {
+		echo '<div class="button play white popupTrigger ae-2 fromCenter button-9" data-popup-id="9"></div>';
+	}
+}
+?>
 </div>
 
 
@@ -326,19 +345,6 @@ while ( have_posts() ) : the_post();
 <?php } ?>
 
 
-
-
-
-
-<?php } else if ($slide_type == "video") { ?>
-<div class="fix-10-12">
-
-	<div class="button play white popupTrigger ae-2 fromCenter button-9" data-popup-id="9"></div>
-
-	<?php echo $title_html; ?>
-	<div class="ae-2"><?php echo $slide_content; ?></div>
-
-</div>
 
 
 
