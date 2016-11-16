@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost
--- Generation Time: Nov 16, 2016 at 05:08 PM
+-- Generation Time: Nov 16, 2016 at 07:30 PM
 -- Server version: 5.5.33-log
 -- PHP Version: 5.5.3
 
@@ -678,7 +678,7 @@ CREATE TABLE `wp_options` (
   `autoload` varchar(20) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT 'yes',
   PRIMARY KEY (`option_id`),
   UNIQUE KEY `option_name` (`option_name`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci AUTO_INCREMENT=515 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci AUTO_INCREMENT=516 ;
 
 --
 -- Dumping data for table `wp_options`
@@ -873,7 +873,7 @@ INSERT INTO `wp_options` (`option_id`, `option_name`, `option_value`, `autoload`
 (512, '_site_transient_theme_roots', 'a:2:{s:3:"hhc";s:7:"/themes";s:13:"twentysixteen";s:7:"/themes";}', 'no');
 INSERT INTO `wp_options` (`option_id`, `option_name`, `option_value`, `autoload`) VALUES
 (513, '_site_transient_update_plugins', 'O:8:"stdClass":5:{s:12:"last_checked";i:1479309974;s:7:"checked";a:8:{s:30:"advanced-custom-fields/acf.php";s:6:"4.4.11";s:41:"acf-link-picker-field/acf-link_picker.php";s:5:"1.2.8";s:29:"acf-repeater/acf-repeater.php";s:5:"1.1.1";s:32:"duplicate-page/duplicatepage.php";s:3:"2.1";s:27:"ninja-forms/ninja-forms.php";s:6:"3.0.15";s:41:"password-protected/password-protected.php";s:5:"2.0.3";s:53:"velvet-blues-update-urls/velvet-blues-update-urls.php";s:5:"3.2.7";s:15:"wpide/WPide.php";s:5:"2.4.0";}s:8:"response";a:0:{}s:12:"translations";a:1:{i:0;a:7:{s:4:"type";s:6:"plugin";s:4:"slug";s:18:"password-protected";s:8:"language";s:5:"en_GB";s:7:"version";s:5:"2.0.3";s:7:"updated";s:19:"2016-03-23 01:09:04";s:7:"package";s:85:"https://downloads.wordpress.org/translation/plugin/password-protected/2.0.3/en_GB.zip";s:10:"autoupdate";b:1;}}s:9:"no_update";a:7:{s:30:"advanced-custom-fields/acf.php";O:8:"stdClass":6:{s:2:"id";s:5:"21367";s:4:"slug";s:22:"advanced-custom-fields";s:6:"plugin";s:30:"advanced-custom-fields/acf.php";s:11:"new_version";s:6:"4.4.11";s:3:"url";s:53:"https://wordpress.org/plugins/advanced-custom-fields/";s:7:"package";s:72:"https://downloads.wordpress.org/plugin/advanced-custom-fields.4.4.11.zip";}s:41:"acf-link-picker-field/acf-link_picker.php";O:8:"stdClass":6:{s:2:"id";s:5:"64298";s:4:"slug";s:21:"acf-link-picker-field";s:6:"plugin";s:41:"acf-link-picker-field/acf-link_picker.php";s:11:"new_version";s:5:"1.2.8";s:3:"url";s:52:"https://wordpress.org/plugins/acf-link-picker-field/";s:7:"package";s:64:"https://downloads.wordpress.org/plugin/acf-link-picker-field.zip";}s:32:"duplicate-page/duplicatepage.php";O:8:"stdClass":6:{s:2:"id";s:5:"71646";s:4:"slug";s:14:"duplicate-page";s:6:"plugin";s:32:"duplicate-page/duplicatepage.php";s:11:"new_version";s:3:"2.1";s:3:"url";s:45:"https://wordpress.org/plugins/duplicate-page/";s:7:"package";s:57:"https://downloads.wordpress.org/plugin/duplicate-page.zip";}s:27:"ninja-forms/ninja-forms.php";O:8:"stdClass":6:{s:2:"id";s:5:"27901";s:4:"slug";s:11:"ninja-forms";s:6:"plugin";s:27:"ninja-forms/ninja-forms.php";s:11:"new_version";s:6:"3.0.15";s:3:"url";s:42:"https://wordpress.org/plugins/ninja-forms/";s:7:"package";s:54:"https://downloads.wordpress.org/plugin/ninja-forms.zip";}s:41:"password-protected/password-protected.php";O:8:"stdClass":7:{s:2:"id";s:5:"28951";s:4:"slug";s:18:"password-protected";s:6:"plugin";s:41:"password-protected/password-protected.php";s:11:"new_version";s:5:"2.0.3";s:3:"url";s:49:"https://wordpress.org/plugins/password-protected/";s:7:"package";s:67:"https://downloads.wordpress.org/plugin/password-protected.2.0.3.zip";s:14:"upgrade_notice";s:144:"Show user&#039;s IP address beside &quot;Allow IP Addresses&quot; admin setting. Declare methods as public or private and use PHP5 constructors.";}s:53:"velvet-blues-update-urls/velvet-blues-update-urls.php";O:8:"stdClass":6:{s:2:"id";s:4:"4884";s:4:"slug";s:24:"velvet-blues-update-urls";s:6:"plugin";s:53:"velvet-blues-update-urls/velvet-blues-update-urls.php";s:11:"new_version";s:5:"3.2.7";s:3:"url";s:55:"https://wordpress.org/plugins/velvet-blues-update-urls/";s:7:"package";s:73:"https://downloads.wordpress.org/plugin/velvet-blues-update-urls.3.2.7.zip";}s:15:"wpide/WPide.php";O:8:"stdClass":6:{s:2:"id";s:5:"26793";s:4:"slug";s:5:"wpide";s:6:"plugin";s:15:"wpide/WPide.php";s:11:"new_version";s:5:"2.4.0";s:3:"url";s:36:"https://wordpress.org/plugins/wpide/";s:7:"package";s:54:"https://downloads.wordpress.org/plugin/wpide.2.4.0.zip";}}}', 'no'),
-(514, 'category_children', 'a:0:{}', 'yes');
+(515, 'category_children', 'a:0:{}', 'yes');
 
 -- --------------------------------------------------------
 
@@ -889,7 +889,7 @@ CREATE TABLE `wp_postmeta` (
   PRIMARY KEY (`meta_id`),
   KEY `post_id` (`post_id`),
   KEY `meta_key` (`meta_key`(191))
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci AUTO_INCREMENT=3778 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci AUTO_INCREMENT=3955 ;
 
 --
 -- Dumping data for table `wp_postmeta`
@@ -903,7 +903,7 @@ INSERT INTO `wp_postmeta` (`meta_id`, `post_id`, `meta_key`, `meta_value`) VALUE
 (6, 4, 'position', 'normal'),
 (7, 4, 'layout', 'no_box'),
 (8, 4, 'hide_on_screen', ''),
-(9, 4, '_edit_lock', '1479310786:1'),
+(9, 4, '_edit_lock', '1479316366:1'),
 (10, 5, '_edit_last', '1'),
 (11, 5, '_edit_lock', '1478002731:1'),
 (12, 6, '_wp_attached_file', '2016/10/orange-door.jpg'),
@@ -946,7 +946,7 @@ INSERT INTO `wp_postmeta` (`meta_id`, `post_id`, `meta_key`, `meta_value`) VALUE
 (59, 1, '_wp_trash_meta_comments_status', 'a:1:{i:1;s:1:"1";}'),
 (60, 11, '_thumbnail_id', '8'),
 (63, 16, '_edit_last', '1'),
-(64, 16, '_edit_lock', '1476889137:1'),
+(64, 16, '_edit_lock', '1479314824:1'),
 (65, 16, '_thumbnail_id', '7'),
 (68, 17, 'cta_text', 'Call to action'),
 (69, 17, '_cta_text', 'field_580783c4f9bef'),
@@ -1097,7 +1097,7 @@ INSERT INTO `wp_postmeta` (`meta_id`, `post_id`, `meta_key`, `meta_value`) VALUE
 (224, 29, '_cta_url', 'field_580783d6f9bf0'),
 (225, 29, 'white_slide', '0'),
 (226, 29, '_white_slide', 'field_581b3df784de7'),
-(227, 4, 'field_581c82b385f0a', 'a:13:{s:3:"key";s:19:"field_581c82b385f0a";s:5:"label";s:10:"Slide Type";s:4:"name";s:10:"slide_type";s:4:"type";s:5:"radio";s:12:"instructions";s:0:"";s:8:"required";s:1:"0";s:7:"choices";a:5:{s:19:"header_with_columns";s:19:"Header with columns";s:12:"side_by_side";s:12:"Side by side";s:21:"single_central_column";s:21:"Single central column";s:16:"three_thumbnails";s:16:"Three thumbnails";s:3:"map";s:3:"Map";}s:12:"other_choice";s:1:"0";s:17:"save_other_choice";s:1:"0";s:13:"default_value";s:0:"";s:6:"layout";s:10:"horizontal";s:17:"conditional_logic";a:3:{s:6:"status";s:1:"0";s:5:"rules";a:1:{i:0;a:3:{s:5:"field";s:19:"field_5821a38635d3e";s:8:"operator";s:2:"==";s:5:"value";s:26:"white_text_dark_background";}}s:8:"allorany";s:3:"all";}s:8:"order_no";i:0;}'),
+(227, 4, 'field_581c82b385f0a', 'a:13:{s:3:"key";s:19:"field_581c82b385f0a";s:5:"label";s:10:"Slide Type";s:4:"name";s:10:"slide_type";s:4:"type";s:5:"radio";s:12:"instructions";s:0:"";s:8:"required";s:1:"0";s:7:"choices";a:6:{s:19:"header_with_columns";s:19:"Header with columns";s:12:"side_by_side";s:12:"Side by side";s:21:"single_central_column";s:21:"Single central column";s:13:"featured_item";s:13:"Featured item";s:16:"three_thumbnails";s:16:"Three thumbnails";s:3:"map";s:3:"Map";}s:12:"other_choice";s:1:"0";s:17:"save_other_choice";s:1:"0";s:13:"default_value";s:0:"";s:6:"layout";s:10:"horizontal";s:17:"conditional_logic";a:3:{s:6:"status";s:1:"0";s:5:"rules";a:1:{i:0;a:3:{s:5:"field";s:19:"field_5821a38635d3e";s:8:"operator";s:2:"==";s:5:"value";s:26:"white_text_dark_background";}}s:8:"allorany";s:3:"all";}s:8:"order_no";i:0;}'),
 (229, 34, 'slide_type', 'header_with_columns'),
 (230, 34, '_slide_type', 'field_581c82b385f0a'),
 (231, 33, 'slide_type', 'side_by_side'),
@@ -3327,13 +3327,13 @@ INSERT INTO `wp_postmeta` (`meta_id`, `post_id`, `meta_key`, `meta_value`) VALUE
 (2849, 196, '_slides', 'field_581b0be6b9508'),
 (2850, 195, 'slides', '5'),
 (2851, 195, '_slides', 'field_581b0be6b9508'),
-(2852, 195, '_edit_lock', '1479312467:1'),
+(2852, 195, '_edit_lock', '1479312915:1'),
 (2853, 197, '_edit_last', '1'),
 (2854, 198, 'slides', '0'),
 (2855, 198, '_slides', 'field_581b0be6b9508'),
-(2856, 197, 'slides', '0'),
+(2856, 197, 'slides', '4'),
 (2857, 197, '_slides', 'field_581b0be6b9508'),
-(2858, 197, '_edit_lock', '1479230783:1'),
+(2858, 197, '_edit_lock', '1479314771:1'),
 (2859, 199, '_edit_last', '1'),
 (2860, 200, 'slides', '0'),
 (2861, 200, '_slides', 'field_581b0be6b9508'),
@@ -3861,7 +3861,6 @@ INSERT INTO `wp_postmeta` (`meta_id`, `post_id`, `meta_key`, `meta_value`) VALUE
 (3492, 193, 'slides_4_slide', '231'),
 (3493, 193, '_slides_4_slide', 'field_581b0c12b9509'),
 (3496, 4, 'field_582c7b36f1b77', 'a:13:{s:3:"key";s:19:"field_582c7b36f1b77";s:5:"label";s:9:"Box links";s:4:"name";s:9:"box_links";s:4:"type";s:8:"repeater";s:12:"instructions";s:0:"";s:8:"required";s:1:"0";s:10:"sub_fields";a:2:{i:0;a:15:{s:3:"key";s:19:"field_582c7b6df1b79";s:5:"label";s:10:"Link title";s:4:"name";s:10:"link_title";s:4:"type";s:4:"text";s:12:"instructions";s:0:"";s:8:"required";s:1:"0";s:12:"column_width";s:0:"";s:13:"default_value";s:0:"";s:11:"placeholder";s:0:"";s:7:"prepend";s:0:"";s:6:"append";s:0:"";s:10:"formatting";s:4:"html";s:9:"maxlength";s:0:"";s:17:"conditional_logic";a:3:{s:6:"status";s:1:"0";s:5:"rules";a:1:{i:0;a:3:{s:5:"field";s:19:"field_581c82b385f0a";s:8:"operator";s:2:"==";s:5:"value";s:19:"header_with_columns";}}s:8:"allorany";s:3:"all";}s:8:"order_no";i:0;}i:1;a:9:{s:3:"key";s:19:"field_582c7b61f1b78";s:5:"label";s:8:"Link URL";s:4:"name";s:8:"link_url";s:4:"type";s:11:"link_picker";s:12:"instructions";s:0:"";s:8:"required";s:1:"0";s:12:"column_width";s:0:"";s:17:"conditional_logic";a:3:{s:6:"status";s:1:"0";s:5:"rules";a:1:{i:0;a:3:{s:5:"field";s:19:"field_581c82b385f0a";s:8:"operator";s:2:"==";s:5:"value";s:19:"header_with_columns";}}s:8:"allorany";s:3:"all";}s:8:"order_no";i:1;}}s:7:"row_min";s:0:"";s:9:"row_limit";s:0:"";s:6:"layout";s:5:"table";s:12:"button_label";s:7:"Add Row";s:17:"conditional_logic";a:3:{s:6:"status";s:1:"1";s:5:"rules";a:1:{i:0;a:3:{s:5:"field";s:19:"field_581c82b385f0a";s:8:"operator";s:2:"==";s:5:"value";s:21:"single_central_column";}}s:8:"allorany";s:3:"all";}s:8:"order_no";i:19;}'),
-(3499, 4, 'rule', 'a:5:{s:5:"param";s:9:"post_type";s:8:"operator";s:2:"==";s:5:"value";s:5:"slide";s:8:"order_no";i:0;s:8:"group_no";i:0;}'),
 (3500, 130, 'post_list', '0'),
 (3501, 130, '_post_list', 'field_582c3189b0250'),
 (3502, 130, 'post_list_classes', ''),
@@ -3925,7 +3924,7 @@ INSERT INTO `wp_postmeta` (`meta_id`, `post_id`, `meta_key`, `meta_value`) VALUE
 (3584, 240, 'box_links_2_link_url', 'a:3:{s:3:"url";s:0:"";s:5:"title";s:0:"";s:6:"target";s:0:"";}'),
 (3585, 240, '_box_links_2_link_url', 'field_582c7b61f1b78'),
 (3586, 241, '_edit_last', '1'),
-(3587, 241, '_edit_lock', '1479312163:1'),
+(3587, 241, '_edit_lock', '1479314532:1'),
 (3588, 241, 'slide_type', 'single_central_column'),
 (3589, 241, '_slide_type', 'field_581c82b385f0a'),
 (3590, 241, 'slide_palette', 'dark_text_grey_background'),
@@ -4033,7 +4032,7 @@ INSERT INTO `wp_postmeta` (`meta_id`, `post_id`, `meta_key`, `meta_value`) VALUE
 (3718, 195, 'slides_2_slide', '244'),
 (3719, 195, '_slides_2_slide', 'field_581b0c12b9509'),
 (3720, 246, '_edit_last', '1'),
-(3721, 246, '_edit_lock', '1479312440:1'),
+(3721, 246, '_edit_lock', '1479313151:1'),
 (3722, 246, 'slide_type', 'single_central_column'),
 (3723, 246, '_slide_type', 'field_581c82b385f0a'),
 (3724, 246, 'slide_palette', 'white_text_dark_background'),
@@ -4076,7 +4075,154 @@ INSERT INTO `wp_postmeta` (`meta_id`, `post_id`, `meta_key`, `meta_value`) VALUE
 (3774, 195, 'slides_3_slide', '246'),
 (3775, 195, '_slides_3_slide', 'field_581b0c12b9509'),
 (3776, 195, 'slides_4_slide', '231'),
-(3777, 195, '_slides_4_slide', 'field_581b0c12b9509');
+(3777, 195, '_slides_4_slide', 'field_581b0c12b9509'),
+(3778, 248, '_edit_last', '1'),
+(3779, 248, '_edit_lock', '1479314760:1'),
+(3780, 248, 'slide_type', 'single_central_column'),
+(3781, 248, '_slide_type', 'field_581c82b385f0a'),
+(3782, 248, 'slide_palette', 'dark_text_white_background'),
+(3783, 248, '_slide_palette', 'field_5821a38635d3e'),
+(3784, 248, 'title_format', 'text'),
+(3785, 248, '_title_format', 'field_58236a7dbc0e5'),
+(3786, 248, 'title_colour', '#4c4c4c'),
+(3787, 248, '_title_colour', 'field_58207f6b2877b'),
+(3788, 248, 'hero_alignment', 'center'),
+(3789, 248, '_hero_alignment', 'field_582320f269fff'),
+(3790, 248, 'cta_text', ''),
+(3791, 248, '_cta_text', 'field_580783c4f9bef'),
+(3792, 248, 'cta_url', 'a:3:{s:3:"url";s:0:"";s:5:"title";s:0:"";s:6:"target";s:0:"";}'),
+(3793, 248, '_cta_url', 'field_580783d6f9bf0'),
+(3794, 248, 'post_list', '0'),
+(3795, 248, '_post_list', 'field_582c3189b0250'),
+(3796, 248, 'post_list_classes', ''),
+(3797, 248, '_post_list_classes', 'field_582c514d6e95f'),
+(3798, 248, 'video_url', ''),
+(3799, 248, '_video_url', 'field_582c6994a18c4'),
+(3800, 248, 'video_cta_position', 'top'),
+(3801, 248, '_video_cta_position', 'field_582c69bba18c5'),
+(3802, 248, 'box_links', '0'),
+(3803, 248, '_box_links', 'field_582c7b36f1b77'),
+(3804, 249, 'slides_0_slide', '248'),
+(3805, 249, '_slides_0_slide', 'field_581b0c12b9509'),
+(3806, 249, 'slides', '1'),
+(3807, 249, '_slides', 'field_581b0be6b9508'),
+(3808, 197, 'slides_0_slide', '248'),
+(3809, 197, '_slides_0_slide', 'field_581b0c12b9509'),
+(3810, 250, 'slides_0_slide', '248'),
+(3811, 250, '_slides_0_slide', 'field_581b0c12b9509'),
+(3812, 250, 'slides_1_slide', '227'),
+(3813, 250, '_slides_1_slide', 'field_581b0c12b9509'),
+(3814, 250, 'slides_2_slide', '231'),
+(3815, 250, '_slides_2_slide', 'field_581b0c12b9509'),
+(3816, 250, 'slides', '3'),
+(3817, 250, '_slides', 'field_581b0be6b9508'),
+(3818, 197, 'slides_1_slide', '251'),
+(3819, 197, '_slides_1_slide', 'field_581b0c12b9509'),
+(3820, 197, 'slides_2_slide', '227'),
+(3821, 197, '_slides_2_slide', 'field_581b0c12b9509'),
+(3822, 251, '_edit_last', '1'),
+(3823, 251, '_edit_lock', '1479318603:1'),
+(3824, 251, 'slide_type', 'featured_item'),
+(3825, 251, '_slide_type', 'field_581c82b385f0a'),
+(3826, 251, 'slide_palette', 'dark_text_grey_background'),
+(3827, 251, '_slide_palette', 'field_5821a38635d3e'),
+(3828, 251, 'title_format', 'no_title'),
+(3829, 251, '_title_format', 'field_58236a7dbc0e5'),
+(3830, 251, 'title_colour', '#3a3a3a'),
+(3831, 251, '_title_colour', 'field_58207f6b2877b'),
+(3832, 251, 'hero_alignment', 'center'),
+(3833, 251, '_hero_alignment', 'field_582320f269fff'),
+(3834, 251, 'cta_text', 'Load more posts'),
+(3835, 251, '_cta_text', 'field_580783c4f9bef'),
+(3836, 251, 'cta_url', 'a:3:{s:3:"url";s:1:"#";s:5:"title";s:1:"#";s:6:"target";s:0:"";}'),
+(3837, 251, '_cta_url', 'field_580783d6f9bf0'),
+(3838, 251, 'columns', '0'),
+(3839, 251, '_columns', 'field_582342314905e'),
+(3840, 251, 'icon_grid', '0'),
+(3841, 251, '_icon_grid', 'field_5829a3e657a15'),
+(3856, 251, 'post_list', '0'),
+(3857, 251, '_post_list', 'field_582c3189b0250'),
+(3858, 251, 'post_list_style', 'linked_icons'),
+(3859, 251, '_post_list_style', 'field_582c3210e8544'),
+(3860, 251, 'post_list_classes', 'left'),
+(3861, 251, '_post_list_classes', 'field_582c514d6e95f'),
+(3862, 251, '_wp_old_slug', 'global-contacts'),
+(3863, 251, 'video_url', ''),
+(3864, 251, '_video_url', 'field_582c6994a18c4'),
+(3865, 251, 'video_cta_position', 'top'),
+(3866, 251, '_video_cta_position', 'field_582c69bba18c5'),
+(3867, 251, 'box_links', '0'),
+(3868, 251, '_box_links', 'field_582c7b36f1b77'),
+(3885, 251, '_wp_old_slug', 'our-people-2'),
+(3886, 252, 'slides_0_slide', '248'),
+(3887, 252, '_slides_0_slide', 'field_581b0c12b9509'),
+(3888, 252, 'slides_1_slide', '251'),
+(3889, 252, '_slides_1_slide', 'field_581b0c12b9509'),
+(3890, 252, 'slides_2_slide', '227'),
+(3891, 252, '_slides_2_slide', 'field_581b0c12b9509'),
+(3892, 252, 'slides_3_slide', '231'),
+(3893, 252, '_slides_3_slide', 'field_581b0c12b9509'),
+(3894, 252, 'slides', '4'),
+(3895, 252, '_slides', 'field_581b0be6b9508'),
+(3896, 197, 'slides_3_slide', '231'),
+(3897, 197, '_slides_3_slide', 'field_581b0c12b9509'),
+(3898, 22, '_wp_trash_meta_status', 'publish'),
+(3899, 22, '_wp_trash_meta_time', '1479314985'),
+(3900, 22, '_wp_desired_post_slug', 'hope-and-homes-for-children'),
+(3901, 20, '_wp_trash_meta_status', 'publish'),
+(3902, 20, '_wp_trash_meta_time', '1479314985'),
+(3903, 20, '_wp_desired_post_slug', 'the-latest'),
+(3904, 18, '_wp_trash_meta_status', 'publish'),
+(3905, 18, '_wp_trash_meta_time', '1479314985'),
+(3906, 18, '_wp_desired_post_slug', 'stories'),
+(3907, 16, '_wp_trash_meta_status', 'publish'),
+(3908, 16, '_wp_trash_meta_time', '1479314985'),
+(3909, 16, '_wp_desired_post_slug', 'global-reach-and-expertise'),
+(3910, 13, '_wp_trash_meta_status', 'publish'),
+(3911, 13, '_wp_trash_meta_time', '1479314985'),
+(3912, 13, '_wp_desired_post_slug', 'key-facts-to-quantify-issue'),
+(3913, 11, '_wp_trash_meta_status', 'publish'),
+(3914, 11, '_wp_trash_meta_time', '1479314985'),
+(3915, 11, '_wp_desired_post_slug', 'campaign-heading'),
+(3916, 5, '_wp_trash_meta_status', 'publish'),
+(3917, 5, '_wp_trash_meta_time', '1479314985'),
+(3918, 5, '_wp_desired_post_slug', 'our-vision-our-mission'),
+(3919, 256, '_edit_last', '1'),
+(3920, 256, '_edit_lock', '1479315397:1'),
+(3921, 256, '_thumbnail_id', '71'),
+(3922, 257, '_edit_last', '1'),
+(3923, 257, '_edit_lock', '1479315623:1'),
+(3924, 257, '_thumbnail_id', '71'),
+(3925, 258, '_edit_last', '1'),
+(3926, 258, '_edit_lock', '1479315617:1'),
+(3927, 258, '_thumbnail_id', '71'),
+(3928, 259, '_edit_last', '1'),
+(3929, 259, '_edit_lock', '1479315613:1'),
+(3930, 259, '_thumbnail_id', '71'),
+(3931, 260, '_edit_last', '1'),
+(3932, 260, '_edit_lock', '1479315597:1'),
+(3933, 260, '_thumbnail_id', '71'),
+(3934, 261, '_edit_last', '1'),
+(3935, 261, '_edit_lock', '1479315593:1'),
+(3936, 261, '_thumbnail_id', '71'),
+(3937, 262, '_edit_last', '1'),
+(3938, 262, '_edit_lock', '1479315589:1'),
+(3939, 262, '_thumbnail_id', '71'),
+(3940, 263, '_edit_last', '1'),
+(3941, 263, '_edit_lock', '1479315581:1'),
+(3942, 263, '_thumbnail_id', '71'),
+(3943, 264, '_edit_last', '1'),
+(3944, 264, '_edit_lock', '1479315577:1'),
+(3945, 264, '_thumbnail_id', '71'),
+(3946, 264, '_wp_old_slug', 'convallis-pulvinar'),
+(3947, 263, '_wp_old_slug', 'convallis-pulvinar'),
+(3948, 262, '_wp_old_slug', 'convallis-pulvinar'),
+(3949, 261, '_wp_old_slug', 'convallis-pulvinar'),
+(3950, 260, '_wp_old_slug', 'convallis-pulvinar'),
+(3951, 259, '_wp_old_slug', 'convallis-pulvinar'),
+(3952, 258, '_wp_old_slug', 'convallis-pulvinar'),
+(3953, 257, '_wp_old_slug', 'convallis-pulvinar'),
+(3954, 4, 'rule', 'a:5:{s:5:"param";s:9:"post_type";s:8:"operator";s:2:"==";s:5:"value";s:5:"slide";s:8:"order_no";i:0;s:8:"group_no";i:0;}');
 
 -- --------------------------------------------------------
 
@@ -4113,7 +4259,7 @@ CREATE TABLE `wp_posts` (
   KEY `type_status_date` (`post_type`,`post_status`,`post_date`,`ID`),
   KEY `post_parent` (`post_parent`),
   KEY `post_author` (`post_author`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci AUTO_INCREMENT=248 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci AUTO_INCREMENT=265 ;
 
 --
 -- Dumping data for table `wp_posts`
@@ -4122,24 +4268,24 @@ CREATE TABLE `wp_posts` (
 INSERT INTO `wp_posts` (`ID`, `post_author`, `post_date`, `post_date_gmt`, `post_content`, `post_title`, `post_excerpt`, `post_status`, `comment_status`, `ping_status`, `post_password`, `post_name`, `to_ping`, `pinged`, `post_modified`, `post_modified_gmt`, `post_content_filtered`, `post_parent`, `guid`, `menu_order`, `post_type`, `post_mime_type`, `comment_count`) VALUES
 (1, 1, '2016-10-19 11:36:08', '2016-10-19 10:36:08', 'Welcome to WordPress. This is your first post. Edit or delete it, then start writing!', 'Hello world!', '', 'trash', 'open', 'open', '', 'hello-world__trashed', '', '', '2016-10-19 15:58:57', '2016-10-19 14:58:57', '', 0, 'http://localhost/hhc/?p=1', 0, 'post', '', 1),
 (2, 1, '2016-10-19 11:36:08', '2016-10-19 10:36:08', 'This is an example page. It''s different from a blog post because it will stay in one place and will show up in your site navigation (in most themes). Most people start with an About page that introduces them to potential site visitors. It might say something like this:\n\n<blockquote>Hi there! I''m a bike messenger by day, aspiring actor by night, and this is my blog. I live in Los Angeles, have a great dog named Jack, and I like pi&#241;a coladas. (And gettin'' caught in the rain.)</blockquote>\n\n...or something like this:\n\n<blockquote>The XYZ Doohickey Company was founded in 1971, and has been providing quality doohickeys to the public ever since. Located in Gotham City, XYZ employs over 2,000 people and does all kinds of awesome things for the Gotham community.</blockquote>\n\nAs a new WordPress user, you should go to <a href="http://localhost/hhc/wp-admin/">your dashboard</a> to delete this page and create new pages for your content. Have fun!', 'Sample Page', '', 'trash', 'closed', 'open', '', 'sample-page__trashed', '', '', '2016-11-03 10:06:54', '2016-11-03 10:06:54', '', 0, 'http://localhost/hhc/?page_id=2', 0, 'page', '', 0),
-(4, 1, '2016-10-19 15:32:01', '2016-10-19 14:32:01', '', 'Slide fields', '', 'publish', 'closed', 'closed', '', 'acf_slide-fields', '', '', '2016-11-16 15:32:41', '2016-11-16 15:32:41', '', 0, 'http://localhost/hhc/?post_type=acf&#038;p=4', 0, 'acf', '', 0),
-(5, 1, '2016-10-19 15:35:55', '2016-10-19 14:35:55', 'creating a world in which children no longer suffer', 'Our vision, our mission', '', 'publish', 'open', 'open', '', 'our-vision-our-mission', '', '', '2016-10-19 15:35:55', '2016-10-19 14:35:55', '', 0, 'http://localhost/hhc/?p=5', 0, 'post', '', 0),
+(4, 1, '2016-10-19 15:32:01', '2016-10-19 14:32:01', '', 'Slide fields', '', 'publish', 'closed', 'closed', '', 'acf_slide-fields', '', '', '2016-11-16 17:15:02', '2016-11-16 17:15:02', '', 0, 'http://localhost/hhc/?post_type=acf&#038;p=4', 0, 'acf', '', 0),
+(5, 1, '2016-10-19 15:35:55', '2016-10-19 14:35:55', 'creating a world in which children no longer suffer', 'Our vision, our mission', '', 'trash', 'open', 'open', '', 'our-vision-our-mission__trashed', '', '', '2016-11-16 16:49:45', '2016-11-16 16:49:45', '', 0, 'http://localhost/hhc/?p=5', 0, 'post', '', 0),
 (6, 1, '2016-10-19 15:35:40', '2016-10-19 14:35:40', '', 'orange-door', '', 'inherit', 'open', 'closed', '', 'orange-door', '', '', '2016-10-19 15:35:40', '2016-10-19 14:35:40', '', 5, 'http://localhost/hhc/wp-content/uploads/2016/10/orange-door.jpg', 0, 'attachment', 'image/jpeg', 0),
 (7, 1, '2016-10-19 15:35:42', '2016-10-19 14:35:42', '', 'globe', '', 'inherit', 'open', 'closed', '', 'globe', '', '', '2016-10-19 15:35:42', '2016-10-19 14:35:42', '', 5, 'http://localhost/hhc/wp-content/uploads/2016/10/globe.jpg', 0, 'attachment', 'image/jpeg', 0),
 (8, 1, '2016-10-19 15:35:46', '2016-10-19 14:35:46', '', 'girl-drawing', '', 'inherit', 'open', 'closed', '', 'girl-drawing', '', '', '2016-10-19 15:35:46', '2016-10-19 14:35:46', '', 5, 'http://localhost/hhc/wp-content/uploads/2016/10/girl-drawing.jpg', 0, 'attachment', 'image/jpeg', 0),
 (10, 1, '2016-10-19 15:35:55', '2016-10-19 14:35:55', 'creating a world in which children no longer suffer', 'Our vision, our mission', '', 'inherit', 'closed', 'closed', '', '5-revision-v1', '', '', '2016-10-19 15:35:55', '2016-10-19 14:35:55', '', 5, 'http://localhost/hhc/2016/10/19/5-revision-v1/', 0, 'revision', '', 0),
-(11, 1, '2016-10-19 15:57:19', '2016-10-19 14:57:19', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam semper hendrerit neque ac pulvinar. Etiam vehicula tristique nibh id placerat. Cras fermentum pharetra enim nec fringilla. Vivamus volutpat sollicitudin enim, a facilisis nulla posuere eu. Phasellus pretium sapien suscipit enim posuere feugiat. Nulla vel augue leo. Vivamus pulvinar quam eget sem ultricies sollicitudin. Vestibulum nec tellus vel libero gravida venenatis. Nam gravida lacus et rhoncus vulputate. Quisque eros tellus, facilisis nec dapibus quis, molestie ut odio. Quisque magna metus, tempor non feugiat eu, ornare et nulla. Sed ut dolor vel justo pretium sagittis id sit amet mauris. Mauris sed sem nisi. Suspendisse mollis maximus dui, et vulputate quam tincidunt sed. Suspendisse quis mattis ligula. Pellentesque venenatis lectus neque, nec facilisis lorem sagittis non. Duis massa ante, faucibus vel ex posuere, ullamcorper auctor augue. Nam ultrices quam vel orci rutrum mollis. Sed id faucibus mauris. Mauris viverra risus ut mi vulputate, blandit tincidunt odio gravida. Integer tincidunt odio a eros consectetur laoreet.', 'Campaign Heading', '', 'publish', 'open', 'open', '', 'campaign-heading', '', '', '2016-10-19 15:59:14', '2016-10-19 14:59:14', '', 0, 'http://localhost/hhc/?p=11', 0, 'post', '', 0),
+(11, 1, '2016-10-19 15:57:19', '2016-10-19 14:57:19', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam semper hendrerit neque ac pulvinar. Etiam vehicula tristique nibh id placerat. Cras fermentum pharetra enim nec fringilla. Vivamus volutpat sollicitudin enim, a facilisis nulla posuere eu. Phasellus pretium sapien suscipit enim posuere feugiat. Nulla vel augue leo. Vivamus pulvinar quam eget sem ultricies sollicitudin. Vestibulum nec tellus vel libero gravida venenatis. Nam gravida lacus et rhoncus vulputate. Quisque eros tellus, facilisis nec dapibus quis, molestie ut odio. Quisque magna metus, tempor non feugiat eu, ornare et nulla. Sed ut dolor vel justo pretium sagittis id sit amet mauris. Mauris sed sem nisi. Suspendisse mollis maximus dui, et vulputate quam tincidunt sed. Suspendisse quis mattis ligula. Pellentesque venenatis lectus neque, nec facilisis lorem sagittis non. Duis massa ante, faucibus vel ex posuere, ullamcorper auctor augue. Nam ultrices quam vel orci rutrum mollis. Sed id faucibus mauris. Mauris viverra risus ut mi vulputate, blandit tincidunt odio gravida. Integer tincidunt odio a eros consectetur laoreet.', 'Campaign Heading', '', 'trash', 'open', 'open', '', 'campaign-heading__trashed', '', '', '2016-11-16 16:49:45', '2016-11-16 16:49:45', '', 0, 'http://localhost/hhc/?p=11', 0, 'post', '', 0),
 (12, 1, '2016-10-19 15:57:19', '2016-10-19 14:57:19', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam semper hendrerit neque ac pulvinar. Etiam vehicula tristique nibh id placerat. Cras fermentum pharetra enim nec fringilla. Vivamus volutpat sollicitudin enim, a facilisis nulla posuere eu. Phasellus pretium sapien suscipit enim posuere feugiat. Nulla vel augue leo. Vivamus pulvinar quam eget sem ultricies sollicitudin. Vestibulum nec tellus vel libero gravida venenatis. Nam gravida lacus et rhoncus vulputate. Quisque eros tellus, facilisis nec dapibus quis, molestie ut odio. Quisque magna metus, tempor non feugiat eu, ornare et nulla. Sed ut dolor vel justo pretium sagittis id sit amet mauris. Mauris sed sem nisi. Suspendisse mollis maximus dui, et vulputate quam tincidunt sed. Suspendisse quis mattis ligula. Pellentesque venenatis lectus neque, nec facilisis lorem sagittis non. Duis massa ante, faucibus vel ex posuere, ullamcorper auctor augue. Nam ultrices quam vel orci rutrum mollis. Sed id faucibus mauris. Mauris viverra risus ut mi vulputate, blandit tincidunt odio gravida. Integer tincidunt odio a eros consectetur laoreet.', 'Campaign Heading', '', 'inherit', 'closed', 'closed', '', '11-revision-v1', '', '', '2016-10-19 15:57:19', '2016-10-19 14:57:19', '', 11, 'http://localhost/hhc/2016/10/19/11-revision-v1/', 0, 'revision', '', 0),
-(13, 1, '2016-10-19 15:58:29', '2016-10-19 14:58:29', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam semper hendrerit neque ac pulvinar. Etiam vehicula tristique nibh id placerat. Cras fermentum pharetra enim nec fringilla. Vivamus volutpat sollicitudin enim , a facilisis nulla posuere eu.', 'Key facts to quantify issue', '', 'publish', 'open', 'open', '', 'key-facts-to-quantify-issue', '', '', '2016-10-19 15:58:29', '2016-10-19 14:58:29', '', 0, 'http://localhost/hhc/?p=13', 0, 'post', '', 0),
+(13, 1, '2016-10-19 15:58:29', '2016-10-19 14:58:29', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam semper hendrerit neque ac pulvinar. Etiam vehicula tristique nibh id placerat. Cras fermentum pharetra enim nec fringilla. Vivamus volutpat sollicitudin enim , a facilisis nulla posuere eu.', 'Key facts to quantify issue', '', 'trash', 'open', 'open', '', 'key-facts-to-quantify-issue__trashed', '', '', '2016-11-16 16:49:45', '2016-11-16 16:49:45', '', 0, 'http://localhost/hhc/?p=13', 0, 'post', '', 0),
 (14, 1, '2016-10-19 15:58:29', '2016-10-19 14:58:29', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam semper hendrerit neque ac pulvinar. Etiam vehicula tristique nibh id placerat. Cras fermentum pharetra enim nec fringilla. Vivamus volutpat sollicitudin enim , a facilisis nulla posuere eu.', 'Key facts to quantify issue', '', 'inherit', 'closed', 'closed', '', '13-revision-v1', '', '', '2016-10-19 15:58:29', '2016-10-19 14:58:29', '', 13, 'http://localhost/hhc/2016/10/19/13-revision-v1/', 0, 'revision', '', 0),
 (15, 1, '2016-10-19 15:58:57', '2016-10-19 14:58:57', 'Welcome to WordPress. This is your first post. Edit or delete it, then start writing!', 'Hello world!', '', 'inherit', 'closed', 'closed', '', '1-revision-v1', '', '', '2016-10-19 15:58:57', '2016-10-19 14:58:57', '', 1, 'http://localhost/hhc/2016/10/19/1-revision-v1/', 0, 'revision', '', 0),
-(16, 1, '2016-10-19 16:01:12', '2016-10-19 15:01:12', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam semper hendrerit neque ac pulvinar. Etiam vehicula tristique nibh id placerat.', 'Global reach and expertise', '', 'publish', 'open', 'open', '', 'global-reach-and-expertise', '', '', '2016-10-19 16:01:12', '2016-10-19 15:01:12', '', 0, 'http://localhost/hhc/?p=16', 0, 'post', '', 0),
+(16, 1, '2016-10-19 16:01:12', '2016-10-19 15:01:12', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam semper hendrerit neque ac pulvinar. Etiam vehicula tristique nibh id placerat.', 'Global reach and expertise', '', 'trash', 'open', 'open', '', 'global-reach-and-expertise__trashed', '', '', '2016-11-16 16:49:45', '2016-11-16 16:49:45', '', 0, 'http://localhost/hhc/?p=16', 0, 'post', '', 0),
 (17, 1, '2016-10-19 16:01:12', '2016-10-19 15:01:12', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam semper hendrerit neque ac pulvinar. Etiam vehicula tristique nibh id placerat.', 'Global reach and expertise', '', 'inherit', 'closed', 'closed', '', '16-revision-v1', '', '', '2016-10-19 16:01:12', '2016-10-19 15:01:12', '', 16, 'http://localhost/hhc/2016/10/19/16-revision-v1/', 0, 'revision', '', 0),
-(18, 1, '2016-10-19 16:01:48', '2016-10-19 15:01:48', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam semper hendrerit neque ac pulvinar. Etiam vehicula tristique nibh id placerat. Cras fermentum pharetra enim nec fringilla. Vivamus volutpat sollicitudin enim , a facilisis nulla posuere eu.', 'Stories', '', 'publish', 'open', 'open', '', 'stories', '', '', '2016-10-19 16:01:48', '2016-10-19 15:01:48', '', 0, 'http://localhost/hhc/?p=18', 0, 'post', '', 0),
+(18, 1, '2016-10-19 16:01:48', '2016-10-19 15:01:48', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam semper hendrerit neque ac pulvinar. Etiam vehicula tristique nibh id placerat. Cras fermentum pharetra enim nec fringilla. Vivamus volutpat sollicitudin enim , a facilisis nulla posuere eu.', 'Stories', '', 'trash', 'open', 'open', '', 'stories__trashed', '', '', '2016-11-16 16:49:45', '2016-11-16 16:49:45', '', 0, 'http://localhost/hhc/?p=18', 0, 'post', '', 0),
 (19, 1, '2016-10-19 16:01:48', '2016-10-19 15:01:48', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam semper hendrerit neque ac pulvinar. Etiam vehicula tristique nibh id placerat. Cras fermentum pharetra enim nec fringilla. Vivamus volutpat sollicitudin enim , a facilisis nulla posuere eu.', 'Stories', '', 'inherit', 'closed', 'closed', '', '18-revision-v1', '', '', '2016-10-19 16:01:48', '2016-10-19 15:01:48', '', 18, 'http://localhost/hhc/2016/10/19/18-revision-v1/', 0, 'revision', '', 0),
-(20, 1, '2016-10-19 16:02:16', '2016-10-19 15:02:16', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam semper hendrerit neque ac pulvinar. Etiam vehicula tristique nibh id placerat. Cras fermentum pharetra enim nec fringilla. Vivamus volutpat sollicitudin enim , a facilisis nulla posuere eu.', 'The Latest', '', 'publish', 'open', 'open', '', 'the-latest', '', '', '2016-10-19 16:02:16', '2016-10-19 15:02:16', '', 0, 'http://localhost/hhc/?p=20', 0, 'post', '', 0),
+(20, 1, '2016-10-19 16:02:16', '2016-10-19 15:02:16', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam semper hendrerit neque ac pulvinar. Etiam vehicula tristique nibh id placerat. Cras fermentum pharetra enim nec fringilla. Vivamus volutpat sollicitudin enim , a facilisis nulla posuere eu.', 'The Latest', '', 'trash', 'open', 'open', '', 'the-latest__trashed', '', '', '2016-11-16 16:49:45', '2016-11-16 16:49:45', '', 0, 'http://localhost/hhc/?p=20', 0, 'post', '', 0),
 (21, 1, '2016-10-19 16:02:16', '2016-10-19 15:02:16', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam semper hendrerit neque ac pulvinar. Etiam vehicula tristique nibh id placerat. Cras fermentum pharetra enim nec fringilla. Vivamus volutpat sollicitudin enim , a facilisis nulla posuere eu.', 'The Latest', '', 'inherit', 'closed', 'closed', '', '20-revision-v1', '', '', '2016-10-19 16:02:16', '2016-10-19 15:02:16', '', 20, 'http://localhost/hhc/2016/10/19/20-revision-v1/', 0, 'revision', '', 0),
-(22, 1, '2016-10-19 16:11:19', '2016-10-19 15:11:19', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam semper hendrerit neque ac pulvinar. Etiam vehicula tristique nibh id placerat. Cras fermentum pharetra enim nec fringilla. Vivamus volutpat sollicitudin enim facilisis nulla posuere eu.', 'Hope and Homes for Children', '', 'publish', 'open', 'open', '', 'hope-and-homes-for-children', '', '', '2016-10-19 16:11:19', '2016-10-19 15:11:19', '', 0, 'http://localhost/hhc/?p=22', 0, 'post', '', 0),
+(22, 1, '2016-10-19 16:11:19', '2016-10-19 15:11:19', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam semper hendrerit neque ac pulvinar. Etiam vehicula tristique nibh id placerat. Cras fermentum pharetra enim nec fringilla. Vivamus volutpat sollicitudin enim facilisis nulla posuere eu.', 'Hope and Homes for Children', '', 'trash', 'open', 'open', '', 'hope-and-homes-for-children__trashed', '', '', '2016-11-16 16:49:45', '2016-11-16 16:49:45', '', 0, 'http://localhost/hhc/?p=22', 0, 'post', '', 0),
 (23, 1, '2016-10-19 16:11:19', '2016-10-19 15:11:19', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam semper hendrerit neque ac pulvinar. Etiam vehicula tristique nibh id placerat. Cras fermentum pharetra enim nec fringilla. Vivamus volutpat sollicitudin enim facilisis nulla posuere eu.', 'Hope and Homes for Children', '', 'inherit', 'closed', 'closed', '', '22-revision-v1', '', '', '2016-10-19 16:11:19', '2016-10-19 15:11:19', '', 22, 'http://localhost/hhc/2016/10/19/22-revision-v1/', 0, 'revision', '', 0),
 (25, 1, '2016-11-01 12:21:27', '2016-11-01 12:21:27', '', 'Home', '', 'publish', 'closed', 'closed', '', 'home', '', '', '2016-11-03 10:08:25', '2016-11-03 10:08:25', '', 0, 'http://localhost/hhc/?page_id=25', 0, 'page', '', 0),
 (26, 1, '2016-11-01 12:21:27', '2016-11-01 12:21:27', '', 'Home', '', 'inherit', 'closed', 'closed', '', '25-revision-v1', '', '', '2016-11-01 12:21:27', '2016-11-01 12:21:27', '', 25, 'http://localhost/hhc/2016/11/01/25-revision-v1/', 0, 'revision', '', 0),
@@ -4306,7 +4452,7 @@ INSERT INTO `wp_posts` (`ID`, `post_author`, `post_date`, `post_date_gmt`, `post
 (194, 1, '2016-11-15 17:28:15', '2016-11-15 17:28:15', '', 'Media', '', 'inherit', 'closed', 'closed', '', '193-revision-v1', '', '', '2016-11-15 17:28:15', '2016-11-15 17:28:15', '', 193, 'http://localhost/hhc/193-revision-v1/', 0, 'revision', '', 0),
 (195, 1, '2016-11-15 17:28:27', '2016-11-15 17:28:27', '', 'Work with us', '', 'publish', 'closed', 'closed', '', 'work-with-us', '', '', '2016-11-16 16:07:46', '2016-11-16 16:07:46', '', 0, 'http://localhost/hhc/?page_id=195', 0, 'page', '', 0),
 (196, 1, '2016-11-15 17:28:27', '2016-11-15 17:28:27', '', 'Work with us', '', 'inherit', 'closed', 'closed', '', '195-revision-v1', '', '', '2016-11-15 17:28:27', '2016-11-15 17:28:27', '', 195, 'http://localhost/hhc/195-revision-v1/', 0, 'revision', '', 0),
-(197, 1, '2016-11-15 17:28:38', '2016-11-15 17:28:38', '', 'Blog', '', 'publish', 'closed', 'closed', '', 'blog', '', '', '2016-11-15 17:28:38', '2016-11-15 17:28:38', '', 0, 'http://localhost/hhc/?page_id=197', 0, 'page', '', 0),
+(197, 1, '2016-11-15 17:28:38', '2016-11-15 17:28:38', '', 'Blog', '', 'publish', 'closed', 'closed', '', 'blog', '', '', '2016-11-16 16:46:10', '2016-11-16 16:46:10', '', 0, 'http://localhost/hhc/?page_id=197', 0, 'page', '', 0),
 (198, 1, '2016-11-15 17:28:38', '2016-11-15 17:28:38', '', 'Blog', '', 'inherit', 'closed', 'closed', '', '197-revision-v1', '', '', '2016-11-15 17:28:38', '2016-11-15 17:28:38', '', 197, 'http://localhost/hhc/197-revision-v1/', 0, 'revision', '', 0),
 (199, 1, '2016-11-15 17:28:54', '2016-11-15 17:28:54', '', 'FAQs', '', 'publish', 'closed', 'closed', '', 'faqs', '', '', '2016-11-15 17:28:54', '2016-11-15 17:28:54', '', 0, 'http://localhost/hhc/?page_id=199', 0, 'page', '', 0),
 (200, 1, '2016-11-15 17:28:54', '2016-11-15 17:28:54', '', 'FAQs', '', 'inherit', 'closed', 'closed', '', '199-revision-v1', '', '', '2016-11-15 17:28:54', '2016-11-15 17:28:54', '', 199, 'http://localhost/hhc/199-revision-v1/', 0, 'revision', '', 0),
@@ -4356,7 +4502,24 @@ INSERT INTO `wp_posts` (`ID`, `post_author`, `post_date`, `post_date_gmt`, `post
 (244, 1, '2016-11-16 16:06:08', '2016-11-16 16:06:08', '', 'What we value', '', 'publish', 'closed', 'closed', '', 'campaign-heading-2-2', '', '', '2016-11-16 16:06:09', '2016-11-16 16:06:09', '', 0, 'http://localhost/hhc/?post_type=slide&#038;p=244', 0, 'slide', '', 0),
 (245, 1, '2016-11-16 16:06:21', '2016-11-16 16:06:21', '', 'Work with us', '', 'inherit', 'closed', 'closed', '', '195-revision-v1', '', '', '2016-11-16 16:06:21', '2016-11-16 16:06:21', '', 195, 'http://localhost/hhc/195-revision-v1/', 0, 'revision', '', 0),
 (246, 1, '2016-11-16 16:07:19', '2016-11-16 16:07:19', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam semper hendrerit neque ac pulvinar. Etiam vehicula tristique nibh id placerat. Dolor sit amet, consectetur adipiscing elit. Aliquam semper hendrerit neque ac pulvinar.', 'Become a trustee', '', 'publish', 'closed', 'closed', '', 'become-trustee', '', '', '2016-11-16 16:07:19', '2016-11-16 16:07:19', '', 0, 'http://localhost/hhc/?post_type=slide&#038;p=246', 0, 'slide', '', 0),
-(247, 1, '2016-11-16 16:07:46', '2016-11-16 16:07:46', '', 'Work with us', '', 'inherit', 'closed', 'closed', '', '195-revision-v1', '', '', '2016-11-16 16:07:46', '2016-11-16 16:07:46', '', 195, 'http://localhost/hhc/195-revision-v1/', 0, 'revision', '', 0);
+(247, 1, '2016-11-16 16:07:46', '2016-11-16 16:07:46', '', 'Work with us', '', 'inherit', 'closed', 'closed', '', '195-revision-v1', '', '', '2016-11-16 16:07:46', '2016-11-16 16:07:46', '', 195, 'http://localhost/hhc/195-revision-v1/', 0, 'revision', '', 0),
+(248, 1, '2016-11-16 16:42:20', '2016-11-16 16:42:20', 'Lorem ipsum dolor sit amet quintescur ipsum dolor sit amet.', 'Insights blog', '', 'publish', 'closed', 'closed', '', 'insights-blog', '', '', '2016-11-16 16:48:18', '2016-11-16 16:48:18', '', 0, 'http://localhost/hhc/?post_type=slide&#038;p=248', 0, 'slide', '', 0),
+(249, 1, '2016-11-16 16:42:34', '2016-11-16 16:42:34', '', 'Blog', '', 'inherit', 'closed', 'closed', '', '197-revision-v1', '', '', '2016-11-16 16:42:34', '2016-11-16 16:42:34', '', 197, 'http://localhost/hhc/197-revision-v1/', 0, 'revision', '', 0),
+(250, 1, '2016-11-16 16:43:24', '2016-11-16 16:43:24', '', 'Blog', '', 'inherit', 'closed', 'closed', '', '197-revision-v1', '', '', '2016-11-16 16:43:24', '2016-11-16 16:43:24', '', 197, 'http://localhost/hhc/197-revision-v1/', 0, 'revision', '', 0),
+(251, 1, '2016-11-16 16:45:38', '2016-11-16 16:45:38', '', 'Blog articles', '', 'publish', 'closed', 'closed', '', 'blog-articles', '', '', '2016-11-16 17:50:02', '2016-11-16 17:50:02', '', 0, 'http://localhost/hhc/?post_type=slide&#038;p=251', 0, 'slide', '', 0),
+(252, 1, '2016-11-16 16:46:10', '2016-11-16 16:46:10', '', 'Blog', '', 'inherit', 'closed', 'closed', '', '197-revision-v1', '', '', '2016-11-16 16:46:10', '2016-11-16 16:46:10', '', 197, 'http://localhost/hhc/197-revision-v1/', 0, 'revision', '', 0),
+(253, 1, '2016-11-16 16:50:53', '0000-00-00 00:00:00', '', 'Auto Draft', '', 'auto-draft', 'closed', 'closed', '', '', '', '', '2016-11-16 16:50:53', '0000-00-00 00:00:00', '', 0, 'http://localhost/hhc/?post_type=blog-article&p=253', 0, 'blog-article', '', 0),
+(254, 1, '2016-11-16 16:57:16', '0000-00-00 00:00:00', '', 'Auto Draft', '', 'auto-draft', 'closed', 'closed', '', '', '', '', '2016-11-16 16:57:16', '0000-00-00 00:00:00', '', 0, 'http://localhost/hhc/?post_type=blog-article&p=254', 0, 'blog-article', '', 0),
+(255, 1, '2016-11-16 16:57:21', '0000-00-00 00:00:00', '', 'Auto Draft', '', 'auto-draft', 'closed', 'closed', '', '', '', '', '2016-11-16 16:57:21', '0000-00-00 00:00:00', '', 0, 'http://localhost/hhc/?post_type=blog-article&p=255', 0, 'blog-article', '', 0),
+(256, 1, '2016-11-16 16:58:53', '2016-11-16 16:58:53', '', 'Convallis pulvinar', 'Ut tincidunt libero lorem ipsum dolor amet', 'publish', 'closed', 'closed', '', 'convallis-pulvinar', '', '', '2016-11-16 16:58:53', '2016-11-16 16:58:53', '', 0, 'http://localhost/hhc/?post_type=blog-article&#038;p=256', 0, 'blog-article', '', 0),
+(257, 1, '2016-11-16 16:59:06', '2016-11-16 16:59:06', '', 'Convallis pulvinar', 'Ut tincidunt libero lorem ipsum dolor amet', 'publish', 'closed', 'closed', '', 'convallis-pulvinar-9', '', '', '2016-11-16 17:00:23', '2016-11-16 17:00:23', '', 0, 'http://localhost/hhc/?post_type=blog-article&#038;p=257', 0, 'blog-article', '', 0),
+(258, 1, '2016-11-16 16:59:09', '2016-11-16 16:59:09', '', 'Convallis pulvinar', 'Ut tincidunt libero lorem ipsum dolor amet', 'publish', 'closed', 'closed', '', 'convallis-pulvinar-8', '', '', '2016-11-16 17:00:17', '2016-11-16 17:00:17', '', 0, 'http://localhost/hhc/?post_type=blog-article&#038;p=258', 0, 'blog-article', '', 0),
+(259, 1, '2016-11-16 16:59:11', '2016-11-16 16:59:11', '', 'Convallis pulvinar', 'Ut tincidunt libero lorem ipsum dolor amet', 'publish', 'closed', 'closed', '', 'convallis-pulvinar-7', '', '', '2016-11-16 17:00:13', '2016-11-16 17:00:13', '', 0, 'http://localhost/hhc/?post_type=blog-article&#038;p=259', 0, 'blog-article', '', 0),
+(260, 1, '2016-11-16 16:59:14', '2016-11-16 16:59:14', '', 'Convallis pulvinar', 'Ut tincidunt libero lorem ipsum dolor amet', 'publish', 'closed', 'closed', '', 'convallis-pulvinar-6', '', '', '2016-11-16 16:59:57', '2016-11-16 16:59:57', '', 0, 'http://localhost/hhc/?post_type=blog-article&#038;p=260', 0, 'blog-article', '', 0),
+(261, 1, '2016-11-16 16:59:17', '2016-11-16 16:59:17', '', 'Convallis pulvinar', 'Ut tincidunt libero lorem ipsum dolor amet', 'publish', 'closed', 'closed', '', 'convallis-pulvinar-5', '', '', '2016-11-16 16:59:53', '2016-11-16 16:59:53', '', 0, 'http://localhost/hhc/?post_type=blog-article&#038;p=261', 0, 'blog-article', '', 0),
+(262, 1, '2016-11-16 16:59:20', '2016-11-16 16:59:20', '', 'Convallis pulvinar', 'Ut tincidunt libero lorem ipsum dolor amet', 'publish', 'closed', 'closed', '', 'convallis-pulvinar-4', '', '', '2016-11-16 16:59:49', '2016-11-16 16:59:49', '', 0, 'http://localhost/hhc/?post_type=blog-article&#038;p=262', 0, 'blog-article', '', 0),
+(263, 1, '2016-11-16 16:59:23', '2016-11-16 16:59:23', '', 'Convallis pulvinar', 'Ut tincidunt libero lorem ipsum dolor amet', 'publish', 'closed', 'closed', '', 'convallis-pulvinar-3', '', '', '2016-11-16 16:59:41', '2016-11-16 16:59:41', '', 0, 'http://localhost/hhc/?post_type=blog-article&#038;p=263', 0, 'blog-article', '', 0),
+(264, 1, '2016-11-16 16:59:29', '2016-11-16 16:59:29', '', 'Convallis pulvinar', 'Ut tincidunt libero lorem ipsum dolor amet', 'publish', 'closed', 'closed', '', 'convallis-pulvinar-2', '', '', '2016-11-16 16:59:37', '2016-11-16 16:59:37', '', 0, 'http://localhost/hhc/?post_type=blog-article&#038;p=264', 0, 'blog-article', '', 0);
 
 -- --------------------------------------------------------
 
@@ -4388,7 +4551,7 @@ CREATE TABLE `wp_terms` (
   PRIMARY KEY (`term_id`),
   KEY `slug` (`slug`(191)),
   KEY `name` (`name`(191))
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci AUTO_INCREMENT=15 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci AUTO_INCREMENT=16 ;
 
 --
 -- Dumping data for table `wp_terms`
@@ -4407,7 +4570,8 @@ INSERT INTO `wp_terms` (`term_id`, `name`, `slug`, `term_group`) VALUES
 (11, 'Corporate', 'corporate', 0),
 (12, 'Get in touch', 'get-in-touch', 0),
 (13, 'Media', 'media', 0),
-(14, 'Work with us', 'work-with-us', 0);
+(14, 'Work with us', 'work-with-us', 0),
+(15, 'Blog', 'blog', 0);
 
 -- --------------------------------------------------------
 
@@ -4500,7 +4664,9 @@ INSERT INTO `wp_term_relationships` (`object_id`, `term_taxonomy_id`, `term_orde
 (240, 14, 0),
 (241, 14, 0),
 (244, 14, 0),
-(246, 14, 0);
+(246, 14, 0),
+(248, 15, 0),
+(251, 15, 0);
 
 -- --------------------------------------------------------
 
@@ -4518,14 +4684,14 @@ CREATE TABLE `wp_term_taxonomy` (
   PRIMARY KEY (`term_taxonomy_id`),
   UNIQUE KEY `term_id_taxonomy` (`term_id`,`taxonomy`),
   KEY `taxonomy` (`taxonomy`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci AUTO_INCREMENT=15 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci AUTO_INCREMENT=16 ;
 
 --
 -- Dumping data for table `wp_term_taxonomy`
 --
 
 INSERT INTO `wp_term_taxonomy` (`term_taxonomy_id`, `term_id`, `taxonomy`, `description`, `parent`, `count`) VALUES
-(1, 1, 'category', '', 0, 7),
+(1, 1, 'category', '', 0, 0),
 (2, 2, 'nav_menu', '', 0, 3),
 (3, 3, 'nav_menu', '', 0, 4),
 (4, 4, 'category', '', 0, 8),
@@ -4537,7 +4703,8 @@ INSERT INTO `wp_term_taxonomy` (`term_taxonomy_id`, `term_id`, `taxonomy`, `desc
 (11, 11, 'nav_menu', '', 0, 5),
 (12, 12, 'category', '', 0, 5),
 (13, 13, 'category', '', 0, 3),
-(14, 14, 'category', '', 0, 4);
+(14, 14, 'category', '', 0, 4),
+(15, 15, 'category', '', 0, 2);
 
 -- --------------------------------------------------------
 

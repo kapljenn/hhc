@@ -119,6 +119,21 @@ function addCPTs() {
 		);
 	register_post_type('slide', $cpt_args);
 
+	// blog
+	$cpt_args = array(
+		'menu_icon' => '',
+		'label'	=> __('Blog'),
+		'singular_label' =>	__('Blog Article'),
+		'public'	=>	true,
+		'show_ui'	=>	true,
+		'taxonomies'  => array( 'category' ),
+		'capability_type'	=>	'post',
+		'hierarchical'	=>	false,
+		'rewrite'	=>	true,
+		'supports'	=>	array('title', 'thumbnail', 'editor', 'excerpt')
+		);
+	register_post_type('blog-article', $cpt_args);
+
 	// partners
 	$cpt_args = array(
 		'menu_icon' => '',
@@ -160,6 +175,7 @@ function add_menu_icons_styles() {
 	?>
 		<style>
 			#adminmenu .menu-icon-slide div.wp-menu-image:before { content: '\f175'; }
+			#adminmenu .menu-icon-blog-article div.wp-menu-image:before { content: '\f175'; }
 			#adminmenu .menu-icon-partner div.wp-menu-image:before { content: '\f175'; }
 			#adminmenu .menu-icon-global-contact div.wp-menu-image:before { content: '\f175'; }
 		</style>

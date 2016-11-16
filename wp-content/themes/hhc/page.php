@@ -218,8 +218,7 @@ if ($video_url != "") {
 
 <!-- CTA -->
 <?php if ($cta_text != "") { ?>
-	<a class="button ae-5 fromCenter" href="<?php echo $cta_url; ?>"><?php echo $cta_text; ?></a>
-	<br>
+	<a class="button ae-5 fromCenter" href="<?php echo $cta_url; ?>"><?php echo $cta_text; ?></a><br>
 <?php } ?>
 
 <!-- video -->
@@ -244,6 +243,61 @@ if ($video_url != "") {
 		echo "</div>";
 	}
 ?>
+</div>
+
+
+
+
+
+<?php } else if ($slide_type == "featured_item") { ?>
+<?php
+
+
+	query_posts( array( 'post_type' => array('blog-article'), 'posts_per_page' => -1 ));
+	$counter = 0;
+	if (have_posts()) : while(have_posts()) : the_post();
+		$thumb = wp_get_attachment_image_src( get_post_thumbnail_id($link->ID), 'medium' )['0'];
+
+		if ($counter == 0) {
+			echo '<div class="fix-12-12">';
+				echo '<div class="blog-article featured">';
+					echo '<div class="img-holder">';
+						echo '<img src="' . $thumb . '">';
+					echo '</div>';
+					echo '<div class="post-content">';
+						echo '<div class="post-title">' . get_the_title() . '</div>';
+						echo '<a class="button ae-5 fromCenter" href="' . get_the_permalink() . '">Read post</a>';
+					echo '</div>';
+				echo '</div>';
+			echo '</div>';
+
+			echo '<div class="fix-10-12">';
+				echo '<ul class="post-grid">';
+
+		} else {
+				echo '<li class="blog-article">';
+					echo '<div class="img-holder">';
+						echo '<img src="' . $thumb . '">';
+					echo '</div>';
+					echo '<div class="post-content">';
+						echo '<a href="' . get_the_permalink() . '" class="post-title">' . get_the_title() . '</a>';
+						echo '<div class="post-excerpt">' . get_the_excerpt() . '</div>';
+					echo '</div>';
+				echo '</li>';
+		}
+
+		$counter++;
+
+	endwhile; 
+	echo '</ul></div>';
+	endif;
+?>
+
+
+<!-- CTA -->
+<?php if ($cta_text != "") { ?>
+	<a class="button ae-5 fromCenter" href="<?php echo $cta_url; ?>"><?php echo $cta_text; ?></a><br>
+<?php } ?>
 </div>
 
 
