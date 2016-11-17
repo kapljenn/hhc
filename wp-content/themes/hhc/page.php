@@ -44,8 +44,6 @@ while ( have_posts() ) : the_post();
 			// CTA(s)
 			$cta_text = get_field('cta_text', $slide_id);
 			$cta_url = get_field('cta_url', $slide_id);
-			$cta_2_text = get_field('cta_2_text', $slide_id);
-			$cta_2_url = get_field('cta_2_url', $slide_id);
 
 			// slide classes
 			$slide_classes = "fade kenBurns ";
@@ -80,7 +78,7 @@ while ( have_posts() ) : the_post();
 <div class="fix-10-12 <?php echo $hero_alignment; ?>">
 	<?php echo $title_html; ?>
 	<div class="ae-2"><?php echo $slide_content; ?></div>
-	<?php if ($cta_position == "above_the_columns") { ?>
+	<?php if ($cta_position == "before_the_columns") { ?>
 		<a class="button ae-5 fromCenter" href="<?php echo $cta_url; ?>"><?php echo $cta_text; ?></a>
 	<?php } ?>
 </div>
@@ -123,7 +121,7 @@ while ( have_posts() ) : the_post();
 				</ul>
 			</div>
 <?php } ?>
-<?php if ($cta_position == "below_the_columns") { ?>
+<?php if ($cta_position == "after_the_columns") { ?>
 	<a class="button ae-5 fromCenter" href="<?php echo $cta_url; ?>"><?php echo $cta_text; ?></a>
 <?php } ?>
 
@@ -139,12 +137,16 @@ while ( have_posts() ) : the_post();
 	$right_image = get_field('right_image', $slide_id);
 	$column_ratio = get_field('column_ratio', $slide_id);
 ?>
+<?php if ($left_image) { ?>
 <div class="left-hand-image">
 	<img class="shiftImage shiftImageVertical" src="<?php echo $left_image['url']; ?>" width="1200">
 </div>
+<?php } ?>
+<?php if ($right_image) { ?>
 <div class="right-hand-image">
 	<img class="shiftImage shiftImageVertical" src="<?php echo $right_image['url']; ?>" width="1200">
 </div>
+<?php } ?>
 <div class="fix-10-12">
 	<?php echo $title_html; ?>
 	<div class="ae-2"><?php echo $slide_content; ?></div>
@@ -158,6 +160,12 @@ while ( have_posts() ) : the_post();
 			<div class="ae-3"><?php the_field('right_side_text', $slide_id); ?>&nbsp;</div>
 		</li>
 	</ul>
+</div>
+
+<!-- CTA -->
+<?php if ($cta_text != "") { ?>
+	<a class="button ae-5 fromCenter" href="<?php echo $cta_url; ?>"><?php echo $cta_text; ?></a><br>
+<?php } ?>
 </div>
 
 
@@ -194,6 +202,8 @@ if ($video_url != "") {
 
 				if ($p->post_type == 'partner') {
 					$partner_logo = get_field('partner_logo', $p->ID)['url'];
+					echo $slide_palette;
+					if ($slide_palette == "white_text_dark_background") $partner_logo = get_field('partner_logo_inverted', $p->ID)['url'];
 					$partner_url = get_field('partner_url', $p->ID);
 					echo '<li class="partner"><a href="' . $partner_url . '"><img src="' . $partner_logo . '"></a></li>';
 				} else if ($p->post_type == 'global-contact') {
@@ -251,8 +261,6 @@ if ($video_url != "") {
 
 <?php } else if ($slide_type == "featured_item") { ?>
 <?php
-
-
 	query_posts( array( 'post_type' => array('blog-article'), 'posts_per_page' => -1 ));
 	$counter = 0;
 	if (have_posts()) : while(have_posts()) : the_post();
@@ -293,7 +301,6 @@ if ($video_url != "") {
 	endif;
 ?>
 
-
 <!-- CTA -->
 <?php if ($cta_text != "") { ?>
 	<a class="button ae-5 fromCenter" href="<?php echo $cta_url; ?>"><?php echo $cta_text; ?></a><br>
@@ -314,9 +321,6 @@ if ($video_url != "") {
 	<?php echo $title_html; ?>
 	<BR><BR><BR><BR><BR><BR><BR><BR><BR>
 	<div class="ae-2"><?php echo $slide_content; ?></div>
-	<?php if ($cta_position == "above_the_columns") { ?>
-		<a class="button ae-5 fromCenter" href="<?php echo $cta_url; ?>"><?php echo $cta_text; ?></a>
-	<?php } ?>
 </div>
 
 <?php if (sizeOf($columns) > 0) { ?>
@@ -351,9 +355,6 @@ if ($video_url != "") {
 				</ul>
 			</div>
 <?php } ?>
-<?php if ($cta_position == "below_the_columns") { ?>
-	<a class="button ae-5 fromCenter" href="<?php echo $cta_url; ?>"><?php echo $cta_text; ?></a>
-<?php } ?>
 
 
 
@@ -367,9 +368,6 @@ if ($video_url != "") {
 <div class="fix-10-12 <?php echo $hero_alignment; ?>">
 	<?php echo $title_html; ?>
 	<div class="ae-2"><?php echo $slide_content; ?></div>
-	<?php if ($cta_position == "above_the_columns") { ?>
-		<a class="button ae-5 fromCenter" href="<?php echo $cta_url; ?>"><?php echo $cta_text; ?></a>
-	<?php } ?>
 </div>
 <?php if (sizeOf($thumbnails) > 0) { ?>
 <div class="fix-12-12">
@@ -393,9 +391,6 @@ if ($video_url != "") {
 <?php } ?>
 	</ul>
 </div>
-<?php } ?>
-<?php if ($cta_position == "below_the_columns") { ?>
-	<a class="button ae-5 fromCenter" href="<?php echo $cta_url; ?>"><?php echo $cta_text; ?></a>
 <?php } ?>
 
 
