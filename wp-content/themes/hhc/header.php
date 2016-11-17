@@ -16,7 +16,14 @@
 
 </head>
 
-<body <?php body_class('slides film whiteSlide animated'); ?>>
+<?php
+
+	$small_text_class = "";
+	if (get_field('small_text')) $small_text_class = " small-text";
+
+?>
+
+<body <?php body_class('slides film whiteSlide animated' . $small_text_class); ?>>
 
 	<script type="text/javascript">
 	// save variables for use in JS
