@@ -31,7 +31,7 @@ input[type=text], input[type=email], input[type=number], input[type=tel], textar
 
 /* Slides reset */
 .button { background-color: #00a9dc; border-radius: 6px; padding: 12px 30px; font-family: "Poppins", sans-serif; }
-.sections .menu li a { font-weight: 500; font-size: 17px; letter-spacing: 0; }
+.sections .menu li a { font-weight: 500; font-size: 17px; letter-spacing: 0; font-weight: bold; }
 .panel .button { color: #57244b; background-color: #ffffff; border-radius: 6px; font-size: 16px; }
 .panel.top .button.actionButton { background-color: #444444; }
 .slide { background-color: #57244b; }
@@ -46,7 +46,7 @@ input[type=text], input[type=email], input[type=number], input[type=tel], textar
 .slide.whiteSlide.greyTint { background-color: #e3e3e3; }
 .grid { margin-bottom: 20px; }
 .menu-main-container li a { color: #ffffff; }
-.whiteSlide .menu-main-container li a { color: #57244b; }
+.whiteSlide .menu-main-container li a { color: #57244b; font-weight: bold; }
 .slides.animated .video.kenBurns .background { opacity: 1; }
 html:not(.mobile) .slide.video .background[style] { background-size: cover !important; }
 .button.play { background-image: url(../img/play.png); background-size: 100%; }
@@ -108,7 +108,7 @@ html:not(.mobile) .slide.video .background[style] { background-size: cover !impo
 .side_by_side .grid .col-6-12:nth-of-type(2) { box-sizing: border-box; padding-left: 8%; padding-right: 0%; }
 .side_by_side p { font-weight: 300; margin-bottom: 15px; font-size: 26px; }
 .side_by_side .col-6-12 p { padding-top: 25px; font-size: 21px; line-height: 30px; font-weight: 500; }
-.side_by_side .button { margin-top: 25px; }
+.side_by_side .button { margin-top: 25px; padding: 12px 20px; }
 
 
 /* three thumbnails */

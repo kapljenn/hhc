@@ -206,6 +206,8 @@ if ($video_url != "") {
 					$partner_url = get_field('partner_url', $p->ID);
 					echo '<li class="partner"><a href="' . $partner_url . '"><img src="' . $partner_logo . '"></a></li>';
 				} else if ($p->post_type == 'global-contact') {
+					//var_dump($p);
+					echo $p->ID;
 					$thumb = wp_get_attachment_image_src( get_post_thumbnail_id($p->ID), 'medium')[0];
 					$title = $p->post_title;
 					$excerpt = get_the_excerpt($p->ID);
