@@ -76,7 +76,15 @@
 	<div class="content">
 		<a href="#" class="logo"><svg width="120" height="50"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#logo"></use></svg></a>
 		<?php wp_nav_menu( array('menu' => 'Main', 'menu_class' => 'mainMenu uppercase')); ?>
-		<?php wp_nav_menu( array('menu' => 'Legal', 'menu_class' => 'subMenu')); ?>
+		<ul class="main-menu-add-on">
+			<li>
+				<a href="<?php echo site_url() ?>/fundraise/">Fundraise</a>
+			</li>
+			<li>
+				<a href="<?php echo site_url() ?>/donate/">Donate</a>
+			</li>
+		</ul>
+		<?php wp_nav_menu( array('menu' => 'Corporate', 'menu_class' => 'subMenu')); ?>
 		<ul class="social">
 			<li>
 				<a href="#">
