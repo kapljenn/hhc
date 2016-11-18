@@ -95,7 +95,7 @@ html:not(.mobile) .slide.video .background[style] { background-size: cover !impo
 
 
 /* side by side */
-.side_by_side h1 { font-size: 42px; margin-bottom: 30px; }
+.side_by_side h1 { font-size: 42px; margin-bottom: 10px; }
 .side_by_side p { font-size: 22px; line-height: 32px; }
 .left-hand-image, .right-hand-image { 
 	position: absolute; top: 0; left: 0; width: 50%; height: 100%; box-sizing: border-box; margin: 0; padding: 0; overflow: hidden;
@@ -104,9 +104,11 @@ html:not(.mobile) .slide.video .background[style] { background-size: cover !impo
 .left-hand-image img, .right-hand-image img { 
 	height: 100%; width: auto; margin-right: 0; margin-top: 0; margin-bottom: 0; margin-left: 0; 
 }
-.side_by_side .grid .col-6-12 { box-sizing: border-box; padding-left: 5%; padding-right: 2%; }
+.side_by_side .grid .col-6-12:nth-of-type(1) { box-sizing: border-box; padding-left: 0%; padding-right: 8%; }
+.side_by_side .grid .col-6-12:nth-of-type(2) { box-sizing: border-box; padding-left: 8%; padding-right: 0%; }
 .side_by_side p { font-weight: 300; margin-bottom: 15px; font-size: 26px; }
-.side_by_side .col-6-12 p { padding-top: 25px; font-size: 16px; line-height: 20px; font-weight: 500; }
+.side_by_side .col-6-12 p { padding-top: 25px; font-size: 21px; line-height: 30px; font-weight: 500; }
+.side_by_side .button { margin-top: 25px; }
 
 
 /* three thumbnails */

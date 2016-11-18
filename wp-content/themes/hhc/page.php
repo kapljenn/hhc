@@ -83,7 +83,7 @@ while ( have_posts() ) : the_post();
 	<?php } ?>
 </div>
 
-<?php if (sizeOf($columns) > 0) { ?>
+<?php if ($columns != false) { ?>
 <div class="fix-12-12">
 	<ul class="grid later equal">
 <?php
@@ -94,7 +94,6 @@ while ( have_posts() ) : the_post();
 			$column_image = $c['column_image'];
 			$column_cta_text = $c['cta_text'];
 			$column_cta_url = $c['cta_url'];
-
 ?>
 		<li class="col-<?php echo $column_fraction; ?>-12">
 			<div class="fix-<?php echo $column_fraction; ?>-12">
@@ -193,7 +192,7 @@ if ($video_url != "") {
 		// partners
 		$post_list = get_field('post_list', $slide_id);
 		$post_list_classes = get_field('post_list_classes', $slide_id);
-		if (sizeOf($post_list) > 0) {
+		if ($post_list != false) {
 			echo "<ul class='post-grid " . $post_list_classes . "'>";
 			$column_fraction = floor(12/sizeOf($post_list));
 			foreach ($post_list as $p) {
@@ -243,7 +242,7 @@ if ($video_url != "") {
 <!-- box links -->
 <?php
 	$box_links = get_field('box_links', $slide_id);
-	if (sizeOf($box_links) > 0) {
+	if ($box_links != false) {
 		echo "<div class='cta-bar'>";
 		foreach ($box_links as $l) {
 			$link_title = $l['link_title'];
@@ -323,7 +322,7 @@ if ($video_url != "") {
 	<div class="ae-2"><?php echo $slide_content; ?></div>
 </div>
 
-<?php if (sizeOf($columns) > 0) { ?>
+<?php if ($columns != false) { ?>
 <div class="fix-12-12">
 	<ul class="grid later equal">
 <?php
@@ -369,7 +368,7 @@ if ($video_url != "") {
 	<?php echo $title_html; ?>
 	<div class="ae-2"><?php echo $slide_content; ?></div>
 </div>
-<?php if (sizeOf($thumbnails) > 0) { ?>
+<?php if ($thumbnails != false) { ?>
 <div class="fix-12-12">
 	<ul class="grid later equal">
 <?php
