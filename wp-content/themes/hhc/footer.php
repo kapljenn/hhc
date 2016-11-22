@@ -32,21 +32,6 @@
 </section>
 
 
-<!-- Panel Bottom #01 -->
-<nav class="panel bottom forceMobileView">
-	<div class="sections desktop">
-		<div class="left"></div>
-		<div class="center">
-			<span class="nextSlide">
-				<img src="<?php echo esc_url(get_stylesheet_directory_uri()); ?>/img/down-arrow.png" />
-			</span>
-		</div>
-		<div class="right"></div>
-	</div>
-	<div class="sections compact hidden">
-		<div class="right"></div>
-	</div>
-</nav>
 
 <!-- Share Window -->
 <div class="dropdown share bottom right hidden" data-dropdown-id="2" data-text="Take a look at this" data-url="http://designmodo.com" data-pinterest-image="http://designmodo.com/wp-content/uploads/2015/10/Presentation.jpg">

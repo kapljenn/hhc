@@ -14,6 +14,13 @@ while ( have_posts() ) : the_post();
 			$slide = get_sub_field('slide');
 			$slide_id = $slide->ID;
 
+			// slide variables
+			$slide_type = get_field('slide_type', $slide_id);
+			$slide_palette = get_field('slide_palette', $slide_id);
+			$slide_content = apply_filters('the_content', $slide->post_content);
+			$cta = get_field('cta', $slide_id);
+			$hero_alignment = get_field('hero_alignment', $slide_id);
+
 			// slide title
 			$title_colour = get_field('title_colour', $slide_id);
 			$title_html = '<h1 class="ae-1" style="color: ' . $title_colour . '">' . $slide->post_title . '</h1>';
@@ -25,25 +32,6 @@ while ( have_posts() ) : the_post();
 					$title_html = "<img class='slide-title' src='" . $title_image . "'>";
 				}
 			} else if ($title_format == "no_title") $title_html = "";
-
-			// slide type
-			$slide_type = get_field('slide_type', $slide_id);
-
-			// slide palette
-			$slide_palette = get_field('slide_palette', $slide_id);
-
-			// hero alignment
-			$hero_alignment = get_field('hero_alignment', $slide_id);
-
-			// slide content
-			$slide_content = apply_filters('the_content', $slide->post_content);
-
-			// background image
-			$featured_image = wp_get_attachment_image_src( get_post_thumbnail_id($slide_id), 'large' )['0'];
-
-			// CTA(s)
-			$cta_text = get_field('cta_text', $slide_id);
-			$cta_url = get_field('cta_url', $slide_id);
 
 			// slide classes
 			$slide_classes = "fade kenBurns ";
@@ -61,8 +49,14 @@ while ( have_posts() ) : the_post();
 			// CTA position
 			$cta_position = get_field('cta_position', $slide_id);
 
+			// make HTML ID attribute
+			$html_id_attribute = htmlID($slide->post_title);
+
 			// slide header
-			echo '<section class="slide ' . $slide_classes . '"><div class="content"><div class="container"><div class="wrap">';
+			echo '	<section class="slide ' . $slide_classes . '" id="' . $html_id_attribute . '"">
+						<div class="content">
+							<div class="container">
+								<div class="wrap">';
 
 ?>
 
@@ -79,7 +73,7 @@ while ( have_posts() ) : the_post();
 	<?php echo $title_html; ?>
 	<div class="ae-2"><?php echo $slide_content; ?></div>
 	<?php if ($cta_position == "before_the_columns") { ?>
-		<a class="button ae-5 fromCenter" href="<?php echo $cta_url; ?>"><?php echo $cta_text; ?></a>
+		<?php include('includes/cta.php'); ?>
 	<?php } ?>
 </div>
 
@@ -90,30 +84,33 @@ while ( have_posts() ) : the_post();
 		$column_fraction = floor(12/sizeOf($columns));
 		foreach ($columns as $c) {
 			$column_text_colour = $c['column_text_colour'];
+			$column_text = $c['column_text'];
 			$column_icon = $c['column_icon'];
+			$column_title = $c['column_title'];
+			$column_url = $c['column_url'];
 			$column_image = $c['column_image'];
-			$column_cta_text = $c['cta_text'];
-			$column_cta_url = $c['cta_url'];
 ?>
 		<li class="col-<?php echo $column_fraction; ?>-12">
 			<div class="fix-<?php echo $column_fraction; ?>-12">
-<?php if ($c['column_icon'] != null) { ?>
+<?php if ($column_icon != null) { ?>
 				<div class="img-holder">
 					<img class="column-icon" src="<?php echo $column_icon['url']; ?>" />
 				</div>
 <?php } ?>
-<?php if ($c['column_image'] != null) { ?>
+<?php if ($column_image != null) { ?>
 				<div class="img-holder">
 					<img class="column-image" src="<?php echo $column_image['url']; ?>" />
 				</div>
 <?php } ?>
-				<h3 class="equalElement ae-7" style="color: <?php echo $column_text_colour; ?>"><?php echo $c['column_title']; ?></h3>
+				<h3 class="equalElement ae-7" style="color: <?php echo $column_text_colour; ?>">
+<?php
+	if ($column_url['url'] != null) echo '<a href="' . $column_url['url'] . '">' . $c['column_title'] . '</a>';
+	else echo $column_title;
+?>
+				</h3>
 				<div class="ae-4">
-					<p class="small" style="color: <?php echo $column_text_colour; ?>"><?php echo $c['column_text']; ?></p>
+					<p class="small" style="color: <?php echo $column_text_colour; ?>"><?php echo $column_text; ?></p>
 				</div>
-<?php if ($column_cta_text != null) { ?>
-				<a class="column-cta" href="<?php echo $column_cta_url; ?>"><?php echo $column_cta_text; ?></a>
-<?php } ?>
 			</div>
 		</li>
 <?php } ?>
@@ -121,7 +118,7 @@ while ( have_posts() ) : the_post();
 			</div>
 <?php } ?>
 <?php if ($cta_position == "after_the_columns") { ?>
-	<a class="button ae-5 fromCenter" href="<?php echo $cta_url; ?>"><?php echo $cta_text; ?></a>
+	<?php include('includes/cta.php'); ?>
 <?php } ?>
 
 
@@ -135,6 +132,9 @@ while ( have_posts() ) : the_post();
 	$left_image = get_field('left_image', $slide_id);
 	$right_image = get_field('right_image', $slide_id);
 	$column_ratio = get_field('column_ratio', $slide_id);
+
+	$left_side_icons = get_field('left_side_icons', $slide_id);
+	$right_side_icons = get_field('right_side_icons', $slide_id);
 ?>
 <?php if ($left_image) { ?>
 <div class="left-hand-image">
@@ -153,19 +153,68 @@ while ( have_posts() ) : the_post();
 <div class="fix-12-12">
 	<ul class="grid">
 		<li class="col-<?php echo substr($column_ratio, 0, 1); ?>-12 left">
-			<div class="ae-3"><?php the_field('left_side_text', $slide_id); ?>&nbsp;</div>
+			<div class="ae-3">
+<?php
+	if ($left_side_icons) {
+		if ($left_side_icons != "") {
+			$the_query = new WP_Query(array('post_type' => $left_side_icons, 'posts_per_page' => -1));
+			if ( $the_query->have_posts() ) {
+				echo '<ul class="grid">';
+				while ( $the_query->have_posts() ) {
+					$the_query->the_post();
+					$post_id = get_the_ID();
+					$partner_logo = get_field('partner_logo', $post_id)['url'];
+					if ($slide_palette == "white_text_dark_background") $partner_logo = get_field('partner_logo_inverted', $post_id)['url'];
+					$partner_url = get_field('partner_url', $post_id);
+					echo '<li class="partner"><a href="' . $partner_url . '"><img src="' . $partner_logo . '"></a></li>';
+				}
+				echo '</ul>';
+			}
+			wp_reset_postdata();
+		} else {
+			the_field('left_side_text', $slide_id);
+			echo "&nbsp;";
+		}
+	} else {
+		the_field('left_side_text', $slide_id);
+		echo "&nbsp;";
+	}
+?>
+			</div>
 		</li>
 		<li class="col-<?php echo substr($column_ratio, 2, 3); ?>-12 left">
-			<div class="ae-3"><?php the_field('right_side_text', $slide_id); ?>&nbsp;</div>
+			<div class="ae-3">
+<?php
+	if ($right_side_icons) {
+		if ($right_side_icons != "") {
+			$the_query = new WP_Query(array('post_type' => $right_side_icons, 'posts_per_page' => -1));
+			if ( $the_query->have_posts() ) {
+				echo '<ul class="grid">';
+				while ( $the_query->have_posts() ) {
+					$the_query->the_post();
+					$post_id = get_the_ID();
+					$partner_logo = get_field('partner_logo', $post_id)['url'];
+					if ($slide_palette == "white_text_dark_background") $partner_logo = get_field('partner_logo_inverted', $post_id)['url'];
+					$partner_url = get_field('partner_url', $post_id);
+					echo '<li class="partner"><a href="' . $partner_url . '"><img src="' . $partner_logo . '"></a></li>';
+				}
+				echo '</ul>';
+			}
+			wp_reset_postdata();
+		} else {
+			the_field('right_side_text', $slide_id);
+			echo "&nbsp;";
+		}
+	} else {
+		the_field('right_side_text', $slide_id);
+		echo "&nbsp;";
+	}
+?>
+			</div>
 		</li>
 	</ul>
 </div>
-
-<!-- CTA -->
-<?php if ($cta_text != "") { ?>
-	<a class="button ae-5 fromCenter" href="<?php echo $cta_url; ?>"><?php echo $cta_text; ?></a><br>
-<?php } ?>
-</div>
+<?php include('includes/cta.php'); ?>
 
 
 
@@ -201,7 +250,6 @@ if ($video_url != "") {
 
 				if ($p->post_type == 'partner') {
 					$partner_logo = get_field('partner_logo', $p->ID)['url'];
-					echo $slide_palette;
 					if ($slide_palette == "white_text_dark_background") $partner_logo = get_field('partner_logo_inverted', $p->ID)['url'];
 					$partner_url = get_field('partner_url', $p->ID);
 					echo '<li class="partner"><a href="' . $partner_url . '"><img src="' . $partner_logo . '"></a></li>';
@@ -221,16 +269,44 @@ if ($video_url != "") {
 							echo '<div class="post-excerpt">' . $excerpt . '</div>';
 						echo '</div>';
 					echo '</li>';
+				} else if ($p->post_type == 'job') {
+					//var_dump($p);
+					echo $p->ID;
+					//$thumb = wp_get_attachment_image_src( get_post_thumbnail_id($p->ID), 'medium')[0];
+					$title = $p->post_title;
+					$excerpt = get_the_excerpt($p->ID);
+					$permalink = $p->permalink;
+					echo '<li class="job">';
+						// echo '<div class="img-holder">';
+						// 	echo '<img src="' . $thumb . '">';
+						// echo '</div>';
+						echo '<div class="post-content">';
+							echo '<a href="' . $permalink . '" class="post-title">' . $title . '</a>';
+							echo '<div class="post-excerpt">' . $excerpt . '</div>';
+						echo '</div>';
+					echo '</li>';
+				} else if ($p->post_type == 'download') {
+					//var_dump($p);
+					echo $p->ID;
+					//$thumb = wp_get_attachment_image_src( get_post_thumbnail_id($p->ID), 'medium')[0];
+					$title = $p->post_title;
+					$excerpt = get_the_excerpt($p->ID);
+					$permalink = get_field('file', $p->ID)['url'];
+					echo '<li class="download">';
+						// echo '<div class="img-holder">';
+						// 	echo '<img src="' . $thumb . '">';
+						// echo '</div>';
+						echo '<div class="post-content">';
+							echo '<a href="' . $permalink . '" class="post-title">' . $title . '</a>';
+							echo '<div class="post-excerpt">' . $excerpt . '</div>';
+						echo '</div>';
+					echo '</li>';
 				}
 			}
 			echo "</ul>";
 		}
 ?>
-
-<!-- CTA -->
-<?php if ($cta_text != "") { ?>
-	<a class="button ae-5 fromCenter" href="<?php echo $cta_url; ?>"><?php echo $cta_text; ?></a><br>
-<?php } ?>
+<?php include('includes/cta.php'); ?>
 
 <!-- video -->
 <?php
@@ -302,11 +378,7 @@ if ($video_url != "") {
 	endif;
 ?>
 
-<!-- CTA -->
-<?php if ($cta_text != "") { ?>
-	<a class="button ae-5 fromCenter" href="<?php echo $cta_url; ?>"><?php echo $cta_text; ?></a><br>
-<?php } ?>
-</div>
+<?php include('includes/cta.php'); ?>
 
 
 
@@ -410,16 +482,38 @@ if ($video_url != "") {
 
 
 
+<!-- footer -->
+			<div class="fix-12-12">
+				<nav class="panel bottom">
+					<div class="sections">
+						<div class="center">
+							<span class="nextSlide">
+								<img src="<?php echo esc_url(get_stylesheet_directory_uri()); ?>/img/down-arrow.png" />
+							</span>
+						</div>
+					</div>
+				</nav>
+			</div>
+		</div> <!-- wrap -->
+	</div> <!-- container -->
+</div> <!-- content -->
 
 
 <?php
-			// slide footer
-	      	echo '</div></div></div>';
-			if ($featured_image != null) echo '<div class="background" style="background-image:url(' . $featured_image . ') !important"></div>';
+			// background image
+			$featured_image = wp_get_attachment_image_src( get_post_thumbnail_id($slide_id), 'large' )['0'];
+			if ($featured_image != null) {
+				echo '<div class="background" style="background-image:url(' . $featured_image . ') !important"></div>';
+			}
 			echo '</section>';
+?>
 
+
+
+
+
+<?php
 if ($slide_type == "video") {
-
 ?>
 			<!-- Popup Video -->
 			<div class="popup autoplay" data-popup-id="9">

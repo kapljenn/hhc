@@ -15,6 +15,7 @@
 	.post-grid li { width: 48%; }
 	.cta-bar .button { width: 73%; }
 	.blog-article.featured .img-holder img { width: 600px; height: auto; }
+	.side_by_side .grid .grid li { width: 90% }
 }
 
 @media all and (max-width: 449px) {

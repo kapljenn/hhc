@@ -23,7 +23,7 @@
 
 ?>
 
-<body <?php body_class('slides film whiteSlide animated' . $small_text_class); ?>>
+<body <?php body_class('slides fast smooth film whiteSlide animated' . $small_text_class); ?>>
 
 	<script type="text/javascript">
 	// save variables for use in JS

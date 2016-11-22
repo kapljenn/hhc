@@ -164,6 +164,36 @@ function addCPTs() {
 		);
 	register_post_type('global-contact', $cpt_args);
 
+	// jobs
+	$cpt_args = array(
+		'menu_icon' => '',
+		'label'	=> __('Jobs'),
+		'singular_label' =>	__('Job'),
+		'public'	=>	true,
+		'show_ui'	=>	true,
+		'taxonomies'  => array( 'category' ),
+		'capability_type'	=>	'post',
+		'hierarchical'	=>	false,
+		'rewrite'	=>	true,
+		'supports'	=>	array('title', 'thumbnail', 'editor', 'excerpt')
+		);
+	register_post_type('job', $cpt_args);
+
+	// downloads
+	$cpt_args = array(
+		'menu_icon' => '',
+		'label'	=> __('Downloads'),
+		'singular_label' =>	__('Download'),
+		'public'	=>	true,
+		'show_ui'	=>	true,
+		'taxonomies'  => array( 'category' ),
+		'capability_type'	=>	'post',
+		'hierarchical'	=>	false,
+		'rewrite'	=>	true,
+		'supports'	=>	array('title', 'excerpt')
+		);
+	register_post_type('download', $cpt_args);
+
 }
 add_action('init', 'addCPTs');
 add_theme_support( 'post-thumbnails' );
@@ -178,6 +208,8 @@ function add_menu_icons_styles() {
 			#adminmenu .menu-icon-blog-article div.wp-menu-image:before { content: '\f109'; }
 			#adminmenu .menu-icon-partner div.wp-menu-image:before { content: '\f338'; }
 			#adminmenu .menu-icon-global-contact div.wp-menu-image:before { content: '\f319'; }
+			#adminmenu .menu-icon-job div.wp-menu-image:before { content: '\f337'; }
+			#adminmenu .menu-icon-download div.wp-menu-image:before { content: '\f316'; }
 		</style>
 	<?php
 }
@@ -310,7 +342,7 @@ add_filter("manage_edit-slide_columns", "my_post_columns");
 function remove_admin_menu_items() {
    //remove_menu_page('index.php');
    remove_menu_page('edit.php');
-   remove_menu_page('upload.php');
+   //remove_menu_page('upload.php');
    remove_menu_page('edit-comments.php');
    //remove_menu_page('themes.php');
    //remove_menu_page('plugins.php');
@@ -332,3 +364,15 @@ function style_backend() {
 add_action( 'admin_head', 'style_backend' );
 
 
+// make a string valid for use as an HTML ID attribute
+function htmlID($string) {
+    //Lower case everything
+    $string = strtolower($string);
+    //Make alphanumeric (removes all other characters)
+    $string = preg_replace("/[^a-z0-9_\s-]/", "", $string);
+    //Clean up multiple dashes or whitespaces
+    $string = preg_replace("/[\s-]+/", " ", $string);
+    //Convert whitespaces and underscore to dash
+    $string = preg_replace("/[\s_]/", "-", $string);
+    return $string;
+}
