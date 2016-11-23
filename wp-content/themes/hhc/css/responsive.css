@@ -1,6 +1,16 @@
 
 /* RESPONSIVE RULES */
 
+
+@media all and (max-width: 1272px) {
+	.tweet-inner { padding: 15px; }
+	.twitter-screen-name { font-size: 14px; }
+}
+
+@media all and (max-width: 1090px) {
+	.post-grid .tweet { width: 270px; }
+}
+
 @media all and (max-width: 1023px) {
 	.left-hand-image { position: relative; overflow: visible; }
 	.right-hand-image { position: relative; left: 0; width: 100%; }
@@ -16,6 +26,7 @@
 	.cta-bar .button { width: 73%; }
 	.blog-article.featured .img-holder img { width: 600px; height: auto; }
 	.side_by_side .grid .grid li { width: 90% }
+	.post-grid .tweet { width: 90%; }
 }
 
 @media all and (max-width: 449px) {

@@ -1,18 +1,15 @@
 <?php
 
-/* Page template */
+/* Single post template */
 
 get_header();
 
-while ( have_posts() ) : the_post();
+?>
 
-	// loop through the slides in this page...
-	if( have_rows('slides') ):
+<?php while ( have_posts() ) : the_post();
 
-	    while ( have_rows('slides') ) : the_row();
 
-			$slide = get_sub_field('slide');
-			$slide_id = $slide->ID;
+			$slide_id = get_the_ID();
 
 			// slide variables
 			$slide_type = get_field('slide_type', $slide_id);
@@ -104,7 +101,7 @@ while ( have_posts() ) : the_post();
 <?php } ?>
 				<h3 class="equalElement ae-7" style="color: <?php echo $column_text_colour; ?>">
 <?php
-	if ($column_url != null) echo '<a href="' . $column_url . '">' . $column_title . '</a>';
+	if ($column_url['url'] != null) echo '<a href="' . $column_url['url'] . '">' . $c['column_title'] . '</a>';
 	else echo $column_title;
 ?>
 				</h3>
@@ -470,19 +467,6 @@ if ($video_url != "") {
 
 
 
-<?php } else if ($slide_type == "latest_tweets") { ?>
-<div class="fix-10-12 <?php echo $hero_alignment; ?>">
-	<?php echo $title_html; ?>
-	<div class="ae-2"><?php echo $slide_content; ?></div>
-</div>
-<div class="fix-12-12">
-	<?php include('includes/twitter.php'); ?>
-</div>
-
-
-
-
-
 
 
 
@@ -546,11 +530,13 @@ if ($slide_type == "video") {
 <?php
 
 }
-	    endwhile;
-	endif;
-endwhile;
+
 ?>
 
+
+
+
+<?php endwhile; ?>
 
 
 
