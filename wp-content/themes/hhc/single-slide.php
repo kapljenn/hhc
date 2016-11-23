@@ -1,6 +1,6 @@
 <?php
 
-/* Single post template */
+/* Single slide template */
 
 get_header();
 

@@ -8,7 +8,6 @@ get_header();
 
 <?php while ( have_posts() ) : the_post();
 
-
 			$slide_id = get_the_ID();
 
 			// slide variables

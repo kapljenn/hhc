@@ -45,7 +45,7 @@ input[type=text], input[type=email], input[type=number], input[type=tel], textar
 .slides.whiteSlide .logo.inverted { display: none; }
 .deepPurple { background-color: #57244b !important; }
 .slide.whiteSlide.greyTint { background-color: #e3e3e3; }
-.slide.latest_tweets { background-color: #82d0f6; }
+.slide.latest_tweets { background-color: #57244b; }
 .grid { margin-bottom: 20px; }
 .menu-main-container li a { color: #ffffff; }
 .current_page_item a { border-bottom: 2px solid; }
