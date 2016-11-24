@@ -134,6 +134,10 @@ html:not(.mobile) .slide.video .background[style] { background-size: cover !impo
 .single_central_column .button { margin-top: 10px; }
 
 
+/* map */
+.map { height: 700px; }
+
+
 /* double CTA */
 .cta-bar .button {
 	background-color: #572452; color: #ffffff; border-radius: 0; width: 30%; height: 150px; box-sizing: border-box;

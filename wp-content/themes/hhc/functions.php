@@ -3,7 +3,15 @@
 // enqueue scripts and styles
 function my_enqueue_scripts() {
 
-	// scripts
+	// map scripts
+	wp_register_script( 'google-maps-js', 'https://maps.googleapis.com/maps/api/js?v=3.exp&libraries=places&key=AIzaSyCuVaINYFmfBzecJ-9MvWwCsnWARgQQi8Y', array('jquery') );
+	wp_enqueue_script( 'google-maps-js' );
+	wp_register_script( 'map-style-js', get_stylesheet_directory_uri() . '/js/mapStyle.js', array('jquery') );
+	wp_enqueue_script( 'map-style-js' );
+	wp_register_script( 'map-js', get_stylesheet_directory_uri() . '/js/map.js', array('jquery') );
+	wp_enqueue_script( 'map-js' );	
+
+	// general scripts
 	wp_register_script( 'slides-plugins', get_stylesheet_directory_uri() . '/js/plugins.js', array('jquery'), '5.5.0', true );
 	wp_enqueue_script( 'slides-plugins' );	
 	wp_register_script( 'slides', get_stylesheet_directory_uri() . '/js/slides.min.js', array('jquery'), '5.5.0', true );
@@ -194,6 +202,21 @@ function addCPTs() {
 		);
 	register_post_type('download', $cpt_args);
 
+	// points of interest
+	$cpt_args = array(
+		'menu_icon' => '',
+		'label'	=> __('POIs'),
+		'singular_label' =>	__('POI'),
+		'public'	=>	true,
+		'show_ui'	=>	true,
+		'capability_type'	=>	'post',
+		'hierarchical'	=>	false,
+		'rewrite'	=>	true,
+		'exclude_from_search'	=>	true,
+		'supports'	=>	array('title', 'thumbnail', 'editor')
+		);
+	register_post_type('poi', $cpt_args);
+
 }
 add_action('init', 'addCPTs');
 add_theme_support( 'post-thumbnails' );
@@ -210,6 +233,7 @@ function add_menu_icons_styles() {
 			#adminmenu .menu-icon-global-contact div.wp-menu-image:before { content: '\f319'; }
 			#adminmenu .menu-icon-job div.wp-menu-image:before { content: '\f337'; }
 			#adminmenu .menu-icon-download div.wp-menu-image:before { content: '\f316'; }
+			#adminmenu .menu-icon-poi div.wp-menu-image:before { content: '\f319'; }
 		</style>
 	<?php
 }
@@ -347,7 +371,7 @@ function remove_admin_menu_items() {
    //remove_menu_page('themes.php');
    //remove_menu_page('plugins.php');
    //remove_menu_page('tools.php');
-   remove_menu_page('users.php');
+   //remove_menu_page('users.php');
    //remove_menu_page('options-general.php');
 }
 add_action( 'admin_menu', 'remove_admin_menu_items' );
@@ -376,3 +400,69 @@ function htmlID($string) {
     $string = preg_replace("/[\s_]/", "-", $string);
     return $string;
 }
+
+
+
+
+
+
+
+
+
+
+
+
+/*****************************************************
+******************************************************
+****											  ****
+****											  ****
+****					AJAX 					  ****
+****											  ****
+****											  ****
+******************************************************
+*****************************************************/
+
+add_action( 'wp_ajax_look_up_pois', 'look_up_pois' );
+add_action( 'wp_ajax_nopriv_look_up_pois', 'look_up_pois' );
+function look_up_pois() {
+
+	// define variables
+	global $wpdb;
+	global $wp_query;
+
+	// build query
+	$args = array('post_type' => array('poi'), 'posts_per_page' => -1);
+
+	// run the query
+	$wp_query = new WP_Query($args);
+	if( have_posts()) {
+	    while ( have_posts()) {
+
+			$post = the_post();
+
+			// get POI data
+			$poi_id = get_the_ID();
+			$poi_name = get_the_title();
+			$lat = get_field('latitude');
+			$long = get_field('longitude');
+			$json_pois[] = array(
+				'poi_name' => $poi_name,
+				'poi_id' => $poi_id, 
+				'poi_lat' => $lat, 
+				'poi_long' => $long
+			);
+	    }
+	}
+
+    echo json_encode($json_pois);
+	die();
+}
+
+
+
+
+
+
+
+
+

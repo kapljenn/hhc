@@ -2,6 +2,14 @@
 
 /* Single slide template */
 
+/*
+
+		THIS TEMPLATE NEEDS TO BE COPIED AND PASTED FROM PAGE.PHP TO BE KEPT UP TO DATE.
+
+*/
+
+
+
 get_header();
 
 ?>
