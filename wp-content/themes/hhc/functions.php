@@ -213,7 +213,7 @@ function addCPTs() {
 		'hierarchical'	=>	false,
 		'rewrite'	=>	true,
 		'exclude_from_search'	=>	true,
-		'supports'	=>	array('title', 'thumbnail', 'editor')
+		'supports'	=>	array('title', 'thumbnail', 'editor', 'excerpt')
 		);
 	register_post_type('poi', $cpt_args);
 
@@ -443,11 +443,15 @@ function look_up_pois() {
 			// get POI data
 			$poi_id = get_the_ID();
 			$poi_name = get_the_title();
+			$poi_link = get_the_permalink();
+			$poi_excerpt = get_the_excerpt();
 			$lat = get_field('latitude');
 			$long = get_field('longitude');
 			$json_pois[] = array(
 				'poi_name' => $poi_name,
 				'poi_id' => $poi_id, 
+				'poi_link' => $poi_link, 
+				'poi_excerpt' => $poi_excerpt, 
 				'poi_lat' => $lat, 
 				'poi_long' => $long
 			);
