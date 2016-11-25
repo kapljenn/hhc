@@ -12,22 +12,29 @@
 		<h3 class="equalElement ae-10">Follow us</h3>
 		<ul class="social ae-9">
 			<li>
-				<a href="#">
+				<a target="_blank" href="http://www.facebook.com/hopeandhomes">
 					<img src="<?php echo esc_url(get_stylesheet_directory_uri()); ?>/img/facebook.png" />
 				</a>
 			</li>
 			<li>
-				<a href="#">
+				<a target="_blank" href="https://twitter.com/HopeandHomes">
 					<img src="<?php echo esc_url(get_stylesheet_directory_uri()); ?>/img/twitter.png" />
 				</a>
 			</li>
 			<li>
-				<a href="#">
+				<a target="_blank" href="https://www.instagram.com/hopeandhomesforchildren/">
 					<img src="<?php echo esc_url(get_stylesheet_directory_uri()); ?>/img/instagram.png" />
 				</a>
 			</li>
 		</ul>
-		<div class="copyright">&copy; Hope and Homes for Children 2016</div>
+		<div class="copyright">
+			<a class="frsb" href="http://www.frsb.org.uk/">
+				<img src="<?php echo esc_url(get_stylesheet_directory_uri()); ?>/img/frsb.png" />
+			</a>
+			<br>
+			&copy; Hope and Homes for Children 2016<br>
+			Hope and Homes for Children is a registered charity. No 1089490
+		</div>
 	</div>
 </section>
 

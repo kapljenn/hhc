@@ -396,6 +396,7 @@ if ($video_url != "") {
 </div>
 <div class="fix-12-12">
 	<div class="map" id="map"></div>
+	<div class="map-footer">&nbsp;</div>
 </div>
 
 

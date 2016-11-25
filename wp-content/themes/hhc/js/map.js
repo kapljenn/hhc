@@ -83,7 +83,7 @@ jQuery(document).ready(function() {
 		});
 	}
 
-
+	$('.map-footer').height($('.map-footer').height());
 
 
 
