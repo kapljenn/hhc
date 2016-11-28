@@ -135,8 +135,8 @@ html:not(.mobile) .slide.video .background[style] { background-size: cover !impo
 
 
 /* map */
-.map { height: 400px; }
-.map-footer { height: 400px; }
+.map { }
+.map-footer { }
 .info-window { text-align: left; }
 .info-window h2 { margin: 20px 0; color: #57244b; font-size: 22px; font-weight: 500; text-transform: uppercase; }
 .info-window p { max-width: 300px; font-size: 16px; line-height: 22px; margin-bottom: 20px; }
@@ -235,7 +235,7 @@ html:not(.mobile) .slide.video .background[style] { background-size: cover !impo
 #menu-legal { padding: 50px 0; }
 #menu-legal li { display: inline-block; }
 #menu-legal li a { text-transform: uppercase; font-weight: 500; font-size: 16px; padding: 0 10px; }
-.copyright { padding-top: 100px; font-size: 18px; }
+.copyright { padding-top: 50px; font-size: 18px; }
 .frsb { display: block; width: 200px; margin: 25px auto; }
 .frsb img { width: 100%; }
 

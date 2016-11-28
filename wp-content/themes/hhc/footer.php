@@ -8,7 +8,7 @@
 		<?php wp_nav_menu( array('menu' => 'Legal', 'menu_class' => '')); ?>
 	</div>
 	<div class="fix-10-12 toCenter">
-		<br><br><br><br>
+		<br>
 		<h3 class="equalElement ae-10">Follow us</h3>
 		<ul class="social ae-9">
 			<li>
@@ -28,10 +28,12 @@
 			</li>
 		</ul>
 		<div class="copyright">
+			<!--
 			<a class="frsb" href="http://www.frsb.org.uk/">
 				<img src="<?php echo esc_url(get_stylesheet_directory_uri()); ?>/img/frsb.png" />
 			</a>
 			<br>
+			-->
 			&copy; Hope and Homes for Children 2016<br>
 			Hope and Homes for Children is a registered charity. No 1089490
 		</div>

@@ -46,7 +46,7 @@ jQuery(document).ready(function() {
 	        	content: contentString
 	        });
 
-			// create point
+			// create marker
 			var point = new google.maps.LatLng(pois[i].poi_lat, pois[i].poi_long);
 			marker = new google.maps.Marker({
 				position: point,
@@ -55,15 +55,14 @@ jQuery(document).ready(function() {
 				infoWindow: infoWindow // slightly non-standard, adding the infoWindow to the marker object
 			});
 
+			// add listener
 		    addListener(marker);
-		    //styleMarker(marker);
 		}
 	}
 
 
 	// add marker listener
 	function addListener(marker) {
-		console.log(marker);
 		google.maps.event.addListener(marker, 'click', function() {
 
 			if (activeInfoWindow) activeInfoWindow.close();
@@ -72,18 +71,20 @@ jQuery(document).ready(function() {
 		});
 	}
 	
-	// style infoWindow
-	function styleMarker(marker) {
-		google.maps.event.addListener(marker, 'domready', function() {
-		    var l = $('#infoWindow').parent().parent().parent().siblings();
-		    for (var i = 0; i < l.length; i++) {
-	            $(l[i]).css('border-radius', '16px 16px 16px 16px');
-	            $(l[i]).css('border', '2px solid red');
-		    }
-		});
-	}
+	var mapContainer = $('.map').closest('.container');
+	var containerHeight = mapContainer.height();
 
-	$('.map-footer').height($('.map-footer').height());
+	var mapParent = $('.map').closest('.fix-12-12');
+	var parentWidth = mapParent.width();
+	if (parentWidth > 1114) parentWidth = 1114;
+
+	var w = parentWidth;
+	var h = Math.floor(w*0.75);
+
+	console.log(w + " x " + h);
+	//$('.map').width(w);
+	$('.map').css('width', '100%');
+	$('.map').height(h);
 
 
 

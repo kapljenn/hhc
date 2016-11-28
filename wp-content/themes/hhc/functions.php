@@ -4,7 +4,7 @@
 function my_enqueue_scripts() {
 
 	// map scripts
-	wp_register_script( 'google-maps-js', 'https://maps.googleapis.com/maps/api/js?v=3.exp&libraries=places&key=AIzaSyCuVaINYFmfBzecJ-9MvWwCsnWARgQQi8Y', array('jquery') );
+	wp_register_script( 'google-maps-js', 'https://maps.googleapis.com/maps/api/js?v=3.exp&libraries=places&key=AIzaSyCxhkiBPRt20x4j2U2RSRwgcBT5sE1Y5IM', array('jquery') );
 	wp_enqueue_script( 'google-maps-js' );
 	wp_register_script( 'map-style-js', get_stylesheet_directory_uri() . '/js/mapStyle.js', array('jquery') );
 	wp_enqueue_script( 'map-style-js' );
