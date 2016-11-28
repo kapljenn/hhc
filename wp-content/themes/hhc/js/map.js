@@ -71,22 +71,38 @@ jQuery(document).ready(function() {
 		});
 	}
 	
-	var mapContainer = $('.map').closest('.container');
-	var containerHeight = mapContainer.height();
 
-	var mapParent = $('.map').closest('.fix-12-12');
-	var parentWidth = mapParent.width();
-	if (parentWidth > 1114) parentWidth = 1114;
+	// map resize function
+	function sizeMap() {
+		console.log("resizing");
+		var mapContainer = $('#map').closest('.container');
+		var containerHeight = mapContainer.height();
 
-	var w = parentWidth;
-	var h = Math.floor(w*0.75);
+		var mapParent = $('#map').closest('.fix-12-12');
+		var parentWidth = mapParent.width();
+		if (parentWidth > 1114) parentWidth = 1114;
 
-	console.log(w + " x " + h);
-	//$('.map').width(w);
-	$('.map').css('width', '100%');
-	$('.map').height(h);
+		var w = parentWidth;
+		var h = Math.floor(w*0.75);
+
+		console.log(w + " x " + h);
+		//$('.map').width(w);
+		//$('.map').css('width', '100%');
+		$('#map').height(h);
+	}
+	sizeMap();
 
 
+	// window resize events
+	function mapResizeActions() {
+		sizeMap();
+	};
+	var resizeTimer;
+	$(window).resize(function() {
+	    clearTimeout(resizeTimer);
+	    resizeTimer = setTimeout(mapResizeActions, 100);
+	});
+	mapResizeActions();
 
 
 
