@@ -6,25 +6,20 @@
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0, user-scalable=no">
 	<meta name="apple-mobile-web-app-capable" content="yes" />
-
 	<link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>">
-
 	<link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700" rel="stylesheet">
-
 	<title><?php wp_title(); ?></title>
 	<?php wp_head(); ?>
-
 </head>
 
 <?php
-
-	$small_text_class = "";
-	if (get_field('small_text')) $small_text_class = " small-text";
-
+	// extra classes
+	$extra_classes = "";
+	if (get_field('small_text')) $extra_classes = $extra_classes . " small-text";
+	if (get_the_ID() == "127") $extra_classes = $extra_classes . " scroll";
 ?>
 
-<body <?php body_class('slides fast smooth film whiteSlide animated' . $small_text_class); ?>>
-
+<body <?php body_class('slides fast smooth film whiteSlide animated' . $extra_classes); ?>>
 	<script type="text/javascript">
 	// save variables for use in JS
 	var site_url = "<?php echo site_url() ?>";
