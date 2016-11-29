@@ -39,6 +39,23 @@ var map_style =
                 "visibility": "off"
             }
         ]
+    },    {
+        "featureType": "administrative",
+        "elementType": "all",
+        "stylers": [
+            {
+                "visibility": "off"
+            }
+        ]
+    },
+    {
+        "featureType": "administrative.country",
+        "elementType": "geometry.stroke",
+        "stylers": [
+            {
+                "visibility": "on"
+            }
+        ]
     },
     {
         "featureType": "administrative.province",

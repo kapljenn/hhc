@@ -136,6 +136,7 @@ html:not(.mobile) .slide.video .background[style] { background-size: cover !impo
 
 
 /* map */
+#map > div { background-color: #ffffff !important; }
 .info-window { text-align: left; }
 .info-window h2 { margin: 20px 0; color: #57244b; font-size: 22px; font-weight: 500; text-transform: uppercase; }
 .info-window p { max-width: 300px; font-size: 16px; line-height: 22px; margin-bottom: 20px; }
