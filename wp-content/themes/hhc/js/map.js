@@ -2,6 +2,13 @@
 	
 jQuery(document).ready(function() {
 
+	// iPad detection
+	var is_iPad = navigator.userAgent.match(/iPad/i) != null;
+
+	// zoom level
+	var zoom_level = 2;
+	if (is_iPad) zoom_level = 1;
+
 	// init
 	google.maps.event.addDomListener(window, 'load', initMap);
 	var map;
@@ -18,7 +25,7 @@ jQuery(document).ready(function() {
 		// create map
 		var mapCenter = {lat: 41.9, lng: 12.5};
 		map = new google.maps.Map(document.getElementById('map'), {
-			zoom: 2,
+			zoom: zoom_level,
 			center: mapCenter,
     		styles: map_style,
     		scrollwheel: false
@@ -31,7 +38,6 @@ jQuery(document).ready(function() {
 
 		var marker;
 		var infoWindow;
-		var marker_image = stylesheet_dir + '/img/dot-small.png';
 		for (i = 0; i < pois.length; i++) {
 
 			// popup
@@ -45,6 +51,10 @@ jQuery(document).ready(function() {
 	        infoWindow = new google.maps.InfoWindow({
 	        	content: contentString
 	        });
+
+	        // get marker colour
+			var marker_image = stylesheet_dir + '/img/dot-purple.png';
+			if (pois[i].marker_colour) marker_image = stylesheet_dir + '/img/dot-' + pois[i].marker_colour + '.png';
 
 			// create marker
 			var point = new google.maps.LatLng(pois[i].poi_lat, pois[i].poi_long);

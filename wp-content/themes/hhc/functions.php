@@ -447,13 +447,15 @@ function look_up_pois() {
 			$poi_excerpt = get_the_excerpt();
 			$lat = get_field('latitude');
 			$long = get_field('longitude');
+			$marker_colour = get_field('marker_colour');
 			$json_pois[] = array(
 				'poi_name' => $poi_name,
 				'poi_id' => $poi_id, 
 				'poi_link' => $poi_link, 
 				'poi_excerpt' => $poi_excerpt, 
 				'poi_lat' => $lat, 
-				'poi_long' => $long
+				'poi_long' => $long,
+				'marker_colour' => $marker_colour
 			);
 	    }
 	}
