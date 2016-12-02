@@ -187,6 +187,51 @@ function addCPTs() {
 		);
 	register_post_type('job', $cpt_args);
 
+	// challenges
+	$cpt_args = array(
+		'menu_icon' => '',
+		'label'	=> __('Challenges'),
+		'singular_label' =>	__('Challenge'),
+		'public'	=>	true,
+		'show_ui'	=>	true,
+		'taxonomies'  => array( 'category' ),
+		'capability_type'	=>	'post',
+		'hierarchical'	=>	false,
+		'rewrite'	=>	true,
+		'supports'	=>	array('title', 'thumbnail', 'editor', 'excerpt')
+		);
+	register_post_type('challenge', $cpt_args);
+
+	// events
+	$cpt_args = array(
+		'menu_icon' => '',
+		'label'	=> __('Events'),
+		'singular_label' =>	__('Event'),
+		'public'	=>	true,
+		'show_ui'	=>	true,
+		'taxonomies'  => array( 'category' ),
+		'capability_type'	=>	'post',
+		'hierarchical'	=>	false,
+		'rewrite'	=>	true,
+		'supports'	=>	array('title', 'thumbnail', 'editor', 'excerpt')
+		);
+	register_post_type('event', $cpt_args);
+
+	// stories
+	$cpt_args = array(
+		'menu_icon' => '',
+		'label'	=> __('Stories'),
+		'singular_label' =>	__('Story'),
+		'public'	=>	true,
+		'show_ui'	=>	true,
+		'taxonomies'  => array( 'category' ),
+		'capability_type'	=>	'post',
+		'hierarchical'	=>	false,
+		'rewrite'	=>	true,
+		'supports'	=>	array('title', 'thumbnail', 'editor', 'excerpt')
+		);
+	register_post_type('story', $cpt_args);
+
 	// downloads
 	$cpt_args = array(
 		'menu_icon' => '',
@@ -229,11 +274,14 @@ function add_menu_icons_styles() {
 		<style>
 			#adminmenu .menu-icon-slide div.wp-menu-image:before { content: '\f161'; }
 			#adminmenu .menu-icon-blog-article div.wp-menu-image:before { content: '\f109'; }
+			#adminmenu .menu-icon-story div.wp-menu-image:before { content: '\f109'; }
 			#adminmenu .menu-icon-partner div.wp-menu-image:before { content: '\f338'; }
 			#adminmenu .menu-icon-global-contact div.wp-menu-image:before { content: '\f319'; }
 			#adminmenu .menu-icon-job div.wp-menu-image:before { content: '\f337'; }
 			#adminmenu .menu-icon-download div.wp-menu-image:before { content: '\f316'; }
 			#adminmenu .menu-icon-poi div.wp-menu-image:before { content: '\f319'; }
+			#adminmenu .menu-icon-challenge div.wp-menu-image:before { content: '\f308'; }
+			#adminmenu .menu-icon-event div.wp-menu-image:before { content: '\f486'; }
 		</style>
 	<?php
 }

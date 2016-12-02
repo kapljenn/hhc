@@ -332,6 +332,34 @@ if ($video_url != "") {
 ?>
 </div>
 
+<!-- post loop -->
+<?php
+	$post_loop = get_field('post_loop', $slide_id);
+	if ($post_loop != false) {
+		//var_dump($post_loop);
+		query_posts( array( 'post_type' => array($post_loop), 'posts_per_page' => -1 ));
+		if (have_posts()) : 
+			echo '<ul>';
+			while(have_posts()) : the_post();
+
+				$thumb = wp_get_attachment_image_src( get_post_thumbnail_id($link->ID), 'medium' )['0'];
+				echo '<li class="blog-article">';
+					echo '<div class="img-holder">';
+						echo '<img src="' . $thumb . '">';
+					echo '</div>';
+					echo '<div class="post-content">';
+						echo '<a href="' . get_the_permalink() . '" class="post-title">' . get_the_title() . '</a>';
+						echo '<div class="post-excerpt">' . get_the_excerpt() . '</div>';
+					echo '</div>';
+				echo '</li>';
+
+			endwhile; 
+		echo '</ul>';
+		endif;
+	}
+?>
+
+
 
 
 
