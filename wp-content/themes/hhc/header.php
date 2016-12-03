@@ -16,10 +16,9 @@
 	// extra classes
 	$extra_classes = "";
 	if (get_field('small_text')) $extra_classes = $extra_classes . " small-text";
-	if (get_the_ID() == "127") $extra_classes = $extra_classes . " scroll";
 ?>
 
-<body <?php body_class('slides fast smooth film whiteSlide animated' . $extra_classes); ?>>
+<body <?php body_class('slides fast smooth film whiteSlide animated scroll'); ?>>
 	<script type="text/javascript">
 	// save variables for use in JS
 	var site_url = "<?php echo site_url() ?>";

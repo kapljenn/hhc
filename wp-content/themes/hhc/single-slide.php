@@ -9,15 +9,17 @@
 */
 
 
-
 get_header();
 
-?>
+while ( have_posts() ) : the_post();
 
-<?php while ( have_posts() ) : the_post();
+	// loop through the slides in this page...
+	if( have_rows('slides') ):
 
+	    while ( have_rows('slides') ) : the_row();
 
-			$slide_id = get_the_ID();
+			$slide = get_sub_field('slide');
+			$slide_id = $slide->ID;
 
 			// slide variables
 			$slide_type = get_field('slide_type', $slide_id);
@@ -107,14 +109,14 @@ get_header();
 					<img class="column-image" src="<?php echo $column_image['url']; ?>" />
 				</div>
 <?php } ?>
-				<h3 class="equalElement ae-7" style="color: <?php echo $column_text_colour; ?>">
+				<h2 class="equalElement ae-7" style="color: <?php echo $column_text_colour; ?>">
 <?php
-	if ($column_url['url'] != null) echo '<a href="' . $column_url['url'] . '">' . $c['column_title'] . '</a>';
+	if ($column_url != null) echo '<a style="color: ' . $column_text_colour . '" href="' . $column_url . '">' . $column_title . '</a>';
 	else echo $column_title;
 ?>
-				</h3>
+				</h2>
 				<div class="ae-4">
-					<p class="small" style="color: <?php echo $column_text_colour; ?>"><?php echo $column_text; ?></p>
+					<p style="color: <?php echo $column_text_colour; ?>"><?php echo $column_text; ?></p>
 				</div>
 			</div>
 		</li>
@@ -259,12 +261,10 @@ if ($video_url != "") {
 					$partner_url = get_field('partner_url', $p->ID);
 					echo '<li class="partner"><a href="' . $partner_url . '"><img src="' . $partner_logo . '"></a></li>';
 				} else if ($p->post_type == 'global-contact') {
-					//var_dump($p);
-					echo $p->ID;
 					$thumb = wp_get_attachment_image_src( get_post_thumbnail_id($p->ID), 'medium')[0];
 					$title = $p->post_title;
 					$excerpt = get_the_excerpt($p->ID);
-					$permalink = $p->permalink;
+					$permalink = get_permalink($p->ID);
 					echo '<li class="global-contact">';
 						echo '<div class="img-holder">';
 							echo '<img src="' . $thumb . '">';
@@ -275,12 +275,10 @@ if ($video_url != "") {
 						echo '</div>';
 					echo '</li>';
 				} else if ($p->post_type == 'job') {
-					//var_dump($p);
-					echo $p->ID;
 					//$thumb = wp_get_attachment_image_src( get_post_thumbnail_id($p->ID), 'medium')[0];
 					$title = $p->post_title;
 					$excerpt = get_the_excerpt($p->ID);
-					$permalink = $p->permalink;
+					$permalink = get_permalink($p->ID);
 					echo '<li class="job">';
 						// echo '<div class="img-holder">';
 						// 	echo '<img src="' . $thumb . '">';
@@ -291,8 +289,6 @@ if ($video_url != "") {
 						echo '</div>';
 					echo '</li>';
 				} else if ($p->post_type == 'download') {
-					//var_dump($p);
-					echo $p->ID;
 					//$thumb = wp_get_attachment_image_src( get_post_thumbnail_id($p->ID), 'medium')[0];
 					$title = $p->post_title;
 					$excerpt = get_the_excerpt($p->ID);
@@ -337,34 +333,17 @@ if ($video_url != "") {
 ?>
 </div>
 
-
-
-
-
-<?php } else if ($slide_type == "featured_item") { ?>
+<!-- post loop -->
 <?php
-	query_posts( array( 'post_type' => array('blog-article'), 'posts_per_page' => -1 ));
-	$counter = 0;
-	if (have_posts()) : while(have_posts()) : the_post();
-		$thumb = wp_get_attachment_image_src( get_post_thumbnail_id($link->ID), 'medium' )['0'];
+	$post_loop = get_field('post_loop', $slide_id);
+	if ($post_loop != false) {
+		//var_dump($post_loop);
+		query_posts( array( 'post_type' => array($post_loop), 'posts_per_page' => -1 ));
+		if (have_posts()) : 
+			echo '<ul>';
+			while(have_posts()) : the_post();
 
-		if ($counter == 0) {
-			echo '<div class="fix-12-12">';
-				echo '<div class="blog-article featured">';
-					echo '<div class="img-holder">';
-						echo '<img src="' . $thumb . '">';
-					echo '</div>';
-					echo '<div class="post-content">';
-						echo '<div class="post-title">' . get_the_title() . '</div>';
-						echo '<a class="button ae-5 fromCenter" href="' . get_the_permalink() . '">Read post</a>';
-					echo '</div>';
-				echo '</div>';
-			echo '</div>';
-
-			echo '<div class="fix-10-12">';
-				echo '<ul class="post-grid">';
-
-		} else {
+				$thumb = wp_get_attachment_image_src( get_post_thumbnail_id($link->ID), 'medium' )['0'];
 				echo '<li class="blog-article">';
 					echo '<div class="img-holder">';
 						echo '<img src="' . $thumb . '">';
@@ -374,13 +353,45 @@ if ($video_url != "") {
 						echo '<div class="post-excerpt">' . get_the_excerpt() . '</div>';
 					echo '</div>';
 				echo '</li>';
+
+			endwhile; 
+		echo '</ul>';
+		endif;
+	}
+?>
+
+
+
+
+
+
+<?php } else if ($slide_type == "featured_item") { ?>
+<div class="fix-10-12 <?php echo $hero_alignment; ?>">
+	<?php echo $title_html; ?>
+	<div class="ae-2"><?php echo $slide_content; ?></div>
+</div>
+<?php
+	echo '<div class="fix-10-12">';
+		echo '<ul class="post-grid">';
+		$the_query = new WP_Query(array('post_type' => array('blog-article'), 'posts_per_page' => -1));
+		if ( $the_query->have_posts() ) {
+			while ( $the_query->have_posts() ) {
+				$the_query->the_post();
+				$thumb = wp_get_attachment_image_src( get_post_thumbnail_id($link->ID), 'medium' )['0'];
+				echo '<li class="blog-article">';
+					echo '<div class="img-holder">';
+						echo '<img src="' . $thumb . '">';
+					echo '</div>';
+					echo '<div class="post-content">';
+						echo '<a href="' . get_the_permalink() . '" class="post-title">' . get_the_title() . '</a>';
+						echo '<div class="post-excerpt">' . get_the_excerpt() . '</div>';
+					echo '</div>';
+				echo '</li>';
+			}
 		}
-
-		$counter++;
-
-	endwhile; 
-	echo '</ul></div>';
-	endif;
+		echo '</ul>';
+	echo '</div>';
+	wp_reset_postdata();
 ?>
 
 <?php include('includes/cta.php'); ?>
@@ -397,42 +408,11 @@ if ($video_url != "") {
 <?php } else if ($slide_type == "map") { ?>
 <div class="fix-10-12 <?php echo $hero_alignment; ?>">
 	<?php echo $title_html; ?>
-	<BR><BR><BR><BR><BR><BR><BR><BR><BR>
 	<div class="ae-2"><?php echo $slide_content; ?></div>
 </div>
-
-<?php if ($columns != false) { ?>
 <div class="fix-12-12">
-	<ul class="grid later equal">
-<?php
-		$column_fraction = floor(12/sizeOf($columns));
-		foreach ($columns as $c) {
-			$column_text_colour = $c['column_text_colour'];
-			$column_icon = $c['column_icon'];
-			$column_image = $c['column_image'];
-?>
-		<li class="col-<?php echo $column_fraction; ?>-12">
-			<div class="fix-<?php echo $column_fraction; ?>-12">
-<?php if ($c['column_icon'] != null) { ?>
-				<div class="img-holder">
-					<img class="column-icon" src="<?php echo $column_icon['url']; ?>" />
-				</div>
-<?php } ?>
-<?php if ($c['column_image'] != null) { ?>
-				<div class="img-holder">
-					<img class="column-image" src="<?php echo $column_image['url']; ?>" />
-				</div>
-<?php } ?>
-				<h3 class="equalElement ae-7" style="color: <?php echo $column_text_colour; ?>"><?php echo $c['column_title']; ?></h3>
-				<div class="ae-4">
-					<p class="small" style="color: <?php echo $column_text_colour; ?>"><?php echo $c['column_text']; ?></p>
-				</div>
-			</div>
-		</li>
-<?php } ?>
-				</ul>
-			</div>
-<?php } ?>
+	<div class="map" id="map"></div>
+</div>
 
 
 
@@ -475,6 +455,19 @@ if ($video_url != "") {
 
 
 
+<?php } else if ($slide_type == "latest_tweets") { ?>
+<div class="fix-10-12 <?php echo $hero_alignment; ?>">
+	<?php echo $title_html; ?>
+	<div class="ae-2"><?php echo $slide_content; ?></div>
+</div>
+<div class="fix-12-12">
+	<?php include('includes/twitter.php'); ?>
+</div>
+
+
+
+
+
 
 
 
@@ -488,7 +481,7 @@ if ($video_url != "") {
 
 
 <!-- footer -->
-			<div class="fix-12-12">
+<!-- 			<div class="fix-12-12">
 				<nav class="panel bottom">
 					<div class="sections">
 						<div class="center">
@@ -498,7 +491,9 @@ if ($video_url != "") {
 						</div>
 					</div>
 				</nav>
-			</div>
+			</div> -->
+
+
 		</div> <!-- wrap -->
 	</div> <!-- container -->
 </div> <!-- content -->
@@ -510,10 +505,9 @@ if ($video_url != "") {
 			if ($featured_image != null) {
 				echo '<div class="background" style="background-image:url(' . $featured_image . ') !important"></div>';
 			}
-			echo '</section>';
 ?>
 
-
+</section>
 
 
 
@@ -538,13 +532,11 @@ if ($slide_type == "video") {
 <?php
 
 }
-
+	    endwhile;
+	endif;
+endwhile;
 ?>
 
-
-
-
-<?php endwhile; ?>
 
 
 

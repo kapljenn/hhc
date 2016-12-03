@@ -102,14 +102,14 @@ while ( have_posts() ) : the_post();
 					<img class="column-image" src="<?php echo $column_image['url']; ?>" />
 				</div>
 <?php } ?>
-				<h3 class="equalElement ae-7" style="color: <?php echo $column_text_colour; ?>">
+				<h2 class="equalElement ae-7" style="color: <?php echo $column_text_colour; ?>">
 <?php
-	if ($column_url != null) echo '<a href="' . $column_url . '">' . $column_title . '</a>';
+	if ($column_url != null) echo '<a style="color: ' . $column_text_colour . '" href="' . $column_url . '">' . $column_title . '</a>';
 	else echo $column_title;
 ?>
-				</h3>
+				</h2>
 				<div class="ae-4">
-					<p class="small" style="color: <?php echo $column_text_colour; ?>"><?php echo $column_text; ?></p>
+					<p style="color: <?php echo $column_text_colour; ?>"><?php echo $column_text; ?></p>
 				</div>
 			</div>
 		</li>
@@ -254,12 +254,10 @@ if ($video_url != "") {
 					$partner_url = get_field('partner_url', $p->ID);
 					echo '<li class="partner"><a href="' . $partner_url . '"><img src="' . $partner_logo . '"></a></li>';
 				} else if ($p->post_type == 'global-contact') {
-					//var_dump($p);
-					echo $p->ID;
 					$thumb = wp_get_attachment_image_src( get_post_thumbnail_id($p->ID), 'medium')[0];
 					$title = $p->post_title;
 					$excerpt = get_the_excerpt($p->ID);
-					$permalink = $p->permalink;
+					$permalink = get_permalink($p->ID);
 					echo '<li class="global-contact">';
 						echo '<div class="img-holder">';
 							echo '<img src="' . $thumb . '">';
@@ -270,12 +268,10 @@ if ($video_url != "") {
 						echo '</div>';
 					echo '</li>';
 				} else if ($p->post_type == 'job') {
-					//var_dump($p);
-					echo $p->ID;
 					//$thumb = wp_get_attachment_image_src( get_post_thumbnail_id($p->ID), 'medium')[0];
 					$title = $p->post_title;
 					$excerpt = get_the_excerpt($p->ID);
-					$permalink = $p->permalink;
+					$permalink = get_permalink($p->ID);
 					echo '<li class="job">';
 						// echo '<div class="img-holder">';
 						// 	echo '<img src="' . $thumb . '">';
@@ -286,8 +282,6 @@ if ($video_url != "") {
 						echo '</div>';
 					echo '</li>';
 				} else if ($p->post_type == 'download') {
-					//var_dump($p);
-					echo $p->ID;
 					//$thumb = wp_get_attachment_image_src( get_post_thumbnail_id($p->ID), 'medium')[0];
 					$title = $p->post_title;
 					$excerpt = get_the_excerpt($p->ID);
@@ -365,29 +359,18 @@ if ($video_url != "") {
 
 
 <?php } else if ($slide_type == "featured_item") { ?>
+<div class="fix-10-12 <?php echo $hero_alignment; ?>">
+	<?php echo $title_html; ?>
+	<div class="ae-2"><?php echo $slide_content; ?></div>
+</div>
 <?php
-	query_posts( array( 'post_type' => array('blog-article'), 'posts_per_page' => -1 ));
-	$counter = 0;
-	if (have_posts()) : while(have_posts()) : the_post();
-		$thumb = wp_get_attachment_image_src( get_post_thumbnail_id($link->ID), 'medium' )['0'];
-
-		if ($counter == 0) {
-			echo '<div class="fix-12-12">';
-				echo '<div class="blog-article featured">';
-					echo '<div class="img-holder">';
-						echo '<img src="' . $thumb . '">';
-					echo '</div>';
-					echo '<div class="post-content">';
-						echo '<div class="post-title">' . get_the_title() . '</div>';
-						echo '<a class="button ae-5 fromCenter" href="' . get_the_permalink() . '">Read post</a>';
-					echo '</div>';
-				echo '</div>';
-			echo '</div>';
-
-			echo '<div class="fix-10-12">';
-				echo '<ul class="post-grid">';
-
-		} else {
+	echo '<div class="fix-10-12">';
+		echo '<ul class="post-grid">';
+		$the_query = new WP_Query(array('post_type' => array('blog-article'), 'posts_per_page' => -1));
+		if ( $the_query->have_posts() ) {
+			while ( $the_query->have_posts() ) {
+				$the_query->the_post();
+				$thumb = wp_get_attachment_image_src( get_post_thumbnail_id($link->ID), 'medium' )['0'];
 				echo '<li class="blog-article">';
 					echo '<div class="img-holder">';
 						echo '<img src="' . $thumb . '">';
@@ -397,13 +380,11 @@ if ($video_url != "") {
 						echo '<div class="post-excerpt">' . get_the_excerpt() . '</div>';
 					echo '</div>';
 				echo '</li>';
+			}
 		}
-
-		$counter++;
-
-	endwhile; 
-	echo '</ul></div>';
-	endif;
+		echo '</ul>';
+	echo '</div>';
+	wp_reset_postdata();
 ?>
 
 <?php include('includes/cta.php'); ?>

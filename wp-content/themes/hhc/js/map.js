@@ -10,7 +10,7 @@ jQuery(document).ready(function() {
 	if (is_iPad) zoom_level = 1;
 
 	// init
-	google.maps.event.addDomListener(window, 'load', initMap);
+	if ($('.map').length > 0) google.maps.event.addDomListener(window, 'load', initMap);
 	var map;
 	var activeInfoWindow;
 
@@ -100,7 +100,6 @@ jQuery(document).ready(function() {
 		//$('.map').css('width', '100%');
 		$('#map').height(h);
 	}
-	sizeMap();
 
 
 	// window resize events
@@ -112,7 +111,7 @@ jQuery(document).ready(function() {
 	    clearTimeout(resizeTimer);
 	    resizeTimer = setTimeout(mapResizeActions, 100);
 	});
-	mapResizeActions();
+	if ($('.map').length > 0) mapResizeActions();
 
 
 

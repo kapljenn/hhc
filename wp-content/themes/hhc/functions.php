@@ -54,6 +54,7 @@ function baw_hack_wp_title_for_home( $title ) {
 
 
 // remove the admin bar
+/*
 add_action( 'admin_print_scripts-profile.php', 'hide_admin_bar_prefs' );
 function hide_admin_bar_prefs() { 
 	?>
@@ -63,6 +64,7 @@ function hide_admin_bar_prefs() {
 	<?php
 }
 add_filter('show_admin_bar', '__return_false');
+*/
 
 
 // disable paragraph tag wrapping
