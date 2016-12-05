@@ -13,24 +13,21 @@ get_header();
 
 while ( have_posts() ) : the_post();
 
-	// loop through the slides in this page...
-	if( have_rows('slides') ):
 
-	    while ( have_rows('slides') ) : the_row();
-
-			$slide = get_sub_field('slide');
-			$slide_id = $slide->ID;
+			$slide_id = get_the_ID();
 
 			// slide variables
 			$slide_type = get_field('slide_type', $slide_id);
 			$slide_palette = get_field('slide_palette', $slide_id);
-			$slide_content = apply_filters('the_content', $slide->post_content);
+
+			$slide_content = str_replace("<h1", "<h1 style='display: none !important'", get_the_content());
+
 			$cta = get_field('cta', $slide_id);
 			$hero_alignment = get_field('hero_alignment', $slide_id);
 
 			// slide title
 			$title_colour = get_field('title_colour', $slide_id);
-			$title_html = '<h1 class="ae-1" style="color: ' . $title_colour . '">' . $slide->post_title . '</h1>';
+			$title_html = '<h1 class="ae-1" style="color: ' . $title_colour . '">' . get_the_title() . '</h1>';
 			$title_format = get_field('title_format', $slide_id);
 			$title_image = get_field('title_image', $slide_id);
 			if ($title_format == "image") {
@@ -57,7 +54,7 @@ while ( have_posts() ) : the_post();
 			$cta_position = get_field('cta_position', $slide_id);
 
 			// make HTML ID attribute
-			$html_id_attribute = htmlID($slide->post_title);
+			$html_id_attribute = htmlID(get_the_title());
 
 			// slide header
 			echo '	<section class="slide ' . $slide_classes . '" id="' . $html_id_attribute . '"">
@@ -173,7 +170,7 @@ while ( have_posts() ) : the_post();
 					$partner_logo = get_field('partner_logo', $post_id)['url'];
 					if ($slide_palette == "white_text_dark_background") $partner_logo = get_field('partner_logo_inverted', $post_id)['url'];
 					$partner_url = get_field('partner_url', $post_id);
-					echo '<li class="partner"><a href="' . $partner_url . '"><img src="' . $partner_logo . '"></a></li>';
+					echo '<li class="partner"><a href="' . $partner_url . '" style="background-image: url(' . $partner_logo . ')"></a></li>';
 				}
 				echo '</ul>';
 			}
@@ -203,7 +200,7 @@ while ( have_posts() ) : the_post();
 					$partner_logo = get_field('partner_logo', $post_id)['url'];
 					if ($slide_palette == "white_text_dark_background") $partner_logo = get_field('partner_logo_inverted', $post_id)['url'];
 					$partner_url = get_field('partner_url', $post_id);
-					echo '<li class="partner"><a href="' . $partner_url . '"><img src="' . $partner_logo . '"></a></li>';
+					echo '<li class="partner"><a href="' . $partner_url . '" style="background-image: url(' . $partner_logo . ')"></a></li>';
 				}
 				echo '</ul>';
 			}
@@ -532,15 +529,15 @@ if ($slide_type == "video") {
 <?php
 
 }
-	    endwhile;
-	endif;
-endwhile;
+
 ?>
 
 
 
 
 <?php
+
+endwhile;
 
 get_footer();
 

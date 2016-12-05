@@ -166,7 +166,7 @@ while ( have_posts() ) : the_post();
 					$partner_logo = get_field('partner_logo', $post_id)['url'];
 					if ($slide_palette == "white_text_dark_background") $partner_logo = get_field('partner_logo_inverted', $post_id)['url'];
 					$partner_url = get_field('partner_url', $post_id);
-					echo '<li class="partner"><a href="' . $partner_url . '"><img src="' . $partner_logo . '"></a></li>';
+					echo '<li class="partner"><a href="' . $partner_url . '" style="background-image: url(' . $partner_logo . ')"></a></li>';
 				}
 				echo '</ul>';
 			}
@@ -196,7 +196,7 @@ while ( have_posts() ) : the_post();
 					$partner_logo = get_field('partner_logo', $post_id)['url'];
 					if ($slide_palette == "white_text_dark_background") $partner_logo = get_field('partner_logo_inverted', $post_id)['url'];
 					$partner_url = get_field('partner_url', $post_id);
-					echo '<li class="partner"><a href="' . $partner_url . '"><img src="' . $partner_logo . '"></a></li>';
+					echo '<li class="partner"><a href="' . $partner_url . '" style="background-image: url(' . $partner_logo . ')"></a></li>';
 				}
 				echo '</ul>';
 			}

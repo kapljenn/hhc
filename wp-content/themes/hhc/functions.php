@@ -144,10 +144,40 @@ function addCPTs() {
 		);
 	register_post_type('blog-article', $cpt_args);
 
-	// partners
+	// news
 	$cpt_args = array(
 		'menu_icon' => '',
-		'label'	=> __('Partners'),
+		'label'	=> __('News'),
+		'singular_label' =>	__('News Article'),
+		'public'	=>	true,
+		'show_ui'	=>	true,
+		'taxonomies'  => array( 'category' ),
+		'capability_type'	=>	'post',
+		'hierarchical'	=>	false,
+		'rewrite'	=>	true,
+		'supports'	=>	array('title', 'thumbnail', 'editor', 'excerpt')
+		);
+	register_post_type('news-article', $cpt_args);
+
+	// in the field
+	$cpt_args = array(
+		'menu_icon' => '',
+		'label'	=> __('In The Field'),
+		'singular_label' =>	__('In The Field Article'),
+		'public'	=>	true,
+		'show_ui'	=>	true,
+		'taxonomies'  => array( 'category' ),
+		'capability_type'	=>	'post',
+		'hierarchical'	=>	false,
+		'rewrite'	=>	true,
+		'supports'	=>	array('title', 'thumbnail', 'editor', 'excerpt')
+		);
+	register_post_type('in-the-field-article', $cpt_args);
+
+	// partners (corporate partners)
+	$cpt_args = array(
+		'menu_icon' => '',
+		'label'	=> __('Corporate Partners'),
 		'singular_label' =>	__('Partner'),
 		'public'	=>	true,
 		'show_ui'	=>	true,
@@ -158,6 +188,96 @@ function addCPTs() {
 		'supports'	=>	array('title')
 		);
 	register_post_type('partner', $cpt_args);
+
+	// philanthropy partners
+	$cpt_args = array(
+		'menu_icon' => '',
+		'label'	=> __('Philanthropy Partners'),
+		'singular_label' =>	__('Philanthropy Partner'),
+		'public'	=>	true,
+		'show_ui'	=>	true,
+		'taxonomies'  => array( 'category' ),
+		'capability_type'	=>	'post',
+		'hierarchical'	=>	false,
+		'rewrite'	=>	true,
+		'supports'	=>	array('title')
+		);
+	register_post_type('philanthropy-partner', $cpt_args);
+
+	// strategic partners
+	$cpt_args = array(
+		'menu_icon' => '',
+		'label'	=> __('Strategic Partners'),
+		'singular_label' =>	__('Strategic Partner'),
+		'public'	=>	true,
+		'show_ui'	=>	true,
+		'taxonomies'  => array( 'category' ),
+		'capability_type'	=>	'post',
+		'hierarchical'	=>	false,
+		'rewrite'	=>	true,
+		'supports'	=>	array('title')
+		);
+	register_post_type('strategic-partner', $cpt_args);
+
+	// fellow bodies
+	$cpt_args = array(
+		'menu_icon' => '',
+		'label'	=> __('Fellow Bodies'),
+		'singular_label' =>	__('Fellow Body'),
+		'public'	=>	true,
+		'show_ui'	=>	true,
+		'taxonomies'  => array( 'category' ),
+		'capability_type'	=>	'post',
+		'hierarchical'	=>	false,
+		'rewrite'	=>	true,
+		'supports'	=>	array('title')
+		);
+	register_post_type('fellow-body', $cpt_args);
+
+	// executive leaders
+	$cpt_args = array(
+		'menu_icon' => '',
+		'label'	=> __('Executive Leaders'),
+		'singular_label' =>	__('Executive Leader'),
+		'public'	=>	true,
+		'show_ui'	=>	true,
+		'taxonomies'  => array( 'category' ),
+		'capability_type'	=>	'post',
+		'hierarchical'	=>	false,
+		'rewrite'	=>	true,
+		'supports'	=>	array('title')
+		);
+	register_post_type('executive-leader', $cpt_args);
+
+	// patrons
+	$cpt_args = array(
+		'menu_icon' => '',
+		'label'	=> __('Patrons'),
+		'singular_label' =>	__('Patron'),
+		'public'	=>	true,
+		'show_ui'	=>	true,
+		'taxonomies'  => array( 'category' ),
+		'capability_type'	=>	'post',
+		'hierarchical'	=>	false,
+		'rewrite'	=>	true,
+		'supports'	=>	array('title')
+		);
+	register_post_type('patron', $cpt_args);
+
+	// trustees
+	$cpt_args = array(
+		'menu_icon' => '',
+		'label'	=> __('Trustees'),
+		'singular_label' =>	__('Trustee'),
+		'public'	=>	true,
+		'show_ui'	=>	true,
+		'taxonomies'  => array( 'category' ),
+		'capability_type'	=>	'post',
+		'hierarchical'	=>	false,
+		'rewrite'	=>	true,
+		'supports'	=>	array('title')
+		);
+	register_post_type('trustee', $cpt_args);
 
 	// global contacts
 	$cpt_args = array(
@@ -264,6 +384,36 @@ function addCPTs() {
 		);
 	register_post_type('poi', $cpt_args);
 
+	// internships
+	$cpt_args = array(
+		'menu_icon' => '',
+		'label'	=> __('Internships'),
+		'singular_label' =>	__('Internship'),
+		'public'	=>	true,
+		'show_ui'	=>	true,
+		'capability_type'	=>	'post',
+		'hierarchical'	=>	false,
+		'rewrite'	=>	true,
+		'exclude_from_search'	=>	true,
+		'supports'	=>	array('title', 'thumbnail', 'editor', 'excerpt')
+		);
+	register_post_type('internship', $cpt_args);
+
+	// volunteering
+	$cpt_args = array(
+		'menu_icon' => '',
+		'label'	=> __('Volunteering'),
+		'singular_label' =>	__('Volunteering'),
+		'public'	=>	true,
+		'show_ui'	=>	true,
+		'capability_type'	=>	'post',
+		'hierarchical'	=>	false,
+		'rewrite'	=>	true,
+		'exclude_from_search'	=>	true,
+		'supports'	=>	array('title', 'thumbnail', 'editor', 'excerpt')
+		);
+	register_post_type('volunteering', $cpt_args);
+
 }
 add_action('init', 'addCPTs');
 add_theme_support( 'post-thumbnails' );
@@ -276,10 +426,20 @@ function add_menu_icons_styles() {
 		<style>
 			#adminmenu .menu-icon-slide div.wp-menu-image:before { content: '\f161'; }
 			#adminmenu .menu-icon-blog-article div.wp-menu-image:before { content: '\f109'; }
+			#adminmenu .menu-icon-news-article div.wp-menu-image:before { content: '\f109'; }
+			#adminmenu .menu-icon-in-the-field-article div.wp-menu-image:before { content: '\f109'; }
 			#adminmenu .menu-icon-story div.wp-menu-image:before { content: '\f109'; }
-			#adminmenu .menu-icon-partner div.wp-menu-image:before { content: '\f338'; }
+			#adminmenu .menu-icon-partner div.wp-menu-image:before { content: '\f237'; }
+			#adminmenu .menu-icon-philanthropy-partner div.wp-menu-image:before { content: '\f237'; }
+			#adminmenu .menu-icon-strategic-partner div.wp-menu-image:before { content: '\f237'; }
+			#adminmenu .menu-icon-fellow-body div.wp-menu-image:before { content: '\f237'; }
+			#adminmenu .menu-icon-executive-leader div.wp-menu-image:before { content: '\f338'; }
+			#adminmenu .menu-icon-patron div.wp-menu-image:before { content: '\f338'; }
+			#adminmenu .menu-icon-trustee div.wp-menu-image:before { content: '\f338'; }
 			#adminmenu .menu-icon-global-contact div.wp-menu-image:before { content: '\f319'; }
 			#adminmenu .menu-icon-job div.wp-menu-image:before { content: '\f337'; }
+			#adminmenu .menu-icon-internship div.wp-menu-image:before { content: '\f337'; }
+			#adminmenu .menu-icon-volunteering div.wp-menu-image:before { content: '\f337'; }
 			#adminmenu .menu-icon-download div.wp-menu-image:before { content: '\f316'; }
 			#adminmenu .menu-icon-poi div.wp-menu-image:before { content: '\f319'; }
 			#adminmenu .menu-icon-challenge div.wp-menu-image:before { content: '\f308'; }
@@ -513,10 +673,6 @@ function look_up_pois() {
     echo json_encode($json_pois);
 	die();
 }
-
-
-
-
 
 
 

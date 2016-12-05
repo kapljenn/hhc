@@ -116,7 +116,10 @@ html:not(.mobile) .slide.video .background[style] { background-size: cover !impo
 .side_by_side .col-6-12 p { padding-top: 25px; }
 .side_by_side .button { margin-top: 25px; padding: 12px 20px; }
 .side_by_side .grid .grid li { width: 32%; display: inline-block; vertical-align: top; margin-bottom: 20px; text-align: center; }
-.side_by_side .grid .grid li a { display: inline-block; }
+.side_by_side .grid .grid li a { 
+	display: inline-block; background-size: contain; background-repeat: no-repeat; background-position: center center;
+	width: 120px; height: 120px;
+}
 
 
 
