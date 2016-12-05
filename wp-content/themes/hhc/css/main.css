@@ -65,8 +65,8 @@ html:not(.mobile) .slide.video .background[style] { background-size: cover !impo
 /* slides general */
 .slide-title { margin-bottom: 45px; }
 .img-holder { width: 100%; margin-bottom: 20px; height: 200px; overflow: hidden; }
-.img-holder .column-icon { margin: 0 auto; display: block; height: 80px; width: auto; }
-.img-holder .column-image { margin: 0 auto; display: block; width: auto; }
+.icon-holder img { margin: 0 auto; display: block; height: 80px; width: auto; }
+.img-holder img { margin: 0 auto; display: block; width: auto; }
 .media-link { margin: 10px 0 20px 0; }
 .media-link p { margin-bottom: 0; }
 .media-link a { 

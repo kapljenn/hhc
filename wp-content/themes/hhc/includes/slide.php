@@ -78,13 +78,13 @@
 		<li class="col-<?php echo $column_fraction; ?>-12">
 			<div class="fix-<?php echo $column_fraction; ?>-12">
 <?php if ($column_icon != null) { ?>
-				<div class="img-holder">
-					<img class="column-icon" src="<?php echo $column_icon['url']; ?>" />
+				<div class="icon-holder">
+					<img src="<?php echo $column_icon['url']; ?>" />
 				</div>
 <?php } ?>
 <?php if ($column_image != null) { ?>
 				<div class="img-holder">
-					<img class="column-image" src="<?php echo $column_image['url']; ?>" />
+					<img src="<?php echo $column_image['url']; ?>" />
 				</div>
 <?php } ?>
 				<h2 class="equalElement ae-7" style="color: <?php echo $column_text_colour; ?>">
