@@ -245,7 +245,7 @@ function addCPTs() {
 		'capability_type'	=>	'post',
 		'hierarchical'	=>	false,
 		'rewrite'	=>	true,
-		'supports'	=>	array('title')
+		'supports'	=>	array('title', 'thumbnail', 'editor', 'excerpt')
 		);
 	register_post_type('executive-leader', $cpt_args);
 
@@ -260,7 +260,7 @@ function addCPTs() {
 		'capability_type'	=>	'post',
 		'hierarchical'	=>	false,
 		'rewrite'	=>	true,
-		'supports'	=>	array('title')
+		'supports'	=>	array('title', 'thumbnail', 'editor', 'excerpt')
 		);
 	register_post_type('patron', $cpt_args);
 
@@ -275,7 +275,7 @@ function addCPTs() {
 		'capability_type'	=>	'post',
 		'hierarchical'	=>	false,
 		'rewrite'	=>	true,
-		'supports'	=>	array('title')
+		'supports'	=>	array('title', 'thumbnail', 'editor', 'excerpt')
 		);
 	register_post_type('trustee', $cpt_args);
 
