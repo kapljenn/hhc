@@ -215,7 +215,8 @@ html:not(.mobile) .slide.video .background[style] { background-size: cover !impo
 .blog-article .img-holder img { width: 100%; height: auto; }
 .blog-article .post-content { background-color: #ffffff; box-sizing: border-box; padding: 20px; }
 .blog-article a.post-title { font-weight: 500; display: block; margin-bottom: 20px; }
-.blog-article .post-excerpt { font-size: 14px; }
+.blog-article .post-excerpt { font-size: 14px; color: #303030;}
+.blog-article .post-excerpt { color: #303030; }
 .blog-article .img-holder img { height: 100%; width: auto; max-width: none; }
 .blog-article.featured { height: 400px; position: relative; overflow: hidden; }
 .blog-article.featured .img-holder { height: auto; }
