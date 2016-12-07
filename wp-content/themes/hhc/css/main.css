@@ -7,7 +7,9 @@
 
 
 /* fonts */
-body, h1, h2, h3, p, a, div, span, input, select, textarea, label { font-family: "Poppins", sans-serif; font-weight: 400; }
+body, h1, h2, h3, p, a, div, span, input, select, textarea, label { 
+	font-family: "Poppins", sans-serif; font-weight: 400;
+}
 
 
 /* core elements */
@@ -87,7 +89,7 @@ html:not(.mobile) .slide.video .background[style] { background-size: cover !impo
 /* columns */
 .column { font-size: 16px; line-height: 20px; }
 .col-4-12 h2, .col-3-12 h2 { 
-	font-size: 20px; line-height: 28px; text-transform: uppercase; word-wrap: break-word; margin: 10px 0;
+	font-size: 20px; line-height: 28px; text-transform: uppercase; word-wrap: break-word; margin: 10px 0; display: inline-block;
 }
 .col-3-12 p, .col-4-12 p { font-size: 16px; line-height: 20px; font-weight: bold; }
 .column-cta { 
@@ -270,6 +272,9 @@ section:nth-of-type(1).header_with_3_columns .fix-10-12 p { font-size: 30px; }
 /* Slides / Ninja Forms clash fix */
 .wp-list-table.fixed { position: relative !important; }
 
+
+/* Stripe */
+/*.wrap .stripe-button-el { border: 1px solid red; }*/
 
 
 /* Wufoo */
