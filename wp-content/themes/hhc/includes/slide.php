@@ -399,6 +399,24 @@ if ($video_url != "") {
 
 
 
+
+
+<?php } else if ($slide_type == "zoomed_map") { ?>
+<div class="fix-10-12 <?php echo $hero_alignment; ?>">
+	<?php echo $title_html; ?>
+	<div class="ae-2"><?php echo $slide_content; ?></div>
+</div>
+<div class="fix-12-12">
+	<div class="zoomed-map" id="zoomed_map"></div>
+</div>
+
+
+
+
+
+
+
+
 <?php } else if ($slide_type == "three_thumbnails") { ?>
 <?php $thumbnails = get_field('thumbnails', $slide_id); ?>
 <div class="fix-10-12 <?php echo $hero_alignment; ?>">

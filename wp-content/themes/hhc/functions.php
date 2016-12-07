@@ -10,6 +10,8 @@ function my_enqueue_scripts() {
 	wp_enqueue_script( 'map-style-js' );
 	wp_register_script( 'map-js', get_stylesheet_directory_uri() . '/js/map.js', array('jquery') );
 	wp_enqueue_script( 'map-js' );	
+	wp_register_script( 'zoomed-map-js', get_stylesheet_directory_uri() . '/js/zoomed-map.js', array('jquery') );
+	wp_enqueue_script( 'zoomed-map-js' );	
 
 	// general scripts
 	wp_register_script( 'slides-plugins', get_stylesheet_directory_uri() . '/js/plugins.js', array('jquery'), '5.5.0', true );
