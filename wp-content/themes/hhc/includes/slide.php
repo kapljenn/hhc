@@ -344,41 +344,6 @@ if ($video_url != "") {
 
 
 
-<?php } else if ($slide_type == "featured_item") { ?>
-<div class="fix-10-12 <?php echo $hero_alignment; ?>">
-	<?php echo $title_html; ?>
-	<div class="ae-2"><?php echo $slide_content; ?></div>
-</div>
-<!-- post loop -->
-<?php
-	$post_loop = get_field('post_loop', $slide_id);
-	if ($post_loop != false) {
-		$the_query = new WP_Query(array( 'post_type' => $post_loop, 'posts_per_page' => -1 ));
-		if ( $the_query->have_posts() ) {
-			echo '<ul class="post-grid">';
-			while ( $the_query->have_posts() ) {
-				$the_query->the_post();
-				$thumb = wp_get_attachment_image_src( get_post_thumbnail_id($link->ID), 'medium' )['0'];
-				echo '<li class="blog-article">';
-				if ($thumb) {
-					echo '<div class="img-holder">';
-						echo '<img src="' . $thumb . '">';
-					echo '</div>';
-				}
-					echo '<div class="post-content">';
-						echo '<a href="' . get_the_permalink() . '" class="post-title">' . get_the_title() . '</a>';
-						echo '<div class="post-excerpt">' . get_the_excerpt() . '</div>';
-					echo '</div>';
-				echo '</li>';
-			}
-			echo '</ul>';
-		}
-		wp_reset_postdata();
-	}
-?>
-
-<?php include('cta.php'); ?>
-
 
 
 
@@ -468,6 +433,12 @@ if ($video_url != "") {
 
 
 
+
+
+<?php } else if ($slide_type == "featured_item") { ?>
+<div class="fix-10-12 <?php echo $hero_alignment; ?>">
+	This slide type is no longer in use! Please use Single Central Column instead.
+</div>
 
 
 
