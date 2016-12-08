@@ -281,4 +281,32 @@ section:nth-of-type(1).header_with_3_columns .fix-10-12 p { font-size: 30px; }
 .wufoo input.text { padding: 10px; border-radius: 6px; }
 
 
+.is-checked {
+	background: #007795;
+}
 
+.download-filters #quicksearch {
+	width: 98%;
+	background: #fff;
+	text-align: center;
+}
+
+.download-btn {
+	width: 23% !important;
+	margin: 0 1% !important;
+	font-size: 18px;
+}
+
+.download .post-content {
+	height: 200px;
+	overflow: hidden;
+}
+
+.download .post-excerpt {
+	color: #0e0e0e;
+}
+
+.downloads-grid {
+	max-height: 480px !important;
+	overflow: hidden;
+}

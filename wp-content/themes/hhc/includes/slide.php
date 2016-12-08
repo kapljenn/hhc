@@ -227,6 +227,14 @@ if ($video_url != "") {
 		$post_list = get_field('post_list', $slide_id);
 		$post_list_classes = get_field('post_list_classes', $slide_id);
 		if ($post_list != false) {
+			if(stripos($post_list_classes, 'downloads-grid') !== false)
+			{
+				echo '<div class="download-filters">
+				<p><input type="text" id="quicksearch" placeholder="Search" /></p>
+				<div id="filters" class="button-group"><button class="button download-btn download-btn-first" data-filter=".fundraising-tools">Fundraising Tools</button><button class="button download-btn" data-filter=".training">Training</button><button class="button download-btn" data-filter=".campaigns">Campaigns</button><button class="button download-btn download-btn-last" data-filter=".publications">Publications</button></div>
+				</div>';
+			}
+		
 			echo "<ul class='post-grid " . $post_list_classes . "'>";
 			$column_fraction = floor(12/sizeOf($post_list));
 			foreach ($post_list as $p) {

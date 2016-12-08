@@ -58,20 +58,25 @@ jQuery(document).ready(function() {
 	});
 
 	var qsRegex;
-	var buttonFilter;
-
+	var buttonFilter = '';
+	var defaultFilter = '.initially-shown';
+	
 	var $grid = $('.post-grid').isotope({
 		itemSelector: '.download-grid-item',
 		layoutMode: 'masonry',
 		stagger: 100,
 		filter: function() {
-			if(qsRegex)
+			if($('#quicksearch').val().length > 0)
 			{
 				return qsRegex ? $(this).text().match( qsRegex ) : true;
 			}
-			if(buttonFilter)
+			else if(buttonFilter != '')
 			{
 				return buttonFilter ? $(this).is( buttonFilter ) : true;
+			}
+			else
+			{
+				return defaultFilter ? $(this).is( defaultFilter ) : true;
 			}
 		}
 	});
@@ -79,7 +84,15 @@ jQuery(document).ready(function() {
 	$('#filters').on( 'click', 'button', function() {	
 		qsRegex = '';
 		$('#quicksearch').val('');
-		buttonFilter = $( this ).attr('data-filter');
+		if($(this).hasClass('is-checked'))
+		{
+			buttonFilter = '';
+		}
+		else
+		{
+			buttonFilter = $( this ).attr('data-filter');
+		}
+			
 		$grid.isotope();
 	});
 
@@ -94,8 +107,15 @@ jQuery(document).ready(function() {
 	$('.button-group').each( function( i, buttonGroup ) {
 		var $buttonGroup = $( buttonGroup );
 			$buttonGroup.on( 'click', 'button', function() {
-			$buttonGroup.find('.is-checked').removeClass('is-checked');
-			$( this ).addClass('is-checked');
+			if($(this).hasClass('is-checked'))
+			{
+				$buttonGroup.find('.is-checked').removeClass('is-checked');
+			}
+			else
+			{
+				$buttonGroup.find('.is-checked').removeClass('is-checked');
+				$( this ).addClass('is-checked');
+			}
 		});
 	});
   
