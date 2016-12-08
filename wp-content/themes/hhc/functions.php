@@ -18,6 +18,9 @@ function my_enqueue_scripts() {
 	wp_enqueue_script( 'slides' );	
 	wp_register_script( 'main', get_stylesheet_directory_uri() . '/js/main.js', array('jquery'), '5.5.0', true );
 	wp_enqueue_script( 'main' );	
+	wp_register_script( 'isotope', get_stylesheet_directory_uri() . '/js/isotope.pkgd.min.js', array('jquery'), '5.5.0', true );
+	wp_enqueue_script( 'isotope' );	
+
 
 	// stylesheets
 	wp_enqueue_style( 'default', get_stylesheet_uri() );
@@ -673,6 +676,8 @@ function look_up_pois() {
     echo json_encode($json_pois);
 	die();
 }
+
+
 
 
 

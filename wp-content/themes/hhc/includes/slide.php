@@ -271,7 +271,10 @@ if ($video_url != "") {
 					$title = $p->post_title;
 					$excerpt = get_the_excerpt($p->ID);
 					$permalink = get_field('file', $p->ID)['url'];
-					echo '<li class="download">';
+					
+					$categories = get_the_category($p->ID);
+					
+					echo '<li class="download download-grid-item initially-hidden '.esc_html( $categories[0]->slug ).'">';
 						// echo '<div class="img-holder">';
 						// 	echo '<img src="' . $thumb . '">';
 						// echo '</div>';
