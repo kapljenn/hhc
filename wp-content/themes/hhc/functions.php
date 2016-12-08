@@ -356,6 +356,21 @@ function addCPTs() {
 		);
 	register_post_type('story', $cpt_args);
 
+	// fundraising stories
+	$cpt_args = array(
+		'menu_icon' => '',
+		'label'	=> __('Fundraising Stories'),
+		'singular_label' =>	__('Fundraising Story'),
+		'public'	=>	true,
+		'show_ui'	=>	true,
+		'taxonomies'  => array( 'category' ),
+		'capability_type'	=>	'post',
+		'hierarchical'	=>	false,
+		'rewrite'	=>	true,
+		'supports'	=>	array('title', 'thumbnail', 'editor', 'excerpt')
+		);
+	register_post_type('fundraising-story', $cpt_args);
+
 	// downloads
 	$cpt_args = array(
 		'menu_icon' => '',
@@ -430,6 +445,7 @@ function add_menu_icons_styles() {
 			#adminmenu .menu-icon-blog-article div.wp-menu-image:before { content: '\f109'; }
 			#adminmenu .menu-icon-news-article div.wp-menu-image:before { content: '\f109'; }
 			#adminmenu .menu-icon-in-the-field-article div.wp-menu-image:before { content: '\f109'; }
+			#adminmenu .menu-icon-fundraising-story div.wp-menu-image:before { content: '\f109'; }
 			#adminmenu .menu-icon-story div.wp-menu-image:before { content: '\f109'; }
 			#adminmenu .menu-icon-partner div.wp-menu-image:before { content: '\f237'; }
 			#adminmenu .menu-icon-philanthropy-partner div.wp-menu-image:before { content: '\f237'; }
