@@ -341,6 +341,7 @@ var _gsScope="undefined"!=typeof module&&module.exports&&"undefined"!=typeof glo
 
 
 /* fix ios offset https://gist.github.com/mataspetrikas/431639 */
+/*
 if ( /webkit.*mobile/i.test(navigator.userAgent)) {
   (function($) {
       $.fn.offsetOld = $.fn.offset;
@@ -352,6 +353,7 @@ if ( /webkit.*mobile/i.test(navigator.userAgent)) {
       };
   })(jQuery);
 }
+*/
 
 /* fix svg in firefox  */
 (function(document, window) {
