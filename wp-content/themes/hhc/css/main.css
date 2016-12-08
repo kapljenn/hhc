@@ -7,14 +7,136 @@
 
 
 /* fonts */
+@font-face {
+    font-family: 'GTWP_BlackOblique';
+    src: url('../fonts/GT-Walsheim-Pro-Black-Oblique.eot');
+    src: local('☺'), url('../fonts/GT-Walsheim-Pro-Black-Oblique.woff') format('woff'), url('../GT-Walsheim-Pro-Black-Oblique.ttf') format('truetype'), url('../fonts/GT-Walsheim-Pro-Black-Oblique.svg') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'GTWP_Black';
+    src: url('../fonts/GT-Walsheim-Pro-Black.eot');
+    src: local('☺'), url('../fonts/GT-Walsheim-Pro-Black.woff') format('woff'), url('../GT-Walsheim-Pro-Black.ttf') format('truetype'), url('../fonts/GT-Walsheim-Pro-Black.svg') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'GTWP_BoldOblique';
+    src: url('../fonts/GT-Walsheim-Pro-Bold-Oblique.eot');
+    src: local('☺'), url('../fonts/GT-Walsheim-Pro-Bold-Oblique.woff') format('woff'), url('../GT-Walsheim-Pro-Bold-Oblique.ttf') format('truetype'), url('../fonts/GT-Walsheim-Pro-Bold-Oblique.svg') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'GTWP_Bold';
+    src: url('../fonts/GT-Walsheim-Pro-Bold.eot');
+    src: local('☺'), url('../fonts/GT-Walsheim-Pro-Bold.woff') format('woff'), url('../GT-Walsheim-Pro-Bold.ttf') format('truetype'), url('../fonts/GT-Walsheim-Pro-Bold.svg') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'GTWP_LightOblique';
+    src: url('../fonts/GT-Walsheim-Pro-Light-Oblique.eot');
+    src: local('☺'), url('../fonts/GT-Walsheim-Pro-Light-Oblique.woff') format('woff'), url('../GT-Walsheim-Pro-Light-Oblique.ttf') format('truetype'), url('../fonts/GT-Walsheim-Pro-Light-Oblique.svg') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'GTWP_Light';
+    src: url('../fonts/GT-Walsheim-Pro-Light.eot');
+    src: local('☺'), url('../fonts/GT-Walsheim-Pro-Light.woff') format('woff'), url('../GT-Walsheim-Pro-Light.ttf') format('truetype'), url('../fonts/GT-Walsheim-Pro-Light.svg') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'GTWP_MediumOblique';
+    src: url('../fonts/GT-Walsheim-Pro-Medium-Oblique.eot');
+    src: local('☺'), url('../fonts/GT-Walsheim-Pro-Medium-Oblique.woff') format('woff'), url('../GT-Walsheim-Pro-Medium-Oblique.ttf') format('truetype'), url('../fonts/GT-Walsheim-Pro-Medium-Oblique.svg') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'GTWP_Medium';
+    src: url('../fonts/GT-Walsheim-Pro-Medium.eot');
+    src: local('☺'), url('../fonts/GT-Walsheim-Pro-Medium.woff') format('woff'), url('../GT-Walsheim-Pro-Medium.ttf') format('truetype'), url('../fonts/GT-Walsheim-Pro-Medium.svg') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'GTWP_RegularOblique';
+    src: url('../fonts/GT-Walsheim-Pro-Regular-Oblique.eot');
+    src: local('☺'), url('../fonts/GT-Walsheim-Pro-Regular-Oblique.woff') format('woff'), url('../GT-Walsheim-Pro-Regular-Oblique.ttf') format('truetype'), url('../fonts/GT-Walsheim-Pro-Regular-Oblique.svg') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'GTWP_Regular';
+    src: url('../fonts/GT-Walsheim-Pro-Regular.eot');
+    src: local('☺'), url('../fonts/GT-Walsheim-Pro-Regular.woff') format('woff'), url('../GT-Walsheim-Pro-Regular.ttf') format('truetype'), url('../fonts/GT-Walsheim-Pro-Regular.svg') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'GTWP_ThinOblique';
+    src: url('../fonts/GT-Walsheim-Pro-Thin-Oblique.eot');
+    src: local('☺'), url('../fonts/GT-Walsheim-Pro-Thin-Oblique.woff') format('woff'), url('../GT-Walsheim-Pro-Thin-Oblique.ttf') format('truetype'), url('../fonts/GT-Walsheim-Pro-Thin-Oblique.svg') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'GTWP_Thin';
+    src: url('../fonts/GT-Walsheim-Pro-Thin.eot');
+    src: local('☺'), url('../fonts/GT-Walsheim-Pro-Thin.woff') format('woff'), url('../GT-Walsheim-Pro-Thin.ttf') format('truetype'), url('../fonts/GT-Walsheim-Pro-Thin.svg') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'GTWP_UltraBoldOblique';
+    src: url('../fonts/GT-Walsheim-Pro-Ultra-Bold-Oblique.eot');
+    src: local('☺'), url('../fonts/GT-Walsheim-Pro-Ultra-Bold-Oblique.woff') format('woff'), url('../GT-Walsheim-Pro-Ultra-Bold-Oblique.ttf') format('truetype'), url('../fonts/GT-Walsheim-Pro-Ultra-Bold-Oblique.svg') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'GTWP_UltraBold';
+    src: url('../fonts/GT-Walsheim-Ultra-Pro-Bold.eot');
+    src: local('☺'), url('../fonts/GT-Walsheim-Ultra-Pro-Bold.woff') format('woff'), url('../GT-Walsheim-Ultra-Pro-Bold.ttf') format('truetype'), url('../fonts/GT-Walsheim-Ultra-Pro-Bold.svg') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'GTWP_UltraLightOblique';
+    src: url('../fonts/GT-Walsheim-Pro-Ultra-Light-Oblique.eot');
+    src: local('☺'), url('../fonts/GT-Walsheim-Pro-Ultra-Light-Oblique.woff') format('woff'), url('../GT-Walsheim-Pro-Ultra-Light-Oblique.ttf') format('truetype'), url('../fonts/GT-Walsheim-Pro-Ultra-Light-Oblique.svg') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'GTWP_UltraLight';
+    src: url('../fonts/GT-Walsheim-Pro-Ultra-Light.eot');
+    src: local('☺'), url('../fonts/GT-Walsheim-Pro-Ultra-Light.woff') format('woff'), url('../GT-Walsheim-Pro-Ultra-Light.ttf') format('truetype'), url('../fonts/GT-Walsheim-Pro-Ultra-Light.svg') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+
+
 body, h1, h2, h3, p, a, div, span, input, select, textarea, label { 
-	font-family: "Poppins", sans-serif; font-weight: 400;
+	font-family: "GTWP_Regular", sans-serif; font-weight: 400;
 }
 
 
 /* core elements */
-h1 { font-size: 50px; font-weight: 300; letter-spacing: 0; }
-h2 { font-size: 30px; font-weight: 300; letter-spacing: 0; text-transform: none; margin-top: 50px; }
+h1 { font-size: 50px; font-weight: 300; letter-spacing: 0; font-family: "GTWP_Bold"; }
+h2 { font-size: 30px; font-weight: 300; letter-spacing: 0; font-family: "GTWP_Bold"; text-transform: none; margin-top: 50px; }
 .side_by_side h2 { margin: 0 0 25px 0; }
 h2, h2 a { font-weight: bold; }
 a { color: #00a4d9; }
@@ -37,7 +159,7 @@ input[type=text], input[type=email], input[type=number], input[type=tel], textar
 /* Slides reset */
 a:hover { opacity: 1.0; }
 .slides { background: transparent; }
-.button { background-color: #00a9dc; border-radius: 6px; padding: 12px 30px; font-family: "Poppins", sans-serif; }
+.button { background-color: #00a9dc; border-radius: 6px; padding: 12px 30px; font-family: "GTWP_Regular"; }
 .sections .menu li a { font-weight: 500; font-size: 17px; letter-spacing: 0; font-weight: bold; }
 .panel .button { color: #57244b; background-color: #ffffff; border-radius: 6px; font-size: 16px; }
 .panel.top .button.actionButton { background-color: #444444; }
