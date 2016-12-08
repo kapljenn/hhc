@@ -223,7 +223,7 @@ html:not(.mobile) .slide.video .background[style] { background-size: cover !impo
 /* header with columns */
 .header_with_columns h1 { margin-bottom: 30px; }
 .header_with_columns p { margin-bottom: 15px; }
-.header_with_columns .button { margin-left: 0; margin-bottom: 50px; }
+.header_with_columns .button { margin-left: 0; margin-bottom: 50px; margin-top: 25px; }
 
 
 /* side by side */

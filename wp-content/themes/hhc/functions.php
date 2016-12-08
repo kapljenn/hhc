@@ -296,6 +296,21 @@ function addCPTs() {
 		);
 	register_post_type('global-contact', $cpt_args);
 
+	// our people
+	$cpt_args = array(
+		'menu_icon' => '',
+		'label'	=> __('Our People'),
+		'singular_label' =>	__('Person'),
+		'public'	=>	true,
+		'show_ui'	=>	true,
+		'taxonomies'  => array( 'category' ),
+		'capability_type'	=>	'post',
+		'hierarchical'	=>	false,
+		'rewrite'	=>	true,
+		'supports'	=>	array('title', 'thumbnail', 'editor', 'excerpt')
+		);
+	register_post_type('person', $cpt_args);
+
 	// jobs
 	$cpt_args = array(
 		'menu_icon' => '',
@@ -454,6 +469,7 @@ function add_menu_icons_styles() {
 			#adminmenu .menu-icon-executive-leader div.wp-menu-image:before { content: '\f338'; }
 			#adminmenu .menu-icon-patron div.wp-menu-image:before { content: '\f338'; }
 			#adminmenu .menu-icon-trustee div.wp-menu-image:before { content: '\f338'; }
+			#adminmenu .menu-icon-person div.wp-menu-image:before { content: '\f338'; }
 			#adminmenu .menu-icon-global-contact div.wp-menu-image:before { content: '\f319'; }
 			#adminmenu .menu-icon-job div.wp-menu-image:before { content: '\f337'; }
 			#adminmenu .menu-icon-internship div.wp-menu-image:before { content: '\f337'; }
