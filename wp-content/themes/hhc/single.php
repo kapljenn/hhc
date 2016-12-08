@@ -2,39 +2,32 @@
 
 /* Single template */
 
-/*
-
-		THIS TEMPLATE NEEDS TO BE COPIED AND PASTED FROM PAGE.PHP TO BE KEPT UP TO DATE.
-
-*/
-
-
 get_header();
-
-			// slide header
-			echo '	<section class="slide">
-						<div class="content">
-							<div class="container">
-								<div class="wrap">';
 
 while ( have_posts() ) : the_post();
 
-echo '<h1>' . get_the_title() . '</h1>';
-
-the_content();
-
-endwhile;
-
+	// slide header
+	$html_id_attribute = htmlID(get_the_title());
+	echo '	<section class="slide whiteSlide fade kenBurns single_central_column" id="' . $html_id_attribute . '"">
+				<div class="content">
+					<div class="container">
+						<div class="wrap">';
 ?>
 
-		</div> <!-- wrap -->
-	</div> <!-- container -->
-</div> <!-- content -->
+							<div class="fix-10-12">
+								<h1 class="ae-1"><?php the_title(); ?></h1>
+								<div class="ae-2">
+									<?php the_content(); ?>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</section>
 
+<?php endwhile; ?>
 
-</section>
-
-<?php 
+<?php
 
 get_footer();
 
