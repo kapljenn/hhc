@@ -310,3 +310,18 @@ section:nth-of-type(1).header_with_3_columns .fix-10-12 p { font-size: 30px; }
 	max-height: 480px !important;
 	overflow: hidden;
 }
+
+.nf-before-form-content {
+	padding: 15px 0;
+}	
+
+label .ninja-forms-req-symbol {
+	position: absolute;
+	z-index: 1;
+	top: 5px;
+	left: 10px;
+}
+
+.nf-after-field .nf-error-msg {
+	display: none;
+}
