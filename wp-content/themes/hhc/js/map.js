@@ -84,7 +84,6 @@ jQuery(document).ready(function() {
 
 	// map resize function
 	function sizeMap() {
-		console.log("resizing");
 		var mapContainer = $('#map').closest('.container');
 		var containerHeight = mapContainer.height();
 
@@ -95,7 +94,7 @@ jQuery(document).ready(function() {
 		var w = parentWidth;
 		var h = Math.floor(w*0.75);
 
-		console.log(w + " x " + h);
+		//console.log(w + " x " + h);
 		//$('.map').width(w);
 		//$('.map').css('width', '100%');
 		$('#map').height(h);

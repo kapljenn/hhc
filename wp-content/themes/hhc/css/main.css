@@ -265,6 +265,7 @@ html:not(.mobile) .slide.video .background[style] { background-size: cover !impo
 
 
 /* map */
+#map { border: 1px solid #57244b; }
 #map > div { background-color: #ffffff !important; }
 #zoomed_map > div { background-color: #ffffff !important; }
 .info-window { text-align: left; }
