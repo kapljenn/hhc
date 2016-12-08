@@ -323,7 +323,15 @@ label .ninja-forms-req-symbol {
 }
 
 .nf-after-field .nf-error-msg {
-	display: none;
+//	display: none;
+}
+
+.slide .nf-error-msg {
+	color: #ffffff;
+}
+
+.whiteSlide .nf-error-msg {
+	color: #E80000;
 }
 
 textarea {
