@@ -325,3 +325,7 @@ label .ninja-forms-req-symbol {
 .nf-after-field .nf-error-msg {
 	display: none;
 }
+
+textarea {
+	resize: none;
+}

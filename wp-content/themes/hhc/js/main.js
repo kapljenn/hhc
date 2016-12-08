@@ -54,7 +54,9 @@ jQuery(document).ready(function() {
 
 	// auto expand textarea height
 	$('body').on( 'keyup', 'textarea', function () {
-	    $(this).height(this.scrollHeight-40); // vertical padding
+		while($(this).outerHeight() < this.scrollHeight + parseFloat($(this).css('borderTopWidth')) + parseFloat($(this).css('borderBottomWidth'))) {
+			$(this).height($(this).height()+1);
+		};
 	});
 
 	var qsRegex;
