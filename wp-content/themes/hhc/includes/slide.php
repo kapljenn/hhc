@@ -216,7 +216,8 @@
 <?php
 if ($video_url != "") {
 	if ($video_cta_position == "top") {
-		echo '<div class="button play white popupTrigger ae-2 fromCenter button-9" data-popup-id="9"></div>';
+		//echo '<div class="button play white popupTrigger ae-2 fromCenter button-9" data-popup-id="9"></div>';
+		echo '<a target="_blank" href="' . $video_url . '" class="play-video"></a>';
 	}
 }
 ?>
@@ -302,7 +303,8 @@ if ($video_url != "") {
 <?php
 if ($video_url != "") {
 	if ($video_cta_position == "bottom") {
-		echo '<div class="button play white popupTrigger ae-2 fromCenter button-9" data-popup-id="9"></div>';
+		//echo '<div class="button play white popupTrigger ae-2 fromCenter button-9" data-popup-id="9"></div>';
+		echo '<a target="_blank" href="' . $video_url . '" class="play-video"></a>';
 	}
 }
 ?>

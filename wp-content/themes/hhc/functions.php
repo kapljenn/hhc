@@ -314,6 +314,21 @@ function addCPTs() {
 		);
 	register_post_type('person', $cpt_args);
 
+	// spokespeople
+	$cpt_args = array(
+		'menu_icon' => '',
+		'label'	=> __('Spokespeople'),
+		'singular_label' =>	__('Spokesperson'),
+		'public'	=>	true,
+		'show_ui'	=>	true,
+		'taxonomies'  => array( 'category' ),
+		'capability_type'	=>	'post',
+		'hierarchical'	=>	false,
+		'rewrite'	=>	true,
+		'supports'	=>	array('title', 'thumbnail', 'editor', 'excerpt')
+		);
+	register_post_type('spokesperson', $cpt_args);
+
 	// jobs
 	$cpt_args = array(
 		'menu_icon' => '',
@@ -472,6 +487,7 @@ function add_menu_icons_styles() {
 			#adminmenu .menu-icon-executive-leader div.wp-menu-image:before { content: '\f338'; }
 			#adminmenu .menu-icon-patron div.wp-menu-image:before { content: '\f338'; }
 			#adminmenu .menu-icon-trustee div.wp-menu-image:before { content: '\f338'; }
+			#adminmenu .menu-icon-spokesperson div.wp-menu-image:before { content: '\f338'; }
 			#adminmenu .menu-icon-person div.wp-menu-image:before { content: '\f338'; }
 			#adminmenu .menu-icon-global-contact div.wp-menu-image:before { content: '\f319'; }
 			#adminmenu .menu-icon-job div.wp-menu-image:before { content: '\f337'; }

@@ -130,27 +130,27 @@
 
 
 body, h1, h2, h3, p, a, div, span, input, select, textarea, label { 
-	font-family: "GTWP_Regular", sans-serif; font-weight: 400;
+	font-family: "GTWP_Light", sans-serif; font-weight: 300;
 }
 
 
 /* core elements */
-h1 { font-size: 50px; font-weight: 300; letter-spacing: 0; font-family: "GTWP_Bold"; }
-h2 { font-size: 30px; font-weight: 300; letter-spacing: 0; font-family: "GTWP_Bold"; text-transform: none; margin-top: 50px; }
+h1 { font-size: 50px; letter-spacing: 0; font-family: "GTWP_Light"; font-weight: 300; }
+h2 { font-size: 30px; letter-spacing: 0; font-family: "GTWP_Light"; text-transform: none; margin-top: 50px; font-weight: 300; }
 .side_by_side h2 { margin: 0 0 25px 0; }
-h2, h2 a { font-weight: bold; }
+h2, h2 a { }
 a { color: #00a4d9; }
 p { opacity: 1.0; }
-section p { font-size: 22px; line-height: 28px; font-weight: 300; }
+section p { font-size: 22px; line-height: 28px; }
 @media (min-width:375px) {
-	section p { font-size: 24px; line-height: 30px; font-weight: 300; }
+	section p { font-size: 24px; line-height: 30px; }
 }
 @media (min-width:768px) {
-	section p { font-size: 28px; line-height: 32px; font-weight: 300; }
+	section p { font-size: 28px; line-height: 32px; }
 }
 input[type=button] {
 	background-color: #00a9dc; border-radius: 6px; padding: 12px 30px; display: inline-block; color: #fff; border: 0;
-    outline: 0; text-decoration: none; font-size: 22px; font-weight: 500; vertical-align: top; cursor: pointer; overflow: hidden;
+    outline: 0; text-decoration: none; font-size: 22px; vertical-align: top; cursor: pointer; overflow: hidden;
     position: relative; white-space: nowrap; box-shadow: inset 0 -100px 0 rgba(41,41,41,0); -webkit-appearance: none;
     margin-bottom: 20px; user-select: none !important; transition: .25s;
 }
@@ -166,8 +166,8 @@ input[type=text], input[type=email], input[type=number], input[type=tel], textar
 /* Slides reset */
 a:hover { opacity: 1.0; }
 .slides { background: transparent; }
-.button { background-color: #00a9dc; border-radius: 6px; padding: 12px 30px; font-family: "GTWP_Regular"; }
-.sections .menu li a { font-weight: 500; font-size: 17px; letter-spacing: 0; font-weight: bold; }
+.button { background-color: #00a9dc; border-radius: 6px; padding: 12px 30px; font-family: "GTWP_Light"; }
+.sections .menu li a { font-size: 17px; letter-spacing: 0; }
 .panel .button { color: #57244b; background-color: #ffffff; border-radius: 6px; font-size: 16px; }
 .panel.top .button.actionButton { background-color: #444444; }
 .slide { background-color: #57244b; }
@@ -184,10 +184,14 @@ a:hover { opacity: 1.0; }
 .grid { margin-bottom: 20px; }
 .menu-main-container li a { color: #ffffff; }
 .current_page_item a { border-bottom: 2px solid; }
-.whiteSlide .menu-main-container li a { color: #57244b; font-weight: bold; }
+.whiteSlide .menu-main-container li a { color: #57244b; }
 .slides.animated .video.kenBurns .background { opacity: 1; }
 html:not(.mobile) .slide.video .background[style] { background-size: cover !important; }
 .button.play { background-image: url(../img/play.png); background-size: 100%; }
+.play-video { 
+	background-image: url(../img/play.png); background-size: 100%; width: 100px; height: 100px; padding: 35px; margin: 10px auto;
+	display: block;
+}
 .fix-10-12.left { margin-left: 0 !important; margin-right: 0 !important; text-align: left; max-width: 400px !important; }
 .fix-10-12.center { margin-left: auto !important; margin-right: auto !important; text-align: center; margin-bottom: 50px; }
 .fix-10-12.right { margin-left: 0 !important; margin-right: 0 !important; text-align: left; }
@@ -220,7 +224,7 @@ html:not(.mobile) .slide.video .background[style] { background-size: cover !impo
 .col-4-12 h2, .col-3-12 h2 { 
 	font-size: 20px; line-height: 28px; text-transform: uppercase; word-wrap: break-word; margin: 10px 0; display: inline-block;
 }
-.col-3-12 p, .col-4-12 p { font-size: 16px; line-height: 20px; font-weight: bold; }
+.col-3-12 p, .col-4-12 p { font-size: 16px; line-height: 20px; }
 .column-cta { 
 	color: #00a4e1; padding-left: 15px; background-image: url(../img/arrow-right.png); background-position: left 5px;
 	background-repeat: no-repeat; display: inline-block; margin-bottom: 25px;
@@ -262,8 +266,7 @@ html:not(.mobile) .slide.video .background[style] { background-size: cover !impo
 	position: absolute; top: 0; left: 0; width: 100%; height: 100%; box-sizing: border-box;
 }
 .three_thumbnails .thumbnail-title { 
-	position: absolute; left: 0; text-transform: uppercase; font-weight: 500; top: 50%; margin-top: -0.5em; width: 100%;
-	font-weight: bold; color: #ffffff;
+	position: absolute; left: 0; text-transform: uppercase; top: 50%; margin-top: -0.5em; width: 100%; color: #ffffff;
 }
 
 
@@ -276,7 +279,7 @@ html:not(.mobile) .slide.video .background[style] { background-size: cover !impo
 #map > div { background-color: #ffffff !important; }
 #zoomed_map > div { background-color: #ffffff !important; }
 .info-window { text-align: left; }
-.info-window h2 { margin: 20px 0; color: #57244b; font-size: 22px; font-weight: 500; text-transform: uppercase; }
+.info-window h2 { margin: 20px 0; color: #57244b; font-size: 22px; text-transform: uppercase; }
 .info-window p { max-width: 300px; font-size: 16px; line-height: 22px; margin-bottom: 20px; }
 .info-window a { 
 	color: #00a4e1; padding-left: 15px; background-image: url(../img/arrow-right.png); background-position: left 5px;
@@ -287,7 +290,7 @@ html:not(.mobile) .slide.video .background[style] { background-size: cover !impo
 /* double CTA */
 .cta-bar .button {
 	background-color: #572452; color: #ffffff; border-radius: 0; width: 30%; height: 150px; box-sizing: border-box;
-	line-height: 150px;	text-transform: uppercase; display: inline-block; vertical-align: top; padding: 0; font-weight: 600;
+	line-height: 150px;	text-transform: uppercase; display: inline-block; vertical-align: top; padding: 0; 
 	margin: 0 10px; margin-bottom: 20px;
 }
 .cta-bar .button:hover { 
@@ -302,7 +305,7 @@ html:not(.mobile) .slide.video .background[style] { background-size: cover !impo
 .global-contact .img-holder { width: 100%; height: 200px; overflow: hidden; margin-bottom: 0; }
 .global-contact .img-holder img { width: 100%; height: auto; }
 .global-contact .post-content { background-color: #ffffff; box-sizing: border-box; padding: 20px; }
-.global-contact a.post-title { font-weight: 500; display: block; margin-bottom: 20px; }
+.global-contact a.post-title { display: block; margin-bottom: 20px; }
 .global-contact .post-excerpt { font-size: 14px; }
 .tweet { 
 	background-color: #ffffff; border-radius: 8px; overflow: hidden; width: 25%; font-size: 16px; text-align: left; color: #333333;
@@ -316,22 +319,22 @@ html:not(.mobile) .slide.video .background[style] { background-size: cover !impo
 .tweet .post-content { 
 	box-sizing: border-box; padding: 0; font-size: 15px; line-height: 22px; word-wrap: break-word; color: #333333;
 }
-.twitter-screen-name { font-weight: bold; font-size: 16px; line-height: 16px; }
+.twitter-screen-name { font-size: 16px; line-height: 16px; }
 .twitter-username { 
-	color: #00a9dc; font-size: 14px; display: inline-block; margin-bottom: 15px; font-weight: 500; cursor: pointer;
+	color: #00a9dc; font-size: 14px; display: inline-block; margin-bottom: 15px; cursor: pointer;
 }
-.twitter-text { font-weight: 500; height: 90px; overflow: hidden; }
+.twitter-text { height: 90px; overflow: hidden; }
 .twitter-time { display: block; color: #bbbbbb; font-size: 14px; margin-top: 10px; }
 .twitter-cta {
 	background-color: #00a9dc; color: #ffffff; border-radius: 0; width: 90%; box-sizing: border-box; margin: 15px auto 0 auto;
-	display: block; padding: 0; font-weight: 400; text-align: center; padding: 20px 0; font-size: 18px; border-radius: 6px;
+	display: block; padding: 0; text-align: center; padding: 20px 0; font-size: 18px; border-radius: 6px;
 	cursor: pointer;
 }
 .tweet:nth-of-type(4) .post-content { text-align: center; }
 .job .img-holder { width: 100%; height: 200px; overflow: hidden; margin-bottom: 0; }
 .job .img-holder img { width: 100%; height: auto; }
 .job .post-content { background-color: #ffffff; box-sizing: border-box; padding: 20px; }
-.job a.post-title { font-weight: 500; display: block; margin-bottom: 20px; }
+.job a.post-title { display: block; margin-bottom: 20px; }
 .download .post-excerpt { font-size: 14px; }
 .download .img-holder { width: 100%; height: 200px; overflow: hidden; margin-bottom: 0; }
 .download .img-holder img { width: 100%; height: auto; }
@@ -339,12 +342,12 @@ html:not(.mobile) .slide.video .background[style] { background-size: cover !impo
 	background-color: #ffffff; box-sizing: border-box; padding: 20px; background-image: url(../img/download.png);
 	background-repeat: no-repeat; background-position: 93% 10%;
 }
-.download a.post-title { font-weight: 500; display: block; margin-bottom: 20px; width: 92%; }
+.download a.post-title { display: block; margin-bottom: 20px; width: 92%; }
 .download .post-excerpt { font-size: 14px; }
 .blog-article .img-holder { width: 100%; height: 200px; overflow: hidden; margin-bottom: 0; }
 .blog-article .img-holder img { width: 100%; height: auto; }
 .blog-article .post-content { background-color: #ffffff; box-sizing: border-box; padding: 20px; }
-.blog-article a.post-title { font-weight: 500; display: block; margin-bottom: 20px; }
+.blog-article a.post-title { display: block; margin-bottom: 20px; }
 .blog-article .post-excerpt { font-size: 14px; color: #303030;}
 .blog-article .post-excerpt { color: #303030; }
 .blog-article .img-holder img { height: 100%; width: auto; max-width: none; }
@@ -358,33 +361,33 @@ html:not(.mobile) .slide.video .background[style] { background-size: cover !impo
 /* sidebar */
 .whiteSlide .sidebar .menu-main-container li a { color: #ffffff; }
 .sidebar #menu-main-1 { margin-bottom: 0; }
-.main-menu-add-on li a { font-size: 19px; font-weight: 700; text-transform: uppercase; letter-spacing: .15em; }
+.main-menu-add-on li a { font-size: 19px; text-transform: uppercase; letter-spacing: .15em; }
 .sidebar #menu-corporate { padding-top: 0; }
 .sidebar #menu-corporate li { display: block; }
-.sidebar #menu-corporate li a { font-weight: normal; padding: 0; }
+.sidebar #menu-corporate li a { padding: 0; }
 
 
 /* footer */
 .footer.fade .content { background-color: #3c3c3b; }
-.footer h2, .footer h3 { text-transform: uppercase; font-weight: bold; margin-bottom: 0; }
+.footer h2, .footer h3 { text-transform: uppercase; margin-bottom: 0; }
 .social li { display: inline-block; margin: 10px 25px; }
 #menu-corporate-1 { padding-top: 0px; }
 #menu-corporate-1 li { display: block; }
-#menu-corporate-1 li a { text-transform: uppercase; font-weight: bold; font-size: 22px; padding: 0 0px; }
+#menu-corporate-1 li a { text-transform: uppercase; font-size: 22px; padding: 0 0px; }
 @media (min-width:1024px) {
 	#menu-corporate-1 { padding-top: 100px; }
 	#menu-corporate-1 li { display: inline-block; }
-	#menu-corporate-1 li a { text-transform: uppercase; font-weight: bold; font-size: 22px; padding: 0 25px; }
+	#menu-corporate-1 li a { text-transform: uppercase; font-size: 22px; padding: 0 25px; }
 }
 @media (min-width:1280px) {
 	#menu-corporate-1 { padding-top: 0px; }
 	#menu-corporate-1 li { display: inline-block; }
-	#menu-corporate-1 li a { text-transform: uppercase; font-weight: bold; font-size: 22px; padding: 0 40px; }
+	#menu-corporate-1 li a { text-transform: uppercase; font-size: 22px; padding: 0 40px; }
 }
 
 #menu-legal { padding: 50px 0; }
 #menu-legal li { display: inline-block; }
-#menu-legal li a { text-transform: uppercase; font-weight: 500; font-size: 16px; padding: 0 10px; }
+#menu-legal li a { text-transform: uppercase; font-size: 16px; padding: 0 10px; }
 .copyright { padding-top: 50px; font-size: 18px; }
 .frsb { display: block; width: 200px; margin: 25px auto; }
 .frsb img { width: 100%; }
@@ -398,7 +401,7 @@ html:not(.mobile) .slide.video .background[style] { background-size: cover !impo
 
 
 /* legal pages */
-.small-text section.single_central_column h2 { font-weight: 500; text-align: left; }
+.small-text section.single_central_column h2 { text-align: left; }
 .small-text section.single_central_column p { font-size: 18px; text-align: left; }
 
 
