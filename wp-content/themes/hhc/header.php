@@ -55,7 +55,7 @@
 	</div>
 	<div class="sections compact hidden">
 		<div class="left">
-			<a href="#">
+			<a href="<?php echo home_url() ?>">
 				<img class="logo" alt="logo" src="<?php echo esc_url(get_stylesheet_directory_uri()); ?>/img/logo.png" />
 				<img class="logo inverted" alt="logo" src="<?php echo esc_url(get_stylesheet_directory_uri()); ?>/img/logo-inverted.png" />
 			</a>
@@ -68,7 +68,9 @@
 <nav class="sidebar deepPurple" data-sidebar-id="1">
 	<div class="close"><svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#close"></use></svg></div>
 	<div class="content">
-		<a href="#" class="logo"><svg width="120" height="50"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#logo"></use></svg></a>
+		<a href="<?php echo home_url() ?>">
+			<img class="logo-sidebar" alt="logo" src="<?php echo esc_url(get_stylesheet_directory_uri()); ?>/img/logo-inverted.png" />
+		</a>
 		<?php wp_nav_menu( array('menu' => 'Main', 'menu_class' => 'mainMenu uppercase')); ?>
 		<ul class="main-menu-add-on">
 			<li>
@@ -81,19 +83,19 @@
 		<?php wp_nav_menu( array('menu' => 'Corporate', 'menu_class' => 'subMenu')); ?>
 		<ul class="social">
 			<li>
-				<a href="#">
+				<a href="http://www.facebook.com/hopeandhomes" target="_blank">
 					<img src="<?php echo esc_url(get_stylesheet_directory_uri()); ?>/img/facebook.png" />
 				</a>
 			</li>
 
 			<li>
-				<a href="#">
+				<a href="https://twitter.com/HopeandHomes" target="_blank">
 					<img src="<?php echo esc_url(get_stylesheet_directory_uri()); ?>/img/twitter.png" />
 				</a>
 			</li>
 
 			<li>
-				<a href="#">
+				<a href="https://www.instagram.com/hopeandhomesforchildren/" target="_blank">
 					<img src="<?php echo esc_url(get_stylesheet_directory_uri()); ?>/img/instagram.png" />
 				</a>
 			</li>

@@ -354,3 +354,11 @@ textarea {
     right: 0;  
     margin: auto;
 }
+
+.logo-sidebar {
+	width: 80%;
+	margin-bottom: 15px !important;
+	padding: 0px;
+	font-size: 0;
+}
+
