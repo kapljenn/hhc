@@ -10,6 +10,8 @@ function my_enqueue_scripts() {
 	wp_enqueue_script( 'map-style-js' );
 	wp_register_script( 'map-js', get_stylesheet_directory_uri() . '/js/map.js', array('jquery') );
 	wp_enqueue_script( 'map-js' );	
+	wp_register_script( 'zoomed-map-js', get_stylesheet_directory_uri() . '/js/zoomed-map.js', array('jquery') );
+	wp_enqueue_script( 'zoomed-map-js' );	
 
 	// general scripts
 	wp_register_script( 'slides-plugins', get_stylesheet_directory_uri() . '/js/plugins.js', array('jquery'), '5.5.0', true );
@@ -297,6 +299,21 @@ function addCPTs() {
 		);
 	register_post_type('global-contact', $cpt_args);
 
+	// our people
+	$cpt_args = array(
+		'menu_icon' => '',
+		'label'	=> __('Our People'),
+		'singular_label' =>	__('Person'),
+		'public'	=>	true,
+		'show_ui'	=>	true,
+		'taxonomies'  => array( 'category' ),
+		'capability_type'	=>	'post',
+		'hierarchical'	=>	false,
+		'rewrite'	=>	true,
+		'supports'	=>	array('title', 'thumbnail', 'editor', 'excerpt')
+		);
+	register_post_type('person', $cpt_args);
+
 	// jobs
 	$cpt_args = array(
 		'menu_icon' => '',
@@ -356,6 +373,21 @@ function addCPTs() {
 		'supports'	=>	array('title', 'thumbnail', 'editor', 'excerpt')
 		);
 	register_post_type('story', $cpt_args);
+
+	// fundraising stories
+	$cpt_args = array(
+		'menu_icon' => '',
+		'label'	=> __('Fundraising Stories'),
+		'singular_label' =>	__('Fundraising Story'),
+		'public'	=>	true,
+		'show_ui'	=>	true,
+		'taxonomies'  => array( 'category' ),
+		'capability_type'	=>	'post',
+		'hierarchical'	=>	false,
+		'rewrite'	=>	true,
+		'supports'	=>	array('title', 'thumbnail', 'editor', 'excerpt')
+		);
+	register_post_type('fundraising-story', $cpt_args);
 
 	// downloads
 	$cpt_args = array(
@@ -431,6 +463,7 @@ function add_menu_icons_styles() {
 			#adminmenu .menu-icon-blog-article div.wp-menu-image:before { content: '\f109'; }
 			#adminmenu .menu-icon-news-article div.wp-menu-image:before { content: '\f109'; }
 			#adminmenu .menu-icon-in-the-field-article div.wp-menu-image:before { content: '\f109'; }
+			#adminmenu .menu-icon-fundraising-story div.wp-menu-image:before { content: '\f109'; }
 			#adminmenu .menu-icon-story div.wp-menu-image:before { content: '\f109'; }
 			#adminmenu .menu-icon-partner div.wp-menu-image:before { content: '\f237'; }
 			#adminmenu .menu-icon-philanthropy-partner div.wp-menu-image:before { content: '\f237'; }
@@ -439,6 +472,7 @@ function add_menu_icons_styles() {
 			#adminmenu .menu-icon-executive-leader div.wp-menu-image:before { content: '\f338'; }
 			#adminmenu .menu-icon-patron div.wp-menu-image:before { content: '\f338'; }
 			#adminmenu .menu-icon-trustee div.wp-menu-image:before { content: '\f338'; }
+			#adminmenu .menu-icon-person div.wp-menu-image:before { content: '\f338'; }
 			#adminmenu .menu-icon-global-contact div.wp-menu-image:before { content: '\f319'; }
 			#adminmenu .menu-icon-job div.wp-menu-image:before { content: '\f337'; }
 			#adminmenu .menu-icon-internship div.wp-menu-image:before { content: '\f337'; }

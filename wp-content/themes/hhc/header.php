@@ -7,18 +7,22 @@
 	<meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0, user-scalable=no">
 	<meta name="apple-mobile-web-app-capable" content="yes" />
 	<link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>">
-	<link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700" rel="stylesheet">
 	<title><?php wp_title(); ?></title>
 	<?php wp_head(); ?>
 </head>
 
 <?php
-	// extra classes
-	$extra_classes = "";
-	if (get_field('small_text')) $extra_classes = $extra_classes . " small-text";
+	// use small text?
+	$body_classes = 'slides fast smooth film whiteSlide animated scroll';
+	if (get_field('small_text')) $body_classes = $body_classes . " small-text";
+	if (is_single()) {
+		$obj = get_queried_object();
+ 		$cpt = $obj->post_type;
+		if ($cpt != 'slide') $body_classes = $body_classes . " small-text";
+	}
 ?>
 
-<body <?php body_class('slides fast smooth film whiteSlide animated scroll'); ?>>
+<body <?php body_class($body_classes); ?>>
 	<script type="text/javascript">
 	// save variables for use in JS
 	var site_url = "<?php echo site_url() ?>";
