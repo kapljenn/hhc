@@ -62,7 +62,30 @@ jQuery(document).ready(function() {
 
 
 
+	// restore up/down arrow scrolling
+	$(document).keydown(function(e) {
 
+	    e.stopPropagation();
+	    
+	    switch(e.which) {
+
+	    	// up arrow
+	        case 38:
+	        	console.log('up');
+				var y = $(window).scrollTop(); 
+				$("html, body").animate({ scrollTop: y - 100}, 200);
+	        break;
+
+	        // down arrow
+	        case 40:
+	        	console.log('down');
+				var y = $(window).scrollTop(); 
+				$("html, body").animate({ scrollTop: y + 100}, 200);
+	        break;
+
+	        default: return;
+	    }
+	});
 
 
 
