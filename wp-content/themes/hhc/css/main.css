@@ -495,3 +495,19 @@ textarea {
 	padding: 0px;
 	font-size: 0;
 }
+
+#faqs ul.post-grid { text-align: left; }
+#faqs li.blog-article { width: 48%; text-align: left; margin: 1%; }
+#faqs li.blog-article .post-content { background: none; }
+#faqs li.blog-article a { font-size: 30px; letter-spacing: 0; color: #fff; font-family: "GTWP_Light"; text-transform: none; margin-top: 0px; display: inline-block; margin-bottom: 15px; font-weight: 300; }
+#faqs .ae-2 p { text-align: center; }
+
+#frequently-asked-questions ul.post-grid { text-align: left; }
+#frequently-asked-questions li.blog-article { width: 48%; text-align: left; margin: 1%; }
+#frequently-asked-questions li.blog-article .post-content { background: none; }
+#frequently-asked-questions li.blog-article a { font-size: 30px; letter-spacing: 0; color: #fff; font-family: "GTWP_Light"; text-transform: none; margin-top: 0px; display: inline-block; margin-bottom: 15px; font-weight: 300; }
+#frequently-asked-questions .ae-2 p { text-align: center; }
+
+.faq-answer {
+	font-size: 18px; line-height: 22px; color: #fff; font-family: "GTWP_Light", sans-serif; font-weight: 300;
+}

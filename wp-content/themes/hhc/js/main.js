@@ -172,9 +172,16 @@ jQuery(document).ready(function() {
 		else $('.img-holder').imagefill(); 
 	}
 
-
-
-
+	if($('#faqs').length)
+	{
+		$('#faqs').find('a.post-title').removeAttr('href').removeClass('post-title').css('cursor', 'default');
+		$('#faqs').find('div.post-excerpt').removeClass('post-excerpt').addClass('faq-answer');
+	}
+	if($('#frequently-asked-questions').length)
+	{
+		$('#frequently-asked-questions').find('a.post-title').removeAttr('href').removeClass('post-title').css('cursor', 'default');
+		$('#frequently-asked-questions').find('div.post-excerpt').removeClass('post-excerpt').addClass('faq-answer');
+	}
 
 
 
