@@ -32,3 +32,56 @@
 @media all and (max-width: 449px) {
 	.post-grid li { width: 96%; }
 }
+
+@media (max-width:374px) {
+	section p { font-size: 22px; line-height: 28px; }
+}
+@media (max-width:767px) {
+	section p { font-size: 24px; line-height: 30px; }
+}
+
+@media (max-width:1023px) {
+	#menu-corporate-1 { padding-top: 0px; }
+	#menu-corporate-1 li { display: block; }
+	#menu-corporate-1 li a { text-transform: uppercase; font-size: 22px; padding: 0 0px; }
+}
+@media (max-width:1279px) {
+	#menu-corporate-1 { padding-top: 100px; }
+	#menu-corporate-1 li { display: inline-block; }
+	#menu-corporate-1 li a { text-transform: uppercase; font-size: 22px; padding: 0 25px; }
+}
+
+@media (max-width:374px) {
+	section:nth-of-type(1) h1 { font-size: 36px; }
+}
+@media (max-width:767px) {
+	section:nth-of-type(1) h1 { font-size: 42px; }
+}
+@media (max-width:1023px) {
+	section:nth-of-type(1) h1 { font-size: 56px; }
+}
+
+@media (max-width:1023px) {
+	.download-btn {
+		width: 98% !important;
+		margin: 2% 1% !important;
+		font-size: 18px;
+	}
+}
+@media (max-width:1279px) {
+	.download-btn {
+		width: 23% !important;
+		margin: 0 1% !important;
+		font-size: 18px;
+		padding: 12px 12px;
+	}
+}
+
+@media (max-width:767px) {
+	.downloads-grid {
+		max-height: 1920px !important;
+		overflow: hidden;
+	}
+}
+
+

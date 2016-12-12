@@ -63,7 +63,7 @@ jQuery(document).ready(function() {
 	var buttonFilter = '';
 	var defaultFilter = '.initially-shown';
 	
-	var $grid = $('.post-grid').isotope({
+	var $grid = $('.downloads-grid').isotope({
 		itemSelector: '.download-grid-item',
 		layoutMode: 'masonry',
 		stagger: 100,
