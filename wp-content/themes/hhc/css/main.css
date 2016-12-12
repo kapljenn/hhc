@@ -141,13 +141,7 @@ h2 { font-size: 30px; letter-spacing: 0; font-family: "GTWP_Light"; text-transfo
 h2, h2 a { }
 a { color: #00a4d9; }
 p { opacity: 1.0; }
-section p { font-size: 22px; line-height: 28px; }
-@media (min-width:375px) {
-	section p { font-size: 24px; line-height: 30px; }
-}
-@media (min-width:768px) {
-	section p { font-size: 28px; line-height: 32px; }
-}
+section p, section li { font-size: 22px; line-height: 28px; }
 input[type=button] {
 	background-color: #00a9dc; border-radius: 6px; padding: 12px 30px; display: inline-block; color: #fff; border: 0;
     outline: 0; text-decoration: none; font-size: 22px; vertical-align: top; cursor: pointer; overflow: hidden;
