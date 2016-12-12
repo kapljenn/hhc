@@ -18,6 +18,10 @@ function my_enqueue_scripts() {
 	wp_enqueue_script( 'slides-plugins' );	
 	wp_register_script( 'slides', get_stylesheet_directory_uri() . '/js/slides.min.js', array('jquery'), '5.5.0', true );
 	wp_enqueue_script( 'slides' );	
+	wp_register_script( 'imagesloaded', get_stylesheet_directory_uri() . '/js/imagesloaded.pkgd.min.js', array('jquery'), '5.5.0', true );
+	wp_enqueue_script( 'imagesloaded' );
+	wp_register_script( 'imagefill', get_stylesheet_directory_uri() . '/js/image-fill.min.js', array('jquery'), '5.5.0', true );
+	wp_enqueue_script( 'imagefill' ); 
 	wp_register_script( 'main', get_stylesheet_directory_uri() . '/js/main.js', array('jquery'), '5.5.0', true );
 	wp_enqueue_script( 'main' );	
 	wp_register_script( 'isotope', get_stylesheet_directory_uri() . '/js/isotope.pkgd.min.js', array('jquery'), '5.5.0', true );
@@ -449,6 +453,21 @@ function addCPTs() {
 		);
 	register_post_type('internship', $cpt_args);
 
+	// FAQs
+	$cpt_args = array(
+		'menu_icon' => '',
+		'label'	=> __('FAQs'),
+		'singular_label' =>	__('FAQ'),
+		'public'	=>	true,
+		'show_ui'	=>	true,
+		'capability_type'	=>	'post',
+		'hierarchical'	=>	false,
+		'rewrite'	=>	true,
+		'exclude_from_search'	=>	true,
+		'supports'	=>	array('title', 'editor', 'excerpt')
+		);
+	register_post_type('faq', $cpt_args);
+
 	// volunteering
 	$cpt_args = array(
 		'menu_icon' => '',
@@ -492,6 +511,7 @@ function add_menu_icons_styles() {
 			#adminmenu .menu-icon-global-contact div.wp-menu-image:before { content: '\f319'; }
 			#adminmenu .menu-icon-job div.wp-menu-image:before { content: '\f337'; }
 			#adminmenu .menu-icon-internship div.wp-menu-image:before { content: '\f337'; }
+			#adminmenu .menu-icon-faq div.wp-menu-image:before { content: '\f337'; }
 			#adminmenu .menu-icon-volunteering div.wp-menu-image:before { content: '\f337'; }
 			#adminmenu .menu-icon-download div.wp-menu-image:before { content: '\f316'; }
 			#adminmenu .menu-icon-poi div.wp-menu-image:before { content: '\f319'; }

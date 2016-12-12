@@ -165,6 +165,14 @@ jQuery(document).ready(function() {
 
 
 
+	// make images fill their container, centered (using ImagesLoaded and ImageFill libraries)
+	if (!isTouch) {
+		// exclude Safari because it doesn't work well
+		if ((navigator.userAgent.indexOf('Safari') != -1) && (navigator.userAgent.indexOf('Chrome') == -1)) {}
+		else $('.img-holder').imagefill(); 
+	}
+
+
 
 
 
