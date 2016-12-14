@@ -73,6 +73,7 @@
 			$column_icon = $c['column_icon'];
 			$column_title = $c['column_title'];
 			$column_url = $c['column_url'];
+			$external_url_override = $c['external_url_override'];
 			$column_image = $c['column_image'];
 ?>
 		<li class="col-<?php echo $column_fraction; ?>-12">
@@ -89,7 +90,8 @@
 <?php } ?>
 				<h2 class="equalElement ae-7" style="color: <?php echo $column_text_colour; ?>">
 <?php
-	if ($column_url != null) echo '<a style="color: ' . $column_text_colour . '" href="' . $column_url . '">' . $column_title . '</a>';
+	if ($external_url_override != null) echo '<a target="_blank" style="color: ' . $column_text_colour . '" href="' . $external_url_override . '">' . $column_title . '</a>';
+	else if ($column_url != null) echo '<a style="color: ' . $column_text_colour . '" href="' . $column_url . '">' . $column_title . '</a>';
 	else echo $column_title;
 ?>
 				</h2>
