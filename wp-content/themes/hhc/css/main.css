@@ -145,7 +145,8 @@ h2 { font-size: 30px; letter-spacing: 0; font-family: "GTWP_Light"; text-transfo
 h2, h2 a { }
 a { color: #00a4d9; }
 p { opacity: 1.0; }
-section p, section li { font-size: 28px; line-height: 32px; }
+img { height: auto; }
+section p, section li { font-size: 28px; line-height: 32px; font-weight: 300; }
 input[type=button] {
 	background-color: #00a9dc; border-radius: 6px; padding: 12px 30px; display: inline-block; color: #fff; border: 0;
     outline: 0; text-decoration: none; font-size: 22px; vertical-align: top; cursor: pointer; overflow: hidden;
@@ -160,6 +161,9 @@ input[type=text], input[type=email], input[type=number], input[type=tel], textar
 }
 .button:hover { -webkit-box-shadow: none; box-shadow: none; }
 .wp-caption { max-width: 100%; }
+.ae-2 ul { text-align: left; display: block; margin: 25px 0 25px 27px; }
+.ae-2 li { text-align: left; margin-bottom: 15px; list-style-type: disc; }
+
 
 
 /* Slides reset */
@@ -232,7 +236,7 @@ html:not(.mobile) .slide.video .background[style] { background-size: cover !impo
 
 /* header with columns */
 .header_with_columns h1 { margin-bottom: 30px; }
-.header_with_columns p { margin-bottom: 15px; }
+.header_with_columns p { margin-bottom: 30px; }
 .header_with_columns .button { margin-left: 0; margin-bottom: 50px; margin-top: 25px; }
 
 

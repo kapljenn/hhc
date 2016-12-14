@@ -179,6 +179,8 @@ jQuery(document).ready(function() {
 	$('#contact_by_post').parent().parent().css('margin-top', '-37px');
 
 
+	// font weight fix
+	$('p').css('font-weight', '300');
 
 });
 

@@ -9,9 +9,11 @@ body#tinymce.wp-editor h5,
 body#tinymce.wp-editor h6,
 body#tinymce.wp-editor a,
 body#tinymce.wp-editor p,
+body#tinymce.wp-editor ul,
+body#tinymce.wp-editor li,
 body#tinymce.wp-editor div
 	{ font-family: "Poppins", sans-serif; font-weight: 400; }
-body#tinymce.wp-editor h1 {  }
+
 
 /* download links */
 body#tinymce.wp-editor .media-link { margin: 10px 0 20px 0; }
