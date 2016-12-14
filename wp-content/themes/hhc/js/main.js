@@ -174,7 +174,9 @@ jQuery(document).ready(function() {
 
 
 
-
+	// Stripe label hack
+	$('<div class="sc-form-group"><span class="contact-preferences">Opt in to receiving updates about how your donation is transforming lives</span></div>').insertBefore($('#contact_by_email').parent().parent());
+	$('#contact_by_post').parent().parent().css('margin-top', '-37px');
 
 
 

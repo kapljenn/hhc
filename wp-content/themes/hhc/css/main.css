@@ -132,6 +132,10 @@
 body, h1, h2, h3, p, a, div, span, input, select, textarea, label { 
 	font-family: "GTWP_Light", sans-serif; font-weight: 300;
 }
+form input[type="text"], form input[type="name"], form input[type="email"], form input[type="password"], form input[type="tel"], 
+form textarea {
+    font-family: "GTWP_Light", sans-serif; font-weight: 300;
+}
 
 
 /* core elements */
@@ -404,7 +408,18 @@ section:nth-of-type(1).header_with_3_columns .fix-10-12 p { font-size: 30px; }
 
 
 /* Stripe */
-/*.wrap .stripe-button-el { border: 1px solid red; }*/
+.whiteSlide .sc-checkout-form { background-color: #eeeeee; }
+.sc-checkout-form { box-sizing: border-box; display: block; padding: 0 25px 25px 25px; margin-top: 25px; }
+.sc-checkout-form .sc-form-group { font-weight: 300; font-size: 24px; line-height: 32px; margin-bottom: 0; }
+.sc-checkout-form .sc-form-group label { 
+    font-weight: 300; font-size: 24px; line-height: 32px; margin: 5px 0; vertical-align: top; width: 240px;
+}
+.slide.whiteSlide form input[type="text"], .slide.whiteSlide form input[type="name"], .slide.whiteSlide form input[type="email"], 
+.slide.whiteSlide form input[type="password"], .slide.whiteSlide form input[type="tel"], .slide.whiteSlide form textarea {
+    border: 0; padding: 5px 15px; border-radius: 10px; margin-left: 25px; display: inline-block; font-size: 24px;
+    -webkit-box-shadow: none; box-shadow: none; font-weight: 300;
+}
+.slide .sc-form-group textarea.sc-form-control { width: 400px; }
 
 
 /* Wufoo */
