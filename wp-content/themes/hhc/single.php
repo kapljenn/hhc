@@ -15,6 +15,11 @@ while ( have_posts() ) : the_post();
 ?>
 
 							<div class="fix-10-12">
+<?php
+	if ((get_post_type() == "blog-article") || (get_post_type() == "news-article")) {
+		echo '<span class="publish-date">' . get_the_date('d F Y') . '</span>';
+	}
+?>
 								<h1 class="ae-1"><?php the_title(); ?></h1>
 								<div class="ae-2">
 									<?php the_content(); ?>

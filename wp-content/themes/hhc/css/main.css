@@ -372,6 +372,10 @@ html:not(.mobile) .slide.video .background[style] { background-size: cover !impo
 .blog-article.featured .post-content { background-color: transparent; position: absolute; top: 0; left: 0; width: 100%; height: 100%; }
 
 
+/* single post */
+.publish-date { font-size: 22px; margin-bottom: 10px; }
+
+
 /* sidebar */
 .whiteSlide .sidebar .menu-main-container li a { color: #ffffff; }
 .sidebar #menu-main-1 { margin-bottom: 0; }
