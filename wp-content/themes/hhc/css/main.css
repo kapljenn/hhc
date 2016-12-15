@@ -163,6 +163,7 @@ input[type=text], input[type=email], input[type=number], input[type=tel], textar
 .wp-caption { max-width: 100%; }
 .ae-2 ul { text-align: left; display: block; margin: 25px 0 25px 27px; }
 .ae-2 li { text-align: left; margin-bottom: 15px; list-style-type: disc; }
+.small-text .ae-2 li { font-size: 18px; margin-bottom: 0; }
 
 
 
