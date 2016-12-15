@@ -63,8 +63,8 @@ jQuery(document).ready(function() {
 	var buttonFilter = '';
 	var defaultFilter = '.initially-shown';
 	
-	var $grid = $('.downloads-grid').isotope({
-		itemSelector: '.download-grid-item',
+	var $grid = $('.publications-grid').isotope({
+		itemSelector: '.publication-grid-item',
 		layoutMode: 'masonry',
 		stagger: 100,
 		filter: function() {

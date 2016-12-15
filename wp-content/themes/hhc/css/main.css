@@ -349,15 +349,15 @@ html:not(.mobile) .slide.video .background[style] { background-size: cover !impo
 .job .img-holder img { width: 100%; height: auto; }
 .job .post-content { background-color: #ffffff; box-sizing: border-box; padding: 20px; }
 .job a.post-title { display: block; margin-bottom: 20px; }
-.download .post-excerpt { font-size: 14px; }
-.download .img-holder { width: 100%; height: 200px; overflow: hidden; margin-bottom: 0; }
-.download .img-holder img { width: 100%; height: auto; }
-.download .post-content { 
+.publication .post-excerpt { font-size: 14px; }
+.publication .img-holder { width: 100%; height: 200px; overflow: hidden; margin-bottom: 0; }
+.publication .img-holder img { width: 100%; height: auto; }
+.publication .post-content { 
 	background-color: #ffffff; box-sizing: border-box; padding: 20px; background-image: url(../img/download.png);
 	background-repeat: no-repeat; background-position: 93% 10%;
 }
-.download a.post-title { display: block; margin-bottom: 20px; width: 92%; }
-.download .post-excerpt { font-size: 14px; }
+.publication a.post-title { display: block; margin-bottom: 20px; width: 92%; }
+.publication .post-excerpt { font-size: 14px; }
 .blog-article .img-holder { width: 100%; height: 200px; overflow: hidden; margin-bottom: 0; }
 .blog-article .img-holder img { width: 100%; height: auto; }
 .blog-article .post-content { background-color: #ffffff; box-sizing: border-box; padding: 20px; }
@@ -449,13 +449,13 @@ section:nth-of-type(1).header_with_3_columns .fix-10-12 p { font-size: 30px; }
 	background: #007795;
 }
 
-.download-filters #quicksearch {
+.publication-filters #quicksearch {
 	width: 98%;
 	background: #fff;
 	text-align: center;
 }
 
-.download-btn {
+.publication-btn {
 	width: 23% !important;
 	margin: 0 1% !important;
 	font-size: 18px;
@@ -463,16 +463,16 @@ section:nth-of-type(1).header_with_3_columns .fix-10-12 p { font-size: 30px; }
 }
 
 
-.download .post-content {
+.publication .post-content {
 	height: 200px;
 	overflow: hidden;
 }
 
-.download .post-excerpt {
+.publication .post-excerpt {
 	color: #0e0e0e;
 }
 
-.downloads-grid {
+.publications-grid {
 	max-height: 480px !important;
 	overflow: hidden;
 }

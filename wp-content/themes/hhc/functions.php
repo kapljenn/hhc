@@ -408,11 +408,11 @@ function addCPTs() {
 		);
 	register_post_type('fundraising-story', $cpt_args);
 
-	// downloads
+	// publications
 	$cpt_args = array(
 		'menu_icon' => '',
-		'label'	=> __('Downloads'),
-		'singular_label' =>	__('Download'),
+		'label'	=> __('Publications'),
+		'singular_label' =>	__('Publication'),
 		'public'	=>	true,
 		'show_ui'	=>	true,
 		'taxonomies'  => array( 'category' ),
@@ -421,7 +421,7 @@ function addCPTs() {
 		'rewrite'	=>	true,
 		'supports'	=>	array('title', 'excerpt')
 		);
-	register_post_type('download', $cpt_args);
+	register_post_type('publication', $cpt_args);
 
 	// points of interest
 	$cpt_args = array(
@@ -513,7 +513,7 @@ function add_menu_icons_styles() {
 			#adminmenu .menu-icon-internship div.wp-menu-image:before { content: '\f337'; }
 			#adminmenu .menu-icon-faq div.wp-menu-image:before { content: '\f337'; }
 			#adminmenu .menu-icon-volunteering div.wp-menu-image:before { content: '\f337'; }
-			#adminmenu .menu-icon-download div.wp-menu-image:before { content: '\f316'; }
+			#adminmenu .menu-icon-publication div.wp-menu-image:before { content: '\f316'; }
 			#adminmenu .menu-icon-poi div.wp-menu-image:before { content: '\f319'; }
 			#adminmenu .menu-icon-challenge div.wp-menu-image:before { content: '\f308'; }
 			#adminmenu .menu-icon-event div.wp-menu-image:before { content: '\f486'; }

@@ -232,11 +232,11 @@ if ($video_url != "") {
 		$post_list = get_field('post_list', $slide_id);
 		$post_list_classes = get_field('post_list_classes', $slide_id);
 		if ($post_list != false) {
-			if(stripos($post_list_classes, 'downloads-grid') !== false)
+			if(stripos($post_list_classes, 'publications-grid') !== false)
 			{
-				echo '<div class="download-filters">
+				echo '<div class="publications-filters">
 				<p><input type="text" id="quicksearch" placeholder="Search" /></p>
-				<div id="filters" class="button-group"><button class="button download-btn download-btn-first" data-filter=".fundraising-tools">Fundraising Tools</button><button class="button download-btn" data-filter=".training">Training</button><button class="button download-btn" data-filter=".campaigns">Campaigns</button><button class="button download-btn download-btn-last" data-filter=".publications">Publications</button></div>
+				<div id="filters" class="button-group"><button class="button publication-btn publication-btn-first" data-filter=".fundraising-tools">Fundraising Tools</button><button class="button publication-btn" data-filter=".training">Training</button><button class="button publication-btn" data-filter=".campaigns">Campaigns</button><button class="button publication-btn publication-btn-last" data-filter=".publications">Publications</button></div>
 				</div>';
 			}
 		
@@ -279,7 +279,7 @@ if ($video_url != "") {
 							echo '<div class="post-excerpt">' . $excerpt . '</div>';
 						echo '</div>';
 					echo '</li>';
-				} else if ($p->post_type == 'download') {
+				} else if ($p->post_type == 'publication') {
 					//$thumb = wp_get_attachment_image_src( get_post_thumbnail_id($p->ID), 'medium')[0];
 					$title = $p->post_title;
 					$excerpt = get_the_excerpt($p->ID);
@@ -287,7 +287,7 @@ if ($video_url != "") {
 					
 					$categories = get_the_category($p->ID);
 					
-					echo '<li class="download download-grid-item initially-hidden '.esc_html( $categories[0]->slug ).'">';
+					echo '<li class="publication publication-grid-item initially-hidden '.esc_html( $categories[0]->slug ).'">';
 						// echo '<div class="img-holder">';
 						// 	echo '<img src="' . $thumb . '">';
 						// echo '</div>';
