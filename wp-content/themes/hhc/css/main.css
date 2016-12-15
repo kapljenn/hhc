@@ -424,7 +424,7 @@ section:nth-of-type(1).header_with_3_columns .fix-10-12 p { font-size: 30px; }
 
 /* Slides / Ninja Forms clash fix */
 .wp-list-table.fixed { position: relative !important; }
-
+.nf-after-field .nf-error-msg { font-size: 20px; }
 
 /* Stripe */
 .whiteSlide .sc-checkout-form { background-color: #eeeeee; }
