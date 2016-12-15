@@ -373,13 +373,14 @@ if ($video_url != "") {
 	<?php echo $title_html; ?>
 	<div class="ae-2"><?php echo $slide_content; ?></div>
 </div>
-<div class="fix-12-12">
+<div class="fix-12-12 map-container">
 	<div class="map" id="map"></div>
+	<div class="map-overlay">
+		<div class="dot-yellow">Countries of Influence</div>
+		<div class="dot-grey">Former Countries of Operation</div>
+		<div class="dot-purple">Countries of Operation</div>
+	</div>
 </div>
-
-
-
-
 
 
 

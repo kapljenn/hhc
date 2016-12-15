@@ -278,6 +278,17 @@ html:not(.mobile) .slide.video .background[style] { background-size: cover !impo
 
 
 /* map */
+.map-container { position: relative; }
+.map-overlay { 
+    position: absolute; bottom: 25px; left: 25px; width: 280px; height: 200px; background-color: #ffffff; padding: 25px;
+    box-sizing: border-box; font-size: 20px; text-align: left;
+}
+.map-overlay div { 
+    background-repeat: no-repeat; background-position: left 6px; background-size: 16px; padding-left: 32px; 
+}
+.dot-yellow { background-image: url(../img/dot-yellow.png); }
+.dot-grey { background-image: url(../img/dot-grey.png); }
+.dot-purple { background-image: url(../img/dot-purple.png); }
 #map { margin-top: -15px; }
 #map > div { background-color: #ffffff !important; }
 #zoomed_map > div { background-color: #ffffff !important; }
