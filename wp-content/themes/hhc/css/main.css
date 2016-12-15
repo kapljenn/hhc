@@ -205,7 +205,7 @@ html:not(.mobile) .slide.video .background[style] { background-size: cover !impo
 .slide-title { margin-bottom: 45px; }
 .img-holder { width: 100%; margin-bottom: 20px; height: 200px; overflow: hidden; }
 .icon-holder img { margin: 0 auto; display: block; height: 80px; width: auto; }
-.img-holder img { margin: 0 auto; display: block; width: auto; }
+.img-holder img { margin: 0 auto; display: block; width: auto; max-width: none; }
 .media-link { margin: 10px 0 20px 0; }
 .media-link p { margin-bottom: 0; }
 .media-link a { 
@@ -424,7 +424,7 @@ section:nth-of-type(1).header_with_3_columns .fix-10-12 p { font-size: 30px; }
 
 /* Slides / Ninja Forms clash fix */
 .wp-list-table.fixed { position: relative !important; }
-
+.nf-after-field .nf-error-msg { font-size: 20px; }
 
 /* Stripe */
 .whiteSlide .sc-checkout-form { background-color: #eeeeee; }

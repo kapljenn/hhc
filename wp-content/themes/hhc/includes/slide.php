@@ -117,7 +117,9 @@
 <?php } else if ($slide_type == "side_by_side") { ?>
 <?php
 	$left_image = get_field('left_image', $slide_id);
+	$left_image_src = $left_image['sizes']['large'];
 	$right_image = get_field('right_image', $slide_id);
+	$right_image_src = $right_image['sizes']['large'];
 	$column_ratio = get_field('column_ratio', $slide_id);
 
 	$left_side_icons = get_field('left_side_icons', $slide_id);
@@ -125,12 +127,12 @@
 ?>
 <?php if ($left_image) { ?>
 <div class="left-hand-image">
-	<img class="shiftImage shiftImageVertical" src="<?php echo $left_image['url']; ?>" width="1200">
+	<img class="shiftImage shiftImageVertical" src="<?php echo $left_image_src; ?>" width="1200">
 </div>
 <?php } ?>
 <?php if ($right_image) { ?>
 <div class="right-hand-image">
-	<img class="shiftImage shiftImageVertical" src="<?php echo $right_image['url']; ?>" width="1200">
+	<img class="shiftImage shiftImageVertical" src="<?php echo $right_image_src; ?>" width="1200">
 </div>
 <?php } ?>
 <div class="fix-10-12">
@@ -415,13 +417,15 @@ if ($video_url != "") {
 <?php
 		foreach ($thumbnails as $t) {
 			$thumbnail_image = $t['thumbnail_image'];
+			$thumbnail_image_src = $thumbnail_image['sizes']['large'];
 			$thumbnail_title = $t['thumbnail_title'];
 			$thumbnail_url = $t['thumbnail_url'];
+
 ?>
 		<li class="col-4-12">
 			<div class="fix-4-12">
 				<a href="<?php echo $thumbnail_url; ?>" class="thumbnail-link">
-					<img src="<?php echo $thumbnail_image['url']; ?>" />
+					<img src="<?php echo $thumbnail_image_src; ?>" />
 					<div class="thumbnail-content">
 						<span class="thumbnail-title"><?php echo $thumbnail_title; ?></span>
 					</div>
