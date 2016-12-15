@@ -423,6 +423,21 @@ function addCPTs() {
 		);
 	register_post_type('publication', $cpt_args);
 
+	// fundraising tools
+	$cpt_args = array(
+		'menu_icon' => '',
+		'label'	=> __('Fundraising Tools'),
+		'singular_label' =>	__('Fundraising Tool'),
+		'public'	=>	true,
+		'show_ui'	=>	true,
+		'taxonomies'  => array( 'category' ),
+		'capability_type'	=>	'post',
+		'hierarchical'	=>	false,
+		'rewrite'	=>	true,
+		'supports'	=>	array('title', 'excerpt')
+		);
+	register_post_type('fundraising-tool', $cpt_args);
+
 	// points of interest
 	$cpt_args = array(
 		'menu_icon' => '',
@@ -514,6 +529,7 @@ function add_menu_icons_styles() {
 			#adminmenu .menu-icon-faq div.wp-menu-image:before { content: '\f337'; }
 			#adminmenu .menu-icon-volunteering div.wp-menu-image:before { content: '\f337'; }
 			#adminmenu .menu-icon-publication div.wp-menu-image:before { content: '\f316'; }
+			#adminmenu .menu-icon-fundraising-tool div.wp-menu-image:before { content: '\f316'; }
 			#adminmenu .menu-icon-poi div.wp-menu-image:before { content: '\f319'; }
 			#adminmenu .menu-icon-challenge div.wp-menu-image:before { content: '\f308'; }
 			#adminmenu .menu-icon-event div.wp-menu-image:before { content: '\f486'; }

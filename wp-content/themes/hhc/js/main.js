@@ -63,25 +63,53 @@ jQuery(document).ready(function() {
 	var buttonFilter = '';
 	var defaultFilter = '.initially-shown';
 	
-	var $grid = $('.publications-grid').isotope({
-		itemSelector: '.publication-grid-item',
-		layoutMode: 'masonry',
-		stagger: 100,
-		filter: function() {
-			if($('#quicksearch').val().length > 0)
-			{
-				return qsRegex ? $(this).text().match( qsRegex ) : true;
+	var $grid;
+
+	if ($('.publications-grid').length > 0) {
+		console.log('p');
+		$grid = $('.publications-grid').isotope({
+			itemSelector: '.publication-grid-item',
+			layoutMode: 'masonry',
+			stagger: 100,
+			filter: function() {
+				if($('#quicksearch').val().length > 0)
+				{
+					return qsRegex ? $(this).text().match( qsRegex ) : true;
+				}
+				else if(buttonFilter != '')
+				{
+					return buttonFilter ? $(this).is( buttonFilter ) : true;
+				}
+				else
+				{
+					return defaultFilter ? $(this).is( defaultFilter ) : true;
+				}
 			}
-			else if(buttonFilter != '')
-			{
-				return buttonFilter ? $(this).is( buttonFilter ) : true;
+		});
+	}
+
+	else if ($('.fundraising-tools-grid').length > 0) {
+		console.log('ft');
+		$grid = $('.fundraising-tools-grid').isotope({
+			itemSelector: '.fundraising-tool-grid-item',
+			layoutMode: 'masonry',
+			stagger: 100,
+			filter: function() {
+				if($('#quicksearch').val().length > 0)
+				{
+					return qsRegex ? $(this).text().match( qsRegex ) : true;
+				}
+				else if(buttonFilter != '')
+				{
+					return buttonFilter ? $(this).is( buttonFilter ) : true;
+				}
+				else
+				{
+					return defaultFilter ? $(this).is( defaultFilter ) : true;
+				}
 			}
-			else
-			{
-				return defaultFilter ? $(this).is( defaultFilter ) : true;
-			}
-		}
-	});
+		});
+	}
 
 	$('#filters').on( 'click', 'button', function() {	
 		qsRegex = '';

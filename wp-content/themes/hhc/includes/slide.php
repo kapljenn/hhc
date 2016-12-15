@@ -231,15 +231,23 @@ if ($video_url != "") {
 		// post type
 		$post_list = get_field('post_list', $slide_id);
 		$post_list_classes = get_field('post_list_classes', $slide_id);
-		if ($post_list != false) {
-			if(stripos($post_list_classes, 'publications-grid') !== false)
-			{
-				echo '<div class="publications-filters">
-				<p><input type="text" id="quicksearch" placeholder="Search" /></p>
-				<div id="filters" class="button-group"><button class="button publication-btn publication-btn-first" data-filter=".fundraising-tools">Fundraising Tools</button><button class="button publication-btn" data-filter=".training">Training</button><button class="button publication-btn" data-filter=".campaigns">Campaigns</button><button class="button publication-btn publication-btn-last" data-filter=".publications">Publications</button></div>
-				</div>';
-			}
+
+		// print out filters
+		if (stripos($post_list_classes, 'publications-grid') !== false) {
+			echo '<div class="publications-filters">
+			<p><input type="text" id="quicksearch" placeholder="Search" /></p>
+			<div id="filters" class="button-group"><button class="button publication-btn publication-btn-first" data-filter=".fundraising-tools">Fundraising Tools</button><button class="button publication-btn" data-filter=".training">Training</button><button class="button publication-btn" data-filter=".campaigns">Campaigns</button><button class="button publication-btn publication-btn-last" data-filter=".publications">Publications</button></div>
+			</div>';
+		}
+		else if (stripos($post_list_classes, 'fundraising-tools-grid') !== false) {
+			echo '<div class="fundraising-tools-filters">
+			<p><input type="text" id="quicksearch" placeholder="Search" /></p>
+			<div id="filters" class="button-group"><button class="button fundraising-tool-btn fundraising-tool-btn-first" data-filter=".fundraising-tools">Fundraising Tools</button><button class="button fundraising-tool-btn" data-filter=".training">Training</button><button class="button fundraising-tool-btn" data-filter=".campaigns">Campaigns</button><button class="button fundraising-tool-btn fundraising-tool-btn-last" data-filter=".fundraising-tools">Fundraising Tools</button></div>
+			</div>';
+		}
 		
+		if ($post_list != false) {
+
 			echo "<ul class='post-grid " . $post_list_classes . "'>";
 			$column_fraction = floor(12/sizeOf($post_list));
 			foreach ($post_list as $p) {
@@ -271,23 +279,6 @@ if ($video_url != "") {
 					$excerpt = get_the_excerpt($p->ID);
 					$permalink = get_permalink($p->ID);
 					echo '<li class="job">';
-						// echo '<div class="img-holder">';
-						// 	echo '<img src="' . $thumb . '">';
-						// echo '</div>';
-						echo '<div class="post-content">';
-							echo '<a href="' . $permalink . '" class="post-title">' . $title . '</a>';
-							echo '<div class="post-excerpt">' . $excerpt . '</div>';
-						echo '</div>';
-					echo '</li>';
-				} else if ($p->post_type == 'publication') {
-					//$thumb = wp_get_attachment_image_src( get_post_thumbnail_id($p->ID), 'medium')[0];
-					$title = $p->post_title;
-					$excerpt = get_the_excerpt($p->ID);
-					$permalink = get_field('file', $p->ID)['url'];
-					
-					$categories = get_the_category($p->ID);
-					
-					echo '<li class="publication publication-grid-item initially-hidden '.esc_html( $categories[0]->slug ).'">';
 						// echo '<div class="img-holder">';
 						// 	echo '<img src="' . $thumb . '">';
 						// echo '</div>';
@@ -334,21 +325,63 @@ if ($video_url != "") {
 	if ($post_loop != false) {
 		$the_query = new WP_Query(array( 'post_type' => $post_loop, 'posts_per_page' => -1 ));
 		if ( $the_query->have_posts() ) {
-			echo '<ul class="post-grid">';
+			echo "<ul class='post-grid " . $post_list_classes . "'>";
 			while ( $the_query->have_posts() ) {
 				$the_query->the_post();
-				$thumb = wp_get_attachment_image_src( get_post_thumbnail_id($link->ID), 'medium' )['0'];
-				echo '<li class="blog-article">';
-				if ($thumb) {
-					echo '<div class="img-holder">';
-						echo '<img src="' . $thumb . '">';
-					echo '</div>';
+
+				// publications
+				if (get_post_type() == "publication") {
+					$title = get_the_title();
+					$excerpt = get_the_excerpt();
+					$permalink = get_the_permalink();
+					
+					$categories = get_the_category();
+					
+					echo '<li class="publication publication-grid-item initially-hidden '.esc_html( $categories[0]->slug ).'">';
+						// echo '<div class="img-holder">';
+						// 	echo '<img src="' . $thumb . '">';
+						// echo '</div>';
+						echo '<div class="post-content">';
+							echo '<a href="' . $permalink . '" class="post-title">' . $title . '</a>';
+							echo '<div class="post-excerpt">' . $excerpt . '</div>';
+						echo '</div>';
+					echo '</li>';
 				}
-					echo '<div class="post-content">';
-						echo '<a href="' . get_the_permalink() . '" class="post-title">' . get_the_title() . '</a>';
-						echo '<div class="post-excerpt">' . get_the_excerpt() . '</div>';
-					echo '</div>';
-				echo '</li>';
+
+				// fundraising tools
+				else if (get_post_type() == "fundraising-tool") {
+					$title = get_the_title();
+					$excerpt = get_the_excerpt();
+					$permalink = get_the_permalink();
+					
+					$categories = get_the_category();
+					
+					echo '<li class="fundraising-tool fundraising-tool-grid-item initially-hidden '.esc_html( $categories[0]->slug ).'">';
+						// echo '<div class="img-holder">';
+						// 	echo '<img src="' . $thumb . '">';
+						// echo '</div>';
+						echo '<div class="post-content">';
+							echo '<a href="' . $permalink . '" class="post-title">' . $title . '</a>';
+							echo '<div class="post-excerpt">' . $excerpt . '</div>';
+						echo '</div>';
+					echo '</li>';
+				}
+
+				// any other post type
+				else {
+					$thumb = wp_get_attachment_image_src( get_post_thumbnail_id($link->ID), 'medium' )['0'];
+					echo '<li class="blog-article">';
+					if ($thumb) {
+						echo '<div class="img-holder">';
+							echo '<img src="' . $thumb . '">';
+						echo '</div>';
+					}
+						echo '<div class="post-content">';
+							echo '<a href="' . get_the_permalink() . '" class="post-title">' . get_the_title() . '</a>';
+							echo '<div class="post-excerpt">' . get_the_excerpt() . '</div>';
+						echo '</div>';
+					echo '</li>';
+				}
 			}
 			echo '</ul>';
 		}
