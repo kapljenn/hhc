@@ -333,7 +333,7 @@ if ($video_url != "") {
 				if (get_post_type() == "publication") {
 					$title = get_the_title();
 					$excerpt = get_the_excerpt();
-					$permalink = get_the_permalink();
+					$file_url = get_field('file')['url'];
 					
 					$categories = get_the_category();
 					
@@ -342,7 +342,7 @@ if ($video_url != "") {
 						// 	echo '<img src="' . $thumb . '">';
 						// echo '</div>';
 						echo '<div class="post-content">';
-							echo '<a href="' . $permalink . '" class="post-title">' . $title . '</a>';
+							echo '<a href="' . $file_url . '" class="post-title">' . $title . '</a>';
 							echo '<div class="post-excerpt">' . $excerpt . '</div>';
 						echo '</div>';
 					echo '</li>';
@@ -352,7 +352,7 @@ if ($video_url != "") {
 				else if (get_post_type() == "fundraising-tool") {
 					$title = get_the_title();
 					$excerpt = get_the_excerpt();
-					$permalink = get_the_permalink();
+					$file_url = get_field('file')['url'];
 					
 					$categories = get_the_category();
 					
@@ -361,7 +361,7 @@ if ($video_url != "") {
 						// 	echo '<img src="' . $thumb . '">';
 						// echo '</div>';
 						echo '<div class="post-content">';
-							echo '<a href="' . $permalink . '" class="post-title">' . $title . '</a>';
+							echo '<a href="' . $file_url . '" class="post-title">' . $title . '</a>';
 							echo '<div class="post-excerpt">' . $excerpt . '</div>';
 						echo '</div>';
 					echo '</li>';
