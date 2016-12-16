@@ -155,7 +155,12 @@
 					$partner_logo = get_field('partner_logo', $post_id)['url'];
 					if ($slide_palette == "white_text_dark_background") $partner_logo = get_field('partner_logo_inverted', $post_id)['url'];
 					$partner_url = get_field('partner_url', $post_id);
-					echo '<li class="partner"><a href="' . $partner_url . '" style="background-image: url(' . $partner_logo . ')"></a></li>';
+					if (strlen($partner_url) > 7) {
+						echo '<li class="partner"><a href="' . $partner_url . '" style="background-image: url(' . $partner_logo . ')"></a></li>';
+					}
+					else {
+						echo '<li class="partner"><div style="background-image: url(' . $partner_logo . ')"></div></li>';
+					}
 				}
 				echo '</ul>';
 			}
@@ -185,7 +190,12 @@
 					$partner_logo = get_field('partner_logo', $post_id)['url'];
 					if ($slide_palette == "white_text_dark_background") $partner_logo = get_field('partner_logo_inverted', $post_id)['url'];
 					$partner_url = get_field('partner_url', $post_id);
-					echo '<li class="partner"><a href="' . $partner_url . '" style="background-image: url(' . $partner_logo . ')"></a></li>';
+					if (strlen($partner_url) > 7) {
+						echo '<li class="partner"><a href="' . $partner_url . '" style="background-image: url(' . $partner_logo . ')"></a></li>';
+					}
+					else {
+						echo '<li class="partner"><div style="background-image: url(' . $partner_logo . ')"></div></li>';
+					}
 				}
 				echo '</ul>';
 			}
@@ -420,9 +430,9 @@ if ($video_url != "") {
 <div class="fix-12-12 map-container">
 	<div class="map" id="map"></div>
 	<div class="map-overlay">
-		<div class="dot-yellow">Countries of Influence</div>
-		<div class="dot-grey">Former Countries of Operation</div>
-		<div class="dot-purple">Countries of Operation</div>
+		<div class="dot-purple">Countries of operation</div>
+		<div class="dot-yellow">Countries of influence</div>
+		<div class="dot-grey">Former countries of operation</div>
 	</div>
 </div>
 
