@@ -323,7 +323,16 @@ if ($video_url != "") {
 <?php
 	$post_loop = get_field('post_loop', $slide_id);
 	if ($post_loop != false) {
+
+		// normal query
 		$the_query = new WP_Query(array( 'post_type' => $post_loop, 'posts_per_page' => -1 ));
+
+		// if we're dealing with a people post type, order the items alphabetically
+		$people_post_types = array("patron", "trustee", "executive-leader", "spokesperson");
+		if (in_array($post_loop, $people_post_types)) {
+			$the_query = new WP_Query(array( 'post_type' => $post_loop, 'posts_per_page' => -1 , 'orderby' => 'title' , 'order' => 'ASC' ));
+		}
+
 		if ( $the_query->have_posts() ) {
 			echo "<ul class='post-grid " . $post_list_classes . "'>";
 			while ( $the_query->have_posts() ) {
