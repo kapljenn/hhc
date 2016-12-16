@@ -219,7 +219,7 @@ html:not(.mobile) .slide.video .background[style] { background-size: cover !impo
 
 /* join newsletter form */
 #nf-form-2-cont nf-field:nth-of-type(1) { width: 50%; }
-#nf-form-2-cont nf-field:nth-of-type(2) { width: 30%; }
+/* #nf-form-2-cont nf-field:nth-of-type(2) { width: 30%; }	*/
 #nf-form-2-cont nf-field:nth-of-type(2) input { width: 90%; }
 
 
@@ -476,12 +476,6 @@ section:nth-of-type(1).header_with_3_columns .fix-10-12 p { font-size: 30px; }
 	padding: 15px 0;
 }	
 
-label .ninja-forms-req-symbol {
-	position: absolute;
-	z-index: 1;
-	top: 5px;
-	left: 10px;
-}
 
 .nf-after-field .nf-error-msg {
 //	display: none;
@@ -522,4 +516,22 @@ textarea {
 	margin-bottom: 15px !important;
 	padding: 0px;
 	font-size: 0;
+}
+
+#nf-form-2-cont nf-field:nth-of-type(2) { 
+//	width: auto !important;
+}
+
+.inline-form .recaptcha-container .nf-field-label {
+	display: none;
+}
+.inline-form .recaptcha-container  {
+	padding: 0 20px;
+	margin-top: -10px;
+}
+.inline-form label .ninja-forms-req-symbol {
+	position: absolute;
+	z-index: 1;
+	top: 5px;
+	left: 10px;
 }
