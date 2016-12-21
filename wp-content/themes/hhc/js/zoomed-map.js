@@ -18,7 +18,7 @@ jQuery(document).ready(function() {
 	function initMap() {
 
 		// create map
-		var mapCenter = {lat: 51.135001, lng: -1.937321};
+		var mapCenter = {lat: 51.135421, lng: -1.937301};
 		map = new google.maps.Map(document.getElementById('zoomed_map'), {
 			zoom: zoom_level,
 			center: mapCenter,
@@ -50,7 +50,7 @@ jQuery(document).ready(function() {
 		var marker_image = stylesheet_dir + '/img/dot-purple.png';
 
 		// create marker
-		var point = new google.maps.LatLng(51.135001, -1.937321);
+		var point = new google.maps.LatLng(51.135421, -1.937301);
 		marker = new google.maps.Marker({
 			position: point,
 			map: map,
