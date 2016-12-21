@@ -1,0 +1,226 @@
+#donate-wp1 .icon-holder img {
+	height: 160px;
+}	
+
+
+
+.pp-amount-box {
+	border: 2px solid #57244b;
+	background: #fff;
+}
+
+.pp-amount-box p {
+	padding: 15px;
+	margin-bottom: 0px;
+}
+
+.pp-amount-box-header-1 {
+	background: url('../images/box-1-bg.png');
+}
+.pp-amount-box-header-2 {
+	background: url('../images/box-2-bg.png');
+}
+.pp-amount-box-header-3 {
+	background: url('../images/box-3-bg.png');
+}
+
+.pp-amount-box-header {
+	width: 100%;
+	min-height: 200px;
+	background-size: cover;
+}
+
+
+
+.pp-amount-box-circle {
+	display: block;
+    background: #57244b;
+    width: 100px;
+    text-align: center;
+    height: 100px;
+    line-height: 100px;
+    border-radius: 50%;
+    border: 2px solid #fff;
+    color: #fff;
+    font-weight: bold;
+    font-size: 32px;
+    margin: -50px auto 0 auto;
+    cursor: pointer;
+}
+
+.pp-amount-box-circle-white {
+	display: block;
+    background: #fff;
+    width: 100px;
+    text-align: center;
+    height: 100px;
+    line-height: 100px;
+    border-radius: 50%;
+    border: 2px solid #57244b;
+    color: #57244b;
+    font-weight: bold;
+    font-size: 32px;
+    margin: 0 auto 0 auto;
+    cursor: pointer;
+}
+
+.down-arrow {
+	display: block;
+	margin: 50px auto 0 auto;
+}
+
+h2.gbp {
+	display: block !important;
+	color: #57244b;
+	font-weight: bold;
+	font-size: 48px;
+	margin: 0 0 15px 0;
+}
+
+
+.gift-aid {
+	text-align: center;
+}
+
+.gift-aid input[type=text] {
+	border: 1px solid #57244b;
+	outline: 0;
+	min-width: 300px;
+	text-align: center;
+}
+
+
+h3 {
+	display: block !important;
+	color: #57244b;
+    margin: 10px 0 0 0;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.gift-aid p {
+    font-size: 18px;
+    line-height: 22px;
+    color: #57244b; 	
+}
+
+.gift-aid label {
+	display: block;
+	text-align: center;
+    font-size: 18px;
+    line-height: 22px;
+    color: #57244b; 	
+    margin-bottom: 30px;
+}
+
+
+.payment-method {
+	text-align: center;
+}
+
+.payment-method .payment-select input {
+	display: block;
+	margin: 10px auto 0 auto;
+}
+
+
+.form-fields-col {
+	text-align: left;
+}
+
+.form-fields-col label  {
+	display: block;
+	margin-bottom: 15px;
+}
+
+.form-fields-col label span {
+	display: block;
+	font-size: 16px;
+	line-height: 24px;
+	color: #57244b;
+}
+
+.form-fields-col label span.mandatory {
+	color: #ff0000;
+	display: inline;
+}
+
+
+.form-fields-col label input[type=text] {
+	border: 1px solid #57244b;
+	outline: 0;
+	width: 100%;
+	text-align: left;
+}
+.keep-me-posted  {
+	text-align: center;
+}
+.keep-me-posted h3 {
+	display: block !important;
+	color: #fff;
+    margin: 10px 0 20px 0;
+    font-size: 28px;
+    font-weight: bold;	
+}
+
+.keep-me-posted .keep-me-img {
+	margin: 10px auto 20px auto;
+}
+.keep-me-posted p {
+	color: #fff;
+	font-size: 16px;
+	line-height: 20px;
+}
+
+.keep-me-posted label {
+	font-size: 16px;
+	line-height: 20px;
+	color: #fff;
+	font-weight: bold;
+}
+
+.keep-me-posted label input {
+	margin-left: 15px;
+}
+.keep-me-posted input[type=submit] {
+	display: block;
+	border: 0px;
+	background: #fff;
+	color: #57244b;
+	padding: 10px 20px;
+	margin: 30px auto 0 auto;
+	font-size: 28px;
+	font-weight: bold;
+	border-radius: 6px;
+	cursor: pointer;
+}
+
+
+.worldpay-info {
+	text-align: center;
+}
+
+.worldpay-info p {
+	color: #57244b;
+	font-size: 16px;
+	line-height: 20px;
+}
+
+
+::-webkit-input-placeholder {
+   color: #57244b;
+}
+
+:-moz-placeholder { /* Firefox 18- */
+   color: #57244b;  
+}
+
+::-moz-placeholder {  /* Firefox 19+ */
+   color: #57244b;  
+}
+
+:-ms-input-placeholder {  
+   color: #57244b
+   ;  
+}
+
