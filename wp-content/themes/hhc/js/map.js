@@ -2,12 +2,15 @@
 	
 jQuery(document).ready(function() {
 
+	// determine if this is a touch device
+	var isTouch =  !!("ontouchstart" in window) || window.navigator.msMaxTouchPoints > 0;
+
 	// iPad detection
 	var is_iPad = navigator.userAgent.match(/iPad/i) != null;
 
 	// zoom level
 	var zoom_level = 2;
-	if (is_iPad) zoom_level = 1;
+	if (isTouch) zoom_level = 1;
 
 	// init
 	if ($('.map').length > 0) google.maps.event.addDomListener(window, 'load', initMap);

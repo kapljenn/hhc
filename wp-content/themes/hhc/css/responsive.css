@@ -27,6 +27,7 @@
 	.blog-article.featured .img-holder img { width: 600px; height: auto; }
 	.side_by_side .grid .grid li { width: 90% }
 	.post-grid .tweet { width: 90%; }
+	.map-overlay { position: relative; top: 0; }
 }
 
 @media all and (max-width: 449px) {

@@ -343,6 +343,12 @@ if ($video_url != "") {
 			$the_query = new WP_Query(array( 'post_type' => $post_loop, 'posts_per_page' => -1 , 'orderby' => 'title' , 'order' => 'ASC' ));
 		}
 
+		// if we're dealing with events or challenges, order the items by start date
+		$calendar_based_post_types = array("event", "challenge");
+		if (in_array($post_loop, $calendar_based_post_types)) {
+			$the_query = new WP_Query(array( 'post_type' => $post_loop, 'posts_per_page' => -1 , 'meta_key' => 'start' , 'orderby' => 'meta_value' , 'order' => 'ASC' ));
+		}
+
 		if ( $the_query->have_posts() ) {
 			echo "<ul class='post-grid " . $post_list_classes . "'>";
 			while ( $the_query->have_posts() ) {
