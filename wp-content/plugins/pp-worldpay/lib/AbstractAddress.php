@@ -1,4 +1,5 @@
 <?php
+namespace Worldpay;
 
 abstract class AbstractAddress
 {

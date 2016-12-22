@@ -1,6 +1,3 @@
-#donate-wp1 .icon-holder img {
-	height: 160px;
-}	
 
 
 
@@ -82,10 +79,10 @@ h2.gbp {
 	text-align: center;
 }
 
-.gift-aid input[type=text] {
+.gift-aid input[type=number] {
 	border: 1px solid #57244b;
 	outline: 0;
-	min-width: 300px;
+	min-width: 320px;
 	text-align: center;
 }
 
@@ -145,8 +142,9 @@ h3 {
 	display: inline;
 }
 
+#paymentErrors { color: #ff0000; }
 
-.form-fields-col label input[type=text] {
+.form-fields-col label input[type=text], .form-fields-col label input[type=email] {
 	border: 1px solid #57244b;
 	outline: 0;
 	width: 100%;

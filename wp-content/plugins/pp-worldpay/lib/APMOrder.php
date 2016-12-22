@@ -1,4 +1,5 @@
 <?php
+namespace Worldpay;
 
 class APMOrder extends AbstractOrder
 {

@@ -1,4 +1,5 @@
 <?php
+namespace Worldpay;
 
 class WorldpayException extends \Exception
 {

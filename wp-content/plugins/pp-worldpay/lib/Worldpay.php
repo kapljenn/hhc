@@ -1,5 +1,6 @@
 <?php
 
+namespace Worldpay;
 
 /**
  * PHP library version: 2.1.0

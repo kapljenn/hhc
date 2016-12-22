@@ -1,4 +1,5 @@
 <?php
+namespace Worldpay;
 
 define("ORDER_TYPES", serialize(array("ECOM", "MOTO", "RECURRING")));
 

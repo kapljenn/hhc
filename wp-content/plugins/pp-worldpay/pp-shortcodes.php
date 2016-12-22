@@ -5,11 +5,8 @@ function pp_worldpay_slide_1() {
 
 $strContent = '';
 
-if ($response['paymentStatus'] === 'SUCCESS') {
-	$strContent .= 'success';
-}
-
 	$strContent .= '
+ 
 	<form action="" id="paymentForm" method="post">
 		<ul class="grid later equal">
 				<li class="col-4-12">
@@ -80,7 +77,7 @@ if ($response['paymentStatus'] === 'SUCCESS') {
 		<ul class="grid later equal">
 				<li class="col-12-12">
 					<div class="fix-12-12">
-						<img src="/wp-content/plugins/pp-worldpay/images/down-arrow.png" class="down-arrow" />
+						<img src="'.plugin_dir_url( __FILE__ ).'images/down-arrow.png" class="down-arrow" />
 					</div>
 				</li>
 		</ul>	
@@ -104,7 +101,7 @@ function pp_worldpay_slide_2() {
 					<div class="fix-6-12">
 						<div class="gift-aid">
 							<h2 class="gbp">£GBP</h2>
-							<input type="text" class="pp-worldpay-amount" name="pp_amount" placeholder="Enter your own amount" required="true" />
+							<input type="number" class="pp-worldpay-amount" name="pp_amount" tabindex="1" placeholder="Enter your own amount" required="true" min="1" />
 							<br /><br />
 							<h3>Gift aid declaration</h3>
 							<h3>Add 25p for every £1 you donate</h3>
@@ -112,16 +109,16 @@ function pp_worldpay_slide_2() {
 							<p>If you are a UK taxpayer, please tick the box below and we can receive an extra 25p from every £1 you give at no extra cost to you. Your address is needed to identify you as a current UK taxpayer.</p>
 						
 							<label>
-								<input type="radio" name="pp_giftaid" value="1" />
+								<input type="radio" tabindex="2" name="pp_giftaid" value="1" />
 								Yes: I want to Gift Aid my donation and any donations I make in the future or have made in the past 4 years to Hope and Homes for Children.  I am a UK taxpayer and understand that if I pay less Income Tax and/or Capital Gains Tax than the amount of Gift Aid claimed on all my donations in that tax year it is my responsibility to pay any difference.
 							</label>
 
 							<label>
-								<input type="radio" name="pp_giftaid" value="2" />
+								<input type="radio" tabindex="3" name="pp_giftaid" value="2" />
 								No: I am not a UK taxpayer (this helps us to know not to contact you about this again).
 							</label>
 
-							<img src="/wp-content/plugins/pp-worldpay/images/giftaid-label.png" class="down-arrow" />
+							<img src="'.plugin_dir_url( __FILE__ ).'images/giftaid-label.png" class="down-arrow" />
 						
 						</div>
 					</div>
@@ -137,7 +134,7 @@ function pp_worldpay_slide_2() {
 		<ul class="grid later equal">
 				<li class="col-12-12">
 					<div class="fix-12-12">
-						<img src="/wp-content/plugins/pp-worldpay/images/down-arrow.png" class="down-arrow" />
+						<img src="'.plugin_dir_url( __FILE__ ).'images/down-arrow.png" class="down-arrow" />
 					</div>
 				</li>
 		</ul>	
@@ -166,59 +163,60 @@ function pp_worldpay_slide_3() {
 										<li class="col-2-12">
 											<div class="fix-2-12">
 												<label class="payment-select">
-													<img src="/wp-content/plugins/pp-worldpay/images/payment-mastercard.png" class="payment-icon" />
-													<input type="radio" name="payment_method" value="mastercard" />
+													<img src="'.plugin_dir_url( __FILE__ ).'images/payment-mastercard.png" class="payment-icon" />
+													<input type="radio" tabindex="4" name="payment_method" value="mastercard" />
 												</label>
 											</div>
 										</li>
 										<li class="col-2-12">
 											<div class="fix-2-12">
 												<label class="payment-select">
-													<img src="/wp-content/plugins/pp-worldpay/images/payment-mastercard-debit.png" class="payment-icon" />
-													<input type="radio" name="payment_method" value="mastercard-debit" />
+													<img src="'.plugin_dir_url( __FILE__ ).'images/payment-mastercard-debit.png" class="payment-icon" />
+													<input type="radio" tabindex="5" name="payment_method" value="mastercard-debit" />
 												</label>
 											</div>
 										</li>
 										<li class="col-2-12">
 											<div class="fix-2-12">
 												<label class="payment-select">
-													<img src="/wp-content/plugins/pp-worldpay/images/payment-maestro.png" class="payment-icon" />
-													<input type="radio" name="payment_method" value="maestro" />
+													<img src="'.plugin_dir_url( __FILE__ ).'images/payment-maestro.png" class="payment-icon" />
+													<input type="radio" tabindex="6" name="payment_method" value="maestro" />
 												</label>
 											</div>
 										</li>
 										<li class="col-2-12">
 											<div class="fix-2-12">
 												<label class="payment-select">
-													<img src="/wp-content/plugins/pp-worldpay/images/payment-visa.png" class="payment-icon" />
-													<input type="radio" name="payment_method" value="visa" />
+													<img src="'.plugin_dir_url( __FILE__ ).'images/payment-visa.png" class="payment-icon" />
+													<input type="radio" tabindex="7" name="payment_method" value="visa" />
 												</label>
 											</div>
 										</li>
 										<li class="col-2-12">
 											<div class="fix-2-12">
 												<label class="payment-select">
-													<img src="/wp-content/plugins/pp-worldpay/images/payment-visa-debit.png" class="payment-icon" />
-													<input type="radio" name="payment_method" value="visa-debit" />
+													<img src="'.plugin_dir_url( __FILE__ ).'images/payment-visa-debit.png" class="payment-icon" />
+													<input type="radio" tabindex="8" name="payment_method" value="visa-debit" />
 												</label>
 											</div>
 										</li>
 										<li class="col-2-12">
 											<div class="fix-2-12">
 												<label class="payment-select">
-													<img src="/wp-content/plugins/pp-worldpay/images/payment-visa-electron.png" class="payment-icon" />
-													<input type="radio" name="payment_method" value="visa-electron" />
+													<img src="'.plugin_dir_url( __FILE__ ).'images/payment-visa-electron.png" class="payment-icon" />
+													<input type="radio" tabindex="9" name="payment_method" value="visa-electron" />
 												</label>
 											</div>
 										</li>
 
 								</ul>	
 								
-<div id="paymentSection"></div>								
+
 
 							<h2 class="gbp">Billing details</h2>
 							<h3>Fields marked with a <span style="color: #ff0000;">*</span> are mandatory</h3>
 					
+  <span id="paymentErrors"></span>
 
 						
 						</div>
@@ -239,23 +237,45 @@ function pp_worldpay_slide_3() {
 					<div class="fix-6-12">
 						<div class="form-fields-col">
 							<label>
+								<span>Name on Card <span class="mandatory">*</span></span>
+								<input type="text" tabindex="10" data-worldpay="name" name="name" required="true" />
+							</label>
+
+							<label>
+								<span>Expiration (MM/YYYY) <span class="mandatory">*</span></span>
+								<input type="text" tabindex="12" data-worldpay="exp-month" style="width: 45%;" required="true" />
+								<div style="width: 5%; text-align: center; display: inline-block;">/</div>
+								<input type="text" tabindex="13" data-worldpay="exp-year" style="width: 45%; float: right;" required="true" />
+							</label>
+
+							<label>
 								<span>Title</span>
-								<input type="text" name="pp_title" />
+								<input type="text" tabindex="15" name="pp_title" />
 							</label>
 
 							<label>
 								<span>First name <span class="mandatory">*</span></span>
-								<input type="text" name="pp_firstname" required="true" />
+								<input type="text" tabindex="17" name="pp_firstname" required="true" />
 							</label>
 
 							<label>
 								<span>Email address <span class="mandatory">*</span></span>
-								<input type="text" name="pp_email" required="true" />
+								<input type="email" tabindex="19" name="pp_email" required="true" />
+							</label>
+
+							<label>
+								<span>Address line 1 <span class="mandatory">*</span></span>
+								<input type="text" tabindex="21" name="pp_address_line_1" required="true" />
+							</label>
+
+							<label>
+								<span>Address line 3 <span class="mandatory">*</span></span>
+								<input type="text" tabindex="23" name="pp_address_line_3" required="true" />
 							</label>
 
 							<label>
 								<span>Postcode <span class="mandatory">*</span></span>
-								<input type="text" name="pp_postcode" required="true" />
+								<input type="text" tabindex="25" name="pp_postcode" required="true" />
 							</label>
 
 						</div>
@@ -266,18 +286,44 @@ function pp_worldpay_slide_3() {
 					<div class="fix-6-12">
 						<div class="form-fields-col">
 							<label>
+								<span>Card number <span class="mandatory">*</span></span>
+								<input type="text" tabindex="11" data-worldpay="number" required="true" />
+							</label>
+
+							<label>
+								<span>CVC <span class="mandatory">*</span></span>
+								<input type="text" tabindex="14" data-worldpay="cvc"  required="true" />
+							</label>
+
+
+							<label>
 								<span>Contact number</span>
-								<input type="text" name="pp_contact_number" />
+								<input type="text" tabindex="16" name="pp_contact_number" />
 							</label>
 
 							<label>
 								<span>Last name <span class="mandatory">*</span></span>
-								<input type="text" name="pp_lastname" required="true" />
+								<input type="text" tabindex="18" name="pp_lastname" required="true" />
 							</label>
 
 							<label>
 								<span>Confirm email address <span class="mandatory">*</span></span>
-								<input type="text" name="pp_reemail" required="true" />
+								<input type="email" tabindex="20" name="pp_reemail" required="true" />
+							</label>
+
+							<label>
+								<span>Address line 2</span>
+								<input type="text" tabindex="22" name="pp_address_line_2" />
+							</label>
+
+							<label>
+								<span>Town/City <span class="mandatory">*</span></span>
+								<input type="text" tabindex="24" name="pp_city" required="true" />
+							</label>
+
+							<label>
+								<span>Country</span>
+								<input type="text" tabindex="26" name="pp_country" />
 							</label>
 
 
@@ -291,7 +337,7 @@ function pp_worldpay_slide_3() {
 		<ul class="grid later equal">
 				<li class="col-12-12">
 					<div class="fix-12-12">
-						<img src="/wp-content/plugins/pp-worldpay/images/down-arrow.png" class="down-arrow" />
+						<img src="'.plugin_dir_url( __FILE__ ).'images/down-arrow.png" class="down-arrow" />
 					</div>
 				</li>
 		</ul>
@@ -315,19 +361,19 @@ function pp_worldpay_slide_4() {
 						<div class="keep-me-posted">
 							<h3 class="">Keep me posted</h3>
 							<p>Don\'t worry, we definitely won\'t send you spam or junk mail, or give your details to anyone else. We don\'t like that sort of thing - see our privacy policy.</p>
-							<img src="/wp-content/plugins/pp-worldpay/images/envelope.png" class="keep-me-img" />
+							<img src="'.plugin_dir_url( __FILE__ ).'images/envelope.png" class="keep-me-img" />
 							<p><strong>Would you like to be kept informed<br />by email about what we are up to?</strong></p>
 					
 							<label>
-								<input type="radio" name="pp_informed_by" value="mail" />
+								<input type="radio" tabindex="23" name="pp_informed_by" value="mail" />
 								By email
 							</label>
 							<label>
-								<input type="radio" name="pp_informed_by" value="post" />
+								<input type="radio" tabindex="24" name="pp_informed_by" value="post" />
 								By post
 							</label>
 							<input type="hidden" name="pp_worldpay_send" value="true" />
-							<input type="submit" name="send" value="Make payment" onclick="Worldpay.submitTemplateForm()" />
+							<input type="submit" tabindex="25" name="send" value="Make payment" />
 	
 						
 						</div>
@@ -345,7 +391,7 @@ function pp_worldpay_slide_4() {
 		<ul class="grid later equal">
 				<li class="col-12-12">
 					<div class="fix-12-12">
-						<img src="/wp-content/plugins/pp-worldpay/images/down-arrow.png" class="down-arrow" />
+						<img src="'.plugin_dir_url( __FILE__ ).'images/down-arrow.png" class="down-arrow" />
 					</div>
 				</li>
 		</ul>
@@ -367,11 +413,11 @@ function pp_worldpay_slide_5() {
 				<li class="col-10-12">
 					<div class="fix-10-12">
 						<div class="worldpay-info">
-							<p>With concerns about security of financial data at an all-time high, we want to reassure you that by working with the best partners like PayPal, DigiCert and WorldPay, we\'ll keep your data safe.</p>
+							<p>With concerns about security of financial data at an all-time high, we want to reassure you that by working with the best partners like WorldPay, we\'ll keep your data safe.</p>
 							<br />
 							<p>More information on your donation</p>
 					
-							<img src="/wp-content/plugins/pp-worldpay/images/worldpay-info.png" class="down-arrow" />
+							<img src="'.plugin_dir_url( __FILE__ ).'images/worldpay.png" class="down-arrow" />
 						
 						</div>
 					</div>
@@ -383,11 +429,26 @@ function pp_worldpay_slide_5() {
 					</div>
 				</li>
 		</ul>
+	';
+	if(get_option('pp_worldpay_api_mode') == 1)
+	{
+		$strClientKey = get_option('pp_worldpay_client_key_test');
+	}
+	else
+	{
+		$strClientKey = get_option('pp_worldpay_client_key_live');
+	}
+	
+	$strContent .= '<input type="hidden" id="pp-client-key" value="'.$strClientKey.'" />';
+	
+	$strContent .= '	
 		</form>	
 	';
 	
-		
 	
+	$strContent .= '<script src="https://cdn.worldpay.com/v1/worldpay.js"></script>';
+	$strContent .= '<script src="'.plugin_dir_url( __FILE__ ).'js/script.js"></script>';
+
 	return $strContent;
 }
 
