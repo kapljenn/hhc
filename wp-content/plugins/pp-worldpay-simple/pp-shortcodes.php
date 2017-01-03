@@ -327,8 +327,8 @@ function pp_worldpay_slide_3() {
 							</label>
 
 							<label>
-								<span>Address line 3 <span class="mandatory">*</span></span>
-								<input type="text" tabindex="23" name="pp_address_line_3" required="true" />
+								<span>Address line 3</span>
+								<input type="text" tabindex="23" name="pp_address_line_3" />
 							</label>
 
 							<label>
