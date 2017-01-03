@@ -36,6 +36,6 @@
 	require_once( ABSPATH . 'wp-includes/pluggable.php' );
 
 	
-	wp_redirect( get_home_url().'/'.get_option('pp_worldpay_redirect_formsubmit').'?amount='.base64_encode($res9).'&pid='.base64_encode($paymentId).'&pid='.base64_encode($paymentId).'&firstname='.base64_encode($res3).'&lastname='.base64_encode($res4).'&address1='.base64_encode($res16).'&address2='.base64_encode($res17).'&address3='.base64_encode($res18).'&town='.base64_encode($res20).'&postcode='.base64_encode($res7).'&tel='.base64_encode($res2).'&email='.base64_encode($res5).'&paymenttype='.base64_encode($res21) );
+	wp_redirect( get_home_url().'/'.get_option('pp_worldpay_redirect_formsubmit').'?amount='.base64_encode($res9).'&pid='.base64_encode($paymentId).'&pid='.base64_encode($paymentId).'&firstname='.base64_encode($res3).'&lastname='.base64_encode($res4).'&address1='.base64_encode($res16).'&address2='.base64_encode($res17).'&address3='.base64_encode($res18).'&town='.base64_encode($res20).'&postcode='.base64_encode($res7).'&tel='.base64_encode($res2).'&email='.base64_encode($res5).'&paymenttype='.base64_encode($res21).'&country='.base64_encode($res19) );
 	exit;
 	

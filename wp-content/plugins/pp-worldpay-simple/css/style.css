@@ -204,6 +204,20 @@ h3 {
 	line-height: 20px;
 }
 
+.pp-select-country {
+	border: 1px solid #57244b;
+	outline: 0;
+	width: 100%;
+	text-align: left;
+	padding: 12px 30px;
+	border-radius: 6px;
+	font-size: 22px;
+	font-weight: normal;
+	background: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+}
 
 ::-webkit-input-placeholder {
    color: #57244b;
