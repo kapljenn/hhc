@@ -392,6 +392,21 @@ if ($video_url != "") {
 					echo '</li>';
 				}
 
+				// trustee
+				else if (get_post_type() == "trustee") {
+					$thumb = wp_get_attachment_image_src( get_post_thumbnail_id($link->ID), 'medium' )['0'];
+					echo '<li class="blog-article">';
+					if ($thumb) {
+						echo '<div class="img-holder">';
+							echo '<img src="' . $thumb . '">';
+						echo '</div>';
+					}
+						echo '<div class="post-content">';
+							echo '<a href="' . get_the_permalink() . '" class="post-title">' . get_the_title() . '</a>';
+						echo '</div>';
+					echo '</li>';
+				}
+				
 				// any other post type
 				else {
 					$thumb = wp_get_attachment_image_src( get_post_thumbnail_id($link->ID), 'medium' )['0'];
@@ -421,7 +436,90 @@ if ($video_url != "") {
 
 
 
+<!-- post loop latest -->
+<?php
+	$post_loop = get_field('post_loop_latest', $slide_id);
+	if ($post_loop != false) {
 
+		// normal query
+		$the_query = new WP_Query(array( 'post_type' => $post_loop, 'posts_per_page' => 4 ));
+
+		// if we're dealing with a people post type, order the items alphabetically
+		$people_post_types = array("patron", "trustee", "executive-leader", "spokesperson");
+		if (in_array($post_loop, $people_post_types)) {
+			$the_query = new WP_Query(array( 'post_type' => $post_loop, 'posts_per_page' => 4 , 'orderby' => 'title' , 'order' => 'ASC' ));
+		}
+
+		// if we're dealing with events or challenges, order the items by start date
+		$calendar_based_post_types = array("event", "challenge");
+		if (in_array($post_loop, $calendar_based_post_types)) {
+			$the_query = new WP_Query(array( 'post_type' => $post_loop, 'posts_per_page' => 4 , 'meta_key' => 'start' , 'orderby' => 'meta_value' , 'order' => 'ASC' ));
+		}
+
+		if ( $the_query->have_posts() ) {
+			echo "<ul class='post-grid " . $post_list_classes . "'>";
+			while ( $the_query->have_posts() ) {
+				$the_query->the_post();
+
+				// publications
+				if (get_post_type() == "publication") {
+					$title = get_the_title();
+					$excerpt = get_the_excerpt();
+					$file_url = get_field('file')['url'];
+					
+					$categories = get_the_category();
+					
+					echo '<li class="publication publication-grid-item initially-hidden '.esc_html( $categories[0]->slug ).'">';
+						// echo '<div class="img-holder">';
+						// 	echo '<img src="' . $thumb . '">';
+						// echo '</div>';
+						echo '<div class="post-content">';
+							echo '<a href="' . $file_url . '" class="post-title">' . $title . '</a>';
+							echo '<div class="post-excerpt">' . $excerpt . '</div>';
+						echo '</div>';
+					echo '</li>';
+				}
+
+				// fundraising tools
+				else if (get_post_type() == "fundraising-tool") {
+					$title = get_the_title();
+					$excerpt = get_the_excerpt();
+					$file_url = get_field('file')['url'];
+					
+					$categories = get_the_category();
+					
+					echo '<li class="fundraising-tool fundraising-tool-grid-item initially-hidden '.esc_html( $categories[0]->slug ).'">';
+						// echo '<div class="img-holder">';
+						// 	echo '<img src="' . $thumb . '">';
+						// echo '</div>';
+						echo '<div class="post-content">';
+							echo '<a href="' . $file_url . '" class="post-title">' . $title . '</a>';
+							echo '<div class="post-excerpt">' . $excerpt . '</div>';
+						echo '</div>';
+					echo '</li>';
+				}
+
+				// any other post type
+				else {
+					$thumb = wp_get_attachment_image_src( get_post_thumbnail_id($link->ID), 'medium' )['0'];
+					echo '<li class="blog-article">';
+					if ($thumb) {
+						echo '<div class="img-holder">';
+							echo '<img src="' . $thumb . '">';
+						echo '</div>';
+					}
+						echo '<div class="post-content">';
+							echo '<a href="' . get_the_permalink() . '" class="post-title">' . get_the_title() . '</a>';
+							echo '<div class="post-excerpt">' . get_the_excerpt() . '</div>';
+						echo '</div>';
+					echo '</li>';
+				}
+			}
+			echo '</ul>';
+		}
+		wp_reset_postdata();
+	}
+?>
 
 
 
