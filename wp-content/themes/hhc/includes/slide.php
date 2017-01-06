@@ -398,7 +398,7 @@ if ($video_url != "") {
 					echo '<li class="blog-article">';
 					if ($thumb) {
 						echo '<div class="img-holder">';
-							echo '<img src="' . $thumb . '">';
+							echo '<a href="' . get_the_permalink() . '" class="post-title"><img src="' . $thumb . '"></a>';
 						echo '</div>';
 					}
 						echo '<div class="post-content">';
