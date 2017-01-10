@@ -209,6 +209,17 @@ jQuery(document).ready(function() {
 
 	// font weight fix
 	$('p').css('font-weight', '300');
+	
+	
+	$('a').click(function(){
+		if($(this).attr('href') == '#donate-wp1')
+		{
+			$('html, body').animate({
+				scrollTop: $('#donate-wp1').offset().top
+			}, 500);
+			return false;
+		}
+	});
 
 });
 

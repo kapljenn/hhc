@@ -9,7 +9,7 @@
 	</div>
 	<div class="fix-10-12 toCenter">
 		<br>
-		<h3 class="equalElement ae-10">Follow us</h3>
+		<h3 class="equalElement ae-10" style="color: #fff;">Follow us</h3>
 		<ul class="social ae-9">
 			<li>
 				<a target="_blank" href="http://www.facebook.com/hopeandhomes">

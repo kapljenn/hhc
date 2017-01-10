@@ -407,6 +407,25 @@ if ($video_url != "") {
 					echo '</li>';
 				}
 				
+				//event
+				else if (get_post_type() == "event") {
+					if(date('Y-m-d', strtotime(get_field('unpublish_date'))) > date('Y-m-d'))
+					{
+						$thumb = wp_get_attachment_image_src( get_post_thumbnail_id($link->ID), 'medium' )['0'];
+						echo '<li class="blog-article">';
+						if ($thumb) {
+							echo '<div class="img-holder">';
+								echo '<img src="' . $thumb . '">';
+							echo '</div>';
+						}
+							echo '<div class="post-content">';
+								echo '<a href="' . get_the_permalink() . '" class="post-title">' . get_the_title() . '</a>';
+								echo '<div class="post-excerpt">' . get_the_excerpt() . '</div>';
+							echo '</div>';
+						echo '</li>';
+					}
+				}
+								
 				// any other post type
 				else {
 					$thumb = wp_get_attachment_image_src( get_post_thumbnail_id($link->ID), 'medium' )['0'];

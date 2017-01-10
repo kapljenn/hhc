@@ -301,7 +301,7 @@ function pp_worldpay_slide_3() {
 		</ul>	
 
 
-		<ul class="grid later equal">
+		<ul class="grid later equal donate-form-inputs">
 				<li class="col-6-12">
 					<div class="fix-6-12">
 						<div class="form-fields-col">
@@ -662,9 +662,10 @@ function pp_worldpay_slide_4() {
 						<div class="keep-me-posted">
 							<h3 class="">Keep me posted</h3>
 							<p>Don\'t worry, we definitely won\'t send you spam or junk mail, or give your details to anyone else. We don\'t like that sort of thing - see our privacy policy.</p>
-							<img src="'.plugin_dir_url( __FILE__ ).'images/envelope.png" class="keep-me-img" />
-							<p><strong>Would you like to be kept informed<br />by email about what we are up to?</strong></p>
-					
+							';
+//							<img src="'.plugin_dir_url( __FILE__ ).'images/envelope.png" class="keep-me-img" />
+//							<p><strong>Would you like to be kept informed<br />by email about what we are up to?</strong></p>
+$strContent .= '					
 							<label>
 								<input type="radio" tabindex="27" name="pp_informed_by" value="mail" />
 								By email
@@ -704,7 +705,7 @@ function pp_worldpay_slide_4() {
 add_shortcode('pp_worldpay_slide_5', 'pp_worldpay_slide_5');
 function pp_worldpay_slide_5() {
 	$strContent = '
-		<ul class="grid later equal">
+		<ul class="grid later equal donate-footer-row">
 				<li class="col-1-12">
 					<div class="fix-1-12">
 						&nbsp;
@@ -718,7 +719,7 @@ function pp_worldpay_slide_5() {
 							<br />
 							<p>More information on your donation</p>
 					
-							<img src="'.plugin_dir_url( __FILE__ ).'images/worldpay.png" class="down-arrow" />
+							<div class="donate-powered"><p>Payments powered by<br /><span>WorldPay</span></p></div>
 						
 						</div>
 					</div>

@@ -1,5 +1,6 @@
 
-
+#donate .icon-holder img { height: 160px; }
+#donate-wp1 .wrap { padding: 50px 0 0 0; }
 
 .pp-amount-box {
 	border: 2px solid #57244b;
@@ -144,10 +145,12 @@ h3 {
 
 #paymentErrors { color: #ff0000; }
 
-.form-fields-col label input[type=text], .form-fields-col label input[type=email] {
-	border: 1px solid #57244b;
+.donate-form-inputs label input[type=text], .form-fields-col label input[type=email] {
+	border: 1px solid #57244b !important;
 	outline: 0;
 	width: 100%;
+	max-width: 100%;
+	margin-left: 0px !important;
 	text-align: left;
 }
 .keep-me-posted  {
@@ -155,7 +158,7 @@ h3 {
 }
 .keep-me-posted h3 {
 	display: block !important;
-	color: #fff;
+	color: #57244b;
     margin: 10px 0 20px 0;
     font-size: 28px;
     font-weight: bold;	
@@ -165,7 +168,7 @@ h3 {
 	margin: 10px auto 20px auto;
 }
 .keep-me-posted p {
-	color: #fff;
+	color: #57244b;
 	font-size: 16px;
 	line-height: 20px;
 }
@@ -173,8 +176,9 @@ h3 {
 .keep-me-posted label {
 	font-size: 16px;
 	line-height: 20px;
-	color: #fff;
+	color: #57244b;
 	font-weight: bold;
+	display: inline;
 }
 
 .keep-me-posted label input {
@@ -183,8 +187,8 @@ h3 {
 .keep-me-posted input[type=submit] {
 	display: block;
 	border: 0px;
-	background: #fff;
-	color: #57244b;
+	background: #0ca4da;
+	color: #fff;
 	padding: 10px 20px;
 	margin: 30px auto 0 auto;
 	font-size: 28px;
@@ -209,11 +213,12 @@ h3 {
 	outline: 0;
 	width: 100%;
 	text-align: left;
-	padding: 12px 30px;
+	padding: 6px 30px;
 	border-radius: 6px;
 	font-size: 22px;
 	font-weight: normal;
 	background: none;
+	margin-top: 5px;
     -webkit-appearance: none;
     -moz-appearance: none;
     appearance: none;
@@ -236,3 +241,33 @@ h3 {
    ;  
 }
 
+.donate-footer-row {
+    width: 300%;
+    color: #fff;
+    padding-top: 30px;
+    padding-bottom: 30px;
+    margin-left: -100% !important;
+    padding-left: 100%;
+    background: #57244b;
+    padding-right: 100%;
+    margin-bottom: -30px !important;
+}
+.donate-footer-row p {
+	color: #fff !important;
+}
+
+.donate-powered {
+    width: 200px;
+    text-align: left;
+    margin: 0 auto;
+}
+.donate-powered p {
+	color: #000000 !important;
+    font-weight: bold !important;
+    font-size: 18px !important;
+}
+.donate-powered p span {
+    font-size: 30px !important;
+    font-weight: bold !Important;
+    line-height: 32px;
+}
