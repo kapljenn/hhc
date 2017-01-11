@@ -96,7 +96,7 @@
 ?>
 				</h2>
 				<div class="ae-4">
-					<p style="color: <?php echo $column_text_colour; ?>"><?php echo $column_text; ?></p>
+					<p style="color: <?php echo $column_text_colour; ?>"><?php echo str_replace('<p>', '<p style="color: '.$column_text_colour.';">', $column_text); ?></p>
 				</div>
 			</div>
 		</li>
@@ -581,14 +581,17 @@ if ($video_url != "") {
 
 
 <?php } else if ($slide_type == "three_thumbnails") { ?>
-<?php $thumbnails = get_field('thumbnails', $slide_id); ?>
+<?php 
+	$thumbnails = get_field('thumbnails', $slide_id); 
+	$thumbnails_equal_height = get_field('thumbnails_equal_height', $slide_id) == true ? 'thumbnails-equal-height' : '';
+?>
 <div class="fix-10-12 <?php echo $hero_alignment; ?>">
 	<?php echo $title_html; ?>
 	<div class="ae-2"><?php echo $slide_content; ?></div>
 </div>
 <?php if ($thumbnails != false) { ?>
 <div class="fix-12-12">
-	<ul class="grid later equal">
+	<ul class="grid later equal <?php echo $thumbnails_equal_height; ?>">
 <?php
 		foreach ($thumbnails as $t) {
 			$thumbnail_image = $t['thumbnail_image'];

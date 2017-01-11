@@ -221,6 +221,30 @@ jQuery(document).ready(function() {
 		}
 	});
 
+	if($('.thumbnails-equal-height').length)
+	{
+		var thumbHeight = 0;
+		$('.thumbnails-equal-height').find('.thumbnail-link').each(function(){  
+			if($(this).find('img').height() < thumbHeight || thumbHeight == 0)
+			{  
+				thumbHeight = $(this).find('img').height();  
+			}
+		});    
+		$('.thumbnails-equal-height').find('.thumbnail-link').height(thumbHeight);	
+
+		$( window ).resize(function() {
+			var thumbHeight = 0;
+			$('.thumbnails-equal-height').find('.thumbnail-link').each(function(){  
+				if($(this).find('img').height() < thumbHeight || thumbHeight == 0)
+				{  
+					thumbHeight = $(this).find('img').height();  
+				}
+			});    
+			$('.thumbnails-equal-height').find('.thumbnail-link').height(thumbHeight);	
+		});		
+	}
+
+
 });
 
 }(jQuery));
