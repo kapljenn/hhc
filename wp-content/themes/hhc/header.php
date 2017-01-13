@@ -53,8 +53,8 @@
 			<?php wp_nav_menu( array('menu' => 'Main', 'menu_class' => 'menu uppercase')); ?>
 		</div>
 		<div class="right">
-			<a class="button menuButton" href="<?php echo site_url() . '/fundraise/' ?>">Fundraise</a>
-			<a class="button menuButton" href="<?php echo site_url()  . '/donate/' ?>">Donate</a>
+			<a class="button menuButton" href="<?php echo site_url() . '/fundraise/' ?>">FUNDRAISE</a>
+			<a class="button menuButton" href="<?php echo site_url()  . '/donate/' ?>">DONATE</a>
 		</div>
 	</div>
 	<div class="sections compact hidden">
