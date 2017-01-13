@@ -78,10 +78,10 @@
 		<?php wp_nav_menu( array('menu' => 'Main', 'menu_class' => 'mainMenu uppercase')); ?>
 		<ul class="main-menu-add-on">
 			<li>
-				<a href="<?php echo site_url() ?>/fundraise/">Fundraise</a>
+				<a href="<?php echo site_url() ?>/fundraise/">FUNDRAISE</a>
 			</li>
 			<li>
-				<a href="<?php echo site_url() ?>/donate/">Donate</a>
+				<a href="<?php echo site_url() ?>/donate/">DONATE</a>
 			</li>
 		</ul>
 		<?php wp_nav_menu( array('menu' => 'Corporate', 'menu_class' => 'subMenu')); ?>
